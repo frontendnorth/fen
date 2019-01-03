@@ -1,11 +1,19 @@
-# fen
+# Front End North
 
-Set up using parcle
+The Front End North website.
 
- ## Setup
- 
-Install `npm install`.
+## Developer Environment
 
-To complie run `npm run dev`
+Set up using [ParcelJS](https://parceljs.org/).
 
-View on `http://localhost:1234/`
+### Prerequisites
+
+* A GitHub account with push access to this repository.
+* NPM installed locally.
+
+### Set up
+
+1. Clone the respository on your computer by running `git clone git@github.com:frontendnorth/fen.git`.
+2. In the project root, run `npm install`.
+3. Run `npm run dev` to watch for changes and start a local environment.
+4. View your environment on on `http://localhost:1234/`
