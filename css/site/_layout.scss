@@ -1,10 +1,22 @@
-body {
-    background: $page-bg;
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 1rem;
+    min-width: 100vw;
+    min-height: 100vh;
+
+    background: $page-bg;
+}
+
+.header {
+    display: flex;
 }
 
 .main {
-    margin: 0 auto;
-    max-width: 600px;
+    margin: 0 auto 15vh;
+    width: 100%;
+    max-width: 400px;
 }

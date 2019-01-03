@@ -342,24 +342,34 @@ template {
   display: none;
 }
 
-body {
-  background: #ffffff;
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 1rem;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.header {
+  display: flex;
 }
 
 .main {
-  margin: 0 auto;
-  max-width: 600px;
+  margin: 0 auto 15vh;
+  width: 100%;
+  max-width: 400px;
 }
 
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 .h1 {
   margin: 0;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   letter-spacing: -0.04em;
   line-height: 0.9;
 }
@@ -368,25 +378,30 @@ body {
   text-align: center;
 }
 
-.jumbo {
+.logo {
+  font-size: 15vw;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  padding: 3rem 0;
+  padding: 0 0.7em;
+  height: 5.2em;
+  width: 5.2em;
+  border: 0.1em solid #286D63;
+  background-color: #71c1b5;
+  font-family: "Atlan-Black", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  word-spacing: 100vw;
+  line-height: 1;
 }
-.jumbo__heading {
-  font-size: 13vw;
-  text-align: center;
+.logo__year {
+  display: block;
+  color: #286D63;
+  align-self: flex-end;
 }
-.jumbo__heading::first-line {
-  color: #15c2c2;
-}
-@media (min-width: 80rem) {
-  .jumbo {
-    min-height: 30vh;
-  }
-  .jumbo__heading {
-    font-size: 10rem;
+@media (min-width: 30rem) {
+  .logo {
+    font-size: 4rem;
   }
 }
 
@@ -422,17 +437,17 @@ body {
 
 .button {
   clear: both;
-  background-color: #15c2c2;
+  background-color: #286D63;
   border: 0 none;
   border-radius: 4px;
   transition: background-color 0.1s ease-in-out 0s;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   display: inline-block;
   font-size: 1rem;
   font-weight: normal;
-  height: 2.5em;
-  line-height: 2.5em;
+  height: 2em;
+  line-height: 2em;
   margin: 1rem 0;
   padding: 0 2em;
   text-align: center;
@@ -442,7 +457,7 @@ body {
   width: auto;
 }
 .button:hover {
-  background-color: #13abab;
+  background-color: #215a52;
 }
 
 /* MailChimp Form Embed Code - Classic - 12/17/2015 v10.7 */

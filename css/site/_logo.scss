@@ -1,0 +1,29 @@
+.logo {
+    font-size: 15vw; // used to scale logo
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0.7em;
+    height: 5.2em;
+    width: 5.2em;
+    border: 0.1em solid $brand-primary;
+    background-color: $brand-primary--light;
+
+    font-family: $font-heading;
+    color: $text-light;
+    text-transform: uppercase;
+    word-spacing: 100vw;
+    line-height: 1;
+
+    &__year {
+        display: block;
+        color: $brand-primary;
+        align-self: flex-end;
+        // -webkit-text-stroke: 0.05em $text-light;
+    }
+
+    @media (min-width: 30rem) {
+        font-size: 4rem;
+    }
+}
