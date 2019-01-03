@@ -1,18 +1,39 @@
-// nice colour names: use in this file only
-$white: #ffffff;
-$cyan: #286D63;
+/* =========================================================
+    Layout
+========================================================= */
+// breakpoints
+$small          : 24rem;
+$medium         : 30rem;
+$large          : 50rem;
 
+// spacing
+$space          : 2rem;
+$space--xs      : $space / 3;
+$space--sm      : $space / 2;
+$space--lg      : $space * 1.5;
+$space--xl      : $space * 3;
 
-// theme colours
-$brand-primary: $cyan;
+// other
+$input-height   : 2.5rem;
+$radius         : 0.2rem;
+
+/* =========================================================
+    Colours
+========================================================= */
+// names – use in this file only
+$cyan           : #286D63;
+$white          : #ffffff;
+$grey           : #666;
+
+// brand colours
+$brand-primary  : $cyan;
 $brand-primary--light: lighten(desaturate(#286d63, 7.09), 30.78);
-$page-bg: $white;
 
-// text colours
-$text-primary: $brand-primary;
-$text-light: $white;
-$text-error: #dc2c0a;
+// text
+$text-primary   : $brand-primary;
+$text-light     : $white;
+$text-muted     : $grey;
+$text-error     : #dc2c0a;
 
-// fonts
-$font-heading: 'Atlan-Black', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-$font-body: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+// other
+$page-bg        : $white;

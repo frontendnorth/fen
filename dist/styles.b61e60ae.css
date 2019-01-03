@@ -342,40 +342,73 @@ template {
   display: none;
 }
 
+/* =========================================================
+    Layout
+========================================================= */
+/* =========================================================
+    Colours
+========================================================= */
+/* =========================================================
+    Fonts
+========================================================= */
+body {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+}
+
+h2 {
+  font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: #666;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
 .body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
-  padding: 1rem;
-  min-width: 100vw;
-  min-height: 100vh;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
   background: #ffffff;
+}
+@media (min-width: 50rem) {
+  .body {
+    flex-direction: row;
+    padding: 3rem;
+  }
 }
 
 .header {
   display: flex;
+  margin: 2rem auto;
+}
+@media (min-width: 50rem) {
+  .header {
+    margin-right: 3rem;
+  }
 }
 
 .main {
-  margin: 0 auto 15vh;
+  margin-bottom: 15vh;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
 }
-
-body {
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-
-.h1 {
-  margin: 0;
-  letter-spacing: -0.04em;
-  line-height: 0.9;
-}
-
-.h2 {
-  text-align: center;
+@media (min-width: 50rem) {
+  .main {
+    margin: 0 auto 0 0;
+  }
 }
 
 .logo {
@@ -399,9 +432,9 @@ body {
   color: #286D63;
   align-self: flex-end;
 }
-@media (min-width: 30rem) {
+@media (min-width: 24rem) {
   .logo {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -413,16 +446,16 @@ body {
 .label {
   display: block;
   margin-bottom: 0.2rem;
+  text-align: left;
 }
 
 .input {
   display: block;
   width: 100%;
-  padding: 8px 0;
-  text-indent: 2%;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 1rem;
   border: 1px solid #ABB0B2;
-  -webkit-border-radius: 0.2rem;
-  -moz-border-radius: 0.2rem;
   border-radius: 0.2rem;
 }
 .input[type=checkbox] {
@@ -439,53 +472,86 @@ body {
   clear: both;
   background-color: #286D63;
   border: 0 none;
-  border-radius: 4px;
+  border-radius: 0.2rem;
   transition: background-color 0.1s ease-in-out 0s;
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
   font-size: 1rem;
   font-weight: normal;
-  height: 2em;
-  line-height: 2em;
-  margin: 1rem 0;
-  padding: 0 2em;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin: 0.2rem 0 1rem;
+  padding: 0 2rem;
   text-align: center;
   text-decoration: none;
   vertical-align: top;
   white-space: nowrap;
-  width: auto;
+  width: 100%;
 }
-.button:hover {
-  background-color: #215a52;
+.button:focus, .button:hover {
+  background-color: #71c1b5;
 }
 
-/* MailChimp Form Embed Code - Classic - 12/17/2015 v10.7 */
-.form__header {
+.form {
   text-align: center;
 }
-.form__group {
-  margin: 1.5rem 0;
+@media (min-width: 24rem) {
+  .form {
+    text-align: left;
+  }
+  .form__group {
+    margin-bottom: 2rem;
+  }
+  .form__group--inline {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+  }
+  .form__group--inline .form__input {
+    position: relative;
+    flex-grow: 1;
+  }
+  .form__group--inline .input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+  }
+  .form__group--inline .button {
+    margin: 0;
+    flex: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form__group--inline .form__messages,
+.form__group--inline div.mce_inline_error {
+    position: absolute;
+    top: 100%;
+  }
 }
-.form #mce-responses {
+
+#mce-responses {
   overflow: hidden;
 }
-.form .response {
+
+.response {
   text-align: center;
   display: none;
 }
-.form #mc-embedded-subscribe {
-  display: block;
-  margin: 1rem auto;
-}
-.form div.mce_inline_error {
+
+.form__messages,
+div.mce_inline_error {
   margin: 0.5em 0 !important;
   padding: 0 !important;
   background: none !important;
-  color: #dc2c0a !important;
+  color: #666 !important;
   font-size: 0.8rem;
-  text-align: right;
 }
-.form input.mce_inline_error {
+
+div.mce_inline_error {
+  color: #dc2c0a !important;
+}
+
+input.mce_inline_error {
   border: 2px solid #dc2c0a !important;
 }

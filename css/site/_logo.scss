@@ -10,7 +10,7 @@
     border: 0.1em solid $brand-primary;
     background-color: $brand-primary--light;
 
-    font-family: $font-heading;
+    font-family: $font-brand;
     color: $text-light;
     text-transform: uppercase;
     word-spacing: 100vw;
@@ -20,10 +20,9 @@
         display: block;
         color: $brand-primary;
         align-self: flex-end;
-        // -webkit-text-stroke: 0.05em $text-light;
     }
 
-    @media (min-width: 30rem) {
-        font-size: 4rem;
+    @media (min-width: $small) {
+        font-size: 3.5rem;
     }
 }
