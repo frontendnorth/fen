@@ -1,9 +1,37 @@
+@font-face {
+    font-family: 'Atlan-Black';
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: local('Atlan-Black'),
+         url('/assets/fonts/subset-Atlan-Black.woff2') format('woff2'), /* preloaded */
+         url('/assets/fonts/subset-Atlan-Black.woff') format('woff'),
+         url('/assets/fonts/subset-Atlan-Black.ttf') format('truetype'),
+         url('/assets/fonts/subset-Atlan-Black.eot') format('embedded-opentype');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-display: auto;
+    src: local('Raleway-SemiBold'),
+         url('/assets/fonts/subset-Raleway-SemiBold.woff2') format('woff2'), /* preloaded */
+         url('/assets/fonts/subset-Raleway-SemiBold.woff') format('woff'),
+         url('/assets/fonts/subset-Raleway-SemiBold.ttf') format('truetype'),
+         url('/assets/fonts/subset-Raleway-SemiBold.eot') format('embedded-opentype');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
 /* =========================================================
     Fonts
 ========================================================= */
 $font-brand     : 'Atlan-Black', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 $font-heading   : 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 $font-body      : 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+
 
 body {
     font-family: $font-body;
@@ -12,7 +40,6 @@ body {
 h1 {
     margin: 0;
     font-family: $font-heading;
-    letter-spacing: -0.04em;
     line-height: 0.9;
 }
 

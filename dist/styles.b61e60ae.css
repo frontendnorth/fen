@@ -348,6 +348,24 @@ template {
 /* =========================================================
     Colours
 ========================================================= */
+@font-face {
+  font-family: "Atlan-Black";
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: local("Atlan-Black"), url("subset-Atlan-Black.3fd03559.woff2") format("woff2"), url("subset-Atlan-Black.49de4f6d.woff") format("woff"), url("subset-Atlan-Black.2883f5fe.ttf") format("truetype"), url("subset-Atlan-Black.16bd55e1.eot") format("embedded-opentype");
+  unicode-range: U+000-5FF;
+  /* Latin glyphs */
+}
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 600;
+  font-display: auto;
+  src: local("Raleway-SemiBold"), url("subset-Raleway-SemiBold.2a60ae17.woff2") format("woff2"), url("subset-Raleway-SemiBold.8f1baf1f.woff") format("woff"), url("subset-Raleway-SemiBold.09725906.ttf") format("truetype"), url("subset-Raleway-SemiBold.66d5d30e.eot") format("embedded-opentype");
+  unicode-range: U+000-5FF;
+  /* Latin glyphs */
+}
 /* =========================================================
     Fonts
 ========================================================= */
@@ -358,7 +376,6 @@ body {
 h1 {
   margin: 0;
   font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  letter-spacing: -0.04em;
   line-height: 0.9;
 }
 
