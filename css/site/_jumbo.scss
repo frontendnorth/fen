@@ -1,11 +1,23 @@
 .jumbo {
-    height: 35vh;
-    background: $primary;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+    padding: 3rem 0;
 
-.jumbo__title {
-    color: $text-secondary;
+    &__heading {
+        font-size: 13vw;
+        text-align: center;
+
+        &::first-line {
+            color: $primary;
+        }
+    }
+
+    @media (min-width: 80rem) {
+        min-height: 30vh;
+
+        &__heading {
+            font-size: 10rem;
+        }
+    }
 }
