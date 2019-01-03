@@ -1,0 +1,11 @@
+.jumbo {
+    height: 35vh;
+    background: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jumbo__title {
+    color: $text-secondary;
+}

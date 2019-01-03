@@ -1,0 +1,19 @@
+{
+  "name": "bgw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "molecules": "0.0.3",
+    "parcel-bundler": "^1.11.0"
+  },
+  "devDependencies": {
+    "sass": "^1.15.2"
+  }
+}

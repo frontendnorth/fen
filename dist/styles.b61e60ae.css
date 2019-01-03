@@ -1,0 +1,42 @@
+body {
+  background: #fff;
+  margin: 0;
+  min-width: 320px;
+}
+
+.half {
+  width: 50%;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+.h1 {
+  font-size: 10rem;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.2rem;
+}
+
+.jumbo {
+  height: 35vh;
+  background: #C21515;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jumbo__title {
+  color: #fff;
+}
+
+.content {
+  width: 50%;
+  margin: 0 auto;
+}
+
+button,
+input[type=submit] {
+  background: #C21515;
+}
