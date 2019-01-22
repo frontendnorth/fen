@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html --public-url /dist/"
+    "dev": "parcel src/index.html -d ."
   },
   "keywords": [],
   "author": "Front End North",
