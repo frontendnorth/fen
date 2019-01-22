@@ -14,7 +14,7 @@ $space--lg      : $space * 1.5;
 $space--xl      : $space * 3;
 
 // other
-$input-height   : 2.5rem;
+$input-height   : 2.7rem;
 $radius         : 0.2rem;
 
 /* =========================================================
@@ -24,6 +24,7 @@ $radius         : 0.2rem;
 $cyan           : #286D63;
 $white          : #ffffff;
 $grey           : #666;
+$black          : #313639;;
 
 // brand colours
 $brand-primary  : $cyan;
@@ -32,8 +33,9 @@ $brand-primary--light: lighten(desaturate(#286d63, 7.09), 30.78); // #71C1B5
 // text
 $text-primary   : $brand-primary;
 $text-light     : $white;
+$text-dark      : $black;
 $text-muted     : $grey;
 $text-error     : #dc2c0a;
 
 // other
-$page-bg        : $white;
+$page-bg        : #fefefe;

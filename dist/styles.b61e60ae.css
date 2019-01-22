@@ -381,7 +381,7 @@ h1 {
 
 h2 {
   font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  color: #666;
+  color: #313639;
 }
 
 html {
@@ -398,7 +398,7 @@ html {
   padding: 2rem;
   width: 100%;
   height: 100%;
-  background: #ffffff;
+  background: #fefefe;
 }
 @media (min-width: 50rem) {
   .body {
@@ -429,29 +429,41 @@ html {
 }
 
 .logo {
-  font-size: 15vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 0.7em;
-  height: 5.2em;
-  width: 5.2em;
-  border: 0.1em solid #286D63;
-  background-color: #71c1b5;
+  height: auto;
   font-family: "Atlan-Black", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: #ffffff;
+  color: #313639;
+  text-align: center;
   text-transform: uppercase;
-  word-spacing: 100vw;
   line-height: 1;
 }
-.logo__year {
+.logo img {
+  margin: 15px auto;
   display: block;
-  color: #286D63;
-  align-self: flex-end;
+  width: 25%;
+}
+@media (min-width: 50rem) {
+  .logo {
+    width: 12em;
+    padding: 0 0.5em;
+    border-right: 0.06em solid #313639;
+  }
+}
+.logo__title {
+  padding-bottom: 1.5rem;
+}
+.logo__title--primary {
+  font-family: "Bree Serif", serif;
+  font-size: 2rem;
+}
+.logo__title--secondary {
+  font-size: 4rem;
 }
 @media (min-width: 24rem) {
-  .logo {
-    font-size: 3.5rem;
+  .logo__title--secondary {
+    font-size: 2rem;
   }
 }
 
@@ -469,8 +481,8 @@ html {
 .input {
   display: block;
   width: 100%;
-  height: 2.5rem;
-  line-height: 2.5rem;
+  height: 2.7rem;
+  line-height: 2.7rem;
   padding: 0 1rem;
   border: 1px solid #ABB0B2;
   border-radius: 0.2rem;
@@ -487,7 +499,7 @@ html {
 
 .button {
   clear: both;
-  background-color: #286D63;
+  background-color: #313639;
   border: 0 none;
   border-radius: 0.2rem;
   transition: background-color 0.1s ease-in-out 0s;
@@ -496,8 +508,8 @@ html {
   display: inline-block;
   font-size: 1rem;
   font-weight: normal;
-  height: 2.5rem;
-  line-height: 2.5rem;
+  height: 2.7rem;
+  line-height: 2.7rem;
   margin: 0.2rem 0 1rem;
   padding: 0 2rem;
   text-align: center;
@@ -507,7 +519,7 @@ html {
   width: 100%;
 }
 .button:focus, .button:hover {
-  background-color: #71c1b5;
+  background-color: #666;
 }
 
 .form {

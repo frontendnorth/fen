@@ -30,8 +30,7 @@
 $font-brand     : 'Atlan-Black', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 $font-heading   : 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 $font-body      : 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-
-
+$font-fes       : 'Bree Serif', serif;
 
 body {
     font-family: $font-body;
@@ -45,5 +44,5 @@ h1 {
 
 h2 {
     font-family: $font-heading;
-    color: $text-muted;
+    color: $text-dark;
 }
