@@ -349,15 +349,6 @@ template {
     Colours
 ========================================================= */
 @font-face {
-  font-family: "Atlan-Black";
-  font-style: normal;
-  font-weight: 900;
-  font-display: auto;
-  src: local("Atlan-Black"), url("subset-Atlan-Black.666d884c.woff2") format("woff2"), url("subset-Atlan-Black.3ea2b384.woff") format("woff"), url("subset-Atlan-Black.982bbf28.ttf") format("truetype"), url("subset-Atlan-Black.414e9567.eot") format("embedded-opentype");
-  unicode-range: U+000-5FF;
-  /* Latin glyphs */
-}
-@font-face {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 600;
@@ -384,6 +375,10 @@ h2 {
   color: #313639;
 }
 
+.upper {
+  text-transform: uppercase;
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -402,30 +397,30 @@ html {
 }
 @media (min-width: 50rem) {
   .body {
-    flex-direction: row;
     padding: 3rem;
   }
 }
 
 .header {
-  display: flex;
-  margin: 2rem auto;
+  display: block;
+  margin: 0 auto;
 }
-@media (min-width: 50rem) {
-  .header {
-    margin-right: 3rem;
-  }
-}
-
 .main {
   margin-bottom: 15vh;
   width: 100%;
   max-width: 450px;
 }
-@media (min-width: 50rem) {
-  .main {
-    margin: 0 auto 0 0;
-  }
+.visually-hidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  position: absolute;
 }
 
 .logo {
@@ -433,10 +428,9 @@ html {
   flex-direction: column;
   justify-content: center;
   height: auto;
-  font-family: "Atlan-Black", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   color: #313639;
   text-align: center;
-  text-transform: uppercase;
   line-height: 1;
 }
 .logo img {
@@ -444,26 +438,23 @@ html {
   display: block;
   width: 25%;
 }
-@media (min-width: 50rem) {
-  .logo {
-    width: 12em;
-    padding: 0 0.5em;
-    border-right: 0.06em solid #313639;
-  }
-}
-.logo__title {
-  padding-bottom: 1.5rem;
-}
 .logo__title--primary {
   font-family: "Bree Serif", serif;
-  font-size: 2rem;
+  font-size: 3rem;
+  padding-bottom: 2.5rem;
+}
+@media (max-width: 30rem) {
+  .logo__title--primary {
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+  }
 }
 .logo__title--secondary {
-  font-size: 4rem;
+  font-size: 2.5rem;
 }
-@media (min-width: 24rem) {
+@media (max-width: 30rem) {
   .logo__title--secondary {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -476,6 +467,7 @@ html {
   display: block;
   margin-bottom: 0.2rem;
   text-align: left;
+  font-family: "Raleway", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 .input {
@@ -529,6 +521,9 @@ html {
   .form {
     text-align: left;
   }
+  .form__block {
+    padding: 2rem 0;
+  }
   .form__group {
     margin-bottom: 2rem;
   }
@@ -556,6 +551,14 @@ html {
 .form__group--inline div.mce_inline_error {
     position: absolute;
     top: 100%;
+  }
+  .form__header {
+    text-align: center;
+  }
+}
+@media (min-width: 24rem) and (max-width: 30rem) {
+  .form__header {
+    font-size: 1.3rem;
   }
 }
 

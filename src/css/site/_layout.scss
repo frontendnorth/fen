@@ -15,17 +15,17 @@ html {
     background: $page-bg;
 
     @media (min-width: $large) {
-        flex-direction: row;
+
         padding: $space--lg;
     }
 }
 
 .header {
-    display: flex;
-    margin: $space auto;
+    display: block;
+    margin: 0 auto;
 
     @media (min-width: $large) {
-        margin-right: $space--lg;
+        //margin-right: $space--lg;
     }
 }
 
@@ -35,6 +35,18 @@ html {
     max-width: 450px;
 
     @media (min-width: $large) {
-        margin: 0 auto 0 0;
+        //margin: 0 auto 0 0;
     }
+}
+
+.visually-hidden {
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE 6/7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+    position: absolute;
 }
