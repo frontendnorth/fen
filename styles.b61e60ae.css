@@ -405,11 +405,13 @@ html {
   display: block;
   margin: 0 auto;
 }
+
 .main {
   margin-bottom: 15vh;
   width: 100%;
   max-width: 450px;
 }
+
 .visually-hidden {
   margin: -1px;
   padding: 0;
