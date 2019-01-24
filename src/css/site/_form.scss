@@ -7,6 +7,7 @@
     display: block;
     margin-bottom: 0.2rem;
     text-align: left;
+    font-family: $font-heading;
 }
 
 .input {
@@ -62,6 +63,10 @@
     @media (min-width: $small) {
         text-align: left;
 
+        &__block {
+            padding: $space 0;
+        }
+
         &__group {
             margin-bottom: $space;
 
@@ -93,6 +98,15 @@
                     position: absolute;
                     top: 100%;
                 }
+            }
+        }
+
+        &__header {
+            text-align: center;
+
+            @media (max-width: $medium) {
+                font-size: 1.3rem;
+
             }
         }
     }
