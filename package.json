@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html -d ."
+    "dev": "parcel src/index.html --out-dir temp",
+    "build": "npm run clean && parcel build src/index.html --out-dir docs --public-url ./",
+    "clean": "rimraf ./docs"
   },
   "keywords": [],
   "author": "Front End North",
@@ -14,6 +16,7 @@
     "parcel-bundler": "^1.11.0"
   },
   "devDependencies": {
+    "rimraf": "^2.6.3",
     "sass": "^1.15.2"
   }
 }
