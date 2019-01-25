@@ -17,3 +17,9 @@ Set up using [ParcelJS](https://parceljs.org/).
 2. In the project root, run `npm install`.
 3. Run `npm run dev` to watch for changes and start a local environment.
 4. View your environment on on `http://localhost:1234/`
+
+### Deploy
+
+The GH pages site uses the docs folder.
+
+Run `npm run build` and commit the docs folder before merging your branch to master.
