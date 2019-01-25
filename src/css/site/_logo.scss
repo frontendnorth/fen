@@ -1,20 +1,17 @@
 .logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: auto;
     font-family: $font-brand;
     color: $text-dark;
     text-align: center;
     line-height: 1;
 
     img {
-        margin: 15px auto;
-        display: block;
-        width: 25%;
+        margin: 0 auto 15px auto;
+        max-width: 120px;
     }
 
     &__title {
+        display: block;
+
         &--primary {
             font-family: $font-fes;
             font-size: 2rem;
