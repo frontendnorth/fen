@@ -442,21 +442,21 @@ html {
 }
 .logo__title--primary {
   font-family: "Bree Serif", serif;
-  font-size: 3rem;
+  font-size: 2rem;
   padding-bottom: 2.5rem;
 }
 @media (max-width: 30rem) {
   .logo__title--primary {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-bottom: 1.5rem;
   }
 }
 .logo__title--secondary {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 @media (max-width: 30rem) {
   .logo__title--secondary {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 
