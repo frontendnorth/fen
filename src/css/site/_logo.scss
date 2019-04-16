@@ -1,34 +1,17 @@
 .logo {
-    font-family: $font-brand;
-    color: $text-dark;
-    text-align: center;
-    line-height: 1;
+  font-family: $font-brand;
+  color: $text-dark;
+  text-align: center;
+  line-height: 1;
+  font-size: 3rem;
 
-    img {
-        margin: 0 auto 15px auto;
-        max-width: 120px;
-    }
+  @media (max-width: $medium) {
+    font-size: 3.5rem;
+  }
 
-    &__title {
-        display: block;
-
-        &--primary {
-            font-family: $font-fes;
-            font-size: 2rem;
-            padding-bottom: 2.5rem;
-
-            @media (max-width: $medium) {
-                font-size: 1.5rem;
-                padding-bottom: 1.5rem;
-            }
-        }
-
-        &--secondary {
-            font-size: 3rem;
-
-            @media (max-width: $medium) {
-                font-size: 2rem;
-            }
-        }
-    }
+  img {
+      margin: 0 auto;
+      max-width: 350px;
+      display: block;
+  }
 }

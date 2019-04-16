@@ -15,7 +15,6 @@ $space--xl      : $space * 3;
 
 // other
 $input-height   : 2.7rem;
-$radius         : 0.2rem;
 
 /* =========================================================
     Colours
@@ -23,15 +22,16 @@ $radius         : 0.2rem;
 // names – use in this file only
 $cyan           : #286D63;
 $white          : #ffffff;
-$grey           : #666;
-$black          : #313639;;
+$grey           : #434343;
+$black          : #313639;
 
 // brand colours
-$brand-primary  : $cyan;
+$brand-primary  : #484BFF;
+$brand-secondary: #FF8725;
 $brand-primary--light: lighten(desaturate(#286d63, 7.09), 30.78); // #71C1B5
 
 // text
-$text-primary   : $brand-primary;
+$text-primary   : $grey;
 $text-light     : $white;
 $text-dark      : $black;
 $text-muted     : $grey;

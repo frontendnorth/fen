@@ -1,0 +1,29 @@
+.social {
+  &__link {
+    display: inline-block;
+    margin: 0 $space--sm;
+
+    &:hover,
+    &:focus,
+    &:active {
+      .icon {
+        fill: $brand-secondary;
+      }
+    }
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+.icon {
+  height: 2rem;
+  width: 2rem;
+  fill: $brand-primary;
+  display: block;
+}
