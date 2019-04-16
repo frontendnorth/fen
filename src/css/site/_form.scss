@@ -16,8 +16,8 @@
     height: $input-height;
     line-height: $input-height;
     padding: 0 $space--sm;
-    border: 1px solid #ABB0B2;
-    border-radius: $radius;
+    border: 1px solid $grey;
+    border-radius: 0;
 
     &[type=checkbox] {
         -webkit-appearance: checkbox;
@@ -32,9 +32,9 @@
 
 .button {
     clear: both;
-    background-color: $black;
+    background-color: $brand-primary;
     border: 0 none;
-    border-radius: $radius;
+    border-radius: 0;
     transition: background-color 0.1s ease-in-out 0s;
     color: $text-light;
     cursor: pointer;
@@ -53,7 +53,7 @@
 
     &:focus,
     &:hover {
-        background-color: $grey;
+        background-color: $brand-secondary;
     }
 }
 
@@ -64,7 +64,7 @@
         text-align: left;
 
         &__block {
-            padding: $space 0;
+            padding: $space--sm 0;
         }
 
         &__group {
