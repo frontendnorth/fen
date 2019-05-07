@@ -20,8 +20,16 @@ Set up using [ParcelJS](https://parceljs.org/).
 3. Run `npm run dev` to watch for changes and start a local environment.
 4. View your environment on on `http://localhost:1234/`
 
-### Deploy
+### Deploying to production
 
 The GH pages site uses the docs folder.
 
 Run `npm run build` and commit the docs folder before merging your branch to master.
+
+### Deploying to staging (https://fen-staging.firebaseapp.com/)
+
+You will need Firebase tools installed: `npm install -g firebase-tools`
+
+and then to login to Firebase `firebase login`
+
+To deploy the *current branch* do `npm run deploy-staging`

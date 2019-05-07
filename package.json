@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "parcel src/index.html --out-dir temp",
     "build": "npm run clean && parcel build src/index.html --out-dir docs --public-url ./ && cp CNAME docs/",
-    "clean": "rimraf ./docs"
+    "clean": "rimraf ./docs",
+    "deploy-staging": "npm run build && firebase deploy -P default"
   },
   "keywords": [],
   "author": "Front End North",
