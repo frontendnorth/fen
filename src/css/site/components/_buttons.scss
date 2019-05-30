@@ -1,0 +1,227 @@
+/**
+ *	Buttons
+ *
+ *	Prominent links and form buttons.
+ *
+ **/
+
+.c-button {
+
+	$color: $color-brand-primary;
+	$padding-v: 14px;
+	$padding-v-md: .8em;
+	$padding-h: 14px;
+	$padding: $padding-v $padding-h;
+	$icon-bar-width: 46px;
+	$radius: 4px;
+
+	background-color: $color;
+	border: none;
+	border-radius: $radius;
+	border-right: $icon-bar-width solid darken($color, 10); // TODO: em?
+	color: $color-text-white;
+	cursor: default; // hover triggers correct cursor unless link is disabled
+	display: inline-block;
+	font-family: $font-brand;
+	// font-size: map-get($type-scale, default);
+	font-size: 1em;
+	font-weight: 600;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	letter-spacing: 0.02em;
+	line-height: 1.1;
+	padding: $padding;
+	position: relative;
+	text-decoration: none;
+	text-shadow: 0 1px 2px rgba(#000, .2);
+	text-transform: uppercase;
+	transition: all ease-in-out .15s;
+	user-select: none;
+	vertical-align: middle;
+	z-index: 1;
+
+	// defaults to an arrow
+	&::after {
+		@include triangle($color-text-white, 'right', 6px);
+
+		right: -(($icon-bar-width /2) - 4px);
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	// interactions
+	&:hover,
+	&:focus,
+	a:hover > & { // 'dummy' buttons inside real links
+		background-color: darken($color, 10);
+		border-right-color: darken($color, 30);
+		cursor: pointer;
+		color: $color-text-white;
+		outline: none;
+	}
+
+	// When pseudo content not supported, wrap in a div
+	input,
+	button {
+		appearance: none;
+		background: none;
+		border: none;
+		border-right: $icon-bar-width solid transparent;
+		color: inherit;
+		cursor: pointer;
+		font-family: inherit;
+		font-weight: inherit;
+		letter-spacing: inherit;
+		text-transform: inherit;
+		margin: (-$padding-v)
+			(-$padding-h);
+		margin-right: calc(-#{$padding-h} - #{$icon-bar-width});
+		outline: none;
+		padding: $padding;
+	}
+
+	// in body copy
+	p + & {
+		// margin-top: $space-default;
+		// margin-bottom: $space-default;
+	}
+
+	// state
+	&--disabled {
+		&::after {
+			display: none;
+		}
+	}
+
+	// js-powered state
+	.is-disabled {
+		cursor: not-allowed;
+	}
+
+
+	// variations
+	// …sizes
+	// n/a
+
+	// block / full-width
+	&--block {
+		@mixin block-rules {
+			display: block;
+			margin-right: 0;
+			text-align: left;
+			width: 100%;
+
+			// following t'other
+			& + & {
+				margin-top: $space-default;
+			}
+		}
+
+		// @include block-rules();
+
+		// @include mq(md) {
+		// 	&\@md {
+		// 		@include block-rules();
+		// 	}
+		// }
+	}
+
+
+	// variations
+	// …colors
+	$colors: (
+		'orange': $color-brand-secondary
+	);
+
+	@mixin colorButtonAttibutes($name, $color) {
+		background: $color;
+		border-right-color: darken($color, 10);
+
+		// for state
+		&::before {
+			background-color: darken($color, 10);
+		}
+
+		&:hover,
+		&:focus,
+		a:hover > & {
+			background-color: lighten($color, 2.5);
+		}
+
+		// Contrast fixer
+		// make this smarter with color checker!
+		@if ( $name == 'reduced' ) {
+			border: 1px solid darken($color, 4);
+			box-shadow: 0 2px 8px rgba(#000, .1);
+			color: $color-text-base;
+
+			&:hover,
+			&:focus,
+			a:hover > & {
+				color: darken($color-text-base, 10);
+			}
+
+			// arrow
+			&::after {
+				@include triangle($color-text-base, 'right', 7px);
+			}
+		}
+	}
+
+	@each $name, $color in $colors {
+		&--#{$name} {
+			@include colorButtonAttibutes($name, $color);
+		}
+	}
+
+	// Special orange 'pop' button for maximum impact
+	&--pop {
+		background-color: #ffb92d !important;
+		background-image: $color-gradient-secondary;
+		background-repeat: repeat-x;
+		// box-shadow: 0 1px 4px rgba(#000, .15);
+		color: $color-text-base;
+		border-right-color: rgba(#fff, .15);
+
+		// triangle
+		&::after {
+			@include triangle($color-text-base, 'right', 6px);
+		}
+
+		&:focus,
+		&:hover {
+			background-position: 0 15px;
+			color: inherit;
+			border-right-color: rgba(#fff, .15);
+		}
+	}
+
+	// icons
+	// Defaults to an arrow - remove this if set
+	&--icon {
+		&::after {
+			content: none;
+		}
+
+		svg {
+			bottom: 0;
+			color: inherit;
+			height: 21px;
+			position: absolute;
+			right: -$icon-bar-width;
+			top: 0;
+			// transition: $transition-fade;
+			opacity: .7;
+			margin: auto;
+			width: $icon-bar-width;
+		}
+			&:focus,
+			&:hover {
+				svg {
+					// should match default arrow treatment
+					opacity: 1;
+				}
+			}
+	}
+
+}

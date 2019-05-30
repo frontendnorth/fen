@@ -1,0 +1,69 @@
+/**
+ *	Typography & fonts
+ *
+ *	@font-face definitions stored here
+ *
+ *	Fonts transformed and code provided using https://transfonter.org/
+ *
+ **/
+
+@font-face {
+	font-family: 'Halis R';
+	src: url('../../fonts/HalisR-Black.woff2') format('woff2'),
+		url('../../fonts/HalisR-Black.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Halis R';
+	src: url('../../fonts/HalisR-Book.woff2') format('woff2'),
+		url('../../fonts/HalisR-Book.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Halis R';
+	src: url('../../fonts/HalisR-Bold.woff2') format('woff2'),
+		url('../../fonts/HalisR-Bold.woff') format('woff');
+	font-weight: bold;
+    font-style: normal;
+}
+
+
+$font-brand: "Halis R", sans-serif;
+$font-body: "Halis R", sans-serif;
+
+$font-size-base: (
+	default: 16px,
+	lg: 18px
+);
+
+$line-height-base: (
+	default: 1.333,
+	lg: 1.414
+);
+
+// https://scotch.io/tutorials/aesthetic-sass-3-typography-and-vertical-rhythm
+$type-scale: (
+	xs: .563rem,
+	s: .75rem,
+	default: 1rem,
+	m: 1rem,
+	reduced: .9rem,
+	l: 1.333rem,
+	xl: 1.777rem,
+	xxl: 2.369rem
+);
+
+$type-scale-lg: (
+	xs: .5rem,
+	s: .707rem,
+	default: 1rem,
+	m: 1rem,
+	reduced: .9rem,
+	l: 1.414rem,
+	xl: 1.999rem,
+	xxl: 2.827rem
+);

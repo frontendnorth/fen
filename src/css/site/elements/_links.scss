@@ -1,0 +1,18 @@
+/**
+ *	Links
+ *
+ *	Note: Styles are v. generic so as not to impact other things link elements.
+ *	`.c-link` should help us with more fancy stuff.
+ *
+ **/
+
+a {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-color: $color-brand-secondary;
+
+	&:focus,
+	&:hover {
+		text-decoration-color: lighten($color-brand-secondary, 20);
+	}
+}

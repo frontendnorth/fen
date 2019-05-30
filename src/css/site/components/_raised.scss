@@ -1,0 +1,55 @@
+/**
+ *	Raised
+ **/
+
+.c-raised {
+
+	background-color: $color-bg-grey-dark;
+
+	$variations: (
+		'white': (
+			color: $color-bg-white
+		),
+		'grey': (
+			color: $color-bg-grey-light
+		),
+		'primary': (
+	 		color: $color-brand-primary
+		),
+		'secondary': (
+	 		color: $color-brand-secondary
+		),
+		'gradient-primary': (
+			image: $color-gradient-primary
+		)
+	);
+
+	@each $name, $values in $variations {
+		&--#{$name} {
+			@if map-has-key($values, 'image') {
+				background-image: map-get($values, image);
+			}
+			@if map-has-key($values, 'color') {
+				background-color: map-get($values, color);
+			}
+
+			// for raised that are links
+			@at-root a#{&} {
+				&:focus,
+				&:hover {
+				}
+			}
+
+			&\@md {
+				// @include mq(md) {
+				// 	background-color: map-get($values, color);
+				// }
+			}
+		}
+	}
+
+	&--drop-shadow {
+		box-shadow: 1px 2px 18px rgba(#000, .15);
+	}
+
+}

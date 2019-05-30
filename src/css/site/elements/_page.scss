@@ -1,0 +1,40 @@
+/**
+ *	Page
+ *
+ *	html and body
+ *
+ **/
+
+html {
+
+	font-size: map-get($font-size-base, default);
+	height: 100%; // fixes flexbox sticky footer on Edge (tested: v17)
+	line-height: map-get($line-height-base, default);
+	scroll-behavior: smooth;
+
+	// @include mq(sm) {
+		// font-size: map-get($font-size-base, lg);
+		// line-height: map-get($line-height-base, lg);
+	// }
+
+}
+
+body {
+
+	background: $color-bg-white;
+	color: $color-text-base;
+	display: flex;
+	flex-direction: column;
+	font-family: $font-body;
+	font-variant-ligatures: none;
+	min-height: 100%;
+	justify-content: space-between; // this doesn't work on ie11, but IDGAF
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: 100%; // fix for iOS
+
+	&.has-popover {
+		overflow: hidden;
+	}
+
+}

@@ -1,0 +1,34 @@
+/*
+ *	Spacing
+ *	Padding, margins, border-radius etc.
+ */
+
+$space-default: 18px;
+$space-xs: 3px;
+$space-s: 9px;
+$space-m: $space-default;
+$space-l: 27px;
+$space-xl: 36px;
+$space-xxl: 54px;
+$space-xxxl: 108px;
+
+$space-inset-default: $space-default;
+$space-inset-s: $space-s;
+$space-inset-m: $space-inset-default;
+$space-inset-l: $space-l;
+$space-inset-xl: $space-xxl;
+
+$space-stack-default: 0 0 $space-default 0;
+$space-stack-s: 0 0 $space-s 0;
+$space-stack-m: 0 0 $space-m 0;
+$space-stack-l: 0 0 $space-l 0;
+$space-stack-xl: 0 0 $space-xl 0;
+$space-stack-xxl: 0 0 $space-xxl 0;
+$space-stack-xxxl: 0 0 $space-xxxl 0;
+
+
+$border-width: 2px;
+$border-width-l: 6px;
+
+
+$radius-default: 5px;

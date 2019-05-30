@@ -1,0 +1,40 @@
+/**
+ *	Links
+ *
+ *	Fancy links. Most likely to be used scoped instead of generically
+ *	so as not to collide with other styles.
+ *
+ **/
+
+// Include as mixin, for consumption elsewhere.
+@mixin link-rules {
+	background:
+		linear-gradient(to top,
+			$color-brand-secondary 0,
+			$color-brand-secondary 2px,
+			rgba($color-brand-secondary, .2) 2px,
+			rgba($color-brand-secondary, .2) 100%),
+		linear-gradient(to top,
+			rgba($color-brand-secondary, .2) 100%,
+			rgba($color-brand-secondary, .2) 100%);
+	background-repeat: no-repeat;
+	background-size: 100%,
+		100% 0;
+	background-position: bottom,
+		bottom;
+	color: inherit;
+	text-decoration: none;
+	transition: background .15s linear;
+
+	&:focus,
+	&:hover {
+		background-size: 100%,
+			100% 100%;
+	}
+}
+
+.c-link {
+
+	@include link-rules();
+
+}

@@ -1,0 +1,31 @@
+/*
+ *	Viewports and mobile sizes
+ *	Driven by https://github.com/sass-mq/sass-mq
+ */
+
+// $width-page: 1080px;
+$width-page: 1000px;
+$width-page-max: 1400px;
+$width-sidebar: 260px;
+
+
+$mq-breakpoints: (
+    sm: 700px,
+    md: 1050px,
+    lg: 1300px,
+
+    // Tweakpoints
+    tightForm: 400px,
+    tightLogo: 410px,
+    depthSm: 720px
+);
+
+// @debug map-get($mq-breakpoints, maximum);
+
+// If you want to display the currently active breakpoint in the top
+// right corner of your site during development, add the breakpoints
+// to this list, ordered by width, e.g. (mobile, tablet, desktop).
+// $mq-show-breakpoints: (mobile, tablet, compactNav, desktop);
+
+// The sass-mq library
+// @import '../../../node_modules/sass-mq/mq';

@@ -1,0 +1,14 @@
+/**
+ *	Ledes
+ *
+ **/
+
+.c-lede {
+
+	font-size: map-get($type-scale, l);
+
+	// @include mq(lg) {
+	// 	font-size: map-get($type-scale-lg, l);
+	// }
+
+}

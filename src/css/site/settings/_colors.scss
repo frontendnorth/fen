@@ -1,0 +1,44 @@
+/**
+ *	Colors
+ **/
+
+
+// brand
+$color-brand-primary: #484be1; // blue
+$color-brand-secondary: #ff8725; // orange
+
+
+// backgrounds
+$color-bg-grey-light: #e6e6e6;
+$color-bg-grey-mid: darken(#e6e6e6, 10);
+$color-bg-grey-dark: #545f66;
+$color-bg-white: #fdfdfd;
+
+
+// gradients
+$color-gradient-primary-dark: #2674fb;
+$color-gradient-primary-light: #6913cc;
+$color-gradient-primary: linear-gradient(to bottom,
+    $color-gradient-primary-dark,
+    $color-gradient-primary-light);
+$color-gradient-secondary-dark: #ffb92d;
+$color-gradient-secondary-light: #ff7723;
+$color-gradient-secondary: linear-gradient(to bottom,
+    $color-gradient-secondary-dark,
+    $color-gradient-secondary-light);
+
+// text
+$color-text-base: #404040; // 75%
+$color-text-reduced: #828282; // 50%
+$color-text-white: #fff;
+$color-text-highlight: $color-brand-primary;
+$color-text-links: $color-brand-secondary;
+$color-text-error: #c41e3d;
+
+// …with hover
+$color-text-white-hover: darken($color-text-white, 15);
+$color-text-links-hover: lighten($color-brand-primary, 10);
+
+
+// lines
+$color-border: #b4b4b4;
