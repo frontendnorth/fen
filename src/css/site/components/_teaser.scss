@@ -1,0 +1,39 @@
+/**
+ *	Teaser
+ *
+ *	Primary for blogs posts, this.
+ *	Thanks to: https://inclusive-components.design/cards/
+ *
+ **/
+
+.c-teaser {
+
+	&__title {
+		font-size: map-get($type-scale-major-second, l);
+		font-weight: 900;
+		margin-top: 0;
+		margin-bottom: $space-s;
+
+		a {
+			color: $color-brand-primary;
+			text-decoration: none;
+		}
+	}
+
+	&__meta {
+		display: block;
+		font-size: map-get($type-scale-major-second, xs);
+		font-weight: 600;
+		margin-bottom: 0;
+	}
+
+	&__excerpt {
+		margin-top: $space-default; // consistent space with or without meta
+		font-size: map-get($type-scale-major-second, s);
+	}
+
+	h2 + & {
+		margin-top: -.5em;
+	}
+
+}
