@@ -1,0 +1,53 @@
+/*
+ *	Icons
+ *
+ *	Reusable icons. Default to a non-background version.
+ *
+ *	.c-icon--small			- A smaller size, 20px.
+ *	.c-icon--inherit		- Inherits size of text.
+ *	.c-icon--full			- Takes full width/height of container.
+ *
+ */
+
+.c-icon {
+
+	background-size: cover;
+	display: inline-block;
+	fill: $color-text-white;
+	height: $icon-size;
+	margin: 0;
+	transition: ease-in-out .15s;
+	vertical-align: middle;
+	width: $icon-size;
+
+	// sizes
+	$sizes: (
+		large: $icon-size-lg,
+		small: $icon-size-sm,
+		inherit: 1em,
+		full: 100%
+	);
+
+	@each $name, $size in $sizes {
+		&--#{$name} {
+			height: $size;
+			width: $size;
+		}
+
+		// @include mq($from: md) {
+		// 	&--#{$name}\@md-up {
+		// 		height: $size;
+		// 		width: $size;
+		// 	}
+		// }
+	}
+
+	// within links
+	a:focus > &,
+	a:hover > & {
+		// fill: darken($color-brand-secondary, 5);
+		transform: scale(1.1);
+		filter: drop-shadow(0 0 8px rgba(#000, .2));
+	}
+
+}

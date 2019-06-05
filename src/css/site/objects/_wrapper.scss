@@ -18,11 +18,6 @@
 	width: 100%;
 	max-width: $width-page;
 
-	// @include mq(md) {
-	// 	padding-left: $space-l;
-	// 	padding-right: $space-l;
-	// }
-
 	// variations
 	&--wide {
 		max-width: $width-page-max;

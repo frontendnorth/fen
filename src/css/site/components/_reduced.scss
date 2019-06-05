@@ -1,0 +1,16 @@
+/**
+ *	Reduced copy
+ *
+ *	Footnotes, legal messages, etc.
+ *
+ **/
+
+.c-reduced {
+
+	color: $color-text-reduced;
+	font-size: map-get($type-scale-major-second, s);
+	font-weight: 700;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+
+}

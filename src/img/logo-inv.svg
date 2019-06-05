@@ -2,7 +2,7 @@
 <svg width="1376px" height="474px" viewBox="0 0 1376 474" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <style>
         #stacked-text { visibility: hidden; }
-        @media (min-width: 300px) {
+        @media (min-width: 700px) {
             #hero-text { visibility: hidden }
             #stacked-text { visibility: visible; }
         }

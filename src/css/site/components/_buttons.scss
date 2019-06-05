@@ -8,11 +8,11 @@
 .c-button {
 
 	$color: $color-brand-primary;
-	$padding-v: 14px;
+	$padding-v: $space-l;
 	$padding-v-md: .8em;
-	$padding-h: 14px;
-	$padding: $padding-v $padding-h;
-	$icon-bar-width: 46px;
+	$padding-h: $space-l;
+	$padding: calc(#{$space-l} - .125em) $padding-h; // tweak to accomodate line-height
+	$icon-bar-width: (($space-l *2) + 6px); // considers width of arrow
 	$radius: 4px;
 
 	background-color: $color;
@@ -23,13 +23,10 @@
 	cursor: default; // hover triggers correct cursor unless link is disabled
 	display: inline-block;
 	font-family: $font-brand;
-	// font-size: map-get($type-scale, default);
-	font-size: 1em;
-	font-weight: 600;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	font-size: map-get($type-scale-major-second, xs);
+	font-weight: 700;
 	letter-spacing: 0.02em;
-	line-height: 1.1;
+	line-height: 1.25;
 	padding: $padding;
 	position: relative;
 	text-decoration: none;
@@ -44,20 +41,18 @@
 	&::after {
 		@include triangle($color-text-white, 'right', 6px);
 
-		right: -(($icon-bar-width /2) - 4px);
+		right: -(($icon-bar-width /2) - 2px);
 		top: 50%;
 		transform: translateY(-50%);
 	}
 
 	// interactions
 	&:hover,
-	&:focus,
-	a:hover > & { // 'dummy' buttons inside real links
+	&:focus {
 		background-color: darken($color, 10);
 		border-right-color: darken($color, 30);
 		cursor: pointer;
 		color: $color-text-white;
-		outline: none;
 	}
 
 	// When pseudo content not supported, wrap in a div
@@ -72,12 +67,16 @@
 		font-family: inherit;
 		font-weight: inherit;
 		letter-spacing: inherit;
+		line-height: inherit;
 		text-transform: inherit;
-		margin: (-$padding-v)
+		margin: -($padding-v)
+			(-$padding-h);
+		margin: calc(-#{$space-l} + .125em)
 			(-$padding-h);
 		margin-right: calc(-#{$padding-h} - #{$icon-bar-width});
 		outline: none;
-		padding: $padding;
+		padding: $padding; // forces larger clickable area
+		text-shadow: inherit;
 	}
 
 	// in body copy
@@ -191,7 +190,7 @@
 		&:focus,
 		&:hover {
 			background-position: 0 15px;
-			color: inherit;
+			color: $color-text-base;
 			border-right-color: rgba(#fff, .15);
 		}
 	}

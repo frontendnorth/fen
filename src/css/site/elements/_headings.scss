@@ -1,0 +1,80 @@
+/**
+ *	Headings
+ *
+ *	Please note that the greek letter headings (`.beta`, etc.) contradict our
+ *	BEM naming convention we have elsewhere, but they are just too damn powerful
+ *	to not use and avoid the SEO/accessiblity problems that many developers
+ *	cause when choosing inappropriate headings.
+ *
+ **/
+
+h1,
+.alpha {
+	font-family: $font-brand;
+	font-size: map-get($type-scale-major-second, xxxxl);
+	font-weight: 600;
+	line-height: 1;
+	margin: 1em 0;
+
+	// @include mq(lg) {
+	// font-size: map-get($type-scale, xxxl);
+	// }
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h2,
+.beta {
+	font-family: $font-brand;
+	font-size: map-get($type-scale-major-second, xxl);
+	font-weight: 600;
+	line-height: 1.3;
+	margin: 1em 0 1em 0;
+
+	@include mq(lg) {
+		font-size: map-get($type-scale, xl);
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	& + p {
+		margin-top: 0;
+	}
+}
+
+h3,
+.gamma {
+	font-family: $font-brand;
+	font-weight: 600;
+	font-size: map-get($type-scale-major-second, l);
+	margin: 1em 0 1em 0;
+
+	@include mq(lg) {
+		font-size: map-get($type-scale, l);
+	}
+}
+
+h4,
+.delta {
+	display: inline-block;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.2;
+	margin-bottom: 1em;
+	text-transform: uppercase;
+
+	+ p {
+		margin-top: 0.2em;
+	}
+
+}
+
+h5,
+.epsilon {
+	font-size: 0.85em;
+	font-weight: 600;
+}

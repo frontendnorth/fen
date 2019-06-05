@@ -30,75 +30,80 @@
     <link href="css/styles.css" rel="stylesheet">
 </head>
 <body class="body">
-    <header class="c-raised--gradient-primary">
+    <header class="o-spacer c-raised--hero-gradient c-inverted">
 
-        <div class="o-wrapper">
+        <div class="o-hero-header">
+            <div class="o-hero-header__logo">
 
-            <h1 class="logo">
-                <img src="img/logo-inv.svg" alt="" aria-hidden>
-                Front End North
-            </h1>
-            <p class="c-lede">
-                <strong>Sheffield, UK - February 2020</strong><br>
-                A welcoming one-track, one-day conference for <strong>developers and designers</strong> who work on the web.
-            </p>
-            <span class="c-lede"><strong>Stay in touch:</strong></span>
+                <h1 class="c-logo">
+                    <img src="img/logo-inv.svg" alt="" aria-hidden>
+                    <span class="c-logo__text">Front End North</span>
+                </h1>
 
-            <div class="social text-center">
-                <a href="https://twitter.com/frontendnorth" class="social__link" target="_blank" rel="noopener noreferrer nofollow" title="Follow us on Twitter">
+            </div>
+            <div class="o-hero-header__intro">
+
+                <p class="c-lede">
+                    <strong>Sheffield, UK - February&nbsp;2020</strong><br>
+                    A welcoming one-track, one-day conference for <strong>developers and designers</strong> who work on the&nbsp;web.
+                </p>
+
+            </div>
+
+            <div class="o-hero-header__social">
+                <span class="c-lede"><strong>Stay in touch:</strong></span>
+
+                <a href="https://twitter.com/frontendnorth" target="_blank" rel="noopener noreferrer nofollow" title="Follow us on Twitter" class="c-social">
                     <span class="visually-hidden">Twitter</span>
-                    <svg aria-hidden role="presentation" class="icon">
+                    <svg aria-hidden role="presentation" class="c-icon">
                         <use href="#twitter"></use>
                     </svg>
                 </a>
 
-                <a href="https://www.facebook.com/Front-End-North-502356493635369" class="social__link" target="_blank" rel="noopener noreferrer nofollow" title="Like us on Facebook">
+                <a href="https://www.facebook.com/Front-End-North-502356493635369" target="_blank" rel="noopener noreferrer nofollow" title="Like us on Facebook" class="c-social">
                     <span class="visually-hidden">Facebook</span>
-                    <svg aria-hidden role="presentation" class="icon">
+                    <svg aria-hidden role="presentation" class="c-icon">
                         <use href="#facebook"></use>
                     </svg>
                 </a>
 
-                <a href="https://www.instagram.com/frontendnorth/" class="social__link" target="_blank" rel="noopener noreferrer nofollow" title="Follow us on Instagram">
+                <a href="https://www.instagram.com/frontendnorth/" target="_blank" rel="noopener noreferrer nofollow" title="Follow us on Instagram" class="c-social">
                     <span class="visually-hidden">Instagram</span>
-                    <svg aria-hidden role="presentation" class="icon">
+                    <svg aria-hidden role="presentation" class="c-icon">
                         <use href="#instagram"></use>
                     </svg>
                 </a>
-            </div>
 
-            <!-- Begin Mailchimp Signup Form -->
-            <div id="mc_embed_signup" class="newsletter">
-                <form action="https://frontendnorth.us7.list-manage.com/subscribe/post?u=d4b4d9d8bcd950567cd7e36cd&amp;id=6c310da9f2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form validate" target="_blank" novalidate>
-                    <div id="mc_embed_signup_scroll" class="form__block">
-                        <div class="form__group form__group--inline">
-                            <div class="form__input">
-                                <label for="mce-EMAIL" class="label visually-hidden">Your email address</label>
-                                <input type="email" value="" placeholder="Your email address" name="EMAIL" class="input required email" id="mce-EMAIL">
-                                <div class="form__messages" id="mce-responses">
-                                    <div class="response" id="mce-error-response" style="display:none"></div>
-                                    <div class="response" id="mce-success-response" style="display:none"></div>
-                                </div>
-                            </div>
-                            <div class="c-button c-button--pop">
-                                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
-                            </div>
+            </div>
+            <div class="o-hero-header__signup">
+
+                <!-- Begin Mailchimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form action="https://frontendnorth.us7.list-manage.com/subscribe/post?u=d4b4d9d8bcd950567cd7e36cd&amp;id=6c310da9f2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate c-compact-form" target="_blank" novalidate>
+                        <label for="mce-EMAIL" class="c-compact-form__label">Your email address</label>
+                        <input type="email" value="" placeholder="Your email address&hellip;" name="EMAIL" class="c-compact-form__field required email" id="mce-EMAIL">
+                        <div class="form__messages" id="mce-responses">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
                         </div>
-                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><label for="hp">This field is for validation and should not be changed</label><input type="text" name="b_d4b4d9d8bcd950567cd7e36cd_6c310da9f2" tabindex="-1" value="" id="hp"></div>
-                    </div>
-                </form>
-            </div>
-            <script type='text/javascript' src='https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-            <!--End mc_embed_signup-->
+                        <div class="c-button c-button--pop c-compact-form__action">
+                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><label for="hp">This field is for validation and should not be changed</label><input type="text" name="b_d4b4d9d8bcd950567cd7e36cd_6c310da9f2" tabindex="-1" value="" id="hp"></div>
+                        </div>
+                    </form>
+                </div>
+                <script type='text/javascript' src='https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                <!--End mc_embed_signup-->
 
+            </div>
         </div>
 
     </header>
 
     <main class="o-wrapper">
 
-        <section>
+        <section class="o-spacer">
 
             <div class="s-content">
 
@@ -111,30 +116,12 @@
             </div>
 
             <h3>Our sponsors:</h3>
-            <div class="">
-                <a href="https://www.evoluted.net/" class="" rel="external" title="Evoluted">
+            <div class="o-sponsor-grid">
+                <a href="https://www.evoluted.net/" rel="external" title="Evoluted">
                     <span class="visually-hidden">Evoluted</span>
                     <img src="img/sponsors/evoluted.svg" alt="">
                 </a>
-            </li>
-
-        </section>
-
-        <section>
-
-            <h2>Blog</h2>
-
-            <article class="c-teaser">
-                <h3 class="c-teaser__title">
-                    <a href="">Rebooting Front End North</a>
-                </h3>
-                <time class="c-teaser__meta" datetime="LOLformatting">18th May, 2019</time>
-                <div class="c-teaser__excerpt">
-                    <p>
-                        Earlier this year, we announced that we had taken the reigns of Sheffield’s conference for web developers, Front End North. We’ve known for years that Sheffield has a thriving tech community, and that having a conference of our own is an great opportunity to get everyone together in one place at the same time…
-                    </p>
-                </div>
-            </article>
+            </div>
 
         </section>
 
@@ -144,7 +131,7 @@
 
         <div class="o-wrapper">
 
-            <small class="c-legal">Front End North Ltd. | Registered company 11851024</small>
+            <small class="c-reduced">Front End North Ltd. | Registered company 11851024</small>
 
         </div>
 

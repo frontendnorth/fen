@@ -15,7 +15,8 @@
   "dependencies": {
     "htmlnano": "^0.2.3",
     "molecules": "0.0.3",
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.3",
+    "sass-mq": "^5.0.0"
   },
   "devDependencies": {
     "rimraf": "^2.6.3",

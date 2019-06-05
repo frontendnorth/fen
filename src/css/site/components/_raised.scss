@@ -48,6 +48,13 @@
 		}
 	}
 
+	// custom for homepage
+	&--hero-gradient {
+		background: linear-gradient(to bottom,
+		    $color-gradient-primary-light 0,
+		    $color-gradient-primary-dark 250px);
+	}
+
 	&--drop-shadow {
 		box-shadow: 1px 2px 18px rgba(#000, .15);
 	}

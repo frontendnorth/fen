@@ -33,11 +33,11 @@
 
 
 $font-brand: "Halis R", sans-serif;
-$font-body: "Halis R", sans-serif;
+$font-body: $font-brand;
 
 $font-size-base: (
-	default: 16px,
-	lg: 18px
+	default: 17px,
+	lg: 19px
 );
 
 $line-height-base: (
@@ -45,25 +45,29 @@ $line-height-base: (
 	lg: 1.414
 );
 
-// https://scotch.io/tutorials/aesthetic-sass-3-typography-and-vertical-rhythm
+// Based on perfect forth - for major typographic blocks
+// Cheers, https://type-scale.com/
 $type-scale: (
-	xs: .563rem,
-	s: .75rem,
+	xs: .64rem,
+	s: .8rem,
 	default: 1rem,
 	m: 1rem,
-	reduced: .9rem,
+	reduced: .8rem,
 	l: 1.333rem,
 	xl: 1.777rem,
-	xxl: 2.369rem
+	xxl: 2.369rem,
+	xxxl: 3.157rem
 );
 
-$type-scale-lg: (
-	xs: .5rem,
-	s: .707rem,
+// A major second - for details
+$type-scale-major-second: (
+	xs: .79rem,
+	s: .889rem,
 	default: 1rem,
 	m: 1rem,
-	reduced: .9rem,
-	l: 1.414rem,
-	xl: 1.999rem,
-	xxl: 2.827rem
+	l: 1.125rem,
+	xl: 1.266rem,
+	xxl: 1.424rem,
+	xxxl: 1.602rem,
+	xxxxl: 1.802rem,
 );

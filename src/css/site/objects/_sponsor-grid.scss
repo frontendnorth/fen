@@ -1,0 +1,17 @@
+/**
+ *	Sponsor grid
+ *
+ *	This will probably be edited as we get more sponsors!
+ *
+ **/
+
+.o-sponsor-grid {
+
+	display: flex;
+
+	& > * {
+		flex: 0 1 50%;
+		max-width: 250px;
+	}
+
+}

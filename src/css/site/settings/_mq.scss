@@ -4,7 +4,7 @@
  */
 
 // $width-page: 1080px;
-$width-page: 1000px;
+$width-page: 625px;
 $width-page-max: 1400px;
 $width-sidebar: 260px;
 
@@ -15,6 +15,7 @@ $mq-breakpoints: (
     lg: 1300px,
 
     // Tweakpoints
+    oldMobile: 350px,
     tightForm: 400px,
     tightLogo: 410px,
     depthSm: 720px
@@ -28,4 +29,4 @@ $mq-breakpoints: (
 // $mq-show-breakpoints: (mobile, tablet, compactNav, desktop);
 
 // The sass-mq library
-// @import '../../../node_modules/sass-mq/mq';
+@import '../../../node_modules/sass-mq/mq';

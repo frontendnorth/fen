@@ -7,6 +7,7 @@
  **/
 
 a {
+// a:not([class^="c-"]) {
 	color: inherit;
 	text-decoration: underline;
 	text-decoration-color: $color-brand-secondary;
@@ -14,5 +15,11 @@ a {
 	&:focus,
 	&:hover {
 		text-decoration-color: lighten($color-brand-secondary, 20);
+	}
+
+	&:focus {
+		// a11y AF, keyboard fans
+		outline: $color-brand-secondary dashed 2px;
+		outline-offset: $space-xs;
 	}
 }
