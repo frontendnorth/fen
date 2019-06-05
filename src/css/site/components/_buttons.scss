@@ -25,6 +25,8 @@
 	font-family: $font-brand;
 	font-size: map-get($type-scale-major-second, xs);
 	font-weight: 700;
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;
 	letter-spacing: 0.02em;
 	line-height: 1.25;
 	padding: $padding;

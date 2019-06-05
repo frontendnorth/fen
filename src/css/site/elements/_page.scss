@@ -24,7 +24,8 @@ body {
 	background: $color-bg-white;
 	color: $color-text-base;
 	font-family: $font-body;
-	min-height: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 	margin: 0;
 	padding: 0;
 	-webkit-text-size-adjust: 100%; // fix for iOS

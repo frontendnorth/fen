@@ -51,6 +51,7 @@ h3,
 	font-family: $font-brand;
 	font-weight: 600;
 	font-size: map-get($type-scale-major-second, l);
+	line-height: 1.2;
 	margin: 1em 0 1em 0;
 
 	@include mq(lg) {
