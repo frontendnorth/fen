@@ -12,6 +12,11 @@
 	overflow: hidden;
 	max-width: 700px;
 
+	@include mq(md) {
+		padding-top: $space-xxxl;
+		padding-bottom: $space-xxxl;
+	}
+
 	&__logo {
 		box-sizing: border-box;
 		margin: 0
@@ -41,7 +46,7 @@
 		& > :first-child {
 			display: none;
 
-			@include mq(oldMobile) {
+			@include mq(xs) {
 				display: inline-block;
 			}
 		}
