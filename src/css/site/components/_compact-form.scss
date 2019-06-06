@@ -20,11 +20,12 @@
 
 	// label is hidden responsibly
 	&__label {
-		@include hideText();
+		@include visuallyHidden();
 	}
 
-
 	&__field {
+		width: 100%;
+		flex: 1 1 100%;
 		font-size: map-get($type-scale-major-second, s); // TODO: fix (build ignores this(!?))
 		font-size: .9em;
 		margin-bottom: $space-default;

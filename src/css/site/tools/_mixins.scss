@@ -149,24 +149,19 @@
 
 /*
  *	Hide text
+ *	Visually, but not from screenreaders.
  *
  */
 
-@mixin hideText($break: false, $indent: 200%, $align: left, $overflow: hidden) {
-	@if $break {
-		position: absolute;
-		top: 0; left: 0;
-		pointer-events: none;
-	}
-	text: {
-		indent: $indent;
-		align: $align;
-	}
-	font-size: 0;
-	white-space: nowrap;
-	@if $overflow {
-		overflow: $overflow;
-	}
+@mixin visuallyHidden() {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
 }
 
 
