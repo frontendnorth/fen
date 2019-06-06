@@ -19,22 +19,26 @@
 		// Cheers https://codepen.io/m2rt/pen/KwXgaG for funky effect.
 		a {
 			color: $color-brand-primary;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-image: linear-gradient(
-				to right,
-				$color-brand-secondary,
-				$color-brand-secondary 50%,
-				$color-brand-primary 50%);
-				background-size: 200% 100%;
-				background-position: 100%;
 			text-decoration: none;
+
+			@supports (-webkit-text-fill-color: transparent) {
+				-webkit-background-clip: text; // TODO: deal with via PostCSS (or whatever)
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-image: linear-gradient(
+					to right,
+					$color-brand-secondary,
+					$color-brand-secondary 50%,
+					$color-brand-primary 50%);
+					background-size: 200% 100%;
+					background-position: 100%;
+					transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+			}
 
 			&:focus,
 			&:hover {
 				background-position: 0%;
 				color: $color-brand-secondary;
-				transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
 			}
 
 			&::after {
