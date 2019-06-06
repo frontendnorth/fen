@@ -34,20 +34,19 @@
 			width: $size;
 		}
 
-		// @include mq($from: md) {
-		// 	&--#{$name}\@md-up {
-		// 		height: $size;
-		// 		width: $size;
-		// 	}
-		// }
+		@include mq(md) {
+			&--#{$name}\@md-up {
+				height: $size;
+				width: $size;
+			}
+		}
 	}
 
 	// within links
 	a:focus > &,
 	a:hover > & {
-		// fill: darken($color-brand-secondary, 5);
-		transform: scale(1.1);
-		filter: drop-shadow(0 0 8px rgba(#000, .2));
+		fill: lighten($color-brand-secondary, 15);
+		transform: translate(0, 7%);
 	}
 
 }
