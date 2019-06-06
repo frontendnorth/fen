@@ -40,7 +40,10 @@
 	}
 
 	&__action {
+		align-items: center;
 		display: flex; // stetch height of button inside to maximum
+		flex-direction: column;
+		justify-content: center;
 
 		@include mq(xs) {
 			border-bottom-left-radius: 0;

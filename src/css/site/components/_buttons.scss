@@ -78,7 +78,7 @@
 			(-$padding-h);
 		margin: calc(-#{$space-l} + .125em)
 			(-$padding-h);
-		margin-right: calc(-#{$padding-h} - #{$icon-bar-width});
+		margin-right: (-$padding-h - $icon-bar-width);
 		outline: none;
 		padding: $padding; // forces larger clickable area
 		text-shadow: inherit;
