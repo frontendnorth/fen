@@ -7,11 +7,23 @@
 
 .o-sponsor-grid {
 
-	display: flex;
+	display: grid;
+	grid-gap: $space-xl;
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
 
 	& > * {
-		flex: 0 1 50%;
-		max-width: 250px;
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+		margin: auto;
+		width: 100%;
+		max-width: 225px;
+
+		img {
+			height: auto;
+			width: 100%;
+			max-width: 100%;
+		}
 	}
 
 }
