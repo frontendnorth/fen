@@ -11,7 +11,7 @@
 
 	$border-width: 2px;
 
-	@include mq(oldMobile) {
+	@include mq(xs) {
 		align-content: stretch;
 		align-items: stretch;
 		display: flex;
@@ -31,7 +31,7 @@
 		padding: 0 $space-default;
 
 		// field *should* inherit height from button
-		@include mq(oldMobile) {
+		@include mq(xs) {
 			flex: 1 1 auto;
 			margin-bottom: 0;
 			margin-right: -$radius-default; // underlap button to hide radius
@@ -41,7 +41,7 @@
 	&__action {
 		display: flex; // stetch height of button inside to maximum
 
-		@include mq(oldMobile) {
+		@include mq(xs) {
 			border-bottom-left-radius: 0;
 			border-top-left-radius: 0;
 		}

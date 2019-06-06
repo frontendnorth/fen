@@ -10,12 +10,12 @@ $width-sidebar: 260px;
 
 
 $mq-breakpoints: (
+    xs: 350px,
     sm: 700px,
     md: 1050px,
     lg: 1300px,
 
     // Tweakpoints
-    oldMobile: 350px,
     tightForm: 400px,
     tightLogo: 410px,
     depthSm: 720px
