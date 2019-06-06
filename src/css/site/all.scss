@@ -4,7 +4,7 @@
 @import "settings/mq";
 @import "settings/typography";
 @import "tools/mixins.scss";
-@import "normalize";
+@import '../../../node_modules/normalize.css';
 @import "elements/formatting";
 @import "elements/forms";
 @import "elements/headings";
