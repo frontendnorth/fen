@@ -11,32 +11,40 @@
 
 	$border-width: 2px;
 
-	align-content: stretch;
-	align-items: stretch;
-	display: flex;
-	flex-direction: row;
+	@include mq(oldMobile) {
+		align-content: stretch;
+		align-items: stretch;
+		display: flex;
+		flex-direction: row;
+	}
 
 	// label is hidden responsibly
 	&__label {
 		@include hideText();
 	}
 
-	// field *should* inherit height from button
+
 	&__field {
-		border-top-left-radius: $radius-default;
-		border-bottom-left-radius: $radius-default;
-		border: $border-width solid $color-brand-secondary; // TODO: this could be a gradient
-		flex: 1 1 auto;
 		font-size: map-get($type-scale-major-second, s); // TODO: fix (build ignores this(!?))
 		font-size: .9em;
-		margin-right: -$border-width; // underlap button to hide border
+		margin-bottom: $space-default;
 		padding: 0 $space-default;
+
+		// field *should* inherit height from button
+		@include mq(oldMobile) {
+			flex: 1 1 auto;
+			margin-bottom: 0;
+			margin-right: -$radius-default; // underlap button to hide radius
+		}
 	}
 
 	&__action {
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
 		display: flex; // stetch height of button inside to maximum
+
+		@include mq(oldMobile) {
+			border-bottom-left-radius: 0;
+			border-top-left-radius: 0;
+		}
 	}
 
 }
