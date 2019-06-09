@@ -4,27 +4,3 @@
  *	derp !important
  *
  **/
-
-// mailchimp style overrides
-#mce-responses {
-	overflow: hidden;
-}
-.response {
-	text-align: center;
-	display: none;
-}
-
-.form__messages,
-div.mce_inline_error {
-	margin: 0.5em 0 !important;
-	padding: 0 !important;
-	background: none !important;
-	// color: $text-muted !important;
-	font-size: 0.8rem;
-}
-div.mce_inline_error {
-	// color: $text-error !important;
-}
-input.mce_inline_error {
-	// border: 2px solid $text-error !important;
-}

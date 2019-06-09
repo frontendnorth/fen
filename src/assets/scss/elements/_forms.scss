@@ -3,7 +3,8 @@
  *	Generic form styles
  **/
 
-$form-padding-horizontal: $space-s;
+$form-padding-horizontal: $space-default;
+$form-padding-vertical: .7em;
 $form-clickable-size: 30px;
 $form-color-bg: #f8f8f8;
 $form-color-border: #c4c4c4;
@@ -37,7 +38,7 @@ textarea {
 	box-sizing: border-box;
 	color: #6a7071;
 	display: block;
-	padding: 0.7em $space-default;
+	padding: $form-padding-vertical $form-padding-horizontal;
 	width: 100%;
 
 	// if 'size' is set, use auto width
