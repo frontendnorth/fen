@@ -29,6 +29,7 @@ module.exports = function(eleventyConfig) {
         return array.slice(0, limit);
     });
 
+    eleventyConfig.addPassthroughCopy("src/site.webmanifest");
 
     return {
         dir: {
