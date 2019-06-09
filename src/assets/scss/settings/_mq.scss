@@ -16,7 +16,7 @@ $mq-breakpoints: (
     lg: 1300px,
 
     // Tweakpoints
-    
+
 );
 
 // @debug map-get($mq-breakpoints, maximum);
@@ -27,4 +27,4 @@ $mq-breakpoints: (
 // $mq-show-breakpoints: (mobile, tablet, compactNav, desktop);
 
 // The sass-mq library
-@import '../../../node_modules/sass-mq/mq';
+@import '../../../../node_modules/sass-mq/mq';

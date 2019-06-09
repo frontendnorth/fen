@@ -4,8 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html --out-dir temp",
-    "build": "npm run clean && parcel build src/index.html --out-dir docs --public-url ./ && cp CNAME docs/",
+    "sass:dev": "node-sass src/assets/scss/all.scss -o docs/assets/css/",
+    "sass:watch": "node-sass src/assets/scss/all.scss -wo docs/assets/css/",
+    "11ty:build": "npx eleventy",
+    "11ty:watch": "npx eleventy --serve",
+    "svgmin": "svgo -r -f src/assets/img -o docs/assets/img",
+    "init": "npm run sass:dev && npm run svgmin && npm run 11ty:build",
+    "dev": "npm run init && npm run sass:watch & npm run 11ty:watch",
+    "build": "npm run clean && npm run init",
     "clean": "rimraf ./docs",
     "deploy-staging": "npm run build && firebase deploy -P default"
   },
@@ -16,11 +22,11 @@
     "htmlnano": "^0.2.3",
     "molecules": "0.0.3",
     "normalize.css": "^8.0.1",
-    "parcel-bundler": "^1.12.3",
     "sass-mq": "^5.0.0"
   },
   "devDependencies": {
-    "rimraf": "^2.6.3",
-    "sass": "^1.18.0"
+    "@11ty/eleventy": "^0.8.3",
+    "node-sass": "^4.12.0",
+    "rimraf": "^2.6.3"
   }
 }

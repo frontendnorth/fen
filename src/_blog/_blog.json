@@ -1,0 +1,7 @@
+{
+    "tags": [
+        "blog"
+    ],
+    "layout": "blog.njk",
+    "permalink": "/blog/{{ page.date|blogPermalink }}/{{ page.fileSlug }}/index.html"
+}
