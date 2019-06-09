@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Front End North Conference | Returning in 2020</title>
-    <meta name="description" content="A one-day one-track conference in Sheffield for front end developers.">
+    {{ ('<meta name="description" content="' ~ description ~ '">' if description) | safe }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" sizes="180x180" href="meta/apple-touch-icon.png">
@@ -18,7 +18,7 @@
     <meta name="msapplication-config" content="meta/browserconfig.xml">
 
     <meta property="og:title" content="Front End North Conference | Returning in 2020">
-    <meta property="og:description" content="A one-day one-track conference in Sheffield for front end developers.">
+    {{ ('<meta property="og:description" content="' ~ description ~ '">' if description) | safe }}
     <meta property="og:image" content="https://frontendnorth.com/img/fen-log.png">
     <meta property="og:url" content="https://frontendnorth.com">
     <meta name="twitter:card" content="summary">
