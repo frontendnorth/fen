@@ -29,26 +29,35 @@ title: Homepage
             <div class="o-hero-header__social">
                 <span class="c-lede"><strong>Stay in touch:</strong></span>
 
-                <a href="https://twitter.com/frontendnorth" target="_blank" rel="noopener noreferrer nofollow" title="Follow us on Twitter" class="c-social">
-                    <span class="u-visually-hidden">Twitter</span>
-                    <svg aria-hidden="true" role="presentation" class="c-icon">
-                        <use href="#twitter"></use>
-                    </svg>
-                </a>
+                {% set social = [
+                    {
+                        name: "Twitter",
+                        url: "https://twitter.com/frontendnorth",
+                        icon: "twitter",
+                        title: "Follow us on Twitter"
+                    },
+                    {
+                        name: "Facebook",
+                        url: "https://www.facebook.com/Front-End-North-502356493635369",
+                        icon: "facebook",
+                        title: "Like us on Facebook"
+                    },
+                    {
+                        name: "Instagram",
+                        url: "https://www.instagram.com/frontendnorth/",
+                        icon: "instagram",
+                        title: "Follow us on Instagram"
+                    }
+                ] %}
 
-                <a href="https://www.facebook.com/Front-End-North-502356493635369" target="_blank" rel="noopener noreferrer nofollow" title="Like us on Facebook" class="c-social">
-                    <span class="u-visually-hidden">Facebook</span>
-                    <svg aria-hidden="true" role="presentation" class="c-icon">
-                        <use href="#facebook"></use>
-                    </svg>
-                </a>
-
-                <a href="https://www.instagram.com/frontendnorth/" target="_blank" rel="noopener noreferrer nofollow" title="Follow us on Instagram" class="c-social">
-                    <span class="u-visually-hidden">Instagram</span>
-                    <svg aria-hidden="true" role="presentation" class="c-icon">
-                        <use href="#instagram"></use>
-                    </svg>
-                </a>
+                {% for service in social %}
+                    <a href="{{ service.url }}" target="_blank" rel="noopener noreferrer nofollow" title="{{ service.title }}" class="c-social">
+                        <span class="u-visually-hidden">{{ service.name }}</span>
+                        <svg aria-hidden="true" role="presentation" class="c-icon">
+                            <use href="#{{ service.icon }}"></use>
+                        </svg>
+                    </a>
+                {% endfor %}
 
             </div>
             <div class="o-hero-header__signup">
