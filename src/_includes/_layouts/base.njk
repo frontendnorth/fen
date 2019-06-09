@@ -4,7 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Front End North Conference | Returning in 2020</title>
+    <title>
+        {%- if page.url == '/' -%}
+            {{ business.site_title }} | Returning in 2020
+        {%- else -%}
+            {{ title }} | {{ business.site_title }}
+        {%- endif -%}
+    </title>
     {{ ('<meta name="description" content="' ~ description ~ '">' if description) | safe }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
