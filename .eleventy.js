@@ -31,6 +31,10 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy("src/site.webmanifest");
 
+    eleventyConfig.setBrowserSyncConfig({
+        port: 1234
+    });
+
     return {
         dir: {
             input: "src",
