@@ -47,6 +47,10 @@
 	a:hover > & {
 		fill: lighten($color-brand-secondary, 15);
 		transform: translate(0, 7%);
+
+		@media (prefers-reduced-motion: reduce) {
+			transform: none;
+		}
 	}
 
 }

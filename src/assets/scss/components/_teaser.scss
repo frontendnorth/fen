@@ -30,9 +30,13 @@
 					$color-brand-secondary,
 					$color-brand-secondary 50%,
 					$color-brand-primary 50%);
-					background-size: 200% 100%;
-					background-position: 100%;
-					transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+				background-size: 200% 100%;
+				background-position: 100%;
+				transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+
+				@media (prefers-reduced-motion: reduce) {
+					transition-duration: 0s;
+				}
 			}
 
 			&:focus,
