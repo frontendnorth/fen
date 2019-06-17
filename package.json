@@ -10,7 +10,7 @@
     "autoprefix": "npx postcss docs/assets/css/*.css --use autoprefixer -d docs/assets/css/",
     "11ty:build": "npx eleventy",
     "11ty:watch": "npx eleventy --serve",
-    "svgmin": "svgo -r -f src/assets/img -o docs/assets/img",
+    "svgmin": "svgo --disable=inlineStyles -r -f src/assets/img -o docs/assets/img",
     "init": "npm run sass:dev && npm run fonts && npm run svgmin && npm run 11ty:build",
     "dev": "npm run init && npm run sass:watch & npm run 11ty:watch",
     "build": "npm run clean && npm run init && npm run autoprefix",
