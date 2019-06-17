@@ -60,12 +60,13 @@
 	&__action {
 		align-items: center;
 		display: flex; // stetch height of button inside to maximum
-		flex-direction: column;
+		flex-direction: row;
 		justify-content: center;
 
 		@include mq(xs) {
 			border-bottom-left-radius: 0;
 			border-top-left-radius: 0;
+			flex-direction: column;
 		}
 	}
 
