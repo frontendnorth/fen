@@ -6,11 +6,12 @@ The Front End North website.
 
 ## Developer Environment
 
-Set up using [ParcelJS](https://parceljs.org/).
+Uses Unix commands, may not work on Windows machines (#TODO: fix).
 
 ### Prerequisites
 
 * A GitHub account with push access to this repository.
+* A Linux/MacOS computer.
 * NPM installed locally.
 
 ### Set up
