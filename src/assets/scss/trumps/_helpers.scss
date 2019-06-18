@@ -46,7 +46,13 @@
  */
 
 .u-uppercase {
+	letter-spacing: 0.015em;
 	text-transform: uppercase;
+
+	// h2-a-like
+	@at-root strong#{&} {
+		font-weight: 800;
+	}
 }
 
 /*

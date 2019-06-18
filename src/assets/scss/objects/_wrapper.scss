@@ -16,7 +16,7 @@
 	padding-right: $space-l;
 	position: relative;
 	width: 100%;
-	max-width: $width-page;
+	max-width: ($width-page + ($space-l *2));
 
 	// variations
 	&--wide {

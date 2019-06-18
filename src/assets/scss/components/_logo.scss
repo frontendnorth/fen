@@ -12,6 +12,7 @@
 	display: block; // remove whitespace
 	margin: 0 auto;
 	position: relative;
+	padding-bottom: 35.8561%;
 	width: 100%;
 
 	a {
@@ -20,10 +21,26 @@
 
 		img {
 			border: none; // ie
-			display: block;
 			height: 100%;
+			position: absolute;
 			width: 100%;
 		}
+
+	&__hero {
+		display: block;
+
+		@include mq(sm) {
+			display: none;
+		}
+	}
+
+	&__stacked {
+		display: none;
+
+		@include mq(sm) {
+			display: block;
+		}
+	}
 
 	&__text {
 		display: block;

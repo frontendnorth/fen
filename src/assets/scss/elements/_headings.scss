@@ -10,6 +10,7 @@
 
 h1,
 .alpha {
+	color: $color-text-headings;
 	font-family: $font-brand;
 	font-size: map-get($type-scale-major-second, xxxxl);
 	font-weight: 600;
@@ -27,11 +28,14 @@ h1,
 
 h2,
 .beta {
+	color: $color-text-headings;
 	font-family: $font-brand;
 	font-size: map-get($type-scale-major-second, xxl);
-	font-weight: 600;
+	font-weight: 800;
+	letter-spacing: 0.015em;
 	line-height: 1.3;
 	margin: 1em 0 1em 0;
+	text-transform: uppercase;
 
 	@include mq(lg) {
 		font-size: map-get($type-scale, xl);
@@ -48,6 +52,7 @@ h2,
 
 h3,
 .gamma {
+	color: $color-text-headings;
 	font-family: $font-brand;
 	font-weight: 600;
 	font-size: map-get($type-scale-major-second, l);
