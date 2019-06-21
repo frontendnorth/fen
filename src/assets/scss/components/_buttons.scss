@@ -49,13 +49,21 @@
 	}
 
 	// interactions
-	&:focus,
-	&:focus-within,
-	&:hover {
+	@mixin interactive-rules {
 		background-color: darken($color, 15);
 		border-right-color: darken($color, 30);
 		cursor: pointer;
 		color: $color-text-white;
+	}
+
+	// We split this because of poor `-within` support in Edge
+	&:focus,
+	&:hover {
+		@include interactive-rules();
+	}
+
+	&:focus-within {
+		@include interactive-rules();
 	}
 
 	// When pseudo content not supported, wrap in a div
@@ -147,7 +155,10 @@
 		}
 
 		&:hover,
-		&:focus,
+		&:focus {
+			background-color: lighten($color, 2.5);
+		}
+
 		&:focus-within {
 			background-color: lighten($color, 2.5);
 		}
@@ -160,7 +171,10 @@
 			color: $color-text-base;
 
 			&:hover,
-			&:focus,
+			&:focus {
+				color: darken($color-text-base, 10);
+			}
+
 			&:focus-within {
 				color: darken($color-text-base, 10);
 			}
@@ -192,12 +206,19 @@
 			@include triangle($color-text-base, 'right', 6px);
 		}
 
-		&:focus,
-		&:focus-within,
-		&:hover {
+		@mixin interactive-pop-rules {
 			background-position: 0 15px;
 			color: $color-text-base;
 			border-right-color: rgba(#fff, .15);
+		}
+
+		&:focus,
+		&:hover {
+			@include interactive-pop-rules();
+		}
+
+		&:focus-within {
+			@include interactive-pop-rules();
 		}
 	}
 
