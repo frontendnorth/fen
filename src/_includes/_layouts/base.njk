@@ -6,9 +6,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>
         {%- if page.url == '/' -%}
-            {{ business.site_title }} | Returning in 2020
+            {{ metadata.site_title }} | Returning in 2020
         {%- else -%}
-            {{ title }} | {{ business.site_title }}
+            {{ title }} | {{ metadata.site_title }}
         {%- endif -%}
     </title>
     {{ ('<meta name="description" content="' ~ description ~ '">' if description) | safe }}

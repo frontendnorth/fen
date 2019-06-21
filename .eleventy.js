@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
 
@@ -34,6 +35,9 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setBrowserSyncConfig({
         port: 1234
     });
+
+    // https://www.npmjs.com/package/@11ty/eleventy-plugin-rss
+    eleventyConfig.addPlugin(pluginRss);
 
     return {
         dir: {
