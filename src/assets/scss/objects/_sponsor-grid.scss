@@ -10,20 +10,44 @@
 	display: grid;
 	grid-gap: $space-xl;
 	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+	overflow: hidden;
+
+	@supports (display: grid) {
+		overflow: visible;
+	}
 
 	& > * {
-		justify-content: center;
 		display: flex;
+		justify-content: center;
 		flex-direction: column;
 		margin: auto;
-		width: 100%;
+		margin-bottom: $space-xl;
 		max-width: 225px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@include mq(sm) {
+			box-sizing: border-box;
+			float: left;
+			padding-right: $space-xl;
+			width: 33.33%;
+		}
+
+		@supports (display: grid) {
+			float: none;
+			min-height: 0 !important;
+			margin: auto;
+			padding-right: 0;
+			width: 100%;
+		}
+	}
 
 		img {
 			height: auto;
-			width: 100%;
+			min-width: 100%;
 			max-width: 100%;
 		}
-	}
 
 }
