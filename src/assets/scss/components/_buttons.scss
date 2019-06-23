@@ -252,4 +252,13 @@
 			}
 	}
 
+	// download
+	&--download {
+		&::after {
+			@include triangle($color-text-white, 'down', 6px);
+
+			transform: none;
+		}
+	}
+
 }
