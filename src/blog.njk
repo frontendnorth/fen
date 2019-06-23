@@ -1,0 +1,19 @@
+---
+title: 'Blog: Latest conference updates'
+---
+
+{% extends "_layouts/base.njk" %}
+
+{% block main %}
+
+    <main>
+
+        <h1>Blog</h1>
+
+        {% for post in collections.blog | reverse | limit(10) %}
+            {% include "_teaser/blog.njk" %}
+        {% endfor %}
+
+    </main>
+
+{% endblock %}

@@ -17,9 +17,9 @@ h1,
 	line-height: 1;
 	margin: 1em 0;
 
-	// @include mq(lg) {
-	// font-size: map-get($type-scale, xxxl);
-	// }
+	@include mq(lg) {
+		font-size: map-get($type-scale, xxl);
+	}
 
 	&:first-child {
 		margin-top: 0;

@@ -106,28 +106,19 @@ description: A one-day, one-track conference in Sheffield for front end develope
             </div>
 
         </section>
-<!--
+
         <section class="o-spacer">
 
             <h2>Blog</h2>
 
             {% for post in collections.blog | reverse | limit(2) %}
-                <article class="c-teaser">
-                    <h3 class="c-teaser__title">
-                        <a href="{{ post.url }}">{{ post.data.title }}</a>
-                    </h3>
-                    <time class="c-teaser__meta" datetime="{{ post.date|htmlDateString }}">{{ post.date | readableDate }}</time>
-                    <div class="c-teaser__excerpt">
-                        <p>
-                            {# Use body copy as excerpt unless frontmatter available  #}
-                            {{ post.data.excerpt if post.data.excerpt else post.templateContent | striptags(true) | truncate(200) }}
-                        </p>
-                    </div>
-                </article>
+                {% include "_teaser/blog.njk" %}
             {% endfor %}
 
+            <a href="/blog/" class="c-button">View all updates</a>
+
         </section>
--->
+
     </main>
 
     <footer class="o-spacer">

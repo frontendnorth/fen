@@ -2,6 +2,6 @@
     "tags": [
         "blog"
     ],
-    "layout": "blog.njk",
+    "layout": "_entry/blog.njk",
     "permalink": "/blog/{{ page.date|blogPermalink }}/{{ page.fileSlug }}/index.html"
 }
