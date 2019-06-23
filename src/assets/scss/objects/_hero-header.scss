@@ -108,45 +108,53 @@
 		&__image {
 			display: none; // TODO: Landscape image for mobile?
 
-			@include mq(sm) {
-				display: flex;
-				height: 900px;
-				margin-left: 200px;
-				background: rgba(#000, .25);
-				clip-path: url('#svgPath');
-				bottom: 0;
-				left: 40%;
-				position: absolute;
-				right: 0;
-				top: -250px;
-				width: 900px;
-
-				> img {
+			@supports(clip-path: url('#svgPath')) {
+				@include mq(sm) {
+					display: flex;
+					height: 900px;
+					margin-left: 200px;
+					background: rgba(#000, .25);
+					clip-path: url('#svgPath');
 					bottom: 0;
-					height: 100%;
-					height: calc(100% - 250px);
-					left: -12%;
+					left: 40%;
 					position: absolute;
-					min-width: 100%;
+					right: 0;
+					top: -250px;
+					width: 900px;
+
+					> img {
+						bottom: 0;
+						height: 100%;
+						height: calc(100% - 250px);
+						left: -12%;
+						position: absolute;
+						min-width: 100%;
+					}
+				}
+
+				@include mq(md) {
+					height: 1345px;
+					left: 50%;
+					top: -400px;
+					width: 1345px;
+
+					> img {
+						height: calc(100% - 400px);
+					}
+				}
+
+				@include mq(lg) {
+					> img {
+						left: 0;
+					}
 				}
 			}
 
-			@include mq(md) {
-				height: 1345px;
-				left: 50%;
-				top: -400px;
-				width: 1345px;
-
-				> img {
-					height: calc(100% - 400px);
-				}
+			// IE / Edge tells stinking LIES about support of clip-path, so…
+			@supports (-ms-ime-align:auto) {
+				display: none;
 			}
 
-			@include mq(lg) {
-				> img {
-					left: 0;
-				}
-			}
 		}
 
 }
