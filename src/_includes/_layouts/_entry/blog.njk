@@ -15,6 +15,21 @@
 
         </div>
 
+        <aside>
+
+            <h2 class="gamma">More from the blog</h2>
+
+            {% for post in collections.blog | reverse | limit(3) %}
+                {# This feels like a hack #}
+                {% if page.url != post.url %}
+                    {% include "_teaser/blog.njk" %}
+                {% endif %}
+            {% endfor %}
+
+            <a href="/blog/" class="c-button">View all updates</a>
+
+        </aside>
+
     </article>
 
 {% endblock %}
