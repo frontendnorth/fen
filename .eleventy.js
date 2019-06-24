@@ -30,6 +30,30 @@ module.exports = function(eleventyConfig) {
         return array.slice(0, limit);
     });
 
+    // Universal Shortcodes
+    // https://www.11ty.io/docs/shortcodes/
+    // e.g.: {% image "image", "alt text" %}
+    // eleventyConfig.addShortcode("image", function(image, alt, caption, alignment) {
+    //     return `<div class="o-image ${alignment ? `o-image--${alignment}` : `-`}">
+    //             <img src="${image}" alt="${alt}">
+    //             ${caption ? `<div class="o-image__caption">${caption}</div>` : `&nbsp;`}
+    //         </div>`;
+    // });
+    // e.g.: {% image src="image", alt="alt text" %}
+    // eleventyConfig.addNunjucksShortcode("image", function(image) {
+    //     return `<div class="o-image">
+    //             <img src="${image.src}" alt="${image.alt}">
+    //             ${image.caption ? `<div class="user_twitter">@${image.caption}</div>` : ``}
+    //         </div>`;
+    // });
+    // e.g.: {% image "image", "alt text", "right" %}A caption.{% endimage %}
+    eleventyConfig.addPairedShortcode("image", function(caption, image, alt, alignment) {
+        return `<div class="o-image ${alignment ? `o-image--${alignment}` : `-`}">
+                <img src="https://devolute-cdn.sirv.com/fen/${image}" alt="${alt}">
+                ${caption ? `<div class="o-image__caption"><p>${caption}</p></div>` : `&nbsp;`}
+            </div>`;
+    });
+
     eleventyConfig.addPassthroughCopy("src/site.webmanifest");
     eleventyConfig.addPassthroughCopy("src/browserconfig.xml");
 
