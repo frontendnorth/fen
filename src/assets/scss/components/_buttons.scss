@@ -9,7 +9,6 @@
 
 	$color: $color-brand-primary;
 	$padding-v: $space-l;
-	$padding-v-md: .8em;
 	$padding-h: $space-l;
 	$padding: calc(#{$space-l} - .125em) $padding-h; // tweak to accomodate line-height
 	$icon-bar-width: (($space-l *2) + 6px); // considers width of arrow
@@ -38,6 +37,10 @@
 	user-select: none;
 	vertical-align: middle;
 	z-index: 1;
+
+	@include mq(lg) {
+		font-size: map-get($type-scale-major-second, s);
+	}
 
 	// defaults to an arrow
 	&::after {

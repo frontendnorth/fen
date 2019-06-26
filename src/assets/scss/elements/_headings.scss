@@ -58,6 +58,7 @@ h3,
 	font-size: map-get($type-scale-major-second, l);
 	line-height: 1.2;
 	margin: 1em 0 1em 0;
+	text-transform: none;
 
 	@include mq(lg) {
 		font-size: map-get($type-scale, l);

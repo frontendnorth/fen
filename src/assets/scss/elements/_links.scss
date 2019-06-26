@@ -21,6 +21,8 @@ a {
 		}
 	}
 
+	// Replace with focus-visible when support is reasonable. Explanation:
+	// https://css-tricks.com/almanac/selectors/f/focus-visible/
 	&:focus {
 		// a11y AF, keyboard fans
 		outline: $color-brand-secondary dashed 2px;

@@ -163,7 +163,7 @@ label {
 
 	small {
 		display: inline-block;
-		font-size: map-get($type-scale, reduced);
+		font-size: map-get($type-scale-major-second, s);
 		font-weight: normal;
 		min-width: 60%; // hack! forces onto new line when appropriate
 	}
