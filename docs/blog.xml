@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Front End North Conference</title>
+	<subtitle>The official blog for the Front End North Conference</subtitle>
+	<link href="https://frontendnorth.com/blog.xml" rel="self"/>
+	<link href="https://frontendnorth.com"/>
+	<updated>2019-06-26T22:39:55.973+01:00</updated>
+	<id>https://frontendnorth.com</id>
+	<author>
+		<name></name>
+		<email></email>
+	</author>
+	
+	<entry>
+		<title>Hello world</title>
+		<link href="https://frontendnorth.com/blog/2018/01/hello-world/"/>
+		<updated>2018-01-11T00:00:00+00:00</updated>
+		<id>https://frontendnorth.com/blog/2018/01/hello-world/</id>
+		<content type="html">&lt;p&gt;This &lt;strong&gt;is&lt;/strong&gt; a &lt;em&gt;test&lt;/em&gt; post.&lt;/p&gt;
+&lt;p&gt;This &lt;strong&gt;is&lt;/strong&gt; a &lt;em&gt;test&lt;/em&gt; post.
+This &lt;strong&gt;is&lt;/strong&gt; a &lt;em&gt;test&lt;/em&gt; post.
+This &lt;strong&gt;is&lt;/strong&gt; a &lt;em&gt;test&lt;/em&gt; post.&lt;/p&gt;
+&lt;p&gt;This &lt;strong&gt;is&lt;/strong&gt; a &lt;em&gt;test&lt;/em&gt; post.
+This &lt;strong&gt;is&lt;/strong&gt; a &lt;em&gt;test&lt;/em&gt; post.&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>Rebooting Front End North</title>
+		<link href="https://frontendnorth.com/blog/2019/06/rebooting-front-end-north/"/>
+		<updated>2019-06-26T22:39:55.973+01:00</updated>
+		<id>https://frontendnorth.com/blog/2019/06/rebooting-front-end-north/</id>
+		<content type="html">&lt;p&gt;Earlier this year, we announced that we had taken the reigns of Sheffield’s conference for web developers, Front End North. We’ve known for years that Sheffield has a thriving tech community, and that having a conference of our own is a great opportunity to get everyone together in one place at the same time. When the previous organisers asked whether we’d be interested in taking control, we jumped at the chance to make it our own.&lt;/p&gt;
+&lt;div class=&quot;o-image o-image--right&quot;&gt;
+                &lt;img src=&quot;https://devolute-cdn.sirv.com/fen/image&quot; alt=&quot;alt text&quot;&gt;
+                &lt;div class=&quot;o-image__caption&quot;&gt;&lt;p&gt;
+    &lt;a href=&quot;https://google.com/&quot;&gt;caption.&lt;/a&gt;
+&lt;/p&gt;&lt;/div&gt;
+            &lt;/div&gt;
+&lt;div class=&quot;o-image -&quot;&gt;
+                &lt;img src=&quot;https://devolute-cdn.sirv.com/fen/image&quot; alt=&quot;alt text&quot;&gt;
+                &amp;nbsp;
+            &lt;/div&gt;
+&lt;h2&gt;Meet the organisers&lt;/h2&gt;
+&lt;p&gt;If you’ve ever been to the &lt;a href=&quot;https://www.meetup.com/Front-End-Sheffield/&quot;&gt;Front End Sheffield user group&lt;/a&gt;, you’ll already know who we are! That’s because Front End North has the same team of organisers behind it.&lt;/p&gt;
+&lt;p&gt;Some of us have been working in tech for many years, some of us are relative newcomers. We are developers, designers and managers. Most of us do not have computer science degrees. Our events have covered web security, accessibility, design, performance and communication. A conference gives us a bigger stage and a bigger audience to showcase the impact of the work we do.&lt;/p&gt;
+&lt;h2&gt;Our intentions&lt;/h2&gt;
+&lt;p&gt;We agreed from the very beginning that we wanted to run a grass-roots event. For us this means offering an affordable ticket price. Conferences have become bigger and better over the years, and ticket prices has grown to match. &lt;strong&gt;We want to keep the costs down to make our event as accessible to as many people as we can&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;We also believe that events should be open to people who want to speak. That means committing to a call for papers programme, with a “blind” talk selection process. We’re aiming to give at least 50% of our talks to people who anonymously submit their talks. &lt;strong&gt;We want to ensure that we give our stage to knowledgeable newcomers as well as well-known experts&lt;/strong&gt;. We’ll also be hoping to run lightning talk sessions to suit first-time speakers.&lt;/p&gt;
+&lt;p&gt;As this is our first time organising a conference, we’re going to try to share our experience with &lt;a href=&quot;https://frontendnorth.com/blog/&quot;&gt;regular updates on this blog&lt;/a&gt;. Organising an event like this is a uniquely challenging task. We’ve benefited from the advice given to us from many experienced organisers of other events who have gone before us, and we’re keeping one eye on the future for those who follow. We hope this enables community organisers across the north to join us.&lt;/p&gt;
+&lt;h2&gt;Stay tuned!&lt;/h2&gt;
+&lt;p&gt;We’ll be announcing the details of our first speakers and our CFP programme in the coming months. Until then, you can find all the latest information on our website, &lt;a href=&quot;https://www.facebook.com/Front-End-North-502356493635369/&quot;&gt;Facebook&lt;/a&gt;, and on &lt;a href=&quot;https://twitter.com/frontendnorth&quot;&gt;Twitter&lt;/a&gt;!&lt;/p&gt;
+</content>
+	</entry>
+</feed>
