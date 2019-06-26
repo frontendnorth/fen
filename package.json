@@ -15,7 +15,7 @@
     "svgmin": "svgo --disable=inlineStyles -r -f src/assets/img -o docs/assets/img",
     "init": "npm run sass:build && npm run fonts && npm run favicons && npm run svgmin && npm run 11ty:build",
     "dev": "npm run init && npm run sass:watch & npm run 11ty:watch",
-    "build": "npm run clean && npm run init && npm run autoprefix",
+    "build": "npm run clean && npm run init && npm run autoprefix && cp CNAME docs/",
     "clean": "rimraf ./docs",
     "deploy-staging": "npm run build && firebase deploy -P default"
   },
