@@ -31,7 +31,7 @@
 
 		@include mq(md) {
 			// TODO: remove 100px when menu added
-			padding: ($space-xxxl +100) 0 $space-xxxl 0;
+			padding: ($space-xxxl +$space-xxl) 0 $space-xxxl 0;
 			margin-left: auto;
 			max-width: $width-page;
 		}
