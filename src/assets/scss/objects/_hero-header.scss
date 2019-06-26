@@ -66,6 +66,7 @@
 				auto
 				$space-xxl
 				auto;
+			position: relative;
 			max-width: 500px;
 
 			@include mq(md) {
@@ -76,6 +77,14 @@
 				margin-bottom: $space-xxxl;
 			}
 		}
+
+			&__action {
+				@include mq(md) {
+					position: absolute;
+					top: 0;
+					right: -279px;
+				}
+			}
 
 		&__social {
 			display: flex;

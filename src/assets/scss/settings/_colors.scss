@@ -21,11 +21,11 @@ $color-gradient-primary-light: #6913cc;
 $color-gradient-primary: linear-gradient(to bottom,
     $color-gradient-primary-light,
     $color-gradient-primary-dark);
-$color-gradient-secondary-dark: #ffb92d;
-$color-gradient-secondary-light: #ff7723;
+$color-gradient-secondary-dark: #ff7723;
+$color-gradient-secondary-light: #ffb92d;
 $color-gradient-secondary: linear-gradient(to bottom,
-    $color-gradient-secondary-dark,
-    $color-gradient-secondary-light);
+    $color-gradient-secondary-light,
+    $color-gradient-secondary-dark);
 
 // text
 $color-text-base: #262626; // 85%

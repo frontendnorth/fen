@@ -200,9 +200,11 @@
 		background-color: #ffb92d !important;
 		background-image: $color-gradient-secondary;
 		background-repeat: repeat-x;
+		border-right-color: rgba(#fff, .15);
 		// box-shadow: 0 1px 4px rgba(#000, .15);
 		color: $color-text-base;
-		border-right-color: rgba(#fff, .15);
+		text-shadow: none;
+		-webkit-font-smoothing: antialiased;
 
 		// triangle
 		&::after {
@@ -261,6 +263,60 @@
 			@include triangle($color-text-white, 'down', 6px);
 
 			transform: none;
+		}
+	}
+
+	// Split
+	&--split {
+		background-color: $color-brand-secondary;
+		color: $color-text-base;
+		border: none;
+		overflow: hidden;
+		position: relative;
+		text-shadow: none;
+		-webkit-font-smoothing: antialiased;
+
+		// hide default arrow
+		&::after {
+			display: none;
+		}
+
+		& .c-button__emphasis {
+			display: inline-block;
+			font-size: map-get($type-scale-major-second, xxl);
+			font-weight: 800;
+			margin:
+				-.5em
+				0
+				-.5em
+				1.2em;
+			position: relative;
+			top: .1em; // magic number
+
+			&::after {
+				@include pseudo();
+
+				background: $color-gradient-secondary;
+				border: none;
+				border-radius: 10px;
+				height: 20em;
+				right: 6.7em;
+				transform: translateY(-9.3em)
+					rotate(45deg);
+				top: 0;
+				width: 20em;
+				z-index: -1;
+			}
+		}
+
+		&:focus,
+		&:hover {
+			background-color: lighten($color-brand-secondary, 5);
+			color: #000;
+
+			& .c-button__emphasis::after {
+				background: $color-gradient-secondary-light;
+			}
 		}
 	}
 
