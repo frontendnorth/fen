@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 ---
 User-agent: *
 {% if project.environment == "production" -%}
-Sitemap: {{ site.url }}/sitemap.xml
+Sitemap: {{ metadata.url }}/sitemap.xml
 {% else -%}
 Disallow: /
 {% endif %}
