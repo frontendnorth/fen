@@ -1,0 +1,169 @@
+/**
+ *	Hero header
+ *
+ *	For the homepage header area.
+ *
+ **/
+
+.o-hero-header {
+	overflow: hidden;
+	position: relative;
+
+	&__copy {
+		margin: 0 auto;
+		padding: $space-xxl $space-l;
+		position: relative;
+		text-align: center;
+		max-width: 500px;
+		z-index: 2; // lift above image
+
+		@include mq(xs) {
+			padding-left: $space-xl;
+			padding-right: $space-xl;
+		}
+
+		@include mq(sm) {
+			text-align: left;
+			margin-left: 0;
+			padding-top: $space-xxxl;
+			padding-bottom: $space-xxxl;
+		}
+
+		@include mq(md) {
+			// TODO: remove 100px when menu added
+			padding: ($space-xxxl +$space-xxl) 0 $space-xxxl 0;
+			margin-left: auto;
+			max-width: $width-page;
+		}
+	}
+
+		&__logo {
+			box-sizing: border-box;
+			margin: 0
+				auto
+				$space-xxl
+				auto;
+			max-width: 100%;
+
+			@include mq(sm) {
+				margin-left: 0;
+				max-width: 320px;
+			}
+
+			@include mq(md) {
+				margin-left: -198px;
+				// Magic number to cause overlap to line text up with body copy
+			}
+
+			@include mq(lg) {
+				margin-left: -307px;
+				max-width: 500px;
+			}
+		}
+
+		&__intro {
+			margin: 0
+				auto
+				$space-xxl
+				auto;
+			position: relative;
+			max-width: 500px;
+
+			@include mq(md) {
+				margin-left: 0;
+			}
+
+			@include mq($from: lg, $and: '(min-height: 900px)') {
+				margin-bottom: $space-xxxl;
+			}
+		}
+
+			&__action {
+				@include mq(md) {
+					position: absolute;
+					top: 0;
+					right: -279px;
+				}
+			}
+
+		&__social {
+			display: flex;
+			justify-content: center;
+			margin-bottom: $space-l;
+
+			// Only introduce if there is space to do so
+			& > :first-child {
+				display: none;
+
+				@include mq(xs) {
+					display: inline-block;
+				}
+			}
+
+			@include mq(sm) {
+				justify-content: flex-start;
+			}
+		}
+
+		&__signup {
+			margin: 0 auto;
+			max-width: 450px;
+
+			@include mq(sm) {
+				margin-left: 0;
+			}
+		}
+
+		&__image {
+			display: none; // TODO: Landscape image for mobile?
+
+			@supports(clip-path: url('#svgPath')) {
+				@include mq(sm) {
+					display: flex;
+					height: 900px;
+					margin-left: 200px;
+					background: rgba(#000, .25);
+					clip-path: url('#svgPath');
+					bottom: 0;
+					left: 40%;
+					position: absolute;
+					right: 0;
+					top: -250px;
+					width: 900px;
+
+					> img {
+						bottom: 0;
+						height: 100%;
+						height: calc(100% - 250px);
+						left: -12%;
+						position: absolute;
+						min-width: 100%;
+					}
+				}
+
+				@include mq(md) {
+					height: 1345px;
+					left: 50%;
+					top: -400px;
+					width: 1345px;
+
+					> img {
+						height: calc(100% - 400px);
+					}
+				}
+
+				@include mq(lg) {
+					> img {
+						left: 0;
+					}
+				}
+			}
+
+			// IE / Edge tells stinking LIES about support of clip-path, so…
+			@supports (-ms-ime-align:auto) {
+				display: none;
+			}
+
+		}
+
+}

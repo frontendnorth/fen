@@ -1,0 +1,152 @@
+---
+title: Home
+description: A one-day, one-track conference in Sheffield for front end developers.
+---
+{# layout: base.njk #}
+{% extends "_layouts/base.njk" %}
+
+{% block main %}
+
+    <header class="o-hero-header o-spacer c-raised--hero-gradient c-inverted">
+
+        <div class="o-hero-header__copy">
+            <div class="o-hero-header__logo">
+
+                <h1 class="c-logo">
+                    <img src="/assets/img/logo-inv.svg" alt="" aria-hidden="true" class="c-logo__hero">
+                    <img src="/assets/img/logo-inv-stacked.svg" alt="" aria-hidden="true" class="c-logo__stacked">
+                    <span class="c-logo__text">Front End North</span>
+                </h1>
+
+            </div>
+            <div class="o-hero-header__intro">
+
+                <p class="c-lede">
+                    <strong class="u-uppercase">
+                        7th&nbsp;February, 2020<br>
+                        The Crucible Sheffield,&nbsp;UK
+                    </strong><br>
+                    A welcoming one-track, one-day conference for <strong>developers and designers</strong> who work on the&nbsp;web.
+                </p>
+
+                {# <div class="o-hero-header__action">
+                    <a href="" class="c-button c-button--split">
+                        Buy tickets now
+                        <strong class="c-button__emphasis">&pound;110</strong>
+                    </a>
+                </div> #}
+
+            </div>
+
+            <div class="o-hero-header__social">
+                <span class="c-lede"><strong>Stay in touch:</strong></span>
+
+                {% set social = [
+                    {
+                        name: "Twitter",
+                        url: "https://twitter.com/frontendnorth",
+                        icon: "twitter",
+                        title: "Follow us on Twitter"
+                    },
+                    {
+                        name: "Facebook",
+                        url: "https://www.facebook.com/Front-End-North-502356493635369",
+                        icon: "facebook",
+                        title: "Like us on Facebook"
+                    },
+                    {
+                        name: "Instagram",
+                        url: "https://www.instagram.com/frontendnorth/",
+                        icon: "instagram",
+                        title: "Follow us on Instagram"
+                    }
+                ] %}
+
+                {% for service in social %}
+                    <a href="{{ service.url }}" target="_blank" rel="noopener noreferrer nofollow" title="{{ service.title }}" class="c-social">
+                        <span class="u-visually-hidden">{{ service.name }}</span>
+                        <svg aria-hidden="true" role="presentation" class="c-icon">
+                            <use href="#{{ service.icon }}"></use>
+                        </svg>
+                    </a>
+                {% endfor %}
+
+            </div>
+            <div class="o-hero-header__signup">
+
+                {% include "signup.njk" %}
+
+            </div>
+        </div>
+        <div class="o-hero-header__image">
+            <img
+                srcset="{{ site.image_cdn }}crucible-bg.jpg?w=900 900w,
+                    {{ site.image_cdn }}crucible-bg.jpg?w=1345 1345w"
+                sizes="(max-width: 1050px) 900px,
+                    1345px"
+                src="{{ site.image_cdn }}crucible-bg.jpg?w=1345"
+                alt="The Crucible, Sheffield - photograph by Craig Flemming">
+        </div>
+
+    </header> {# /.o-hero-header #}
+
+    <main class="o-wrapper">
+
+        <section class="o-spacer">
+
+            <div class="s-content">
+
+                <h2>Sponsorship</h2>
+                <p>
+                    We’re currently offering sponsorship packages for Front End North 2020. Find out more about our sponsorship packages or get in touch at <a href="mailto:{{ metadata.email }}?subject=Sponsorship%20opportunities" rel="author">{{ metadata.email }}</a>.
+                </p>
+                <a href="{{ site.image_cdn }}FEN-Sponsor-Pack.pdf" type="application/pdf" class="c-button c-button--download">Download our sponsor pack</a>
+
+            </div>
+
+            <h3>Our sponsors:</h3>
+
+            <div class="o-sponsor-grid">
+                {%- for sponsor in sponsors -%}
+                    {{ ('<a href="' ~ sponsor.url ~ '" rel="external" title="' ~ sponsor.name ~ '">' if sponsor.url) | safe }}
+                        <span class="u-visually-hidden">{{ sponsor.name }}</span>
+                        <img src="{{ site.image_folder }}sponsors/{{ sponsor.logo }}" alt="">
+                    {{ ('</a>' if sponsor.url) | safe }}
+                {%- endfor -%}
+            </div>
+
+        </section>
+{#
+        <section class="o-spacer">
+
+            <h2>Blog</h2>
+
+            {% for post in collections.blog | reverse | limit(2) %}
+                {% include "_teaser/blog.njk" %}
+            {% endfor %}
+
+            <a href="/blog/" class="c-button">View all updates</a>
+
+        </section>
+#}
+    </main>
+
+    <footer class="o-spacer">
+
+        <div class="o-wrapper">
+
+            <small class="c-reduced">Front End North Ltd. | Registered company 11851024</small>
+
+        </div>
+
+    </footer>
+
+    <svg width="0" height="0" viewBox="0 0 1000 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <clipPath id="svgPath" clipPathUnits="objectBoundingBox" transform="scale(0.001, 0.001)">
+                <path d="M499.996667,1000 L499.996603,1000 C486.303285,999.999992 472.613335,994.803998 462.234816,984.412018 L15.5677902,537.771915 C-5.18926341,517.014861 -5.18926341,483.012061 15.5677902,462.228085 L462.234816,15.5879819 C472.599882,5.19599397 486.303306,0 499.979808,0 C513.683233,0 527.386657,5.19599397 537.778645,15.5879819 L984.391826,462.228085 C1005.20272,483.012061 1005.20272,517.014861 984.391826,537.771915 L537.778645,984.412018 C527.386665,994.803998 513.689985,999.999992 499.996667,1000 Z"></path>
+            </clipPath>
+        </defs>
+    </svg>
+
+{% endblock %}

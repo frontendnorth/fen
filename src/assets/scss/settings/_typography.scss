@@ -1,0 +1,72 @@
+/**
+ *	Typography & fonts
+ *
+ *	@font-face definitions stored here
+ *
+ *	Fonts transformed and code provided using https://transfonter.org/
+ *
+ **/
+
+@font-face {
+	font-family: 'Halis R';
+	src: url('../fonts/HalisR-Black.woff2') format('woff2'),
+		url('../fonts/HalisR-Black.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Halis R';
+	src: url('../fonts/HalisR-Book.woff2') format('woff2'),
+		url('../fonts/HalisR-Book.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Halis R';
+	src: url('../fonts/HalisR-Bold.woff2') format('woff2'),
+		url('../fonts/HalisR-Bold.woff') format('woff');
+	font-weight: bold;
+    font-style: normal;
+}
+
+
+$font-brand: "Halis R", sans-serif;
+$font-body: $font-brand;
+
+$font-size-base: (
+	default: 17px,
+	lg: 19px
+);
+
+$line-height-base: (
+	default: 1.333,
+	lg: 1.414
+);
+
+// Based on perfect forth - for major typographic blocks
+// Cheers, https://type-scale.com/
+$type-scale: (
+	xs: .64rem,
+	s: .8rem,
+	default: 1rem,
+	m: 1rem,
+	l: 1.333rem,
+	xl: 1.777rem,
+	xxl: 2.369rem,
+	xxxl: 3.157rem
+);
+
+// A major second - for details
+$type-scale-major-second: (
+	xs: .79rem,
+	s: .889rem,
+	default: 1rem,
+	m: 1rem,
+	l: 1.125rem,
+	xl: 1.266rem,
+	xxl: 1.424rem,
+	xxxl: 1.602rem,
+	xxxxl: 1.802rem,
+);

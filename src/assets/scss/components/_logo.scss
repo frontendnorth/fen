@@ -1,0 +1,55 @@
+/**
+ *	Logo
+ *
+ *	Text replacement for our primary logo.
+ *	Hides text in a readable way.
+ *	Only for _our_ logo, not those of sponsors.
+ *
+ **/
+
+.c-logo {
+
+	display: block; // remove whitespace
+	margin: 0 auto;
+	position: relative;
+	padding-bottom: 35.8561%;
+	width: 100%;
+
+	a {
+		display: block;
+	}
+
+		img {
+			border: none; // ie
+			height: 100%;
+			position: absolute;
+			width: 100%;
+		}
+
+	&__hero {
+		display: block;
+
+		@include mq(sm) {
+			display: none;
+		}
+	}
+
+	&__stacked {
+		display: none;
+
+		@include mq(sm) {
+			display: block;
+		}
+	}
+
+	&__text {
+		display: block;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		position: absolute;
+		width: 0;
+		z-index: -1;
+	}
+
+}

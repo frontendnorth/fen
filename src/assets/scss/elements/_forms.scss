@@ -1,0 +1,185 @@
+/**
+ *	Forms
+ *	Generic form styles
+ **/
+
+$form-padding-horizontal: $space-default;
+$form-padding-vertical: .7em;
+$form-clickable-size: 30px;
+$form-color-bg: #f8f8f8;
+$form-color-border: #c4c4c4;
+$form-color-focus: lighten(#f3ea7d, 20);
+$form-color-text: black;
+$form-color-placeholder: blue;
+
+
+input,
+select,
+textarea {
+	font-family: $font-body;
+	font-size: 1em;
+	line-height: 1.5;
+	margin-bottom: 2em;
+}
+
+input[type=checkbox],
+input[type=email],
+input[type=number],
+input[type=tel],
+input[type=password],
+input[type=text],
+input[type=url],
+input[type=date],
+select,
+textarea {
+	background-color: $form-color-bg;
+	border: 1px solid $form-color-border;
+	border-radius: 4px;
+	box-sizing: border-box;
+	color: #6a7071;
+	display: block;
+	padding: $form-padding-vertical $form-padding-horizontal;
+	width: 100%;
+
+	// if 'size' is set, use auto width
+	&[size] {
+		width: auto;
+	}
+
+	&:hover {
+		border-color: #d0d0d0;
+	}
+
+	&:focus {
+		background-color: $form-color-focus;
+		box-shadow: none;
+		outline: none;
+	}
+}
+
+input {
+	&[type=checkbox],
+	&[type=radio] {
+		appearance: none;
+		clear: left;
+		cursor: pointer;
+		float: left;
+		height: $form-clickable-size;
+		margin: 0
+			$space-s
+			1em
+			0;
+		padding: 0;
+		width: $form-clickable-size; // consistent dimensions for these
+
+		& + label:not([class]),
+		& + label[class=""] {
+			cursor: pointer;
+			font-weight: normal;
+			position: relative;
+			top: calc(-16px - 1em);
+			margin-bottom: calc(-16px);
+			padding-left: ($form-clickable-size + $space-default);
+		}
+	}
+
+	&[type=checkbox] {
+		// custom 'tick' - falls back to unstyled on IE11
+		&:checked {
+			background-color: inherit; // overwrites mixin template
+			background-size: 75%;
+		}
+
+		&:hover {
+			background-color: lighten($form-color-bg, 2);
+		}
+		&:focus {
+			background-color: $form-color-focus;
+		}
+	}
+
+	&[type=radio] {
+		$size: $form-clickable-size;
+
+		background-color: $color-bg-grey-light;
+		border: 6px solid $color-bg-grey-light;
+		border-radius: 50%;
+		box-shadow: 0 0 0 1px $color-bg-grey-mid;
+		margin-top: 0;
+		margin-bottom: 1em;
+
+		&:focus,
+		&:hover {
+			background-color: $color-bg-grey-mid;
+			outline: none;
+		}
+
+		&:checked {
+			background-color: $color-brand-secondary;
+			box-shadow: 0 0 0 1px $color-brand-secondary;
+		}
+
+		& + label:not([class]),
+		& + label[class=""] {
+			top: calc(-#{$size} - 1em);
+			margin-bottom: -$size;
+		}
+
+		// HACK: following a dummy label
+		span + & {
+			margin-top: .5em;
+		}
+	}
+
+	&[type=text] {
+		// inside a label
+		label & {
+			clear: both;
+			display: inline-block;
+			float: right;
+		}
+	}
+}
+
+select {
+	cursor: pointer;
+
+	&:focus {
+		background-image: none;
+	}
+}
+
+label {
+	clear: both;
+	display: block;
+	font-size: 1rem;
+	font-weight: 600;
+	text-align: left; // if `u-centered`, ignore
+	margin-bottom: $space-s;
+
+	input {
+		margin-bottom: $space-default;
+	}
+
+	small {
+		display: inline-block;
+		font-size: map-get($type-scale-major-second, s);
+		font-weight: normal;
+		min-width: 60%; // hack! forces onto new line when appropriate
+	}
+
+	// we usually assume that this is a description
+	+ p {
+		margin-top: 0;
+		margin-bottom: $space-s;
+	}
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+}
+
+legend {
+	@extend .beta;
+}

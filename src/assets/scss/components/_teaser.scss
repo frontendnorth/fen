@@ -1,0 +1,75 @@
+/**
+ *	Teaser
+ *
+ *	Primary for blogs posts, this.
+ *	Thanks to: https://inclusive-components.design/cards/
+ *
+ **/
+
+.c-teaser {
+
+	position: relative;
+
+	&__title {
+		font-size: map-get($type-scale-major-second, l);
+		font-weight: 900;
+		margin-top: 0;
+		margin-bottom: $space-s;
+
+		// Cheers https://codepen.io/m2rt/pen/KwXgaG for funky effect.
+		a {
+			color: $color-brand-primary;
+			text-decoration: none;
+
+			@supports (-webkit-text-fill-color: transparent) {
+				-webkit-background-clip: text; // TODO: deal with via PostCSS (or whatever)
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-image: linear-gradient(
+					to right,
+					$color-brand-secondary,
+					$color-brand-secondary 50%,
+					$color-brand-primary 50%);
+				background-size: 200% 100%;
+				background-position: 100%;
+				transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+
+				@media (prefers-reduced-motion: reduce) {
+					transition-duration: 0s;
+				}
+			}
+
+			&:focus,
+			&:hover {
+				background-position: 0%;
+				color: $color-brand-secondary;
+			}
+
+			&::after {
+				content: '';
+				bottom: 0;
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		}
+	}
+
+	&__meta {
+		display: block;
+		font-size: map-get($type-scale-major-second, xs);
+		font-weight: 600;
+		margin-bottom: 0;
+	}
+
+	&__excerpt {
+		margin-top: $space-default; // consistent space with or without meta
+		font-size: map-get($type-scale-major-second, s);
+	}
+
+	h2 + & {
+		margin-top: -.5em;
+	}
+
+}

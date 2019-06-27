@@ -1,0 +1,20 @@
+/**
+ *	Social media links
+ *
+ **/
+
+.c-social {
+
+    font-size: 0;
+    text-decoration: none;
+    margin: 0 $space-default;
+
+    & > * {
+        display: inline-block;
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+}

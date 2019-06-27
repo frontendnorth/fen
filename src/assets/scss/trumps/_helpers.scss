@@ -1,0 +1,144 @@
+/*
+*	Helpers
+*	Mainly %placeholders and u-tility classes here
+*
+*	ToC:
+*		Clearfix
+*		Text overflow
+*		Text uppercaser
+*		List reset
+*		Visually hidden
+*		Image replacement
+*		Centre text
+*		No break
+*		Media Query hidey-hacks
+*		Image positioning
+*
+*/
+
+
+/*
+ *	Clearfix
+ */
+
+%clearfix,
+.u-clearfix {
+	@include clearfix();
+}
+
+
+/*
+ *	Text overflow
+ *	An easy way to truncate text with an ellipsis. Requires the element to be block or inline-block.
+ *	/via http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+ */
+
+%text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+/*
+ *	Text uppercaser
+ *	Forces text into uppercase
+ */
+
+.u-uppercase {
+	letter-spacing: 0.015em;
+	text-transform: uppercase;
+
+	// h2-a-like
+	@at-root strong#{&} {
+		font-weight: 800;
+	}
+}
+
+/*
+ *	List reset
+ *	The common task of zeroing out a list
+ */
+
+%list-reset {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+/*
+ *	Visually hidden
+ *	Accessiblity-friendlier way to hide text from h5b
+ */
+
+.u-visually-hidden {
+	@include visuallyHidden();
+}
+
+
+/*
+ *	Image replacement
+ */
+
+.u-hide-text,
+%hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+/*
+ *	Center text
+ */
+
+.u-centered {
+	text-align: center !important;
+}
+
+
+/*
+ *	No break
+ *	Keep these elements together, prevent wrapping
+ */
+
+.u-no-break {
+	display: inline-block;
+}
+
+
+/*
+ *	Media Query hidey-hacks
+ *	For displaying at certain viewports and hiding everywhere else.
+ *	If you're using these, then you're often being lazy / doing it wroing.
+ */
+
+.u-lg-only {
+	@include mq($until: lg) {
+		display: none !important;
+	}
+}
+
+.u-sm-only {
+	@include mq(sm) {
+		display: none !important;
+	}
+}
+
+
+/*
+ *	Image positioning
+ */
+
+.u-image-left {
+	float: left;
+	margin-right: $space-default;
+	margin-bottom: 1em;
+}
+
+.u-image-right {
+	float: right;
+	margin-left: $space-default;
+	margin-bottom: 1em;
+}

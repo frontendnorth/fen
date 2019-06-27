@@ -1,0 +1,19 @@
+/**
+ *	Content
+ *
+ *	The most generic scope.
+ *
+ **/
+
+.s-content {
+
+    a:not(.c-button) {
+        @include link-rules();
+    }
+
+    .c-button {
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+
+}

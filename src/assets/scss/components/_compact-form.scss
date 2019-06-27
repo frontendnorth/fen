@@ -1,0 +1,104 @@
+/**
+ *	Compact form
+ *
+ *	A compact, one line, single-field form.
+ *	Keeps heights of field and button (action) equal.
+ *	Takes width of container.
+ *
+ **/
+
+.c-compact-form {
+
+	$border-width: 2px;
+
+	position: relative;
+	text-align: left;
+
+	@include mq(xs) {
+		align-content: stretch;
+		align-items: stretch;
+		display: flex;
+		flex-direction: row;
+	}
+
+	// label is hidden responsibly
+	&__label {
+		// @include visuallyHidden();
+		// Temporarily using visually hidden technique without clip as it shows as an error in LightHouse currently.
+		// This is fixed in Chrome Canary so can revert back to using the mixin when standard Chrome has updated.
+		border: 0;
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+
+	&__field {
+		width: 100%;
+		flex: 1 1 100%;
+		font-size: map-get($type-scale-major-second, s); // TODO: fix (build ignores this(!?))
+		font-size: .9em;
+		margin-bottom: $space-default;
+		padding: 0 $space-default;
+
+		// field *should* inherit height from button
+		@include mq(xs) {
+			flex: 1 1 auto;
+			margin-bottom: 0;
+			margin-right: -$radius-default; // underlap button to hide radius
+		}
+	}
+
+	&__messages {
+		bottom: -$space-default;
+		font-size: map-get($type-scale-major-second, s);
+		left: 0;
+		line-height: 1.3;
+		padding: 0 $form-padding-horizontal;
+		position: absolute;
+		right: 0;
+
+		> div {
+			position: absolute;
+			top: 0;
+		}
+	}
+
+	&__action {
+		align-items: center;
+		display: flex; // stetch height of button inside to maximum
+		flex-direction: row;
+		justify-content: center;
+
+		@include mq(xs) {
+			border-bottom-left-radius: 0;
+			border-top-left-radius: 0;
+			flex-direction: column;
+		}
+	}
+
+	// error messaging (class provided by Mailchimp)
+	.mce_inline_error {
+		& ~ .c-compact-form__messages {
+			&::before {
+				content: '!';
+				display: block;
+				font-size: $icon-size;
+				font-weight: 900;
+				left: -$icon-size;
+				margin-bottom: 2.25em; // TODO: This is a magic number
+				position: absolute;
+				bottom: 0;
+				text-align: center;
+				width: $icon-size;
+
+				@include mq(xs) {
+					margin-bottom: ($form-padding-vertical /2);
+				}
+			}
+		}
+	}
+
+}

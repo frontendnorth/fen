@@ -1,0 +1,17 @@
+{#
+    Hide tracking if not in production mode
+    https://www.11ty.io/docs/data-js/#example%3A-exposing-environment-variables
+#}
+{% if project.environment == "production" %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132906563-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config',
+            '{{ site.ga }}',
+            { 'anonymize_ip': true }
+        );
+    </script>
+{% endif %}

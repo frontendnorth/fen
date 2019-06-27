@@ -1,0 +1,32 @@
+/**
+ *	Links
+ *
+ *	Note: Styles are v. generic so as not to impact other things link elements.
+ *	`.c-link` should help us with more fancy stuff.
+ *
+ **/
+
+a {
+// a:not([class^="c-"]) {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-color: $color-brand-secondary;
+
+	&:focus,
+	&:hover {
+		text-decoration-color: lighten($color-brand-secondary, 20);
+
+		> img[src*="svg"] {
+			filter: opacity(75%);
+		}
+	}
+
+	// Replace with focus-visible when support is reasonable. Explanation:
+	// https://css-tricks.com/almanac/selectors/f/focus-visible/
+	&:focus {
+		// a11y AF, keyboard fans
+		outline: $color-brand-secondary dashed 2px;
+		outline-offset: $space-xs;
+	}
+
+}

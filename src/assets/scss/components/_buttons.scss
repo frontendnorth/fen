@@ -1,0 +1,323 @@
+/**
+ *	Buttons
+ *
+ *	Prominent links and form buttons.
+ *
+ **/
+
+.c-button {
+
+	$color: $color-brand-primary;
+	$padding-v: $space-l;
+	$padding-h: $space-l;
+	$padding: calc(#{$space-l} - .125em) $padding-h; // tweak to accomodate line-height
+	$icon-bar-width: (($space-l *2) + 6px); // considers width of arrow
+	$radius: $radius-default;
+
+	background-color: $color;
+	border: none;
+	border-radius: $radius;
+	border-right: $icon-bar-width solid darken($color, 10); // TODO: em?
+	color: $color-text-white;
+	cursor: default; // hover triggers correct cursor unless link is disabled
+	display: inline-block;
+	font-family: $font-brand;
+	font-size: map-get($type-scale-major-second, xs);
+	font-weight: 700;
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;
+	letter-spacing: 0.02em;
+	line-height: 1.25;
+	padding: $padding;
+	position: relative;
+	text-decoration: none;
+	text-shadow: 0 1px 2px rgba(#000, .2);
+	text-transform: uppercase;
+	transition: all ease-in-out .15s;
+	user-select: none;
+	vertical-align: middle;
+	z-index: 1;
+
+	@include mq(lg) {
+		font-size: map-get($type-scale-major-second, s);
+	}
+
+	// defaults to an arrow
+	&::after {
+		@include triangle($color-text-white, 'right', 6px);
+
+		right: -(($icon-bar-width /2) - 2px);
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	// interactions
+	@mixin interactive-rules {
+		background-color: darken($color, 15);
+		border-right-color: darken($color, 30);
+		cursor: pointer;
+		color: $color-text-white;
+	}
+
+	// We split this because of poor `-within` support in Edge
+	&:focus,
+	&:hover {
+		@include interactive-rules();
+	}
+
+	&:focus-within {
+		@include interactive-rules();
+	}
+
+	// When pseudo content not supported, wrap in a div
+	input,
+	button {
+		appearance: none;
+		background: none;
+		border: none;
+		border-right: $icon-bar-width solid transparent;
+		color: inherit;
+		cursor: pointer;
+		flex: 1 1 auto;
+		font-family: inherit;
+		font-weight: inherit;
+		letter-spacing: inherit;
+		line-height: inherit;
+		text-transform: inherit;
+		text-align: left;
+		margin: -($padding-v)
+			(-$padding-h);
+		margin: calc(-#{$space-l} + .125em)
+			(-$padding-h);
+		margin-right: (-$padding-h - $icon-bar-width);
+		outline: none;
+		padding: $padding; // forces larger clickable area
+		text-shadow: inherit;
+	}
+
+	// in body copy
+	p + & {
+		// margin-top: $space-default;
+		// margin-bottom: $space-default;
+	}
+
+	// state
+	&--disabled {
+		&::after {
+			display: none;
+		}
+	}
+
+	// js-powered state
+	.is-disabled {
+		cursor: not-allowed;
+	}
+
+
+	// variations
+	// …sizes
+	// n/a
+
+	// block / full-width
+	&--block {
+		@mixin block-rules {
+			display: block;
+			margin-right: 0;
+			text-align: left;
+			width: 100%;
+
+			// following t'other
+			& + & {
+				margin-top: $space-default;
+			}
+		}
+
+		// @include block-rules();
+
+		// @include mq(md) {
+		// 	&\@md {
+		// 		@include block-rules();
+		// 	}
+		// }
+	}
+
+
+	// variations
+	// …colors
+	$colors: (
+		'orange': $color-brand-secondary
+	);
+
+	@mixin colorButtonAttibutes($name, $color) {
+		background: $color;
+		border-right-color: darken($color, 10);
+
+		// for state
+		&::before {
+			background-color: darken($color, 10);
+		}
+
+		&:hover,
+		&:focus {
+			background-color: lighten($color, 2.5);
+		}
+
+		&:focus-within {
+			background-color: lighten($color, 2.5);
+		}
+
+		// Contrast fixer
+		// make this smarter with color checker!
+		@if ( $name == 'reduced' ) {
+			border: 1px solid darken($color, 4);
+			box-shadow: 0 2px 8px rgba(#000, .1);
+			color: $color-text-base;
+
+			&:hover,
+			&:focus {
+				color: darken($color-text-base, 10);
+			}
+
+			&:focus-within {
+				color: darken($color-text-base, 10);
+			}
+
+			// arrow
+			&::after {
+				@include triangle($color-text-base, 'right', 7px);
+			}
+		}
+	}
+
+	@each $name, $color in $colors {
+		&--#{$name} {
+			@include colorButtonAttibutes($name, $color);
+		}
+	}
+
+	// Special orange 'pop' button for maximum impact
+	&--pop {
+		background-color: #ffb92d !important;
+		background-image: $color-gradient-secondary;
+		background-repeat: repeat-x;
+		border-right-color: rgba(#fff, .15);
+		// box-shadow: 0 1px 4px rgba(#000, .15);
+		color: $color-text-base;
+		text-shadow: none;
+		-webkit-font-smoothing: antialiased;
+
+		// triangle
+		&::after {
+			@include triangle($color-text-base, 'right', 6px);
+		}
+
+		@mixin interactive-pop-rules {
+			background-position: 0 15px;
+			color: $color-text-base;
+			border-right-color: rgba(#fff, .15);
+		}
+
+		&:focus,
+		&:hover {
+			@include interactive-pop-rules();
+		}
+
+		&:focus-within {
+			@include interactive-pop-rules();
+		}
+	}
+
+	// icons
+	// Defaults to an arrow - remove this if set
+	&--icon {
+		&::after {
+			content: none;
+		}
+
+		svg {
+			bottom: 0;
+			color: inherit;
+			height: 21px;
+			position: absolute;
+			right: -$icon-bar-width;
+			top: 0;
+			// transition: $transition-fade;
+			opacity: .7;
+			margin: auto;
+			width: $icon-bar-width;
+		}
+
+			&:focus,
+			&:focus-within,
+			&:hover {
+				svg {
+					// should match default arrow treatment
+					opacity: 1;
+				}
+			}
+	}
+
+	// download
+	&--download {
+		&::after {
+			@include triangle($color-text-white, 'down', 6px);
+
+			transform: none;
+		}
+	}
+
+	// Split
+	&--split {
+		background-color: $color-brand-secondary;
+		color: $color-text-base;
+		border: none;
+		overflow: hidden;
+		position: relative;
+		text-shadow: none;
+		-webkit-font-smoothing: antialiased;
+
+		// hide default arrow
+		&::after {
+			display: none;
+		}
+
+		& .c-button__emphasis {
+			display: inline-block;
+			font-size: map-get($type-scale-major-second, xxl);
+			font-weight: 800;
+			margin:
+				-.5em
+				0
+				-.5em
+				1.2em;
+			position: relative;
+			top: .1em; // magic number
+
+			&::after {
+				@include pseudo();
+
+				background: $color-gradient-secondary;
+				border: none;
+				border-radius: 10px;
+				height: 20em;
+				right: 6.7em;
+				transform: translateY(-9.3em)
+					rotate(45deg);
+				top: 0;
+				width: 20em;
+				z-index: -1;
+			}
+		}
+
+		&:focus,
+		&:hover {
+			background-color: lighten($color-brand-secondary, 5);
+			color: #000;
+
+			& .c-button__emphasis::after {
+				background: $color-gradient-secondary-light;
+			}
+		}
+	}
+
+}

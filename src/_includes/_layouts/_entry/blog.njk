@@ -1,0 +1,35 @@
+{% extends "_layouts/base.njk" %}
+
+{% block main %}
+
+    <article>
+
+        <a href="/blog/" class="beta">Blog</a>
+
+        <h1>{{ title }}</h1>
+        <time class="c-teaser__meta" datetime="{{ page.date|htmlDateString }}">{{ page.date | readableDate }}</time>
+
+        <div class="s-content">
+
+            {{ content | safe }}
+
+        </div>
+
+        <aside>
+
+            <h2 class="gamma">More from the blog</h2>
+
+            {% for post in collections.blog | reverse | limit(3) %}
+                {# This feels like a hack #}
+                {% if page.url != post.url %}
+                    {% include "_teaser/blog.njk" %}
+                {% endif %}
+            {% endfor %}
+
+            <a href="/blog/" class="c-button">View all updates</a>
+
+        </aside>
+
+    </article>
+
+{% endblock %}
