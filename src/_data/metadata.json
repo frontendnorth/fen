@@ -1,6 +1,7 @@
 {
     "title": "Front End North Conference",
     "url": "https://frontendnorth.com",
+    "email": "info@frontendnorth.com",
     "feed": {
         "subtitle": "The official blog for the Front End North Conference",
         "filename": "feed.xml",
