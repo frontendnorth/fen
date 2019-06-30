@@ -2,12 +2,13 @@
 
 {% block main %}
 
-    <article>
+    <article class="o-wrapper">
 
-        <a href="/blog/" class="beta">Blog</a>
-
-        <h1>{{ title }}</h1>
-        <time class="c-teaser__meta" datetime="{{ page.date|htmlDateString }}">{{ page.date | readableDate }}</time>
+        <header>
+            <a href="/blog/" class="beta breadcrumbs">Blog</a>
+            <h1>{{ title }}</h1>
+            <time class="c-teaser__meta" datetime="{{ page.date|htmlDateString }}">{{ page.date | readableDate }}</time>
+        </header>
 
         <div class="s-content">
 
