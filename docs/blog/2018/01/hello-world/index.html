@@ -4,14 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>
-        {%- if page.url == '/' -%}
-            {{ metadata.title }} | Returning in 2020
-        {%- else -%}
-            {{ title }} | {{ metadata.title }}
-        {%- endif -%}
-    </title>
-    {{ ('<meta name="description" content="' ~ description ~ '">' if description) | safe }}
+    <title>Hello world | Front End North Conference</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -23,7 +17,7 @@
     <meta name="theme-color" content="#484be1">
 
     <meta property="og:title" content="Front End North Conference | Returning in 2020">
-    {{ ('<meta property="og:description" content="' ~ description ~ '">' if description) | safe }}
+    
     <meta property="og:image" content="https://frontendnorth.com/img/fen-log.png">
     <meta property="og:url" content="https://frontendnorth.com">
     <meta name="twitter:card" content="summary">
@@ -32,15 +26,82 @@
     <meta property="fb:app_id" content="333914457322662" />
     <meta name="twitter:site" content="@frontendnorth">
 
-    <link href="/assets/css/all.css?v={{ project.buildDate }}" rel="stylesheet">
+    <link href="/assets/css/all.css" rel="stylesheet">
 </head>
 <body>
 
-    {% block main %}{% endblock %}
+    
 
-    {# {{ content | safe }} #}
+    <article>
 
-    {% include 'tracking.njk' %}
+        <a href="/blog/" class="beta">Blog</a>
+
+        <h1>Hello world</h1>
+        <time class="c-teaser__meta" datetime="2018-01-11">11 January, 2018</time>
+
+        <div class="s-content">
+
+            <p>This <strong>is</strong> a <em>test</em> post.</p>
+<p>This <strong>is</strong> a <em>test</em> post.
+This <strong>is</strong> a <em>test</em> post.
+This <strong>is</strong> a <em>test</em> post.</p>
+<p>This <strong>is</strong> a <em>test</em> post.
+This <strong>is</strong> a <em>test</em> post.</p>
+
+
+        </div>
+
+        <aside>
+
+            <h2 class="gamma">More from the blog</h2>
+
+            
+                
+                
+                    <article class="c-teaser">
+    <h3 class="c-teaser__title">
+        <a href="/blog/2019/06/rebooting-front-end-north/">Rebooting Front End North</a>
+    </h3>
+    <time class="c-teaser__meta" datetime="2019-06-26">26 June, 2019</time>
+    <div class="c-teaser__excerpt">
+        <p>
+            
+            Earlier this year, we announced that we had taken the reigns of Sheffield’s conference for web developers, Front End North. We’ve known for years that Sheffield has a thriving tech community, and that...
+        </p>
+    </div>
+</article>
+
+                
+            
+                
+                
+            
+
+            <a href="/blog/" class="c-button">View all updates</a>
+
+        </aside>
+
+    </article>
+
+
+
+    
+
+    
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132906563-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config',
+            'UA-132906563-1',
+            { 'anonymize_ip': true }
+        );
+    </script>
+
+
 
     <svg width="0" height="0" class="hidden">
       <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="twitter">
