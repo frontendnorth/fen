@@ -77,6 +77,17 @@ description: A one-day, one-track conference in Sheffield for front end develope
                 {% include "signup.njk" %}
 
             </div>
+            <section class="">
+
+                <h2>Speakers</h2>
+
+                {% for speaker in collections.featuredSpeakers %}
+                    {% if speaker.data.featured %}
+                        {% include "_teaser/speaker.njk" %}
+                    {% endif %}
+                {% endfor %}
+
+            </section>
         </div>
         <div class="o-hero-header__image">
             <img

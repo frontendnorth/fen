@@ -4,14 +4,26 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 module.exports = function(eleventyConfig) {
 
     // Define collections
-    eleventyConfig.addCollection('speakers', collection => {
-        return collection.getFilteredByGlob('src/_speakers/*.md');
+    eleventyConfig.addCollection('featuredSpeakers', collection => {
+        return collection.getFilteredByGlob('src/_speakers/*.md').sort((a, b) => {
+                return a.data.featured - b.data.featured;
+        });
+    });
+
+    eleventyConfig.addCollection('schedule', collection => {
+        return collection.getFilteredByGlob('src/_schedule/**/*.md').sort((a, b) => {
+                return a.data.time - b.data.time;
+        });
     });
 
     // Date formatting (human readable)
     // https://moment.github.io/luxon/docs/manual/formatting.html
     eleventyConfig.addFilter("readableDate", dateObj => {
         return DateTime.fromJSDate(dateObj, {zone: 'gmt'}).toFormat("d LLLL, yyyy");
+    });
+
+    eleventyConfig.addFilter("readableTime", dateObj => {
+        return DateTime.fromJSDate(dateObj, {zone: 'gmt'}).toFormat("h:mma");
     });
 
     // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string

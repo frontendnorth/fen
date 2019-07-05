@@ -1,0 +1,7 @@
+{
+    "tags": [
+        "speakers"
+    ],
+    "layout": "_entry/speaker.njk",
+    "permalink": "/speakers/{{ page.fileSlug }}/index.html"
+}

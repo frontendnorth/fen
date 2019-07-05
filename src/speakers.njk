@@ -1,0 +1,22 @@
+---
+title: 'Speakers'
+---
+
+{% extends "_layouts/base.njk" %}
+
+{% block main %}
+
+    <main>
+
+        <h1>{{ title }}</h1>
+        <ul>
+            {% for speaker in collections.speakers %}
+                <li>
+                    <a href="{{ speaker.url }}">{{ speaker.data.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </main>
+
+{% endblock %}

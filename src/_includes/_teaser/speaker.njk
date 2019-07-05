@@ -1,0 +1,11 @@
+<article class="c-">
+    <h3 class="c-">
+        <a href="{{ speaker.url }}">{{ speaker.data.title }}</a>
+    </h3>
+    <span class="">
+        {{ speaker.data.role }} {{ speaker.data.place }}
+    </span>
+    {% if speaker.data.thumbnail %}
+        <img src="{{ site.image_cdn }}{{ speaker.data.thumbnail }}" alt="">
+    {% endif %}
+</article>

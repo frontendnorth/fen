@@ -1,0 +1,53 @@
+{% extends "_layouts/base.njk" %}
+
+{% block main %}
+
+    <article class="o-wrapper">
+
+        <header>
+            <a href="/speakers/" class="beta breadcrumbs">2020 Speaker</a>
+            <h1>{{ title }}</h1>
+        </header>
+
+        <div class="s-content">
+
+            <section>
+
+                {% for talk in collections.schedule %}
+
+                    {# TODO: This feels like a hack #}
+                    {% if page.fileSlug == talk.data.speaker %}
+
+                        {{ talk.templateContent | safe }}
+
+                    {% endif %}
+                {% endfor %}
+
+            </section>
+            <section>
+                <h2>Bio</h2>
+                {{ content | safe }}
+
+                <aside>
+
+                    {% if previous %}
+                        <ul>
+                            {% for talk in previous %}
+                                <li>
+                                    {{ ('<a href="' ~ talk.url ~ '" rel="external">' if talk.url) | safe }}
+                                        {{ talk.name }}
+                                    {{ ('</a>' if talk.url) | safe }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                </aside>
+
+            </section>
+
+        </div>
+
+    </article>
+
+{% endblock %}
