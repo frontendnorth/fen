@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "fen-staging"
+    "default": "fen-staging",
+    "staging": "fen-staging",
+    "production": "fen-production"
   }
 }

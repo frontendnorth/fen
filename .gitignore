@@ -4,3 +4,5 @@ node_modules
 /haters
 *.map
 /temp
+.firebase
+docs

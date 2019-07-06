@@ -17,7 +17,8 @@
     "dev": "npm run init && npm run sass:watch & npm run 11ty:watch",
     "build": "npm run clean && npm run init && npm run autoprefix && cp CNAME docs/",
     "clean": "rimraf ./docs",
-    "deploy-staging": "npm run build && firebase deploy -P default"
+    "deploy-staging": "npm run build && firebase deploy -P staging",
+    "deploy-production": "npm run build && firebase deploy -P production"
   },
   "keywords": [],
   "author": "Front End North",
