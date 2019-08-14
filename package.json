@@ -34,7 +34,7 @@
     "sass-mq": "^5.0.0"
   },
   "devDependencies": {
-    "rimraf": "^2.6.3"
+    "rimraf": "^3.0.0"
   },
   "browserslist": [
     "last 2 versions",
