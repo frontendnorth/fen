@@ -3,5 +3,15 @@
         "name": "Evoluted",
         "url": "https://www.evoluted.net/web-development",
         "logo": "evoluted.svg"
+    },
+    {
+        "name": "Notist",
+        "url": "https://noti.st/",
+        "logo": "notist.svg"
+    },
+    {
+        "name": "Autodesk",
+        "url": "https://autodesk.co.uk/",
+        "logo": "bitmap/autodesk-logo-rgb-black-1line-medium-v2.png"
     }
 ]
