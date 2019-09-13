@@ -11,6 +11,7 @@
     "favicons": "cp -R src/assets/favicons/ docs/",
     "autoprefix": "npx postcss docs/assets/css/*.css --no-map --use autoprefixer -d docs/assets/css/",
     "11ty:build": "ELEVENTY_ENV=production npx eleventy",
+    "__11ty:watch": "DEBUG=Eleventy* npx eleventy --serve",
     "11ty:watch": "npx eleventy --serve",
     "svgmin": "svgo --disable=inlineStyles -r -f src/assets/img -o docs/assets/img",
     "init": "npm run sass:build && npm run fonts && npm run favicons && npm run svgmin && npm run 11ty:build",
@@ -23,17 +24,18 @@
   "author": "Front End North",
   "license": "none",
   "dependencies": {
-    "@11ty/eleventy": "^0.8.3",
-    "@11ty/eleventy-plugin-rss": "^1.0.6",
+    "@11ty/eleventy": "^0.9.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "autoprefixer": "^9.6.1",
     "molecules": "0.0.3",
-    "autoprefixer": "^9.6.0",
     "node-sass": "^4.12.0",
-    "postcss-cli": "^6.1.2",
     "normalize.css": "^8.0.1",
-    "sass-mq": "^5.0.0"
+    "postcss-cli": "^6.1.3",
+    "sass-mq": "^5.0.1",
+    "svgo": "^1.3.0"
   },
   "devDependencies": {
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.7.1"
   },
   "browserslist": [
     "last 2 versions",
