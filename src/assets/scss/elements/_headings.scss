@@ -12,10 +12,10 @@ h1,
 .alpha {
 	color: $color-text-headings;
 	font-family: $font-brand;
-	font-size: map-get($type-scale-major-second, xxxxl);
+	font-size: map-get($type-scale-major-second, xxxl);
 	font-weight: 600;
 	line-height: 1;
-	margin: 1em 0;
+	margin: 1.5em 0;
 
 	@include mq(lg) {
 		font-size: map-get($type-scale, xxl);

@@ -9,22 +9,24 @@
 	overflow: hidden;
 	position: relative;
 
+	@include mq(xs) {
+		padding: 0 $space-l;
+	}
+
 	&__copy {
 		margin: 0 auto;
-		padding: $space-xxl $space-l;
+		padding: $space-xxl 0;
 		position: relative;
 		text-align: center;
-		max-width: 500px;
 		z-index: 2; // lift above image
 
 		@include mq(xs) {
-			padding-left: $space-xl;
-			padding-right: $space-xl;
+			// padding-left: $space-xl;
+			// padding-right: $space-xl;
 		}
 
 		@include mq(sm) {
 			text-align: left;
-			margin-left: 0;
 			padding-top: $space-xxxl;
 			padding-bottom: $space-xxxl;
 		}
@@ -32,7 +34,6 @@
 		@include mq(md) {
 			// TODO: remove 100px when menu added
 			padding: ($space-xxxl +$space-xxl) 0 $space-xxxl 0;
-			margin-left: auto;
 			max-width: $width-page;
 		}
 	}
@@ -43,7 +44,7 @@
 				auto
 				$space-xxl
 				auto;
-			max-width: 100%;
+			max-width: 500px;
 
 			@include mq(sm) {
 				margin-left: 0;
@@ -69,7 +70,7 @@
 			position: relative;
 			max-width: 500px;
 
-			@include mq(md) {
+			@include mq(sm) {
 				margin-left: 0;
 			}
 
