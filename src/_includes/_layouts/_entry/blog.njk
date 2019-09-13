@@ -2,34 +2,49 @@
 
 {% block main %}
 
-    <article class="o-wrapper">
+    <article>
 
-        <header>
-            <a href="/blog/" class="beta breadcrumbs">Blog</a>
-            <h1>{{ title }}</h1>
-            <time class="c-teaser__meta" datetime="{{ page.date|htmlDateString }}">{{ page.date | readableDate }}</time>
-        </header>
+        <div class="o-spacer c-raised--hero-gradient c-inverted">
 
-        <div class="s-content">
+            <header class="o-hero-header__copy o-wrapper">
 
-            {{ content | safe }}
+                <h1 class="c-inverted">{{ title }}</h1>
+                <time class="c-teaser__meta" datetime="{{ page.date|htmlDateString }}">{{ page.date | readableDate }}</time>
+
+                {% if intro %}
+                    <div class="s-content c-lede">
+                        <p>{{ intro | safe }}</p>
+                    </div>
+                {% endif %}
+
+            </header>
 
         </div>
 
-        <aside>
+        <div class="o-wrapper">
 
-            <h2 class="gamma">More from the blog</h2>
+            <div class="s-content o-spacer">
 
-            {% for post in collections.blog | reverse | limit(3) %}
-                {# This feels like a hack #}
-                {% if page.url != post.url %}
-                    {% include "_teaser/blog.njk" %}
-                {% endif %}
-            {% endfor %}
+                {{ content | safe }}
 
-            <a href="/blog/" class="c-button">View all updates</a>
+            </div>
 
-        </aside>
+            <aside class="o-spacer">
+
+                <h2 class="gamma">More from the blog</h2>
+
+                {% for post in collections.blog | reverse | limit(3) %}
+                    {# This feels like a hack #}
+                    {% if page.url != post.url %}
+                        {% include "_teaser/blog.njk" %}
+                    {% endif %}
+                {% endfor %}
+
+                <a href="/blog/" class="c-button">View all updates</a>
+
+            </aside>
+
+        </div> {# /.o-wrapper #}
 
     </article>
 

@@ -1,0 +1,35 @@
+{% extends "_layouts/base.njk" %}
+
+{% block main %}
+
+    <article>
+
+        <div class="o-spacer c-raised--hero-gradient c-inverted">
+
+            <header class="o-hero-header__copy o-wrapper">
+
+                <h1 class="c-inverted">{{ title }}</h1>
+
+                {% if intro %}
+                    <div class="s-content c-lede">
+                        <p>{{ intro | safe }}</p>
+                    </div>
+                {% endif %}
+
+            </header>
+
+        </div>
+
+        <div class="o-wrapper o-spacer">
+
+            <div class="s-content">
+
+                {{ content | safe }}
+
+            </div>
+
+        </div> {# /.o-wrapper.o-spacer #}
+
+    </article>
+
+{% endblock %}

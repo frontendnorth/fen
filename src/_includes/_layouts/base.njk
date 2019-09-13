@@ -36,9 +36,23 @@
 </head>
 <body>
 
-    {% block main %}{% endblock %}
+    {# {% include 'navigation.njk' %} #}
 
-    {# {{ content | safe }} #}
+    <main>
+
+        {% block main %}{% endblock %}
+
+    </main>
+
+    <footer class="o-spacer">
+
+        <div class="o-wrapper">
+
+            <small class="c-reduced">Front End North Ltd. | Registered company 11851024 | <a href="/code-of-conduct">Code of Conduct</a></small>
+
+        </div>
+
+    </footer>
 
     {% include 'tracking.njk' %}
 

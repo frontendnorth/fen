@@ -2,51 +2,133 @@
 
 {% block main %}
 
-    <article class="o-wrapper">
+    <article>
 
-        <header>
-            <a href="/speakers/" class="beta breadcrumbs">2020 Speaker</a>
-            <h1>{{ title }}</h1>
-        </header>
+        <div class="o-spacer c-raised--hero-gradient c-inverted">
 
-        <div class="s-content">
+            <header class="o-hero-header__copy o-wrapper">
 
-            <section>
+                <h1 class="c-inverted">{{ title }}</h1>
+
+            </header>
+
+            <section class="o-wrapper">
 
                 {% for talk in collections.schedule %}
 
                     {# TODO: This feels like a hack #}
                     {% if page.fileSlug == talk.data.speaker %}
 
+                        <h2>{{ talk.data.title }}</h2>
+                        {{ ('<span>' ~ talk.data.subtitle ~ '</span>' if talk.data.subtitle) | safe }}
+
                         {{ talk.templateContent | safe }}
 
                     {% endif %}
+
                 {% endfor %}
-
-            </section>
-            <section>
-                <h2>Bio</h2>
-                {{ content | safe }}
-
-                <aside>
-
-                    {% if previous %}
-                        <ul>
-                            {% for talk in previous %}
-                                <li>
-                                    {{ ('<a href="' ~ talk.url ~ '" rel="external">' if talk.url) | safe }}
-                                        {{ talk.name }}
-                                    {{ ('</a>' if talk.url) | safe }}
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-
-                </aside>
 
             </section>
 
         </div>
+
+        <section class="o-wrapper">
+
+            <h2>About {{ title }}</h2>
+
+            <div class="s-content">
+
+                {{ content | safe }}
+
+                {% if content | length == 0 %}
+                    <p>To be announced</p>
+                {% endif %}
+
+            </div>
+
+            {% if external %}
+                <aside>
+
+                    <ul>
+                        {% for item in external %}
+                            <li>
+                                {# My kingdom for a switch… #}
+                                {% if item.twitter %}
+                                    <a href="https://twitter.com/{{ item.twitter }}">@{{ item.twitter }}</a>
+                                {% elseif item.github %}
+                                    <a href="https://github.com/{{ item.github }}">Github</a>
+                                {% elseif item.website %}
+                                    <a href="{{ item.website }}">{{ item.website | replace("https://", "") | replace("http://", "") }}</a>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                </aside>
+            {% endif %}
+
+            {% if previous %}
+
+                <aside>
+
+                    <ul>
+                        {% for talk in previous %}
+                            <li>
+                                {{ ('<a href="' ~ talk.url ~ '" rel="external">' if talk.url) | safe }}
+                                    {{ talk.name }}
+                                    {{ ('<span>place = ' ~ talk.where ~ '</span>' if talk.where) | safe }}
+                                {{ ('</a>' if talk.url) | safe }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                </aside>
+
+            {% endif %}
+
+        </section>
+
+        <nav class="o-wrapper o-spacer">
+
+            {#
+                Next / Prev in collection links
+                Modifed from:
+                https://github.com/11ty/eleventy/issues/211#issuecomment-419634985
+                TODO: Bring into meta
+            #}
+            {% macro getSiblingLinks(collection, direction) %}
+
+                {% set currentItemIndex = 0 %}
+                {% set countOfItems = collections[collection].length %}
+
+                {% if direction == 'previous' %}
+                    {% set advance = -1 %}
+                {% else %}
+                    {% set advance = 1 %}
+                {% endif %}
+
+                {% for item in collections[collection] %}
+                    {% if item.url == page.url %}
+                        {% set currentItemIndex = loop.index0 %}
+                    {% endif %}
+                {% endfor %}
+
+                {% set nextItemIndex = currentItemIndex + advance  %}
+                {% set nextItem = collections[collection][nextItemIndex] %}
+
+                {% if nextItem %}
+                    <a href="{{ nextItem.url | url }}" class="">{{ nextItem.data.title }}</a>
+                {% endif %}
+
+            {% endmacro %}
+
+            {{ getSiblingLinks('speakers', 'previous') }}
+
+            <a href="/speakers">View all speakers</a>
+
+            {{ getSiblingLinks('speakers') }}
+
+        </nav>
 
     </article>
 

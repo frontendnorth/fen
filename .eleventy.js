@@ -4,7 +4,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 module.exports = function(eleventyConfig) {
 
     // Define collections
-    eleventyConfig.addCollection('featuredSpeakers', collection => {
+    eleventyConfig.addCollection('speakers', collection => {
         return collection.getFilteredByGlob('src/_speakers/*.md').sort((a, b) => {
                 return a.data.featured - b.data.featured;
         });
@@ -15,6 +15,20 @@ module.exports = function(eleventyConfig) {
                 return a.data.time - b.data.time;
         });
     });
+
+    // Navigation
+    // Thanks, https://github.com/maxboeck/mxb/blob/master/src/includes/navigation.njk
+    eleventyConfig.addCollection('nav', function(collection) {
+        return collection.getFilteredByTag('nav').sort(function(a, b) {
+            return a.data.navOrder - b.data.navOrder
+        })
+    })
+
+    eleventyConfig.addCollection('navSecondary', function(collection) {
+        return collection.getFilteredByTag('navSecondary').sort(function(a, b) {
+            return a.data.navOrder - b.data.navOrder
+        })
+    })
 
     // Date formatting (human readable)
     // https://moment.github.io/luxon/docs/manual/formatting.html
