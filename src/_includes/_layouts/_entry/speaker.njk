@@ -12,21 +12,56 @@
 
             </header>
 
+            {% if image %}
+                <img
+                    src="{{ site.image_cdn }}{{ image }}?thumbnail=350"
+                    alt="Photograph of {{ title }}">
+            {% endif %}
+
             <section class="o-wrapper">
 
-                {% for talk in collections.schedule %}
+                {#
+                    Assign variables so that they are available outisde of the following loop.
+                    #twigLyfe x
+                #}
+                {% set talk_title = null %}
+                {% set talk_subtitle = null %}
+                {% set talk_content = null %}
 
+                {# Find talk attributes if available #}
+                {% for talk in collections.schedule %}
                     {# TODO: This feels like a hack #}
                     {% if page.fileSlug == talk.data.speaker %}
 
-                        <h2>{{ talk.data.title }}</h2>
-                        {{ ('<span>' ~ talk.data.subtitle ~ '</span>' if talk.data.subtitle) | safe }}
+                        {% set talk_title = talk.data.title %}
+                        {% set talk_subtitle = talk.data.subtitle %}
+                        {% set talk_content = talk.templateContent %}
 
-                        {{ talk.templateContent | safe }}
+                    {% endif %}
+                {% endfor %}
+
+                {% if talk_title %}
+
+                    <h2>{{ talk.data.title }}</h2>
+                    {{ ('<span>' ~ talk_subtitle ~ '</span>' if talk_subtitle) | safe }}
+
+                    {% if talk_content %}
+
+                        <div class="s-content">
+                            {{ talk_content | safe }}
+                        </div>
+
+                    {% else %}
+
+                        <p>Talk content TBA</p>
 
                     {% endif %}
 
-                {% endfor %}
+                {% else %}
+
+                    <p>Talk title TBA.</p>
+
+                {% endif %}
 
             </section>
 
