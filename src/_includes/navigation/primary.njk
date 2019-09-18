@@ -1,0 +1,19 @@
+{#
+    Primary navigation menu
+#}
+<nav>
+    <ul class="o-menu o-menu--horizontal@lg c-navigation-primary c-navigation-primary">
+        {%- for nav in collections.nav -%}
+            {% set isCurrent = (nav.url == page.url) %}
+            {% set isParent = nav.url != '/' and nav.url in page.url -%}
+            <li class="c-navigation-primary__item {{ 'c-navigation-primary__item--home' if loop.index0 == 0 }}">
+                <a
+                    {% if isCurrent %}aria-current="page"{% endif %}
+                    href="{{ nav.url | url }}"
+                    class="o-menu__action c-navigation-primary__action {% if isCurrent or isParent %}is-here{% endif %}">
+                    {{- nav.data.navTitle or nav.data.title -}}
+                </a>
+            </li>
+        {%- endfor %}
+    </ul>
+</nav>

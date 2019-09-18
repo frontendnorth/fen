@@ -1,0 +1,74 @@
+/**
+ *	Menu
+ *
+ *	Layout for the generic 'menu-like' objects.
+ *
+ **/
+
+.o-menu {
+
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	&__item,
+	> li {
+		padding-bottom: 1em;
+
+		&:last-child {
+			padding-bottom: inherit;
+		}
+	}
+
+		&__action {
+			display: block; // maximise clickable area
+		}
+
+	&--tight {
+		> .o-menu__item {
+			display: flex;
+			padding-bottom: 0;
+			width: 100%;
+		}
+	}
+
+	// variations
+	// horizontal
+	@mixin horizontal-rules {
+
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+
+		> li {
+			// display: flex;
+			padding-bottom: 0;
+			padding-right: 1em;
+
+			&:last-child {
+				padding-right: 0;
+			}
+
+			> * {
+				// flex: 1;
+			}
+		}
+	}
+
+	&--horizontal {
+		@include horizontal-rules();
+	}
+
+	&--horizontal\@md {
+		@include mq(sm) {
+			@include horizontal-rules();
+		}
+	}
+
+	&--horizontal\@lg {
+		@include mq(md) {
+			@include horizontal-rules();
+		}
+	}
+
+}
