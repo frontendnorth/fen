@@ -42,7 +42,7 @@
 
                 {% if talk_title %}
 
-                    <h2>{{ talk.data.title }}</h2>
+                    <h2>{{ talk_title }}</h2>
                     {{ ('<span>' ~ talk_subtitle ~ '</span>' if talk_subtitle) | safe }}
 
                     {% if talk_content %}
@@ -106,13 +106,17 @@
 
                 <aside>
 
+                    <h2>Previous talks</h2>
+
                     <ul>
                         {% for talk in previous %}
-                            <li>
-                                {{ ('<a href="' ~ talk.url ~ '" rel="external">' if talk.url) | safe }}
-                                    {{ talk.name }}
-                                    {{ ('<span>place = ' ~ talk.where ~ '</span>' if talk.where) | safe }}
-                                {{ ('</a>' if talk.url) | safe }}
+                            <li class="c-teaser">
+                                <h3 class="c-teaser__title">
+                                    {{ ('<a href="' ~ talk.url ~ '" rel="external">' if talk.url) | safe }}
+                                        {{ talk.name }}
+                                    {{ ('</a>' if talk.url) | safe }}
+                                </h3>
+                                {{ ('<span class="c-teaser__meta">' ~ talk.where ~ '</span>' if talk.where) | safe }}
                             </li>
                         {% endfor %}
                     </ul>
@@ -133,7 +137,7 @@
             #}
             {% macro getSiblingLinks(collection, direction) %}
 
-                {% set currentItemIndex = 0 %}
+                {% set currentIndex = 0 %}
                 {% set countOfItems = collections[collection].length %}
 
                 {% if direction == 'previous' %}
@@ -144,22 +148,35 @@
 
                 {% for item in collections[collection] %}
                     {% if item.url == page.url %}
-                        {% set currentItemIndex = loop.index0 %}
+                        {% set currentIndex = loop.index0 %}
                     {% endif %}
                 {% endfor %}
 
-                {% set nextItemIndex = currentItemIndex + advance  %}
-                {% set nextItem = collections[collection][nextItemIndex] %}
+                {% set siblingIndex = currentIndex + advance  %}
+                {% set sibling = collections[collection][siblingIndex] %}
 
-                {% if nextItem %}
-                    <a href="{{ nextItem.url | url }}" class="">{{ nextItem.data.title }}</a>
+                {% if sibling %}
+                    <span class="c-teaser">
+                        <span class="c-teaser__title">
+                            <a
+                                href="{{ sibling.url | url }}"
+                                rel="{{ "prev" if direction == 'previous' else "next" }}"
+                                title="View the {{ "previous" if direction == 'previous' else "next" }} speaker: {{ sibling.data.title }}">
+                                {{ sibling.data.title }}
+                            </a>
+                        </span>
+                    </span>
                 {% endif %}
 
             {% endmacro %}
 
             {{ getSiblingLinks('speakers', 'previous') }}
 
-            <a href="/speakers">View all speakers</a>
+            <span class="c-teaser">
+                <span class="c-teaser__title">
+                    <a href="/speakers">View all speakers</a>
+                </span>
+            </span>
 
             {{ getSiblingLinks('speakers') }}
 
