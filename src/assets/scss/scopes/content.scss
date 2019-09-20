@@ -9,6 +9,11 @@
 
     a:not(.c-button) {
         @include link-rules();
+
+        // on a dark background
+        .c-inverted & {
+            @include link-rules-background($color-text-white);
+        }
     }
 
     .c-button {

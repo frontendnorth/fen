@@ -6,17 +6,24 @@
  *
  **/
 
+// Can be used to overwrite default link-rules (see: `.s-content .c-inverted`)
+@mixin link-rules-background($color: $color-brand-secondary) {
+	background-image:
+		linear-gradient(to top,
+			$color 0,
+			$color 2px,
+			rgba($color, .2) 2px,
+			rgba($color, .2) 100%),
+		linear-gradient(to top,
+			rgba($color, .2) 100%,
+			rgba($color, .2) 100%);
+}
+
 // Include as mixin, for consumption elsewhere.
-@mixin link-rules {
-	background:
-		linear-gradient(to top,
-			$color-brand-secondary 0,
-			$color-brand-secondary 2px,
-			rgba($color-brand-secondary, .2) 2px,
-			rgba($color-brand-secondary, .2) 100%),
-		linear-gradient(to top,
-			rgba($color-brand-secondary, .2) 100%,
-			rgba($color-brand-secondary, .2) 100%);
+@mixin link-rules() {
+
+	@include link-rules-background;
+
 	background-repeat: no-repeat;
 	background-size: 100%,
 		100% 0;
