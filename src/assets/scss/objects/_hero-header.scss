@@ -17,7 +17,6 @@
 		margin: 0 auto;
 		padding: $space-xxl 0;
 		position: relative;
-		text-align: center;
 		z-index: 2; // lift above image
 
 		@include mq(xs) {
@@ -26,7 +25,6 @@
 		}
 
 		@include mq(sm) {
-			text-align: left;
 			padding-top: $space-xxxl;
 			padding-bottom: $space-xxxl;
 		}
@@ -68,10 +66,12 @@
 				$space-xxl
 				auto;
 			position: relative;
+			text-align: center;
 			max-width: 500px;
 
 			@include mq(sm) {
 				margin-left: 0;
+				text-align: left;
 			}
 
 			@include mq($from: lg, $and: '(min-height: 900px)') {
