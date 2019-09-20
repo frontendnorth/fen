@@ -16,11 +16,11 @@ $color-bg-white: #fdfdfd;
 
 
 // gradients
-$color-gradient-primary-dark: #2674fb;
-$color-gradient-primary-light: #6913cc;
+$color-gradient-primary-dark: #6913cc;
+$color-gradient-primary-light: #2674fb;
 $color-gradient-primary: linear-gradient(to bottom,
-    $color-gradient-primary-light,
-    $color-gradient-primary-dark);
+    $color-gradient-primary-dark,
+    $color-gradient-primary-light);
 $color-gradient-secondary-dark: #ff7723;
 $color-gradient-secondary-light: #ffb92d;
 $color-gradient-secondary: linear-gradient(to bottom,

@@ -51,8 +51,8 @@
 	// custom for homepage
 	&--hero-gradient {
 		background: linear-gradient(to bottom,
-		    $color-gradient-primary-light 0,
-		    $color-gradient-primary-dark 850px);
+		    $color-gradient-primary-dark 0,
+		    $color-gradient-primary-light 650px);
 	}
 
 	&--drop-shadow {
