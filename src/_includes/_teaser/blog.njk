@@ -6,7 +6,12 @@
     <div class="c-teaser__excerpt">
         <p>
             {# Use body copy as excerpt unless frontmatter available  #}
-            {{ post.data.excerpt if post.data.excerpt else post.templateContent | striptags(true) | truncate(200) }}
+            {% set teaser_length = 200 %}
+            {% if post.data.excerpt %}
+                {{ post.data.excerpt | striptags(true) | truncate(teaser_length) }}
+            {% else %}
+                {{ post.data.intro | striptags(true) | truncate(teaser_length) if post.data.intro else post.templateContent | striptags(true) | truncate(teaser_length) }}
+            {% endif %}
         </p>
     </div>
 </article>
