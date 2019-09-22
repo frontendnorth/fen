@@ -12,9 +12,12 @@ html {
 	line-height: map-get($line-height-base, default);
 	scroll-behavior: smooth;
 
+	@include mq(md) { // TODO: down to sm?
+		line-height: map-get($line-height-base, md);
+	}
+
 	@include mq(lg) {
 		font-size: map-get($font-size-base, lg);
-		line-height: map-get($line-height-base, lg);
 	}
 
 }
