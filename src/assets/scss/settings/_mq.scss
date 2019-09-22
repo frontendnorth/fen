@@ -14,9 +14,10 @@ $mq-breakpoints: (
     sm: 700px,
     md: 1050px,
     lg: 1300px,
+    xl: 1600px,
 
     // Tweakpoints
-
+    mdPlus: 1200px,
 );
 
 // @debug map-get($mq-breakpoints, maximum);

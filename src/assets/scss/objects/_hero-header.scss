@@ -6,6 +6,13 @@
  **/
 
 .o-hero-header {
+
+	$image-size: 200px;
+	$image-size-md: 400px;
+	$image-size-md-plus: 600px;
+	$image-size-lg: 725px;
+	$image-size-xl: 825px;
+
 	overflow: hidden;
 	position: relative;
 
@@ -14,7 +21,7 @@
 	}
 
 	&__copy {
-		margin: 0 auto;
+		// margin: 0 auto; // TODO: in wrapper
 		padding: $space-xxl 0;
 		position: relative;
 		z-index: 2; // lift above image
@@ -116,6 +123,68 @@
 		}
 
 		&__image {
+			display: none; // TODO: clip-path alternative
+			margin: 0 auto;
+
+			@supports(clip-path: url('#svgPath')) {
+				display: block;
+				height: $image-size;
+				background: rgba(#000, .25);
+				clip-path: url('#svgPath');
+				position: relative;
+				width: $image-size;
+
+				> img {
+					bottom: 0;
+					height: 100%;
+					position: absolute;
+					min-width: 100%;
+				}
+			}
+
+			@include mq(md) {
+				bottom: 0;
+				height: $image-size-md;
+				margin: 0;
+				margin-bottom: -(($image-size-md /2) + $space-xxl); // +`o-spacer`
+				position: absolute;
+				right: ($width-page + $space-l + $space-xxl); // text + wrapper padding + comfy
+				width: $image-size-md;
+			}
+
+			@include mq(mdPlus) {
+				height: $image-size-md-plus;
+				margin-bottom: -(($image-size-md-plus /2) + $space-xxl);
+				right: ($width-page + $space-l + $space-xxl);
+				width: $image-size-md-plus;
+			}
+
+			@include mq(lg) {
+				height: $image-size-lg;
+				margin-bottom: -(($image-size-lg /2) + $space-xxl);
+				width: $image-size-lg;
+			}
+
+			@include mq(xl) {
+				height: $image-size-xl;
+				width: $image-size-xl;
+
+				> img {
+					// height: calc(100% - 400px);
+				}
+			}
+
+			// IE / Edge tells stinking LIES about support of clip-path, so…
+			@supports (-ms-ime-align:auto) {
+				display: none;
+			}
+
+		}
+
+	// homepage variations
+	&--home {
+	.o-hero-header {
+		&__image {
 			display: none; // TODO: Landscape image for mobile?
 
 			@supports(clip-path: url('#svgPath')) {
@@ -123,8 +192,6 @@
 					display: flex;
 					height: 900px;
 					margin-left: 200px;
-					background: rgba(#000, .25);
-					clip-path: url('#svgPath');
 					bottom: 0;
 					left: 40%;
 					position: absolute;
@@ -133,12 +200,9 @@
 					width: 900px;
 
 					> img {
-						bottom: 0;
-						height: 100%;
 						height: calc(100% - 250px);
 						left: -12%;
 						position: absolute;
-						min-width: 100%;
 					}
 				}
 
@@ -159,12 +223,8 @@
 					}
 				}
 			}
-
-			// IE / Edge tells stinking LIES about support of clip-path, so…
-			@supports (-ms-ime-align:auto) {
-				display: none;
-			}
-
 		}
+	}
+	}
 
 }

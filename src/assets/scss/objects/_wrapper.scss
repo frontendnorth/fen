@@ -19,6 +19,34 @@
 	max-width: ($width-page + ($space-l *2));
 
 	// variations
+	&--has-sidebar {
+		@include mq(md) {
+			max-width: 1120px;
+		}
+	}
+
+		// Use with…
+		&__primary {
+			@include mq(md) {
+				float: right;
+				width: $width-page;
+				max-width: 100%;
+				clear: right;
+
+				// Floats impact margin between headings and body copy
+				> * {
+					margin-top: 0;
+				}
+			}
+		}
+
+		&__secondary {
+			@include mq(md) {
+				float: left;
+				padding-left: $space-l;
+			}
+		}
+
 	&--wide {
 		max-width: $width-page-max;
 

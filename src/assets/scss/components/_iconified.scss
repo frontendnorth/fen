@@ -1,0 +1,36 @@
+/**
+ *	Iconified
+ *
+ *	aka iconized, item with an icon… or something
+ *
+ **/
+
+.c-iconified {
+
+	color: $color-text-reduced;
+	display: inline-block;
+	font-weight: 600;
+	text-decoration: none;
+
+	&:focus,
+	&:hover {
+		color: darken($color-text-reduced, 20);
+	}
+
+	&__icon {
+		background-color: rgba($color-text-reduced, .8);
+		border-radius: 50%;
+		display: inline-block;
+		height: $icon-size;
+		margin-right: $space-l;
+		overflow: hidden;
+		vertical-align: middle;
+		width: $icon-size;
+	}
+
+		&:focus &__icon,
+		&:hover &__icon {
+			background-color: darken($color-text-reduced, .8);
+		}
+
+}

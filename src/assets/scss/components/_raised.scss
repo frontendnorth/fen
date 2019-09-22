@@ -19,6 +19,9 @@
 		'secondary': (
 	 		color: $color-brand-secondary
 		),
+		'light-opaque': (
+	 		color: rgba(#fff, .15)
+		),
 		'gradient-primary': (
 			image: $color-gradient-primary
 		)
