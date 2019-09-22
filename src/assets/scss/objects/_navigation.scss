@@ -1,0 +1,55 @@
+/**
+ *	Navigation
+ *
+ *	Placement of the primary navigation menu and controls.
+ *
+ **/
+
+.o-navigation {
+
+	// Var-in' this as it's likely to be tweaked independantly from other layout
+	@include mq-add-breakpoint(navigationBreak, map-get($mq-breakpoints, "sm"));
+
+	position: absolute;
+	z-index: 20;
+
+	@include mq(navigationBreak) {
+		box-sizing: border-box;
+		background: rgba(#000, .25);
+		margin: 0 auto;
+		padding-left: $space-l;
+		padding-right: $space-l;
+		width: 100%;
+	}
+
+	&__menu {
+
+		@include mq($until: navigationBreak) {
+			position: fixed;
+			right: -100%;
+			width: 100%;
+
+			&.is-open {
+				right: 0;
+			}
+		}
+
+		@include mq(navigationBreak) {
+			margin: 0 auto;
+			max-width: $width-page-max; // matches `o-wrapper`
+			right: 0;
+		}
+	}
+
+	&__trigger {
+		bottom: $space-l;
+		display: block;
+		position: fixed;
+		right: $space-l;
+
+		@include mq(navigationBreak) {
+			display: none;
+		}
+	}
+
+}

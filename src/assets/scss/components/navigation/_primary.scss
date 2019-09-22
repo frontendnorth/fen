@@ -1,0 +1,89 @@
+/**
+ *	Primary navigation
+ *
+ *	Interaction and styling.
+ *	`navigationBreak` set in `o-navigation`
+ *
+ **/
+
+.c-navigation-primary {
+
+
+
+
+
+	@include mq(navigationBreak) {
+		box-sizing: border-box;
+		font-size: map-get($type-scale-major-second, l);
+		font-weight: 600;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+
+	&__item {
+		@include mq(navigationBreak) {
+			padding: $space-default
+				$space-s;
+			position: relative;
+
+			// divider
+			&::before {
+				@include pseudo();
+
+				border-left: 2px solid rgba($color-text-white, .35);
+				height: 1em;
+				left: -1px;
+				top: 50%;
+				margin-top: -.5em;
+			}
+
+				&:first-child::before {
+					display: none;
+				}
+
+			&--home {
+				// position
+				display: none;
+
+				+ * {
+					&::before {
+						display: none;
+					}
+				}
+			}
+		}
+
+		@include mq($until: navigationBreak) {
+			.is-open & {
+
+			}
+		}
+	}
+
+		&__action {
+			color: $color-text-white;
+			text-decoration: none;
+
+			&.is-here,
+			&:focus,
+			&:hover {
+				outline: none;
+			}
+
+			@include mq(navigationBreak) {
+				border-radius: $radius-default;
+				padding: $space-l;
+				padding: calc(#{$space-l} - .3em) // inc. line-height
+					$space-l;
+				// TODO: want this to be a slidey-boi ヽ( _ _ヽ)彡
+				transition: background linear .1s;
+
+				&.is-here,
+				&:focus,
+				&:hover {
+					background-color: rgba($color-bg-white, .35);
+				}
+			}
+		}
+
+}

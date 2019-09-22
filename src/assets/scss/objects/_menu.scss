@@ -11,10 +11,7 @@
 	margin: 0;
 	padding: 0;
 
-	&__item,
-	> li {
-		padding-bottom: 1em;
-
+	&__item {
 		&:last-child {
 			padding-bottom: inherit;
 		}
@@ -40,9 +37,7 @@
 		flex-direction: row;
 		align-items: stretch;
 
-		> li {
-			// display: flex;
-			padding-bottom: 0;
+		&__item {
 			padding-right: 1em;
 
 			&:last-child {
