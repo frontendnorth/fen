@@ -1,0 +1,20 @@
+{#
+    External links list
+#}
+
+{% import "_macros/icons.njk" as icons %}
+
+<ul class="o-menu">
+    {% for item in external %}
+        <li>
+            {# My kingdom for a switch… #}
+            {% if item.twitter %}
+                {{ icons.iconItem(item.twitter, 'twitter') }}
+            {% elseif item.github %}
+                {{ icons.iconItem(item.github, 'github') }}
+            {% elseif item.website %}
+                {{ icons.iconItem(item.website) }}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

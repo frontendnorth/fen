@@ -1,11 +1,19 @@
-<article class="c-">
-    <h3 class="c-">
-        <a href="{{ speaker.url }}">{{ speaker.data.title }}</a>
-    </h3>
-    <span class="">
-        {{ speaker.data.role }} {{ speaker.data.place }}
-    </span>
-    {% if speaker.data.thumbnail %}
-        <img src="{{ site.image_cdn }}{{ speaker.data.thumbnail }}" alt="">
+<article class="c-teaser c-teaser--speaker{{ ' c-teaser--inverted' if inverted }}">
+    <div class="c-teaser__text">
+        <h3 class="c-teaser__title">
+            <a href="{{ speaker.url }}">{{ speaker.data.title }}</a>
+        </h3>
+        {% if speaker.data.role %}
+            <span class="c-teaser__meta c-teaser__meta--important">
+                {{ speaker.data.role }}
+            </span>
+        {% endif %}
+    </div>
+    {% if speaker.data.image %}
+        <div class="c-teaser__image">
+            <img
+                src="{{ site.image_cdn }}{{ speaker.data.image }}?thumbnail=100"
+                alt="">
+        </div>
     {% endif %}
 </article>

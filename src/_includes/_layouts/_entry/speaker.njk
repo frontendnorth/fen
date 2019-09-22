@@ -6,72 +6,94 @@
 
         <div class="o-spacer c-raised--hero-gradient c-inverted">
 
-            <header class="o-hero-header__copy o-wrapper">
+            <div class="o-wrapper o-wrapper--has-sidebar o-spacer">
 
-                <h1 class="c-inverted">{{ title }}</h1>
+                <header class="o-wrapper__primary o-hero-header__copy">
 
-            </header>
-
-            {% if image %}
-                <img
-                    src="{{ site.image_cdn }}{{ image }}?thumbnail=350"
-                    alt="Photograph of {{ title }}">
-            {% endif %}
-
-            <section class="o-wrapper">
-
-                {#
-                    Assign variables so that they are available outisde of the following loop.
-                    #twigLyfe x
-                #}
-                {% set talk_title = null %}
-                {% set talk_subtitle = null %}
-                {% set talk_content = null %}
-
-                {# Find talk attributes if available #}
-                {% for talk in collections.schedule %}
-                    {# TODO: This feels like a hack #}
-                    {% if page.fileSlug == talk.data.speaker %}
-
-                        {% set talk_title = talk.data.title %}
-                        {% set talk_subtitle = talk.data.subtitle %}
-                        {% set talk_content = talk.templateContent %}
-
-                    {% endif %}
-                {% endfor %}
-
-                {% if talk_title %}
-
-                    <h2>{{ talk_title }}</h2>
-                    {{ ('<span>' ~ talk_subtitle ~ '</span>' if talk_subtitle) | safe }}
-
-                    {% if talk_content %}
-
-                        <div class="s-content">
-                            {{ talk_content | safe }}
-                        </div>
-
-                    {% else %}
-
-                        <p>Talk content TBA</p>
-
+                    <h1 class="c-inverted">{{ title }}</h1>
+                    {% if role %}
+                        <span class="c-meta">
+                            {{ role }}
+                        </span>
                     {% endif %}
 
-                {% else %}
+                </header>
 
-                    <p>Talk title TBA.</p>
-
+                {% if image %}
+                    <div class="o-hero-header__image">
+                        <img
+                            src="{{ site.image_cdn }}{{ image }}?thumbnail=350"
+                            alt="Photograph of {{ title }}">
+                    </div>
                 {% endif %}
 
-            </section>
+            </div>
+
+            {#
+                Assign variables so that they are available outisde of the following loop.
+                #twigLyfe x
+            #}
+            {% set talk_title = null %}
+            {% set talk_subtitle = null %}
+            {% set talk_content = null %}
+
+            {# Find talk attributes if available #}
+            {% for talk in collections.schedule %}
+                {#
+                    TODO: This feels like a hack
+                    "Custom filter"?
+                #}
+                {% if page.fileSlug == talk.data.speaker %}
+
+                    {% set talk_title = talk.data.title %}
+                    {% set talk_subtitle = talk.data.subtitle %}
+                    {% set talk_content = talk.templateContent %}
+
+                {% endif %}
+            {% endfor %}
+
+            <div class="c-raised--light-opaque">
+
+                <section class="o-wrapper o-wrapper--has-sidebar">
+                    <div class="o-wrapper__primary">
+
+                        {% if talk_title %}
+
+                            <h2 class="c-inverted">{{ talk_title }}</h2>
+                            {{ ('<span class="c-meta">' ~ talk_subtitle ~ '</span>' if talk_subtitle) | safe }}
+
+                            {% if talk_content %}
+
+                                <div class="s-content c-lede">
+                                    {{ talk_content | safe }}
+                                </div>
+
+                            {% else %}
+
+                                <p>Talk content TBA</p>
+
+                            {% endif %}
+
+                        {% else %}
+
+                            <p>Talk title TBA.</p>
+
+                        {% endif %}
+
+                    </div>
+                </section>
+
+            </div>
 
         </div>
 
-        <section class="o-wrapper">
+        <section class="o-wrapper o-wrapper--has-sidebar o-spacer">
 
-            <h2>About {{ title }}</h2>
+            <div class="o-wrapper__primary">
+                <h2>About {{ title }}</h2>
+            </div>
 
-            <div class="s-content">
+            <div class="o-wrapper__primary o-spacer s-content">
 
                 {{ content | safe }}
 
@@ -82,41 +104,30 @@
             </div>
 
             {% if external %}
-                <aside>
+                <aside class="o-wrapper__secondary o-spacer">
 
-                    <ul>
-                        {% for item in external %}
-                            <li>
-                                {# My kingdom for a switch… #}
-                                {% if item.twitter %}
-                                    <a href="https://twitter.com/{{ item.twitter }}">@{{ item.twitter }}</a>
-                                {% elseif item.github %}
-                                    <a href="https://github.com/{{ item.github }}">Github</a>
-                                {% elseif item.website %}
-                                    <a href="{{ item.website }}">{{ item.website | replace("https://", "") | replace("http://", "") }}</a>
-                                {% endif %}
-                            </li>
-                        {% endfor %}
-                    </ul>
+                    {% include "external-links.njk" %}
 
                 </aside>
             {% endif %}
 
             {% if previous %}
 
-                <aside>
+                <aside class="o-wrapper__primary">
 
                     <h2>Previous talks</h2>
 
-                    <ul>
+                    <ul class="o-menu">
                         {% for talk in previous %}
-                            <li class="c-teaser">
-                                <h3 class="c-teaser__title">
-                                    {{ ('<a href="' ~ talk.url ~ '" rel="external">' if talk.url) | safe }}
-                                        {{ talk.name }}
-                                    {{ ('</a>' if talk.url) | safe }}
-                                </h3>
-                                {{ ('<span class="c-teaser__meta">' ~ talk.where ~ '</span>' if talk.where) | safe }}
+                            <li class="">
+                                <div class="c-teaser">
+                                    <h3 class="c-teaser__title">
+                                        {{ ('<a href="' ~ talk.url ~ '" rel="external">' if talk.url) | safe }}
+                                            {{ talk.name }}
+                                        {{ ('</a>' if talk.url) | safe }}
+                                    </h3>
+                                    {{ ('<span class="c-teaser__meta">' ~ talk.where ~ '</span>' if talk.where) | safe }}
+                                </div>
                             </li>
                         {% endfor %}
                     </ul>
@@ -183,5 +194,7 @@
         </nav>
 
     </article>
+
+    {% include "image-clipper.njk" %}
 
 {% endblock %}

@@ -1,0 +1,25 @@
+{#
+    Icons
+#}
+
+{# Icon #}
+{% macro icon(icon='website') %}
+    <svg aria-hidden="true" role="presentation" class="c-icon">
+        <use href="#{{ service.icon }}"></use>
+    </svg>
+    icon: {{ icon }}
+{% endmacro %}
+
+{# Iconified icon #}
+{% macro iconItem(url, service = null) %}
+    <a href="{% if service == 'twitter' -%}
+            https://twitter.com/
+        {%- elif service == 'github' -%}
+            https://github.com/
+        {%- endif %}{{ url }}" class="c-iconified">
+        <span class="c-iconified__icon">
+            {{ icon(service) }}
+        </span>{# close dat gaaaaap ヘ(◕。◕ヘ)
+        #}{{ '@' if service == 'twitter' }}{{ url | replace("https://", "") | replace("http://", "") }}
+    </a>
+{% endmacro %}
