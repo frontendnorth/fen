@@ -23,7 +23,6 @@
 	}
 
 	&__menu {
-
 		@include mq($until: navigationBreak) {
 			position: fixed;
 			right: -100%;

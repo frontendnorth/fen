@@ -17,13 +17,18 @@
 		font-size: map-get($type-scale-major-second, l);
 		font-weight: 600;
 		line-height: 1.2;
+		padding: $space-default 0;
 		text-transform: uppercase;
+	}
+
+	@include mq(lg) {
+		padding-top: $space-l;
+		padding-bottom: $space-l;
 	}
 
 	&__item {
 		@include mq(navigationBreak) {
-			padding: $space-default
-				$space-s;
+			padding: 0 $space-s;
 			position: relative;
 
 			// divider
