@@ -1,0 +1,28 @@
+/**
+ *	Speaker grid
+ *
+ *	For displaying a grid of speakers
+ *
+ **/
+
+.o-speaker-grid {
+
+	list-style: none;
+	margin: 0
+		0
+		$space-xl
+		0;
+	padding: 0;
+
+	@supports (display: grid) {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+		// TODO: support? grid-gap: $space-xl;
+		gap: $space-xl;
+	}
+
+	&__item {
+
+	}
+
+}

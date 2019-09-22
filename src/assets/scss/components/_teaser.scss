@@ -8,9 +8,23 @@
 
 .c-teaser {
 
+	clear: both;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	// overflow: hidden;
 	position: relative;
 
+	// To differentiate from `__image` - not always required
+	&__text {
+		flex: 1 0 0;
+		// When used, assume an image is alongside, so…
+		margin-top: $space-l;
+	}
+
 	&__title {
+		flex: 0 1 100%;
 		font-size: map-get($type-scale-major-second, l);
 		font-weight: 900;
 		margin-top: 0;
@@ -58,18 +72,90 @@
 
 	&__meta {
 		display: block;
+		flex: 0 1 100%;
 		font-size: map-get($type-scale-major-second, xs);
 		font-weight: 600;
+		line-height: 1.3;
 		margin-bottom: 0;
+
+		&--important {
+			font-size: map-get($type-scale-major-second, s);
+		}
 	}
 
 	&__excerpt {
 		margin-top: $space-default; // consistent space with or without meta
 		font-size: map-get($type-scale-major-second, s);
+
+		> *:first-child {
+			margin-top: 0;
+		}
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	h2 + & {
 		margin-top: -.5em;
+	}
+
+	// If used, requires `__text` to accompany this
+	&__image {
+		background: $color-text-base;
+		border-radius: $radius-default;
+		flex: 0 0 auto;
+		height: 100px;
+		margin-right: $space-l;
+		overflow: hidden; // for the rounded corners
+		position: relative;
+		order: -1;
+		z-index: -1;
+		width: 100px;
+
+		// Split declaration so that lack of support for `:focus-within`
+		// does not result in rejection of everything
+		@mixin image-interaction {
+			filter: brightness(1.05);
+		}
+
+		// TODO: Zoom in effect instead?
+		.c-teaser:hover & {
+			@include image-interaction();
+		}
+		.c-teaser:focus-within & {
+			@include image-interaction();
+		}
+
+		img {
+			height: 100%;
+			object-fit: cover;
+			width: 100%;
+		}
+	}
+
+
+	// Variation: inverted
+	&--inverted {
+		.c-teaser {
+			&__title {
+				a {
+					color: $color-text-white;
+
+					@supports (-webkit-text-fill-color: transparent) {
+						background-image: linear-gradient(
+							to right,
+							$color-brand-secondary,
+							$color-brand-secondary 50%,
+							$color-text-white 50%);
+					}
+				}
+			}
+
+			&__meta {
+				color: rgba($color-text-white, .7);
+			}
+		}
 	}
 
 }

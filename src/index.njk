@@ -9,7 +9,7 @@ navOrder: 0
 
 {% block main %}
 
-    <header class="o-hero-header o-spacer c-raised--hero-gradient c-inverted">
+    <header class="o-hero-header o-hero-header--home o-spacer c-raised--hero-gradient c-inverted">
 
         <div class="o-wrapper o-hero-header__copy">
             <div class="o-hero-header__logo">
@@ -39,7 +39,7 @@ navOrder: 0
                 </div> #}
 
             </div>
-
+{#
             <div class="o-hero-header__social">
                 <span class="c-lede"><strong>Stay in touch:</strong></span>
 
@@ -79,21 +79,26 @@ navOrder: 0
                 {% include "signup.njk" %}
 
             </div>
-{#
+#}
             <section class="">
 
-                <h2>Our speakers</h2>
+                <h2 class="c-inverted">Our speakers</h2>
 
-                {% for speaker in collections.speakers %}
-                    {% if speaker.data.featured %}
-                        {% include "_teaser/speaker.njk" %}
-                    {% endif %}
-                {% endfor %}
+                <ul class="o-speaker-grid">
+                    {% for speaker in collections.speakers %}
+                        {% if speaker.data.featured %}
+                            <li class="o-speaker-grid__item">
+                                {% set inverted = true %}
+                                {% include "_teaser/speaker.njk" %}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
 
                 <a href="/speakers/" class="c-button">View the full line-up</a>
 
             </section>
- #}
+
         </div>
         <div class="o-hero-header__image">
             <img
@@ -133,7 +138,7 @@ navOrder: 0
             </div>
 
         </section>
-{#
+
         <section class="o-spacer">
 
             <h2>Blog</h2>
@@ -145,7 +150,7 @@ navOrder: 0
             <a href="/blog/" class="c-button">View all updates</a>
 
         </section>
- #}
+
     </div>
 
     {% include "image-clipper.njk" %}
