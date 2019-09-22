@@ -7,11 +7,15 @@
 
 .o-hero-header {
 
-	$image-size: 200px;
-	$image-size-md: 400px;
-	$image-size-md-plus: 600px;
-	$image-size-lg: 725px;
-	$image-size-xl: 825px;
+	$image-size: $space-xxxl;
+	$image-size-sm: $space-xxxl *1.5;
+	$image-size-md: $space-xxxl *3;
+	$image-size-md-plus: $space-xxxl *4;
+	$image-size-lg: $space-xxxl *5;
+	$image-size-xl: $space-xxxl *6;
+
+	// When things get awkward around the face…
+	@include mq-add-breakpoint(faceBreak, 450px);
 
 	overflow: hidden;
 	position: relative;
@@ -21,25 +25,30 @@
 	}
 
 	&__copy {
-		// margin: 0 auto; // TODO: in wrapper
 		padding: $space-xxl 0;
 		position: relative;
 		z-index: 2; // lift above image
 
-		@include mq(xs) {
-			// padding-left: $space-xl;
-			// padding-right: $space-xl;
+		@include mq(faceBreak) {
+			padding-right: ($image-size + $space-xl) ; // clear image + padding
 		}
 
 		@include mq(sm) {
-			padding-top: $space-xxxl;
-			padding-bottom: $space-xxxl;
+			padding: $space-xxxl
+				($image-size-sm + $space-xl)
+				$space-xxl
+				0;
 		}
 
 		@include mq(md) {
 			// TODO: remove 100px when menu added
-			padding: ($space-xxxl +$space-xxl) 0 $space-xxxl 0;
+			padding-top: ($space-xxxl +$space-xxl);
+			padding-right: 0; // Let column `o-wrapper` system deal with this
 			max-width: $width-page;
+		}
+
+		> *:last-child {
+			margin-bottom: 0;
 		}
 	}
 
@@ -122,17 +131,23 @@
 			}
 		}
 
+		// This is usually a BEAUTIFUL face
 		&__image {
 			display: none; // TODO: clip-path alternative
-			margin: 0 auto;
+			margin: 0
+				auto
+				$space-xxl
+				auto;
 
 			@supports(clip-path: url('#svgPath')) {
 				display: block;
-				height: $image-size;
+				height: $image-size; // fallback
+				height: 66.66vw;
 				background: rgba(#000, .25);
 				clip-path: url('#svgPath');
 				position: relative;
 				width: $image-size;
+				width: 66.66vw;
 
 				> img {
 					bottom: 0;
@@ -142,36 +157,45 @@
 				}
 			}
 
+			@include mq(faceBreak) {
+				bottom: -$space-xl;
+				height: $image-size;
+				position: absolute;
+				right: $space-l;
+				width: $image-size;
+			}
+
+			@include mq(sm) {
+				height: $image-size-sm;
+				width: $image-size-sm;
+			}
+
 			@include mq(md) {
 				bottom: 0;
 				height: $image-size-md;
 				margin: 0;
-				margin-bottom: -(($image-size-md /2) + $space-xxl); // +`o-spacer`
-				position: absolute;
+				margin-bottom: -($image-size-md /2);
 				right: ($width-page + $space-l + $space-xxl); // text + wrapper padding + comfy
 				width: $image-size-md;
 			}
 
 			@include mq(mdPlus) {
 				height: $image-size-md-plus;
-				margin-bottom: -(($image-size-md-plus /2) + $space-xxl);
+				margin-bottom: -($image-size-md-plus /2);
 				right: ($width-page + $space-l + $space-xxl);
 				width: $image-size-md-plus;
 			}
 
 			@include mq(lg) {
 				height: $image-size-lg;
-				margin-bottom: -(($image-size-lg /2) + $space-xxl);
+				margin-bottom: -($image-size-lg /2);
 				width: $image-size-lg;
 			}
 
 			@include mq(xl) {
 				height: $image-size-xl;
+				margin-bottom: -($image-size-xl /2);
 				width: $image-size-xl;
-
-				> img {
-					// height: calc(100% - 400px);
-				}
 			}
 
 			// IE / Edge tells stinking LIES about support of clip-path, so…
@@ -184,6 +208,13 @@
 	// homepage variations
 	&--home {
 	.o-hero-header {
+
+		&__copy {
+			@include mq(lg) {
+				padding-bottom: $space-xxxl;
+			}
+		}
+
 		&__image {
 			display: none; // TODO: Landscape image for mobile?
 
