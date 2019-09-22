@@ -4,7 +4,7 @@ role: "Senior Developer, Litmus"
 image: "speakers/peter-aitken.jpg"
 external:
     - twitter: "jiggy_pete"
-    - website: "https://www.globaldiversitycfpday.com/"
+    - website: "https://www.globaldiversitycfpday.com"
 previous:
     - name: "How can our language and behaviour be more inclusive"
       where: "Utah JS 2017"

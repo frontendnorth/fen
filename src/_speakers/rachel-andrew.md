@@ -1,12 +1,12 @@
 ---
 title: "Rachel Andrew"
-role: "CSS WG Member, Smashing Magazine Editor in Chief"
+role: "Smashing Magazine Editor in Chief"
 role_long: "Writer, speaker, web developer, CSS Working Group Member, Smashing Magazine Editor in Chief"
 image: "speakers/rachel-andrew.jpg"
 image_attr: "Drew McLellan"
 external:
     - twitter: "rachelandrew"
-    - website: "https://rachelandrew.co.uk/"
+    - website: "https://rachelandrew.co.uk"
 previous:
     - name: "Refactoring (the way we talk about) CSS"
       where: "CSS Day 2019"
