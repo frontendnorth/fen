@@ -14,7 +14,7 @@ h1,
 	font-family: $font-brand;
 	font-size: map-get($type-scale-major-second, xxxl);
 	font-weight: 600;
-	line-height: 1;
+	line-height: 1.2;
 	margin: 1.5em 0;
 
 	@include mq(lg) {

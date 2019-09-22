@@ -6,7 +6,6 @@
 .c-lede {
 
 	font-size: map-get($type-scale-major-second, l);
-	line-height: map-get($line-height-base, default);
 
 	@include mq(lg) {
 		font-size: map-get($type-scale, l);

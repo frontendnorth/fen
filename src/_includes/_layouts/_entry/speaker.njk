@@ -6,13 +6,13 @@
 
         <div class="o-spacer c-raised--hero-gradient c-inverted">
 
-            <div class="o-wrapper o-wrapper--has-sidebar o-spacer">
+            <div class="o-wrapper o-wrapper--has-sidebar">
 
                 <header class="o-wrapper__primary o-hero-header__copy">
 
                     <h1 class="c-inverted">{{ title }}</h1>
                     {% if role %}
-                        <span class="c-meta">
+                        <span class="c-subheading">
                             {{ role }}
                         </span>
                     {% endif %}
@@ -22,7 +22,7 @@
                 {% if image %}
                     <div class="o-hero-header__image">
                         <img
-                            src="{{ site.image_cdn }}{{ image }}?thumbnail=350"
+                            src="{{ site.image_cdn }}{{ image }}?thumbnail=768"
                             alt="Photograph of {{ title }}">
                     </div>
                 {% endif %}
@@ -55,16 +55,16 @@
             <div class="c-raised--light-opaque">
 
                 <section class="o-wrapper o-wrapper--has-sidebar">
-                    <div class="o-wrapper__primary">
+                    <div class="o-wrapper__primary o-spacer o-spacer--flipped">
 
                         {% if talk_title %}
 
                             <h2 class="c-inverted">{{ talk_title }}</h2>
-                            {{ ('<span class="c-meta">' ~ talk_subtitle ~ '</span>' if talk_subtitle) | safe }}
+                            {{ ('<span class="c-subheading">' ~ talk_subtitle ~ '</span>' if talk_subtitle) | safe }}
 
                             {% if talk_content %}
 
-                                <div class="s-content c-lede">
+                                <div class="s-content">
                                     {{ talk_content | safe }}
                                 </div>
 
@@ -103,7 +103,11 @@
 
             </div>
 
-            {% if external %}
+            {#
+                Hide external links until talk content has been provided.
+                HARSH BUT FAIR
+            #}
+            {% if external and talk_content %}
                 <aside class="o-wrapper__secondary o-spacer">
 
                     {% include "external-links.njk" %}
