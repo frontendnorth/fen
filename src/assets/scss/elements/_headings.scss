@@ -48,6 +48,11 @@ h2,
 	& + p {
 		margin-top: 0;
 	}
+
+	// Headings can be stealthy links… always back this up with a button
+	a {
+		text-decoration: none;
+	}
 }
 
 h3,
