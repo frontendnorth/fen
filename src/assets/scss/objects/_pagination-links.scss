@@ -1,0 +1,51 @@
+/**
+ *	Pagination links
+ *
+ *	Bottom-of-page navigation
+ *
+ **/
+
+.o-pagination-links {
+
+	align-items: center;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	@include mq(sm) {
+		display: flex;
+	}
+
+	&__item {
+		flex: 1 1 33.333%;
+		margin-bottom: 1em;
+		text-align: left;
+
+		// Wish `:blank` was a thing so I didn't have to use `|trim` filters
+		&:empty {
+			margin-bottom: 0;
+		}
+
+		@include mq(sm) {
+			margin-bottom: 0;
+			text-align: center;
+		}
+
+		&:first-child {
+			display: none; // hide on mobile due to spacing issues
+			text-align: left;
+
+			@include mq(sm) {
+				display: block;
+			}
+		}
+
+		&:last-child {
+			@include mq(sm) {
+				text-align: right;
+			}
+		}
+	}
+
+}

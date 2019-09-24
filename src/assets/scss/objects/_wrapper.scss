@@ -19,6 +19,7 @@
 	max-width: ($width-page + ($space-l *2));
 
 	// variations
+	&--wide,
 	&--has-sidebar {
 		@include mq(md) {
 			max-width: 1120px;
@@ -46,30 +47,5 @@
 				padding-left: $space-l;
 			}
 		}
-
-	&--wide {
-		max-width: $width-page-max;
-
-		// Mainly for video-ratio consideration
-		// @media screen and (max-height: map-get($mq-breakpoints, depthSm)) {
-		// 	max-width: $width-page;
-		// }
-	}
-
-	&--no-padding {
-		padding-left: 0;
-		padding-right: 0;
-
-		&\@sm {
-			// @include mq($until: sm) {
-			// 	padding-left: 0;
-			// 	padding-right: 0;
-			// }
-		}
-	}
-
-	&--tight {
-		max-width: 50em;
-	}
 
 }

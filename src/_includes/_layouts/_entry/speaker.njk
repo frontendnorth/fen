@@ -87,7 +87,7 @@
 
         </div>
 
-        <section class="o-wrapper o-wrapper--has-sidebar o-spacer">
+        <section class="o-wrapper o-wrapper--has-sidebar o-spacer o-spacer--super">
 
             <div class="o-wrapper__primary">
                 <h2>About {{ title }}</h2>
@@ -142,13 +142,12 @@
 
         </section>
 
-        <nav class="o-wrapper o-spacer">
+        <nav class="o-wrapper o-wrapper--wide o-spacer">
 
             {#
                 Next / Prev in collection links
                 Modifed from:
                 https://github.com/11ty/eleventy/issues/211#issuecomment-419634985
-                TODO: Bring into meta
             #}
             {% macro getSiblingLinks(collection, direction) %}
 
@@ -185,15 +184,27 @@
 
             {% endmacro %}
 
-            {{ getSiblingLinks('speakers', 'previous') }}
+            <ol class="o-pagination-links">
 
-            <span class="c-teaser">
-                <span class="c-teaser__title">
-                    <a href="/speakers">View all speakers</a>
-                </span>
-            </span>
+                <li class="o-pagination-links__item">
+                    {{- getSiblingLinks('speakers', 'previous') | trim -}}
+                </li>
 
-            {{ getSiblingLinks('speakers') }}
+                <li class="o-pagination-links__item">
+
+                    <div class="c-teaser">
+                        <span class="c-teaser__title">
+                            <a href="/speakers">View all speakers</a>
+                        </span>
+                    </div>
+
+                </li>
+
+                <li class="o-pagination-links__item">
+                    {{- getSiblingLinks('speakers') | trim -}}
+                </li>
+
+            </ol>
 
         </nav>
 

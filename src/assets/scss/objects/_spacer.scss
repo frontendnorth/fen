@@ -14,4 +14,13 @@
 		margin-top: $space-xxl;
 	}
 
+	// DAS HUEG
+	&--super {
+		margin-bottom: $space-xxxl;
+
+		@include mq(md) {
+			margin-bottom: ($space-xxxl *1.5);
+		}
+	}
+
 }
