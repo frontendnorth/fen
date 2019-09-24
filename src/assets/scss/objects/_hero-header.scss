@@ -14,6 +14,11 @@
 	$image-size-lg: $space-xxxl *5;
 	$image-size-xl: $space-xxxl *6;
 
+	// For shallow screens
+	$tightHeight: 900px;
+	// TODO: remove 70px menu guestimate?
+	$menuHeight: 70px;
+
 	// When things get awkward around the face…
 	@include mq-add-breakpoint(faceBreak, 450px);
 
@@ -41,8 +46,7 @@
 		}
 
 		@include mq(md) {
-			// TODO: remove 100px when menu added
-			padding-top: ($space-xxxl +$space-xxl);
+			padding-top: ($space-xxxl + $menuHeight);
 			padding-right: 0; // Let column `o-wrapper` system deal with this
 			max-width: $width-page;
 		}
@@ -90,7 +94,7 @@
 				text-align: left;
 			}
 
-			@include mq($from: lg, $and: '(min-height: 900px)') {
+			@include mq($from: lg, $and: '(min-height: #{$tightHeight})') {
 				margin-bottom: $space-xxxl;
 			}
 		}
@@ -212,6 +216,10 @@
 		&__copy {
 			@include mq(lg) {
 				padding-bottom: $space-xxxl;
+			}
+
+			@include mq($from: lg, $and: '(min-height: #{$tightHeight})') {
+				padding-top: (($space-xxxl *1.5) + $menuHeight);
 			}
 		}
 
