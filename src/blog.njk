@@ -14,14 +14,29 @@ navOrder: 30
 
 {% block main %}
 
-    <h1>Blog</h1>
-    {% for post in blog %}
-        {% include "_teaser/blog.njk" %}
-    {% endfor %}
+    <div class="o-spacer c-raised--hero-gradient c-inverted">
+
+        <header class="o-hero-header__copy o-wrapper">
+
+            <h1 class="c-inverted">Blog</h1>
+            <span class="c-subheading">Latest conference updates from the team</time>
+
+        </header>
+
+    </div>
+
+    <div class="o-wrapper o-spacer">
+
+        {% for post in blog %}
+            {% include "_teaser/blog.njk" %}
+        {% endfor %}
+
+    </div> {# /.o-wrapper.o-spacer #}
 
     {# Only show pagination when required #}
     {% if pagination.hrefs | length > 1 %}
 
+        {# TODO: Style this from `o-pagination-links` before we write too many posts! #}
         <nav aria-label="pagination">
             {{ ('<a href="' ~ pagination.previousPageHref ~ '">Newer posts</a>' if pagination.previousPageHref) | safe }}
             {{ ('<a href="' ~ pagination.nextPageHref ~ '">Older posts</a>' if pagination.nextPageHref) | safe }}
