@@ -29,20 +29,22 @@
 
             </div>
 
-            <aside class="o-spacer">
+            {% if collections.blog | length > 1 %}
+                <aside class="o-spacer">
 
-                <h2 class="gamma">More from the blog</h2>
+                    <h2 class="gamma">More from the blog</h2>
 
-                {% for post in collections.blog | reverse | limit(3) %}
-                    {# This feels like a hack #}
-                    {% if page.url != post.url %}
-                        {% include "_teaser/blog.njk" %}
-                    {% endif %}
-                {% endfor %}
+                    {% for post in collections.blog | reverse | limit(3) %}
+                        {# This feels like a hack #}
+                        {% if page.url != post.url %}
+                            {% include "_teaser/blog.njk" %}
+                        {% endif %}
+                    {% endfor %}
 
-                <a href="/blog/" class="c-button">View all updates</a>
+                    <a href="/blog/" class="c-button">View all updates</a>
 
-            </aside>
+                </aside>
+            {% endif %}
 
         </div> {# /.o-wrapper #}
 
