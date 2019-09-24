@@ -43,18 +43,17 @@
 				margin-top: -.5em;
 			}
 
-				&:first-child::before {
-					display: none;
-				}
+				&:first-child + & {
+					padding-left: 0;
 
-			&--home {
-				// position
-				display: none;
-
-				+ * {
 					&::before {
 						display: none;
 					}
+				}
+
+			&--home {
+				@include mq(navigationBreak) {
+					display: none;
 				}
 			}
 		}

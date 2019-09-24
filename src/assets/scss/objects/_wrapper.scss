@@ -16,13 +16,14 @@
 	padding-right: $space-l;
 	position: relative;
 	width: 100%;
-	max-width: ($width-page + ($space-l *2));
+	// max-width: ($width-page + ($space-l *2));
+	max-width: $width-page;
 
 	// variations
 	&--wide,
 	&--has-sidebar {
 		@include mq(md) {
-			max-width: 1120px;
+			max-width: $width-page-max;
 		}
 	}
 

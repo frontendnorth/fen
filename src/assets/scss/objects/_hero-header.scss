@@ -30,7 +30,11 @@
 	}
 
 	&__copy {
-		padding: $space-xxl 0;
+		// + space for logo, dependant upon `$navigationBreak`
+		padding: ($space-xxl + (34px + $space-l))
+			0
+			$space-xxl
+			0;
 		position: relative;
 		z-index: 2; // lift above image
 

@@ -11,34 +11,71 @@
 	@include mq-add-breakpoint(navigationBreak, map-get($mq-breakpoints, "sm"));
 
 	position: absolute;
+	width: 100%;
 	z-index: 20;
 
 	@include mq(navigationBreak) {
-		box-sizing: border-box;
 		background: rgba(#000, .25);
+		width: 100%;
+	}
+
+	&__wrapper {
+		box-sizing: border-box;
 		margin: 0 auto;
 		padding-left: $space-l;
 		padding-right: $space-l;
 		width: 100%;
+		max-width: $width-page;
+
+		@include mq(navigationBreak) {
+			align-items: center;
+			display: flex;
+			justify-content: flex-start;
+		}
+
+		@include mq(md) {
+			max-width: $width-page-max;
+		}
 	}
 
-	&__menu {
-		@include mq($until: navigationBreak) {
-			position: fixed;
-			right: -100%;
-			width: 100%;
+		// Please note: There is a link to 'home' in the menu too
+		&__logo {
+			background: transparent url('/assets/img/logo.svg') center center no-repeat;
+			background-size: contain;
+			display: inline-block;
+			height: 34px;
+			margin-top: $space-l;
+			width: 51px;
 
-			&.is-open {
-				right: 0;
+			@include mq(navigationBreak) {
+				height: 34px;
+				margin: 0
+					$space-l
+					0
+					0;
+				width: 51px;
+			}
+
+			@include mq(xl) {
+				margin-left: -(51px + $space-l);
 			}
 		}
 
-		@include mq(navigationBreak) {
-			margin: 0 auto;
-			max-width: $width-page-max; // matches `o-wrapper`
-			right: 0;
+		&__menu {
+			@include mq($until: navigationBreak) {
+				position: fixed;
+				right: -100%;
+				width: 100%;
+
+				&.is-open {
+					right: 0;
+				}
+			}
+
+			@include mq(navigationBreak) {
+				display: inline-block;
+			}
 		}
-	}
 
 	&__trigger {
 		bottom: $space-l;
