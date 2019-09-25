@@ -1,0 +1,29 @@
+/**
+ *	Social bar
+ *
+ *	Slap this in the footer or somewhere else?
+ *
+ **/
+
+.o-footer {
+
+	@include mq($until: sm) {
+		&__legal {
+			margin-bottom: $space-xl;
+		}
+	}
+
+	@include mq(sm) {
+		display: flex;
+		justify-content: space-between;
+
+		&__legal {
+			flex: 1 1 auto;
+		}
+
+		&__social {
+			flex: 0 0 auto;
+		}
+	}
+
+}

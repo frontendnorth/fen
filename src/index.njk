@@ -39,47 +39,6 @@ navOrder: 0
                 </div> #}
 
             </div>
-{#
-            <div class="o-hero-header__social">
-                <span class="c-lede"><strong>Stay in touch:</strong></span>
-
-                {% set social = [
-                    {
-                        name: "Twitter",
-                        url: "https://twitter.com/frontendnorth",
-                        icon: "twitter",
-                        title: "Follow us on Twitter"
-                    },
-                    {
-                        name: "Facebook",
-                        url: "https://www.facebook.com/Front-End-North-502356493635369",
-                        icon: "facebook",
-                        title: "Like us on Facebook"
-                    },
-                    {
-                        name: "Instagram",
-                        url: "https://www.instagram.com/frontendnorth/",
-                        icon: "instagram",
-                        title: "Follow us on Instagram"
-                    }
-                ] %}
-
-                {% for service in social %}
-                    <a href="{{ service.url }}" target="_blank" rel="noopener noreferrer nofollow" title="{{ service.title }}" class="c-social">
-                        <span class="u-visually-hidden">{{ service.name }}</span>
-                        <svg aria-hidden="true" role="presentation" class="c-icon">
-                            <use href="#{{ service.icon }}"></use>
-                        </svg>
-                    </a>
-                {% endfor %}
-
-            </div>
-            <div class="o-hero-header__signup">
-
-                {% include "signup.njk" %}
-
-            </div>
-#}
             <section class="">
 
                 <h2 class="c-inverted">Our speakers</h2>
@@ -98,7 +57,6 @@ navOrder: 0
                 <a href="/speakers/" class="c-button">View the full line-up</a>
 
             </section>
-
         </div>
         <div class="o-hero-header__image">
             <img

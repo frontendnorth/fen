@@ -42,7 +42,7 @@
 
     {% include 'navigation/primary.njk' %}
 
-    <main>
+    <main class="o-spacer">
 
         {% block main %}{% endblock %}
 
@@ -50,12 +50,26 @@
 
     <footer class="o-spacer">
 
-        <div class="o-wrapper">
-
-            <small class="c-reduced">Front End North Ltd. | Registered company 11851024 | <a href="/code-of-conduct">Code of Conduct</a></small>
-
+        <div class="o-wrapper o-spacer">
+            <h2 class="delta">Sign-up for updates</h2>
+            {% include "signup.njk" %}
         </div>
 
+        <div class="o-wrapper o-footer">
+
+            <div class="o-footer__legal">
+
+                <small class="c-reduced">Front End North Ltd. | Registered company 11851024 <br><a href="/code-of-conduct">Code of Conduct</a></small>
+
+            </div>
+            <div class="o-footer__social">
+
+                {% include "social.njk" %}
+                {# {% include "signup.njk" %} #}
+
+            </div>
+
+        </div>
     </footer>
 
     {% include 'tracking.njk' %}
