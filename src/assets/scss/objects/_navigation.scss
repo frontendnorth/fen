@@ -24,12 +24,13 @@
 		margin: 0 auto;
 		padding: $space-l;
 		width: 100%;
-		max-width: $width-page-max;
+		max-width: $width-page;
 
 		@include mq(navigationBreak) {
 			align-items: center;
 			display: flex;
 			justify-content: flex-start;
+			max-width: $width-page-max;
 		}
 	}
 
