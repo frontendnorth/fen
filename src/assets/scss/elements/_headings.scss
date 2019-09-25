@@ -73,11 +73,11 @@ h3,
 h4,
 .delta {
 	display: inline-block;
-	font-size: 1rem;
-	font-weight: 500;
+	font-size: 1em;
+	font-weight: 600;
 	line-height: 1.2;
 	margin-bottom: 1em;
-	text-transform: uppercase;
+	text-transform: none;
 
 	+ p {
 		margin-top: 0.2em;
