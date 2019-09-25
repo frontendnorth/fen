@@ -22,19 +22,14 @@
 	&__wrapper {
 		box-sizing: border-box;
 		margin: 0 auto;
-		padding-left: $space-l;
-		padding-right: $space-l;
+		padding: $space-l;
 		width: 100%;
-		max-width: $width-page;
+		max-width: $width-page-max;
 
 		@include mq(navigationBreak) {
 			align-items: center;
 			display: flex;
 			justify-content: flex-start;
-		}
-
-		@include mq(md) {
-			max-width: $width-page-max;
 		}
 	}
 
@@ -61,21 +56,36 @@
 			}
 		}
 
-		&__menu {
+		&__overlay {
 			@include mq($until: navigationBreak) {
+				bottom: -100%;
 				position: fixed;
-				right: -100%;
+				left: -100%;
 				width: 100%;
 
 				&.is-open {
-					right: 0;
+					bottom: 0;
 				}
 			}
 
 			@include mq(navigationBreak) {
-				display: inline-block;
+				align-items: center;
+				display: flex;
+				flex: 1 1 auto;
+				justify-content: space-between;
 			}
 		}
+
+			&__menu {
+				@include mq(navigationBreak) {
+					display: inline-block;
+					flex: 1 1 auto; // Push social stuff to the end
+				}
+			}
+
+			&__social {
+
+			}
 
 	&__trigger {
 		bottom: $space-l;

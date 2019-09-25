@@ -15,24 +15,32 @@
             </a>
         {%- endif %}
 
-        <nav class="o-navigation__menu js-popover-target" data-target="navigation">
+        <div class="o-navigation__overlay js-popover-target" data-target="navigation">
+            <nav class="o-navigation__menu" aria-labelledby="primary-navigation">
 
-            <ul class="o-menu o-menu--horizontal@md c-navigation-primary">
-                {%- for nav in collections.nav -%}
-                    {% set isCurrent = (nav.url == page.url) %}
-                    {% set isParent = nav.url != '/' and nav.url in page.url -%}
-                    <li class="c-navigation-primary__item {{ 'c-navigation-primary__item--home' if loop.index0 == 0 }}">
-                        <a
-                            {% if isCurrent %}aria-current="page"{% endif %}
-                            href="{{ nav.url | url }}"
-                            class="o-menu__action c-navigation-primary__action {% if isCurrent or isParent %}is-here{% endif %}">
-                            {{- nav.data.navTitle or nav.data.title -}}
-                        </a>
-                    </li>
-                {%- endfor %}
-            </ul>
+                <ul class="o-menu o-menu--horizontal@md c-navigation-primary">
+                    {%- for nav in collections.nav -%}
+                        {% set isCurrent = (nav.url == page.url) %}
+                        {% set isParent = nav.url != '/' and nav.url in page.url -%}
+                        <li class="c-navigation-primary__item {{ 'c-navigation-primary__item--home' if loop.index0 == 0 }}">
+                            <a
+                                {% if isCurrent %}aria-current="page"{% endif %}
+                                href="{{ nav.url | url }}"
+                                class="o-menu__action c-navigation-primary__action {% if isCurrent or isParent %}is-here{% endif %}">
+                                {{- nav.data.navTitle or nav.data.title -}}
+                            </a>
+                        </li>
+                    {%- endfor %}
+                </ul>
 
-        </nav>
+            </nav>
+            <div class="o-navigation__social c-inverted">
+
+                {% include "social.njk" %}
+
+            </div>
+
+        </div>
     </div>
     <div class="o-navigation__trigger">
 

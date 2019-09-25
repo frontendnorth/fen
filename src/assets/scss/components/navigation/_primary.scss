@@ -8,23 +8,14 @@
 
 .c-navigation-primary {
 
-
-
-
-
 	@include mq(navigationBreak) {
 		box-sizing: border-box;
 		font-size: map-get($type-scale-major-second, l);
 		font-weight: 600;
 		letter-spacing: 0.01em;
 		line-height: 1.2;
-		padding: $space-default 0;
+		padding: 0;
 		text-transform: uppercase;
-	}
-
-	@include mq(lg) {
-		padding-top: $space-l;
-		padding-bottom: $space-l;
 	}
 
 	&__item {
@@ -83,9 +74,12 @@
 				// TODO: want this to be a slidey-boi ヽ( _ _ヽ)彡
 				transition: background linear .1s;
 
-				&.is-here,
 				&:focus,
 				&:hover {
+					color: $color-text-highlight;
+				}
+
+				&.is-here {
 					background-color: rgba($color-bg-white, .35);
 				}
 			}

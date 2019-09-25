@@ -43,10 +43,6 @@
 		}
 
 		&__secondary {
-			@include mq(md) {
-				float: left;
-				padding-left: $space-l;
-			}
 		}
 
 }
