@@ -145,7 +145,8 @@
 	// variations
 	// …colors
 	$colors: (
-		'orange': $color-brand-secondary
+		'orange': $color-brand-secondary,
+		'reduced': $color-bg-grey-mid
 	);
 
 	@mixin colorButtonAttibutes($name, $color) {
@@ -169,9 +170,8 @@
 		// Contrast fixer
 		// make this smarter with color checker!
 		@if ( $name == 'reduced' ) {
-			border: 1px solid darken($color, 4);
-			box-shadow: 0 2px 8px rgba(#000, .1);
 			color: $color-text-base;
+			text-shadow: none;
 
 			&:hover,
 			&:focus {
