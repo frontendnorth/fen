@@ -162,6 +162,11 @@
 
 
 	// Variations
+	// Media (has an image)
+	&--media {
+		flex-wrap: nowrap;
+	}
+
 	// Speaker - used (large) on speaker landing page
 	&--speaker {
 		@include mq(sm) {

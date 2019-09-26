@@ -47,7 +47,10 @@ navOrder: 0
                     {% for speaker in collections.speakers %}
                         {% if speaker.data.featured %}
                             <li class="o-speaker-grid__item">
-                                {% set teaser = { inverted: true } %}
+                                {% set teaser = {
+                                    type: 'media',
+                                    inverted: true
+                                } %}
                                 {% include "_teaser/speaker.njk" %}
                             </li>
                         {% endif %}
