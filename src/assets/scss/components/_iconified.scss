@@ -18,8 +18,7 @@
 	}
 
 	&__icon {
-		background-color: rgba($color-text-reduced, .8);
-		border-radius: 50%;
+		color: $color-brand-primary;
 		display: inline-block;
 		height: $icon-size;
 		margin-right: $space-l;
@@ -30,7 +29,7 @@
 
 		&:focus &__icon,
 		&:hover &__icon {
-			background-color: darken($color-text-reduced, .8);
+			color: $color-text-base;
 		}
 
 }
