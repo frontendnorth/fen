@@ -210,7 +210,10 @@
 
 			// IE / Edge tells stinking LIES about support of clip-path, so…
 			@supports (-ms-ime-align:auto) {
-				display: none;
+				@include mq(lg) {
+					height: $image-size-md-plus;
+					width: $image-size-md-plus;
+				}
 			}
 
 		}
@@ -267,6 +270,10 @@
 						left: 0;
 					}
 				}
+			}
+			// As above, IE hidey hack
+			@supports (-ms-ime-align:auto) {
+				display: none;
 			}
 		}
 	}
