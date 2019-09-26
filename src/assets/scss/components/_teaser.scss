@@ -70,6 +70,19 @@
 				top: 0;
 			}
 		}
+
+		// Adopts more styles from its default element
+		&--default {
+			// Only h2 for now…
+			@at-root h2#{&} {
+				font-size: map-get($type-scale-major-second, xxl);
+				line-height: 1.1;
+
+				@include mq(lg) {
+					font-size: map-get($type-scale, xl);
+				}
+			}
+		}
 	}
 
 	&__meta {
@@ -131,6 +144,7 @@
 		}
 
 		img {
+			display: block; // die, whitespace
 			height: 100%;
 			object-fit: cover;
 			width: 100%;
@@ -138,27 +152,55 @@
 	}
 
 
-	// Variation: inverted
-	&--inverted {
+	// Variations
+	// Speaker - used (large) on speaker landing page
+	&--speaker {
+		@include mq(sm) {
+			flex-direction: column;
+
 		.c-teaser {
 			&__title {
-				a {
-					color: $color-text-white;
+				// font-size: map-get($type-scale-major-second, xl);
+				font-size: map-get($type-scale-major-second, xxl);
+				line-height: 1.1;
+				text-transform: uppercase;
 
-					@supports (-webkit-text-fill-color: transparent) {
-						background-image: linear-gradient(
-							to right,
-							$color-brand-secondary,
-							$color-brand-secondary 50%,
-							$color-text-white 50%);
-					}
+				@include mq(lg) {
+					font-size: map-get($type-scale, xl);
 				}
 			}
 
-			&__meta {
-				color: rgba($color-text-white, .7);
+			&__image {
+				border-radius: ($radius-default *2);
+				height: auto;
+				margin-right: 0;
+				width: 100%;
 			}
 		}
+		}
+	}
+
+	// Inverted
+	&--inverted {
+	.c-teaser {
+		&__title {
+			a {
+				color: $color-text-white;
+
+				@supports (-webkit-text-fill-color: transparent) {
+					background-image: linear-gradient(
+						to right,
+						$color-brand-secondary,
+						$color-brand-secondary 50%,
+						$color-text-white 50%);
+				}
+			}
+		}
+
+		&__meta {
+			color: rgba($color-text-white, .7);
+		}
+	}
 	}
 
 }

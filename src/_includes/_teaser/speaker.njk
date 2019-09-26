@@ -1,8 +1,10 @@
-<article class="c-teaser c-teaser--speaker{{ ' c-teaser--inverted' if inverted }}">
+<article class="c-teaser
+    {{ ' c-teaser--inverted' if teaser.inverted }}
+    {{ 'c-teaser--' ~ teaser.type if teaser.type }}">
     <div class="c-teaser__text">
-        <h3 class="c-teaser__title">
+        <{{ teaser.level if teaser.level else 'h3' }} class="c-teaser__title">
             <a href="{{ speaker.url }}">{{ speaker.data.title }}</a>
-        </h3>
+        </{{ teaser.level if teaser.level else 'h3' }}>
         {% if speaker.data.role %}
             <span class="c-teaser__meta c-teaser__meta--important">
                 {{ speaker.data.role }}
@@ -11,9 +13,16 @@
     </div>
     {% if speaker.data.image %}
         <div class="c-teaser__image">
-            <img
-                src="{{ site.image_cdn }}{{ speaker.data.image }}?thumbnail=100"
-                alt="">
+            {# TODO: Fix this with proper responsive images instead #}
+            {% if teaser.type == 'speaker' %}
+                <img
+                    src="{{ site.image_cdn }}{{ speaker.data.image }}?thumbnail=280"
+                    alt="">
+            {% else %}
+                <img
+                    src="{{ site.image_cdn }}{{ speaker.data.image }}?thumbnail=100"
+                    alt="">
+            {% endif %}
         </div>
     {% endif %}
 </article>

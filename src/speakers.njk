@@ -8,17 +8,41 @@ navOrder: 10
 
 {% block main %}
 
-    <main>
+    <div class="o-spacer c-raised--hero-gradient c-inverted">
 
-        <h1>{{ title }}</h1>
-        <ul>
-            {% for speaker in collections.speakers %}
-                <li>
-                    <a href="{{ speaker.url }}">{{ speaker.data.title }}</a>
-                </li>
-            {% endfor %}
-        </ul>
+        <header class="o-hero-header__copy o-wrapper o-wrapper--wide">
 
-    </main>
+            <h1 class="c-inverted">2020 Speakers</h1>
+            <span class="c-subheading">Our evolving line up</span>
+
+                <ul class="o-speaker-grid">
+                    {% for speaker in collections.speakers %}
+                        {% if speaker.data.featured %}
+                            <li class="o-speaker-grid__item">
+                                {% set teaser = {
+                                    inverted: true,
+                                    type: 'speaker',
+                                    level: 'h2'
+                                } %}
+                                {% include "_teaser/speaker.njk" %}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+        </header>
+
+    </div>
+
+    <div class="o-wrapper o-spacer">
+
+        <h2>Do you want to speak at Front End North too?</h2>
+        <p>
+            The speakers announced above will only make up part of our line-up. We are opening a Call for Proposals (CFP) to give you the chance to join them!
+        </p>
+
+        <a href="/blog/2019/09/apply-to-speak-at-front-end-north-2020/" class="c-button">Read our CFP</a>
+
+    </div> {# /.o-wrapper.o-spacer #}
 
 {% endblock %}
