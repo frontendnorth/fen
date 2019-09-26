@@ -1,5 +1,5 @@
 /**
- *	Links
+ *	Links (+ buttons)
  *
  *	Note: Styles are v. generic so as not to impact other things link elements.
  *	`.c-link` should help us with more fancy stuff.
@@ -28,4 +28,16 @@ a {
 		outline-offset: $space-xs;
 	}
 
+}
+
+button {
+	&:focus {
+		// as above ^
+		outline: $color-brand-secondary dashed 2px;
+		outline-offset: $space-xs;
+	}
+
+	&:active {
+		outline: none;
+	}
 }
