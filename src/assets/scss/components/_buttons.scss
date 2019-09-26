@@ -33,7 +33,9 @@
 	text-decoration: none;
 	text-shadow: 0 1px 2px rgba(#000, .2);
 	text-transform: uppercase;
-	transition: all ease-in-out .15s;
+	transition-property: background, border; // Should match `interactive-rules()`
+	transition-duration: 0.15s;
+	transition-timing-function: ease-in-out;
 	user-select: none;
 	vertical-align: middle;
 	z-index: 1;

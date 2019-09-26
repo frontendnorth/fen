@@ -46,7 +46,9 @@
 					$color-brand-primary 50%);
 				background-size: 200% 100%;
 				background-position: 100%;
-				transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+				transition-property: background, color;
+				transition-duration: 0.3s;
+				transition-timing-function: cubic-bezier(0.000, 0.000, 0.230, 1);
 
 				@media (prefers-reduced-motion: reduce) {
 					transition-duration: 0s;
@@ -112,6 +114,7 @@
 		order: -1;
 		z-index: -1;
 		width: 100px;
+		transition: all 0.1s linear;
 
 		// Split declaration so that lack of support for `:focus-within`
 		// does not result in rejection of everything
