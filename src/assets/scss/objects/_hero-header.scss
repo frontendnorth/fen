@@ -7,8 +7,9 @@
 
 .o-hero-header {
 
-	$image-size: $space-xxxl;
-	$image-size-sm: $space-xxxl *1.5;
+	$image-size: $space-xxxl *1.5;
+	// Note: yes, it gets smaller, then bigger, then smaller again!
+	$image-size-sm: $space-xxxl;
 	$image-size-md: $space-xxxl *3;
 	$image-size-md-plus: $space-xxxl *4;
 	$image-size-lg: $space-xxxl *5;
@@ -30,8 +31,7 @@
 	}
 
 	&__copy {
-		// + space for logo, dependant upon `$navigationBreak`
-		padding: ($space-xxl + (34px + $space-l))
+		padding: $space-xxxl
 			0
 			$space-xxl
 			0;
@@ -87,13 +87,14 @@
 		&__intro {
 			margin: 0
 				auto
-				$space-xxl
+				$space-xxxl
 				auto;
 			position: relative;
 			text-align: center;
 			max-width: 500px;
 
 			@include mq(sm) {
+				margin-bottom: $space-xxl;
 				margin-left: 0;
 				text-align: left;
 			}
@@ -150,12 +151,12 @@
 			@supports(clip-path: url('#svgPath')) {
 				display: block;
 				height: $image-size; // fallback
-				height: 66.66vw;
+				height: 75vw;
 				background: rgba(#000, .25);
 				clip-path: url('#svgPath');
 				position: relative;
 				width: $image-size;
-				width: 66.66vw;
+				width: 75vw;
 
 				> img {
 					bottom: 0;
@@ -174,6 +175,7 @@
 			}
 
 			@include mq(sm) {
+				bottom: -$space-l;
 				height: $image-size-sm;
 				width: $image-size-sm;
 			}
