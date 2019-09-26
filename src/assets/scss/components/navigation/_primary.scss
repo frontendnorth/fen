@@ -75,6 +75,17 @@
 				outline: none;
 			}
 
+			&:focus,
+			&:hover {
+				color: $color-text-highlight;
+			}
+
+			@include mq($until: navigationBreak) {
+				&.is-here {
+					color: $color-text-highlight;
+				}
+			}
+
 			@include mq(navigationBreak) {
 				border-radius: $radius-default;
 				padding: $space-l;
@@ -82,11 +93,6 @@
 					$space-l;
 				// TODO: want this to be a slidey-boi ヽ( _ _ヽ)彡
 				transition: background linear .1s;
-
-				&:focus,
-				&:hover {
-					color: $color-text-highlight;
-				}
 
 				&.is-here {
 					background-color: rgba($color-bg-white, .35);
