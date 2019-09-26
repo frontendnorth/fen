@@ -106,11 +106,11 @@
             </div>
 
             {#
-                Hide external links until talk content has been provided.
+                Hide external links on desktop until talk content has been provided.
                 HARSH BUT FAIR
             #}
-            {% if external and talk_content %}
-                <aside class="o-wrapper__secondary o-spacer">
+            {% if external %}
+                <aside class="o-wrapper__secondary o-spacer {{ 'u-md-only' if not talk_content }}">
 
                     {% include "external-links.njk" %}
 

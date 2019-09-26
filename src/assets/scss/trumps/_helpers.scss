@@ -120,6 +120,12 @@
 	}
 }
 
+.u-md-only {
+	@include mq(md) {
+		display: none !important;
+	}
+}
+
 .u-sm-only {
 	@include mq(sm) {
 		display: none !important;
