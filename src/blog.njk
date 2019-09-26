@@ -19,7 +19,7 @@ navOrder: 30
         <header class="o-hero-header__copy o-wrapper">
 
             <h1 class="c-inverted">Blog</h1>
-            <span class="c-subheading">Latest conference updates from the team</time>
+            <span class="c-subheading">Latest conference updates from the team</span>
 
         </header>
 
@@ -28,6 +28,7 @@ navOrder: 30
     <div class="o-wrapper o-spacer">
 
         {% for post in blog %}
+            {% set teaser = { level: 'h2' } %}
             {% include "_teaser/blog.njk" %}
         {% endfor %}
 
