@@ -13,8 +13,17 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	// overflow: hidden;
+	margin-bottom: $space-xl;
 	position: relative;
+
+	// When one teaser follows another (shouldn't impact grids/lists, etc.)
+	& + & {
+		margin-top: $space-xxl;
+	}
+
+	@at-root .o-speaker-grid & {
+		margin-bottom: inherit;
+	}
 
 	// To differentiate from `__image` - not always required
 	&__text {

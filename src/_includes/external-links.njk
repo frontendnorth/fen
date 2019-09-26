@@ -6,7 +6,7 @@
 
 <ul class="o-menu">
     {% for item in external %}
-        <li>
+        <li class="o-menu__item">
             {# My kingdom for a switch… #}
             {% if item.twitter %}
                 {{ icons.iconItem(item.twitter, 'twitter') }}

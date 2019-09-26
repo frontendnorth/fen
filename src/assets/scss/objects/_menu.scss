@@ -12,6 +12,8 @@
 	padding: 0;
 
 	&__item {
+		margin-bottom: 1em;
+
 		&:last-child {
 			padding-bottom: inherit;
 		}
