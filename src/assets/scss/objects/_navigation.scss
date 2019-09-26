@@ -59,9 +59,12 @@
 
 		&__overlay {
 			@include mq($until: navigationBreak) {
+				background: red;
 				bottom: -100%;
+				// bottom: 0;
+				height: 100%;
 				position: fixed;
-				left: -100%;
+				left: 0;
 				width: 100%;
 
 				&.is-open {
