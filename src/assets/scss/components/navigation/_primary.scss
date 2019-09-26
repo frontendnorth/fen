@@ -8,17 +8,26 @@
 
 .c-navigation-primary {
 
+	font-weight: 600;
+	text-transform: uppercase;
+
+	@include mq($until: navigationBreak) {
+		font-size: map-get($type-scale, xl);
+	}
+
 	@include mq(navigationBreak) {
 		box-sizing: border-box;
 		font-size: map-get($type-scale-major-second, l);
-		font-weight: 600;
 		letter-spacing: 0.01em;
 		line-height: 1.2;
 		padding: 0;
-		text-transform: uppercase;
 	}
 
 	&__item {
+		@include mq($until: navigationBreak) {
+			padding-bottom: $space-l;
+		}
+
 		@include mq(navigationBreak) {
 			padding: 0 $space-s;
 			position: relative;

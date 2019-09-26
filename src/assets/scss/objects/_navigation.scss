@@ -59,16 +59,19 @@
 
 		&__overlay {
 			@include mq($until: navigationBreak) {
-				background: red;
+				background: $color-bg-grey-dark;
 				bottom: -100%;
-				// bottom: 0;
 				height: 100%;
 				position: fixed;
+				overflow-y: scroll;
 				left: 0;
 				width: 100%;
+				// Transitions shouldn't really be a BEM object thing but…
+				transition: bottom .2s ease-in-out;
 
 				&.is-open {
 					bottom: 0;
+					transition-duration: .1s;
 				}
 			}
 
@@ -81,6 +84,12 @@
 		}
 
 			&__menu {
+				@include mq($until: navigationBreak) {
+					padding: $space-xxl
+						$space-xl
+						0
+						$space-xl;
+				}
 				@include mq(navigationBreak) {
 					display: inline-block;
 					flex: 1 1 auto; // Push social stuff to the end
@@ -88,7 +97,9 @@
 			}
 
 			&__social {
-
+				@include mq($until: navigationBreak) {
+					padding: $space-xl;
+				}
 			}
 
 	&__trigger {
