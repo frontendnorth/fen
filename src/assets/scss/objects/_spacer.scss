@@ -9,6 +9,12 @@
 
 	margin-bottom: $space-xxl;
 
+	@include mq(md) {
+		&\@md {
+			margin-bottom: $space-xxl;
+		}
+	}
+
 	// 🇦🇺
 	&--flipped {
 		margin-top: $space-xxl;
@@ -19,8 +25,12 @@
 		margin-bottom: $space-xxxl;
 
 		@include mq(md) {
-			margin-bottom: ($space-xxxl *1.5);
+			&\@md {
+				margin-bottom: $space-xxxl;
+			}
 		}
 	}
+
+
 
 }

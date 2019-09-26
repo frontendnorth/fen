@@ -87,10 +87,11 @@
 
         </div>
 
-        <section class="o-wrapper o-wrapper--has-sidebar o-spacer o-spacer--super">
+        <section class="o-wrapper o-wrapper--has-sidebar o-spacer o-spacer--super@md">
 
             <div class="o-wrapper__primary">
 
+                {# TODO: Not sure on the 'rules' of using this here with 11ty #}
                 <h2>About {{ title.split(' ')[0] }}</h2>
 
             </div>
@@ -211,7 +212,5 @@
         </nav>
 
     </article>
-
-    {% include "image-clipper.njk" %}
 
 {% endblock %}
