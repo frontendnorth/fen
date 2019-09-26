@@ -3,14 +3,15 @@
 #}
 
 {# Icon #}
-{% macro icon(icon='website') %}
+{# TODO: default doesn't work properly when `null` is passed to it #}
+{% macro icon(type = 'link') %}
     <svg aria-hidden="true" role="presentation" class="c-icon">
-        <use href="#{{ icon }}"></use>
+        <use href="#{{ type }}"></use>
     </svg>
 {% endmacro %}
 
 {# Iconified icon #}
-{% macro iconItem(url, service = null) %}
+{% macro iconItem(url, service = 'link') %}
     <a href="{% if service == 'twitter' -%}
             https://twitter.com/
         {%- elif service == 'github' -%}
