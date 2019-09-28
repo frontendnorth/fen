@@ -5,13 +5,18 @@
         "logo": "evoluted.svg"
     },
     {
-        "name": "Notist",
-        "url": "https://noti.st/",
-        "logo": "notist.svg"
+        "name": "Nimble",
+        "url": "http://www.nimbleapproach.com/",
+        "logo": "nimble-bw.svg"
     },
     {
         "name": "Autodesk",
         "url": "https://autodesk.co.uk/",
         "logo": "bitmap/autodesk-logo-rgb-black-1line-medium-v2.png"
+    },
+    {
+        "name": "Notist",
+        "url": "https://noti.st/",
+        "logo": "notist.svg"
     }
 ]

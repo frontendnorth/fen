@@ -8,7 +8,7 @@
 .o-sponsor-grid {
 
 	display: grid;
-	grid-gap: $space-xl;
+	grid-gap: $space-xxl;
 	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
 	overflow: hidden;
 
