@@ -81,6 +81,10 @@
 
 	// error messaging (class provided by Mailchimp)
 	.mce_inline_error {
+		@include mq($until: sm) {
+			padding-left: $icon-size;
+		}
+
 		& ~ .c-compact-form__messages {
 			&::before {
 				content: '!';
@@ -96,6 +100,10 @@
 
 				@include mq(xs) {
 					margin-bottom: ($form-padding-vertical /2);
+				}
+
+				@include mq($until: sm) {
+					left: 0;
 				}
 			}
 		}
