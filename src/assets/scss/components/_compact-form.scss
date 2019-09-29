@@ -41,7 +41,7 @@
 		font-size: map-get($type-scale-major-second, s); // TODO: fix (build ignores this(!?))
 		font-size: .9em;
 		margin-bottom: $space-default;
-		padding: 0 $space-default !important;
+		padding: 0 $space-default;
 
 		// field *should* inherit height from button
 		@include mq(xs) {
