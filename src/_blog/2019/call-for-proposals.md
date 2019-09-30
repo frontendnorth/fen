@@ -61,7 +61,7 @@ By applying to our CFP, you are agreeing to follow our [code of conduct](/code-o
 
 ## CFP form
 
-You can apply to speak at Front End North by [filling out our CFP form](https://forms.gle/9LKwzhpVJG2RNaAi7).
+You can apply to speak at Front End North by [filling out our CFP form](https://forms.gle/9LKwzhpVJG2RNaAi7). Please remember that **this CFP will close on Saturday November 16th**.
 
 Good luck!
 
