@@ -2,6 +2,8 @@
     Social media links
 #}
 
+{% import "_macros/icons.njk" as icons %}
+
 {% set social = [
     {
         name: "Twitter",
@@ -26,8 +28,6 @@
 {% for service in social %}
     <a href="{{ service.url }}" target="_blank" rel="noopener noreferrer nofollow" title="{{ service.title }}" class="c-social">
         <span class="u-visually-hidden">{{ service.name }}</span>
-        <svg aria-hidden="true" role="presentation" class="c-icon">
-            <use href="#{{ service.icon }}"></use>
-        </svg>
+        {{ icons.icon(service.icon) }}
     </a>
 {% endfor %}
