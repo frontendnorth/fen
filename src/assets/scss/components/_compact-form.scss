@@ -23,16 +23,7 @@
 
 	// label is hidden responsibly
 	&__label {
-		// @include visuallyHidden();
-		// Temporarily using visually hidden technique without clip as it shows as an error in LightHouse currently.
-		// This is fixed in Chrome Canary so can revert back to using the mixin when standard Chrome has updated.
-		border: 0;
-		height: 1px;
-		margin: -1px;
-		overflow: hidden;
-		padding: 0;
-		position: absolute;
-		width: 1px;
+		@include visuallyHidden();
 	}
 
 	&__field {
