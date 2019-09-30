@@ -15,7 +15,7 @@ We are searching for four **30 minute talks** on any topic surrounding front end
 - Managing and mentoring people responsibly
 - Weird and wonderful ways to use the Web
 
-You don’t have to stick rigidly to these subjects, we’re open to hearing your ideas!
+You don’t have to stick rigidly to these subjects, we’re open to hearing your ideas! **The CFP closes on Saturday November 16th.**
 
 
 ## What we can offer
