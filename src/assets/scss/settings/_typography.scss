@@ -8,6 +8,7 @@
  **/
 
 @font-face {
+	font-display: fallback;
 	font-family: 'Halis R';
 	src: url('../fonts/HalisR-Black.woff2') format('woff2'),
 		url('../fonts/HalisR-Black.woff') format('woff');
@@ -16,6 +17,7 @@
 }
 
 @font-face {
+	font-display: fallback;
 	font-family: 'Halis R';
 	src: url('../fonts/HalisR-Book.woff2') format('woff2'),
 		url('../fonts/HalisR-Book.woff') format('woff');
@@ -24,6 +26,7 @@
 }
 
 @font-face {
+	font-display: fallback;
 	font-family: 'Halis R';
 	src: url('../fonts/HalisR-Bold.woff2') format('woff2'),
 		url('../fonts/HalisR-Bold.woff') format('woff');
@@ -32,7 +35,7 @@
 }
 
 
-$font-brand: "Halis R", sans-serif;
+$font-brand: "Halis R", "Open sans", sans-serif;
 $font-body: $font-brand;
 
 $font-size-base: (
