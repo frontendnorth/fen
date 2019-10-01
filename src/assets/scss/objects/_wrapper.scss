@@ -34,11 +34,11 @@
 				width: $width-page;
 				max-width: 100%;
 				clear: right;
+			}
 
-				// Floats impact margin between headings and body copy
-				> * {
-					margin-top: 0;
-				}
+			// Floats impact margin between headings and body copy
+			> * {
+				margin-top: 0;
 			}
 		}
 

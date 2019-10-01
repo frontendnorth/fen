@@ -87,62 +87,65 @@
 
         </div>
 
-        <section class="o-wrapper o-wrapper--has-sidebar o-spacer o-spacer--super@md">
+        <section class="o-spacer o-spacer--super@md">
 
-            <div class="o-wrapper__primary">
+            <div class="o-wrapper o-wrapper--has-sidebar">
+                <div class="o-wrapper__primary">
 
-                {# TODO: Not sure on the 'rules' of using this here with 11ty #}
-                <h2>About {{ title.split(' ')[0] }}</h2>
+                    {# TODO: Not sure on the 'rules' of using this here with 11ty #}
+                    <h2>About {{ title.split(' ')[0] }}</h2>
 
+                </div>
             </div>
+            <div class="o-wrapper o-wrapper--has-sidebar">
+                <div class="o-wrapper__primary o-spacer s-content">
 
-            <div class="o-wrapper__primary o-spacer s-content">
+                    {{ content | safe }}
 
-                {{ content | safe }}
+                    {% if content | length == 0 %}
+                        <p>To be announced</p>
+                    {% endif %}
 
-                {% if content | length == 0 %}
-                    <p>To be announced</p>
+                </div>
+
+                {#
+                    Hide external links on desktop until talk content has been provided.
+                    HARSH BUT FAIR
+                #}
+                {% if external %}
+                    <aside class="o-wrapper__secondary o-spacer {{ 'u-md-only' if not talk_content }}">
+
+                        {% include "external-links.njk" %}
+
+                    </aside>
                 {% endif %}
 
-            </div>
+                {% if previous %}
 
-            {#
-                Hide external links on desktop until talk content has been provided.
-                HARSH BUT FAIR
-            #}
-            {% if external %}
-                <aside class="o-wrapper__secondary o-spacer {{ 'u-md-only' if not talk_content }}">
+                    <aside class="o-wrapper__primary">
 
-                    {% include "external-links.njk" %}
+                        <h2>Previous talks</h2>
 
-                </aside>
-            {% endif %}
+                        <ul class="o-menu">
+                            {% for talk in previous %}
+                                <li class="o-menu__item">
+                                    <div class="c-teaser">
+                                        <h3 class="c-teaser__title">
+                                            {{ ('<a href="' ~ talk.url ~ '" rel="external">' if talk.url) | safe }}
+                                                {{ talk.name }}
+                                            {{ ('</a>' if talk.url) | safe }}
+                                        </h3>
+                                        {{ ('<span class="c-teaser__meta">' ~ talk.where ~ '</span>' if talk.where) | safe }}
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
 
-            {% if previous %}
+                    </aside>
 
-                <aside class="o-wrapper__primary">
+                {% endif %}
 
-                    <h2>Previous talks</h2>
-
-                    <ul class="o-menu">
-                        {% for talk in previous %}
-                            <li class="o-menu__item">
-                                <div class="c-teaser">
-                                    <h3 class="c-teaser__title">
-                                        {{ ('<a href="' ~ talk.url ~ '" rel="external">' if talk.url) | safe }}
-                                            {{ talk.name }}
-                                        {{ ('</a>' if talk.url) | safe }}
-                                    </h3>
-                                    {{ ('<span class="c-teaser__meta">' ~ talk.where ~ '</span>' if talk.where) | safe }}
-                                </div>
-                            </li>
-                        {% endfor %}
-                    </ul>
-
-                </aside>
-
-            {% endif %}
-
+            </div> {# /.o-wrapper.o-wrapper--has-sidebar #}
         </section>
 
         <nav class="o-wrapper o-wrapper--wide o-spacer" aria-label="Other speakers">
