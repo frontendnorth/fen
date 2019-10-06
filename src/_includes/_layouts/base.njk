@@ -6,13 +6,25 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>
         {%- if page.url == '/' -%}
-            {% set meta_title = metadata.title ~ ' | Returning in February,2020' %}
+            {% set meta_title = metadata.title ~ ' | Returning in February, 2020' %}
         {%- else -%}
             {% set meta_title = title ~ ' | ' ~ metadata.title %}
         {%- endif -%}
         {{- meta_title -}}
     </title>
-    {{ ('<meta name="description" content="' ~ description ~ '">' if description) | safe }}
+    {# Is description set in frontmatter? #}
+    {% set meta_description = null %}
+    {% if description %}
+        {% set meta_description = description %}
+    {% else %}
+        {# If speaker, use talk description (if available!) #}
+        {% for talk in collections.schedule %}
+            {% if page.fileSlug == talk.data.speaker %}
+                {% set meta_description = talk.data.title ~': ' ~ talk.templateContent | striptags(true) | truncate(150) %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {{ ('<meta name="description" content="' ~ meta_description ~ '">' if meta_description) | safe }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/assets/css/all.css?v={{ project.buildDate }}" rel="stylesheet">
 
@@ -25,7 +37,7 @@
     <meta name="theme-color" content="#484be1">
 
     <meta property="og:title" content="{{ meta_title }}">
-    {{ ('<meta property="og:description" content="' ~ description ~ '">' if description) | safe }}
+    {{ ('<meta property="og:description" content="' ~ meta_description ~ '">' if meta_description) | safe }}
     <meta property="twitter:image" content="https://frontendnorth.com/android-chrome-512x512.png">
     {# TODO: Change og:image on speaker profiles #}
     <meta property="og:image" content="https://frontendnorth.com/assets/img/cards/fen-logo.png">
