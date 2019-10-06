@@ -29,7 +29,7 @@
 		}
 
 		@include mq(navigationBreak) {
-			padding: 0 $space-s;
+			margin: 0 $space-xs;
 			position: relative;
 
 			// divider
@@ -38,29 +38,43 @@
 
 				border-left: 2px solid rgba($color-text-white, .35);
 				height: 1em;
-				left: -1px;
+				left: -(1px + $space-s); // width + margin
 				top: 50%;
 				margin-top: -.5em;
 			}
 
+				// Not on the first one
 				&:first-child + & {
-					padding-left: 0;
+					margin-left: 0;
 
 					&::before {
 						display: none;
 					}
 				}
 
+			&.is-here {
+				background-color: rgba($color-bg-white, .35);
+				border-radius: $radius-default;
+				// TODO: want this to be a slidey-boi ヽ( _ _ヽ)彡
+				transition: background linear .1s;
+
+				// Hide divider before
+				&::before {
+					display: none;
+				}
+			}
+
+			// Hide divider after
+			&.is-here + & {
+				&::before {
+					display: none;
+				}
+			}
+
 			&--home {
 				@include mq(navigationBreak) {
 					display: none;
 				}
-			}
-		}
-
-		@include mq($until: navigationBreak) {
-			.is-open & {
-
 			}
 		}
 	}
@@ -81,22 +95,15 @@
 			}
 
 			@include mq($until: navigationBreak) {
-				&.is-here {
+				.is-here > & {
 					color: $color-text-highlight;
 				}
 			}
 
 			@include mq(navigationBreak) {
-				border-radius: $radius-default;
 				padding: $space-l;
 				padding: calc(#{$space-l} - .3em) // inc. line-height
 					$space-l;
-				// TODO: want this to be a slidey-boi ヽ( _ _ヽ)彡
-				transition: background linear .1s;
-
-				&.is-here {
-					background-color: rgba($color-bg-white, .35);
-				}
 			}
 		}
 
