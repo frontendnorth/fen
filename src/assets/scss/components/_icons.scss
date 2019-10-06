@@ -45,7 +45,7 @@
 	// within links
 	a:focus > &,
 	a:hover > & {
-		fill: lighten($color-brand-secondary, 15);
+		fill: $color-brand-secondary;
 		transform: translate(0, 7%);
 
 		@media (prefers-reduced-motion: reduce) {
