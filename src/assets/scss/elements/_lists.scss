@@ -1,0 +1,28 @@
+/**
+ *	Lists
+ *
+ **/
+
+ul:not([class]) {
+
+    list-style: none;
+    padding-left: $space-xl;
+
+	li {
+        position: relative;
+        padding-bottom: .5em;
+
+        &::before {
+            @include pseudo();
+
+            background-color: $color-brand-primary;
+            border-radius: 2px;
+            height: $space-default;
+            left: -$space-xl;
+            top: calc(.5em - 2px);
+            transform: rotate(45deg);
+            width: $space-default;
+        }
+    }
+
+}
