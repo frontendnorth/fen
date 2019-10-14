@@ -2,6 +2,7 @@
 title: "Peter Aitken"
 role: "Senior Developer, Litmus"
 image: "speakers/peter-aitken.jpg"
+card_image: "cards/speaker-card-peter.png"
 external:
     - twitter: "jiggy_pete"
     - website: "https://www.globaldiversitycfpday.com"

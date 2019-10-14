@@ -4,6 +4,7 @@ role: "Smashing Magazine Editor in Chief"
 role_long: "Writer, speaker, web developer, CSS Working Group Member, Smashing Magazine Editor in Chief"
 image: "speakers/rachel-andrew.jpg"
 image_attr: "Drew McLellan"
+card_image: "cards/speaker-card-rachel.png"
 external:
     - twitter: "rachelandrew"
     - website: "https://rachelandrew.co.uk"

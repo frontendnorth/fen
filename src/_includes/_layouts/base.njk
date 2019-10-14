@@ -38,9 +38,8 @@
 
     <meta property="og:title" content="{{ meta_title }}">
     {{ ('<meta property="og:description" content="' ~ meta_description ~ '">' if meta_description) | safe }}
-    <meta property="twitter:image" content="{{ metadata.url }}/android-chrome-512x512.png">
-    {# TODO: Change og:image on speaker profiles #}
-    <meta property="og:image" content="{{ metadata.url }}/assets/img/cards/fen-logo.png">
+    <meta property="twitter:image" content="{{ site.image_cdn ~ card_image if card_image else metadata.url ~ '/android-chrome-512x512.png' }}">
+    <meta property="og:image" content="{{ site.image_cdn ~ card_image if card_image else metadata.url ~ '/assets/img/cards/fen-logo.png' }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
@@ -54,7 +53,7 @@
         {% endif %}
     {%- endfor -%}
     <meta property="og:type" content="{{ og_type | d('website', true) }}" />
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="{{ 'summary_large_image' if card_image else 'summary' }}">
     <meta name="twitter:image:alt" content="Front End North Conference">
     <meta property="og:site_name" content="Front End North">
     <meta property="fb:app_id" content="333914457322662" />
