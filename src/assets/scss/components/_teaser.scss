@@ -185,10 +185,18 @@
 			}
 
 			&__image {
+				// This, plus `img` rule below, forces box when image doesn't load
+				@include responsiveRatio();
+
 				border-radius: ($radius-default *2);
 				height: auto;
 				margin-right: 0;
 				width: 100%;
+
+				img {
+					position: absolute;
+					top: 0;
+				}
 			}
 		}
 		}
