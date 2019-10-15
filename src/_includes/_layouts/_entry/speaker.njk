@@ -157,6 +157,8 @@
             #}
             {% macro getSiblingLinks(collection, direction) %}
 
+                {% import "_macros/icons.njk" as icons %}
+
                 {% set currentIndex = 0 %}
                 {% set countOfItems = collections[collection].length %}
 
@@ -181,8 +183,10 @@
                             <a
                                 href="{{ sibling.url | url }}"
                                 rel="{{ "prev" if direction == 'previous' else "next" }}"
-                                title="View the {{ "previous" if direction == 'previous' else "next" }} speaker: {{ sibling.data.title }}">
-                                {{ sibling.data.title }}
+                                title="View the {{ "previous" if direction == 'previous' else "next" }} speaker: {{ sibling.data.title }}"
+                                class="c-arrow-link {{ "c-arrow-link--previous" if direction == 'previous' }}">
+                                {{- sibling.data.title -}}
+                                {{ icons.icon('arrow-right') }}
                             </a>
                         </span>
                     </span>
@@ -190,13 +194,13 @@
 
             {% endmacro %}
 
-            <ol class="o-pagination-links">
+            <ol class="o-pagination-link">
 
-                <li class="o-pagination-links__item">
+                <li class="o-pagination-link__item">
                     {{- getSiblingLinks('speakers', 'previous') | trim -}}
                 </li>
 
-                <li class="o-pagination-links__item">
+                <li class="o-pagination-link__item">
 
                     <div class="c-teaser">
                         <span class="c-teaser__title">
@@ -206,7 +210,7 @@
 
                 </li>
 
-                <li class="o-pagination-links__item">
+                <li class="o-pagination-link__item">
                     {{- getSiblingLinks('speakers') | trim -}}
                 </li>
 

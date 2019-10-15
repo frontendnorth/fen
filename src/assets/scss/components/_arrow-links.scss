@@ -1,0 +1,68 @@
+/*
+ *	Arrow links
+ *
+ *	Put a big fat arrow on a link.
+ *	Used with pagination and in combination with `c-icon`.
+ *
+ */
+
+ .c-arrow-link {
+
+	position: relative;
+	margin-right: calc(#{$icon-size} + #{$space-default});
+
+	@include mq(sm, md) {
+		margin-right: 0;
+	}
+
+	.c-icon {
+		position: absolute;
+		right: -$icon-size;
+		right: calc(-#{$icon-size} + -#{$space-default});
+	}
+
+		&:focus,
+		&:hover {
+			.c-icon {
+				transform: translateX($space-default);
+
+				@media (prefers-reduced-motion: reduce) {
+					transform: none;
+				}
+			}
+		}
+
+	&--previous {
+		margin-left: calc(#{$icon-size} + #{$space-default});
+		margin-right: auto;
+
+		@include mq(sm, md) {
+			margin-left: 0;
+		}
+
+		.c-icon {
+			left: -$icon-size;
+			left: calc(-#{$icon-size} + -#{$space-default});
+			right: auto;
+			transform: rotate(0.5turn);
+		}
+
+		&:focus,
+		&:hover {
+			.c-icon {
+				transform: rotate(0.5turn)
+					translateX($space-default);
+
+				.c-teaser & {
+					// This is a hack to cheat the `.c-teaser` slide-fill effect
+					color: $color-brand-secondary;
+				}
+
+				@media (prefers-reduced-motion: reduce) {
+					transform: rotate(0.5turn);
+				}
+			}
+		}
+	}
+
+}
