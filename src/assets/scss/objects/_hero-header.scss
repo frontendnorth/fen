@@ -23,12 +23,7 @@
 	// When things get awkward around the face…
 	@include mq-add-breakpoint(faceBreak, 450px);
 
-	overflow: hidden;
 	position: relative;
-
-	@include mq(xs) {
-		padding: 0 $space-l;
-	}
 
 	&__copy {
 		padding: $space-xxxl
@@ -56,10 +51,23 @@
 		}
 
 		@include mq(lg) {
-			padding-top: ($space-xxxl + $menuHeight);
+			padding-top: ($space-xxl + $menuHeight);
+			padding-bottom: $space-xxl;
 		}
 
-		> *:last-child {
+		@include mq($from: lg, $and: '(min-height: #{$tightHeight})') {
+			padding-top: ($space-xxxl + $menuHeight);
+			padding-bottom: $space-xxxl;
+		}
+
+		&--speaker {
+			@include mq(lg) {
+				padding-top: ($space-xxxl + $menuHeight);
+			}
+		}
+
+		> *:last-child,
+		p:last-of-type {
 			margin-bottom: 0;
 		}
 	}
@@ -224,6 +232,8 @@
 
 	// homepage variations
 	&--home {
+		overflow: hidden;
+
 	.o-hero-header {
 
 		&__copy {
@@ -231,12 +241,15 @@
 				padding-top: ($space-xxxl + $menuHeight);
 			}
 
-			@include mq(lg) {
-				padding-bottom: $space-xxxl;
-			}
-
 			@include mq($from: lg, $and: '(min-height: #{$tightHeight})') {
 				padding-top: (($space-xxxl *1.5) + $menuHeight);
+			}
+		}
+
+		@include mq($from: xs, $until: sm) {
+			&__logo,
+			&__intro {
+				padding: 0 $space-l;
 			}
 		}
 

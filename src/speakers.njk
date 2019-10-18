@@ -9,29 +9,33 @@ navOrder: 10
 
 {% block main %}
 
-    <div class="o-spacer c-raised--hero-gradient c-inverted">
+    <div class="o-hero-header o-spacer c-raised--hero-gradient c-inverted">
 
-        <header class="o-hero-header__copy o-wrapper o-wrapper--wide">
+        <div class="o-hero-header__copy o-wrapper o-wrapper--wide">
 
-            <h1 class="c-inverted">2020 Speakers</h1>
-            <span class="c-subheading">Our evolving line up</span>
+            <header class="o-spacer c-inverted">
 
-                <ul class="o-speaker-grid">
-                    {% for speaker in collections.speakers %}
-                        {% if speaker.data.featured %}
-                            <li class="o-speaker-grid__item">
-                                {% set teaser = {
-                                    inverted: true,
-                                    type: 'speaker',
-                                    level: 'h2'
-                                } %}
-                                {% include "_teaser/speaker.njk" %}
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
+                <h1 class="c-inverted">2020 Speakers</h1>
+                <span class="c-subheading">Our evolving line up</span>
 
-        </header>
+            </header>
+
+            <ul class="o-speaker-grid">
+                {% for speaker in collections.speakers %}
+                    {% if speaker.data.featured %}
+                        <li class="o-speaker-grid__item">
+                            {% set teaser = {
+                                inverted: true,
+                                type: 'speaker',
+                                level: 'h2'
+                            } %}
+                            {% include "_teaser/speaker.njk" %}
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+        </div> {# /.o-hero-header__copy.o-wrapper.o-wrapper--wide #}
 
     </div>
 
