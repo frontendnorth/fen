@@ -9,7 +9,7 @@
 
 .c-subheading {
 
-	color: rgba($color-text-white, .8);
+	color: $color-text-reduced;
 	display: block;
 	font-size: map-get($type-scale-major-second, xl);
 	font-weight: 600;
@@ -19,6 +19,10 @@
 
 	@include mq(lg) {
 		font-size: map-get($type-scale, l);
+	}
+
+	.c-inverted & {
+		color: rgba($color-text-white, .8);
 	}
 
 	// Change margin, depending upon what it's following
