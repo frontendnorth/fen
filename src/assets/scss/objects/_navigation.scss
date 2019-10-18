@@ -7,9 +7,6 @@
 
 .o-navigation {
 
-	// Var-in' this as it's likely to be tweaked independantly from other layout
-	@include mq-add-breakpoint(navigationBreak, map-get($mq-breakpoints, "sm"));
-
 	position: absolute;
 	width: 100%;
 	z-index: 20;

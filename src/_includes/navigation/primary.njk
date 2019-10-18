@@ -18,7 +18,7 @@
         <div class="o-navigation__overlay js-popover-target" data-target="navigation">
             <nav class="o-navigation__menu" aria-label="Main">
 
-                <ul class="o-menu o-menu--horizontal@md c-navigation-primary">
+                <ul class="o-menu o-menu--horizontal@nav-break c-navigation-primary">
                     {%- for nav in collections.nav -%}
                         {% set isCurrent = (nav.url == page.url) %}
                         {% set isParent = nav.url != '/' and nav.url in page.url -%}
