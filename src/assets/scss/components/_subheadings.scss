@@ -30,21 +30,22 @@
 	// These aren't magic numbers, but it's a bit contrived… init?
 	.alpha + &,
 	h1 + & {
-		margin-top: -(1.5 * map-get($type-scale-major-second, xxxl));
+		margin-top: -((1.5 * 1.1) * map-get($type-scale-major-second, xxxl));
 		margin-bottom: 1.5em; // inherits margin of preceeding heading
 
 		@include mq(lg) {
-			margin-top: -(1.5 * map-get($type-scale, xxl));
+			margin-top: -((1.5 * 1.1) * map-get($type-scale, xxl));
 		}
 	}
 
 	.beta + &,
 	h2 + & {
-		margin-top: -(1 * map-get($type-scale-major-second, xxl));
+		// take line-height into account
+		margin-top: -(1.15 * map-get($type-scale-major-second, xxl));
 		margin-bottom: 1em;
 
 		@include mq(lg) {
-			margin-top: -(1 * map-get($type-scale, xl));
+			margin-top: -(1.15 * map-get($type-scale, xl));
 		}
 	}
 
