@@ -154,13 +154,16 @@
 
 		// This is usually a BEAUTIFUL face
 		&__image {
+			border-radius: $radius-l;
 			display: none; // TODO: clip-path alternative
+			overflow: hidden;
 			margin: 0
 				auto
 				$space-xxl
 				auto;
 
 			@supports(clip-path: url('#svgPath')) {
+				border-radius: 0;
 				display: block;
 				height: $image-size; // fallback
 				height: 75vw;
