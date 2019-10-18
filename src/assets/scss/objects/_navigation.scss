@@ -53,7 +53,7 @@
 			}
 
 			@include mq(xl) {
-				margin-left: -(51px + $space-l);
+				margin-left: -(51px + $space-xl);
 			}
 		}
 
@@ -97,6 +97,8 @@
 			}
 
 			&__social {
+				flex: 0 0 auto;
+
 				@include mq($until: navigationBreak) {
 					padding: $space-xl;
 				}

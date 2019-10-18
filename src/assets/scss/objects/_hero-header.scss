@@ -18,7 +18,7 @@
 	// For shallow screens
 	$tightHeight: 900px;
 	// TODO: remove 70px menu guestimate?
-	$menuHeight: 70px;
+	$menuHeight: 75px;
 
 	// When things get awkward around the face…
 	@include mq-add-breakpoint(faceBreak, 450px);
@@ -50,9 +50,13 @@
 		}
 
 		@include mq(md) {
-			padding-top: ($space-xxxl + $menuHeight);
+			padding-top: ($space-xxl + $menuHeight);
 			padding-right: 0; // Let column `o-wrapper` system deal with this
 			max-width: $width-page;
+		}
+
+		@include mq(lg) {
+			padding-top: ($space-xxxl + $menuHeight);
 		}
 
 		> *:last-child {
@@ -223,6 +227,10 @@
 	.o-hero-header {
 
 		&__copy {
+			@include mq(md) {
+				padding-top: ($space-xxxl + $menuHeight);
+			}
+
 			@include mq(lg) {
 				padding-bottom: $space-xxxl;
 			}

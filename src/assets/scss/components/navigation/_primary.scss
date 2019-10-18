@@ -12,7 +12,7 @@
 	text-transform: uppercase;
 
 	@include mq($until: navigationBreak) {
-		font-size: map-get($type-scale, xl);
+		font-size: map-get($type-scale, l);
 	}
 
 	@include mq(navigationBreak) {
