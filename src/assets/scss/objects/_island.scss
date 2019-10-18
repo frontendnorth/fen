@@ -1,0 +1,53 @@
+/**
+ *	Islands
+ *
+ *	To separate content blocks consistently.
+ *	Margins are removed from first and last children.
+ *
+ **/
+
+@mixin island-rules($padding: $space-inset-xl) {
+
+	display: block;
+	padding: $padding;
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.o-island {
+
+	$padding: $space-inset-xl;
+
+	@include island-rules();
+
+	@include mq(sm) {
+		&\@md {
+			@include island-rules();
+		}
+	}
+
+	&--squat {
+		@include mq($until: md) {
+			&\@md-down {
+				padding: 0
+					$padding
+					0
+					$padding;
+			}
+		}
+	}
+
+	&--stretch {
+		@include mq(md) {
+			&\@md {
+				padding: $padding
+					0
+					$padding
+					0;
+			}
+		}
+	}
+
+}

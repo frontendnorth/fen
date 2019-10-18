@@ -51,6 +51,12 @@
 		}
 	}
 
+	// Variations
+	// Rounded corners
+	&--rounded {
+		border-radius: $radius-l;
+	}
+
 	// custom for homepage
 	&--hero-gradient {
 		background: linear-gradient(to bottom,

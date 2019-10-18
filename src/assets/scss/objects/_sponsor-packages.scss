@@ -1,0 +1,49 @@
+/**
+ *	Sponsor packages
+ *
+ *
+ **/
+
+.o-sponsor-packages {
+
+	display: grid;
+	grid-gap: $space-xl 0;
+	// grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+	grid-template-areas:
+		"lead"
+		"default";
+	overflow: hidden;
+	align-items: start;
+
+	@include mq(sm) {
+		grid-template-areas:
+			"lead lead"
+			"default default";
+	}
+
+	@include mq(md) {
+		grid-gap: $space-xl;
+		grid-template-areas: "lead default default";
+	}
+
+	@include mq(lg) {
+		grid-gap: $space-xxl; // `.o-island` takes over
+	}
+
+	&__package {
+		grid-area: default;
+
+		@include mq(sm) {
+			box-sizing: border-box;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&:first-child {
+			grid-area: lead;
+		}
+	}
+
+}

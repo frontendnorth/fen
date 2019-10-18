@@ -1,0 +1,117 @@
+---
+title: 'Sponsors'
+description: 'Join our amazing sponsors and support the growth of web development in Sheffield by sponsoring our conference'
+tags: nav
+navOrder: 80
+sponsorPackages:
+- name: Gold
+  cost: 5,000
+  benefits:
+  - "Speaker slot: <strong>10 minute lightning talk</strong> slot after the lunch break"
+  - "Conference tickets: 4"
+  - "Opening & closing remarks: <strong>Logo on individual slide</strong> & thanks"
+  - "Website: Large logo with link and 200 word bio"
+  - "Exhibition space: <strong>Dedicated exhibit table</strong>"
+  - "Tweets promoting the sponsor's involvement"
+- name: Silver
+  cost: 2,000
+  benefits:
+  - "Conference tickets: 2"
+  - "Opening & closing remarks: <strong>Logo on sponsors slide</strong> & thanks"
+  - "Website: Logo with link"
+  - "Exhibition space: <strong>Dedicated exhibit table</strong>"
+  - "Tweets promoting the sponsor's involvement"
+- name: Bronze
+  cost: 1,000
+  benefits:
+  - "Conference tickets: 1"
+  - "Opening & closing remarks: <strong>Logo on sponsors slide</strong> & thanks"
+  - "Website: Logo with link"
+  - "Exhibition space: Space for promotional material on shared exhibit table"
+  - "Tweets promoting the sponsor's involvement"
+---
+
+{% import "_macros/icons.njk" as icons %}
+
+{% extends "_layouts/base.njk" %}
+
+{% block main %}
+
+    <div class="o-hero-header o-spacer c-raised--hero-gradient">
+
+        <div class="o-hero-header__copy o-wrapper o-wrapper--wide">
+
+            <header class="o-spacer c-inverted">
+
+                <h1 class="c-inverted">Sponsors</h1>
+                <span class="c-subheading">We offer the following packages:</span>
+
+            </header>
+
+            <div class="o-sponsor-packages o-spacer">
+
+                {% for package in sponsorPackages %}
+
+                    <div class="o-sponsor-packages__package">
+
+                        <div class="{{ "o-island c-raised c-raised--rounded c-raised--white" if loop.index == 1 else "o-island@sm o-island--squat@md-down o-island--stretch@md c-inverted" }}">
+
+                            <h2{{ (" class='c-inverted'" if loop.index != 1) | safe }}>
+                                <span class="c-highlight">
+                                    {{ icons.icon('star') if loop.index == 1 }}
+                                </span>
+                                {{ package.name }}
+                            </h2>
+                            <span class="c-subheading">£{{ package.cost }}</span>
+
+                            <ul>
+                                {% for benefit in package.benefits %}
+                                    <li>{{ benefit | safe }}</li>
+                                {% endfor %}
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+            <div class="o-spacer c-inverted">
+                <div class="u-centered s-content">
+                    <a href="mailto:info@frontendnorth.com?subject=Sponsorship website enquiry" class="c-button c-button--pop">Contact us for more details</a>
+                    <br>
+                    or <a href="{{ site.image_cdn }}FEN-Sponsor-Pack.pdf" type="application/pdf">download our sponsor pack PDF</a>
+                </div>
+            </div>
+
+        </div> {# /.o-hero-header__copy.o-wrapper.o-wrapper--wide #}
+
+    </div>
+
+    <div class="o-wrapper o-spacer">
+
+        <h2>Why sponsor Front End North?</h2>
+        <p>
+            Sponsoring Front End North provides your company with a platform to engage with and support the Front End community, it’s a great way to meet prospective new hires and promote your products and services.
+        </p>
+
+    </div> {# /.o-wrapper.o-spacer #}
+
+    <section class="o-wrapper o-spacer o-spacer--super@md">
+
+        <h2>Our amazing sponsors:</h2>
+
+        <div class="o-sponsor-grid">
+            {%- for sponsor in sponsors -%}
+                {{ ('<a href="' ~ sponsor.url ~ '" rel="external" title="' ~ sponsor.name ~ '">' if sponsor.url) | safe }}
+                    <span class="u-visually-hidden">{{ sponsor.name }}</span>
+                    <img src="{{ site.image_folder }}sponsors/{{ sponsor.logo }}" alt="">
+                {{ ('</a>' if sponsor.url) | safe }}
+            {%- endfor -%}
+        </div>
+
+    </section>
+
+{% endblock %}

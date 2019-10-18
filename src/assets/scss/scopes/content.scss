@@ -11,7 +11,8 @@
         @include link-rules();
 
         // on a dark background
-        .c-inverted & {
+        .c-inverted &,
+        &.c-inverted {
             @include link-rules-background($color-text-white);
         }
     }
