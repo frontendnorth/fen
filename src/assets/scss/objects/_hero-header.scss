@@ -197,14 +197,13 @@
 				height: $image-size-md;
 				margin: 0;
 				margin-bottom: -($image-size-md /2);
-				right: ($width-page + $space-l + $space-xxl); // text + wrapper padding + comfy
+				right: ($width-page + $space-xl);
 				width: $image-size-md;
 			}
 
 			@include mq(mdPlus) {
 				height: $image-size-md-plus;
 				margin-bottom: -($image-size-md-plus /2);
-				right: ($width-page + $space-l + $space-xxl);
 				width: $image-size-md-plus;
 			}
 

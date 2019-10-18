@@ -19,6 +19,11 @@
 	// max-width: ($width-page + ($space-l *2));
 	max-width: $width-page;
 
+	@include mq(md) {
+		padding-left: $space-xl;
+		padding-right: $space-xl;
+	}
+
 	// variations
 	&--wide,
 	&--has-sidebar {
@@ -30,8 +35,9 @@
 		// Use with…
 		&__primary {
 			@include mq(md) {
+				box-sizing: border-box;
 				float: right;
-				width: $width-page;
+				width: ($width-page - ($space-xl *2));
 				max-width: 100%;
 				clear: right;
 			}

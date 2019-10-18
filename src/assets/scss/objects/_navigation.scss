@@ -29,6 +29,11 @@
 			justify-content: flex-start;
 			max-width: $width-page-max;
 		}
+
+		@include mq(md) {
+			padding-left: $space-xl;
+			padding-right: $space-xl;
+		}
 	}
 
 		// Please note: There is a link to 'home' in the menu too
@@ -43,7 +48,7 @@
 			@include mq(navigationBreak) {
 				height: 34px;
 				margin: 0
-					$space-l
+					$space-xl
 					0
 					0;
 				width: 51px;
@@ -90,6 +95,7 @@
 				@include mq(navigationBreak) {
 					display: inline-block;
 					flex: 1 1 auto; // Push social stuff to the end
+					margin-left: -$space-l;
 				}
 			}
 
