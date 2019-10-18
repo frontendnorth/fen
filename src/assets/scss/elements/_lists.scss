@@ -22,6 +22,11 @@ ul:not([class]) {
             top: calc(.5em - 2px);
             transform: rotate(45deg);
             width: $space-default;
+
+            // on a dark background
+            .c-inverted & {
+                background-color: rgba($color-text-white, .7);
+            }
         }
     }
 
