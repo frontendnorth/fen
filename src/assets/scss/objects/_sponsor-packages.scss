@@ -24,6 +24,7 @@
 	@include mq(md) {
 		grid-gap: $space-xl;
 		grid-template-areas: "lead default default";
+		grid-template-columns: 1.5fr 1fr 1fr;
 	}
 
 	@include mq(lg) {
