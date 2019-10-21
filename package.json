@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "sass:dev": "node-sass src/assets/scss/all.scss -o docs/assets/css/",
-    "sass:watch": "node-sass src/assets/scss/all.scss -wo docs/assets/css/",
-    "sass:build": "node-sass src/assets/scss/all.scss -xo docs/assets/css/ --output-style=compressed --source-map false",
+    "sass:watch": "node-sass src/assets/scss/all.scss -wo docs/assets/css/ --source-map docs/assets/css/",
+    "sass:build": "node-sass src/assets/scss/all.scss -xo docs/assets/css/ --output-style=compressed",
     "fonts": "cp -R src/assets/fonts/ docs/assets/fonts/",
     "favicons": "cp -R src/assets/favicons/ docs/",
     "autoprefix": "npx postcss docs/assets/css/*.css --no-map --use autoprefixer -d docs/assets/css/",
@@ -40,6 +40,7 @@
     "uglify-js": "^3.6.0"
   },
   "devDependencies": {
+    "npm-check": "^5.9.0",
     "onchange": "^6.1.0",
     "rimraf": "^2.7.1"
   },
