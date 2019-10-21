@@ -68,4 +68,11 @@
 		box-shadow: 1px 2px 18px rgba(#000, .15);
 	}
 
+	&--branded {
+		background-image: url("data:image/svg+xml,%3Csvg width='443' height='288' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='rotate(-45 268.962 111.331)' fill='%23ededed'%3E%3Crect width='97' height='99' rx='7'/%3E%3Crect x='109' width='97' height='208' rx='7'/%3E%3Crect x='218' width='97' height='317' rx='7'/%3E%3C/g%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: 100px -35%;
+		background-size: 100% auto;
+	}
+
 }
