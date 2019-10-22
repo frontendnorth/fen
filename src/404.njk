@@ -1,0 +1,24 @@
+---
+title: "404: Page not found"
+---
+{% extends "_layouts/base.njk" %}
+
+{% block main %}
+
+    <div class="o-hero-header o-spacer c-raised--hero-gradient c-inverted">
+
+        <header class="o-hero-header__copy o-wrapper">
+
+            <h1 class="c-inverted">{{ title }}</h1>
+
+            <div class="s-content c-lede">
+                <p>You took a wrong turn… although <em>we</em> may have made a mistake. It's a possibility.</p>
+                <p>We're sorry x</p>
+                <a href="{{ metadata.url }}" class="c-button c-button--pop">Return to the homepage</a>
+            </div>
+
+        </header>
+
+    </div>
+
+{% endblock %}
