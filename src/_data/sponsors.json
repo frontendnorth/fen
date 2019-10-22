@@ -7,12 +7,17 @@
     {
         "name": "Nimble",
         "url": "http://www.nimbleapproach.com/",
-        "logo": "nimble-bw.svg"
+        "logo": "nimble.svg"
     },
     {
         "name": "Autodesk",
         "url": "https://autodesk.co.uk/",
-        "logo": "bitmap/autodesk-logo-rgb-black-1line-medium-v2.png"
+        "logo": "bitmap/autodesk-logo-rgb-1line-medium-v2.png"
+    },
+    {
+        "name": "Egress",
+        "url": "https://www.egress.com",
+        "logo": "bitmap/Egress_Logo_600x147.png"
     },
     {
         "name": "Notist",
