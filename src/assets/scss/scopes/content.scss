@@ -22,4 +22,10 @@
         margin-bottom: 1.5em;
     }
 
+    // Context
+    .o-hero-header__copy > & > *:last-child,
+    .o-wrapper__primary > & > *:last-child {
+        margin-bottom: 0;
+    }
+
 }
