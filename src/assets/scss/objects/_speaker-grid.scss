@@ -19,10 +19,63 @@
 		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 		// TODO: support? grid-gap: $space-xl;
 		gap: $space-xl;
+		margin: 0
+			0
+			$space-xl
+			0;
 	}
 
 	&__item {
+		margin-bottom: $space-xl;
 
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@supports (display: grid) {
+			margin-bottom: unset;
+		}
+	}
+
+	// For IE - use selectively
+	&--fix-support {
+		@include mq(sm) {
+			margin: (-$space-l)
+				(-$space-l)
+				$space-xl
+				(-$space-l);
+		}
+
+		@supports (display: grid) {
+			margin: 0
+				0
+				$space-xl
+				0;
+		}
+
+		.o-speaker-grid {
+		&__item {
+			padding-bottom: $space-xl;
+			margin-bottom: 0;
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+
+			@include mq(sm) {
+				box-sizing: border-box;
+				float: left;
+				padding: $space-l;
+				width: 25%;
+			}
+
+			@supports (display: grid) {
+				float: none;
+				padding: 0;
+				width: unset;
+			}
+		}
+		}
 	}
 
 }
