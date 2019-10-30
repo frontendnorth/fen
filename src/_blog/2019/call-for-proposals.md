@@ -3,6 +3,8 @@ title: "Apply to speak at Front End North 2020"
 date: 2019-09-26
 intro: "You may have seen that we have announced our invited speakers for Front End North 2020! We are really excited for them to be coming to Sheffield, but they will only make up half of our speakers on the day. For the other half, we are opening a call for proposals (CFP) to give you a chance to share your ideas and experience on stage!"
 ---
+_On the fence? Need some encouragement to submit a talk? We can answer your questions and tell you what it’s like to be on stage. We want you to be here, and if a quick video chat might convince you to submit a talk, we can help. Send us an email at <info@frontendnorth.com>_
+
 ## What we’re looking for
 
 We are searching for four **30 minute talks** on any topic surrounding front end development and design. To give you a taste of what we’re looking for, we’ve come up with some ideas to get you started:
