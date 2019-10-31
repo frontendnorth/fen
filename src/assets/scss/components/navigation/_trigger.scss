@@ -1,0 +1,63 @@
+/**
+ *	Primary navigation
+ *
+ *	Interaction and styling.
+ *	`navigationBreak` set in `o-navigation`
+ *
+ **/
+
+.c-navigation-trigger {
+
+	$size: ($space-xl *1.5);
+
+	background-color: $color-bg-white;
+	// background-color: $color-brand-primary;
+	// background-color: #ffb92d !important;
+	// background-image: $color-gradient-secondary;
+	background-repeat: repeat-x;
+	border: none;
+	border-radius: $radius-default;
+	box-shadow: 0 0 8px rgba(#000, .25);
+	color: $color-text-base; // for icon
+	cursor: pointer;
+	height: $size;
+	transform-origin: center;
+	transform: translate(#{-$space-l + 9}, #{-$space-l + 9}) // 9 aligns with edge
+		rotate(45deg);
+	transition-property: background;
+	transition-duration: 0.15s;
+	transition-timing-function: ease-in-out;
+	user-select: none;
+	width: $size;
+
+	// Status
+	// Simliar to `.c-button--pop`
+	.has-popover &,
+	&:focus,
+	&:hover {
+		background-position: 0 15px;
+		outline: none;
+	}
+
+	// For animation
+	&::after {
+		// @include pseudo();
+		//
+		// background-color: $color;
+	}
+
+	&__text {
+		@include visuallyHidden();
+	}
+
+	&__icon {
+		display: block;
+		transform: rotate(-45deg);
+	}
+
+	&.is-on-light {
+		background-color: $color-brand-primary;
+		color: rgba($color-text-white, 1);
+	}
+
+}
