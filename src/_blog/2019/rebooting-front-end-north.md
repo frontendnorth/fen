@@ -9,7 +9,7 @@ Earlier this year, we announced that we had taken the reigns of Sheffield’s co
 
 If you’ve ever been to the [Front End Sheffield user group](https://www.meetup.com/Front-End-Sheffield/), you’ll already know who we are! That’s because Front End North has the same team of organisers behind it.
 
-{% image "happy-fes-crew.jpg", "The FEN team", "right" %}Amy Benson, Ian Parr, Katie Fenn, JP Archer, Laura Kishimoto
+{% image "happy-fes-crew.jpg", "The FEN team", "full" %}Amy Benson, Ian Parr, Katie Fenn, JP Archer, Laura Kishimoto
 {% endimage %}
 
 Some of us have been working in tech for many years, some of us are relative newcomers. We are developers, designers and managers. We have a broad range of professional backgrounds. Our events have covered web security, accessibility, design, performance and communication. A conference gives us a bigger stage and a bigger audience to showcase the impact of the work we do.

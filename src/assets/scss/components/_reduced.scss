@@ -13,4 +13,8 @@
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 
+	.c-inverted & {
+		color: rgba($color-text-white, .85);
+	}
+
 }
