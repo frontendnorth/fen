@@ -116,10 +116,14 @@
 		}
 
 			&__action {
-				@include mq(md) {
+				@include mq($until: sm) {
+					margin-top: $space-xxl;
+				}
+
+				@include mq(lg) {
 					position: absolute;
 					top: 0;
-					right: -279px;
+					right: -319px; // Magic AF
 				}
 			}
 
@@ -238,6 +242,8 @@
 	.o-hero-header {
 
 		&__copy {
+			padding-top: $space-xxl;
+
 			@include mq(md) {
 				padding-top: ($space-xxxl + $menuHeight);
 			}
@@ -245,6 +251,10 @@
 			@include mq($from: lg, $and: '(min-height: #{$tightHeight})') {
 				padding-top: (($space-xxxl *1.5) + $menuHeight);
 			}
+		}
+
+		&__intro {
+			margin-bottom: $space-xxl;
 		}
 
 		@include mq($from: xs, $until: sm) {
