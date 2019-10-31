@@ -2,6 +2,8 @@
     "title": "Front End North Conference",
     "url": "https://frontendnorth.com",
     "email": "info@frontendnorth.com",
+    "ticket_url": "https://www.eventbrite.co.uk/e/front-end-north-conference-tickets-78898540659",
+    "volunteer_form": "https://forms.gle/e9myLqPXzcxixBKY6",
     "feed": {
         "subtitle": "The official blog for the Front End North conference",
         "filename": "feed.xml",
