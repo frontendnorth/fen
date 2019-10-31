@@ -22,6 +22,7 @@
 	@include mq(md) {
 		padding-left: $space-xl;
 		padding-right: $space-xl;
+		max-width: ($width-page + $space-xl);
 	}
 
 	// variations
@@ -37,7 +38,7 @@
 			@include mq(md) {
 				box-sizing: border-box;
 				float: right;
-				width: ($width-page - ($space-xl *2));
+				width: ($width-page - $space-xl);
 				max-width: 100%;
 				clear: right;
 			}
