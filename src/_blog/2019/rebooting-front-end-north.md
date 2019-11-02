@@ -1,6 +1,6 @@
 ---
 title: "Rebooting Front End North"
-date: 2019-09-26
+date: 2019-10-31
 ---
 Earlier this year, we announced that we had taken the reigns of Sheffield’s conference for web developers, Front End North. We’ve known for years that Sheffield has a thriving tech community, and that having a conference of our own is a great opportunity to get everyone together in one place at the same time. When the previous organisers asked whether we’d be interested in taking control, we jumped at the chance to make it our own.
 
