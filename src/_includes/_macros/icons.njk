@@ -4,8 +4,8 @@
 
 {# Icon #}
 {# TODO: default doesn't work properly when `null` is passed to it #}
-{% macro icon(type = 'link') %}
-    <svg aria-hidden="true" role="presentation" class="c-icon">
+{% macro icon(type = 'link', size = null) %}
+    <svg aria-hidden="true" role="presentation" class="c-icon {{ 'c-icon--' ~ size if size }}">
         <use xlink:href="#{{ type }}"></use>
     </svg>
 {% endmacro %}
