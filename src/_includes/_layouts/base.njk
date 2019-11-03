@@ -16,14 +16,19 @@
     {% set meta_description = null %}
     {% if description %}
         {% set meta_description = description %}
+    {% elseif excerpt %}
+        {% set meta_description = excerpt %}
+    {% elseif intro %}
+        {% set meta_description = intro %}
     {% else %}
         {# If speaker, use talk description (if available!) #}
         {% for talk in collections.schedule %}
             {% if page.fileSlug == talk.data.speaker %}
-                {% set meta_description = talk.data.title ~': ' ~ talk.templateContent | striptags(true) | truncate(150) %}
+                {% set meta_description = talk.data.title ~': ' ~ talk.templateContent %}
             {% endif %}
         {% endfor %}
     {% endif %}
+    {% set meta_description = (meta_description if meta_description else content) | striptags(true) | truncate(150) %}
     {{ ('<meta name="description" content="' ~ meta_description ~ '">' if meta_description) | safe }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/assets/css/all.css?v={{ project.buildDate }}" rel="stylesheet">
