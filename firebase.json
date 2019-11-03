@@ -18,6 +18,11 @@
         "key": "Cache-Control",
         "value": "max-age=31557600"
       }]
+    }],
+    "redirects": [{
+      "source": "/blog/2019/09/rebooting-front-end-north/",
+      "destination": "/blog/2019/10/rebooting-front-end-north/",
+      "type": 301
     }]
   }
 }
