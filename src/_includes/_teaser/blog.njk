@@ -7,11 +7,13 @@
         <p>
             {# Use body copy as excerpt unless frontmatter available  #}
             {% set teaser_length = 200 %}
+            {% set teaser_excerpt = null %}
             {% if post.data.excerpt %}
-                {{ post.data.excerpt | striptags(true) | truncate(teaser_length) }}
+                {% set teaser_excerpt = post.data.excerpt %}
             {% else %}
-                {{ post.data.intro | striptags(true) | truncate(teaser_length) if post.data.intro else post.templateContent | striptags(true) | truncate(teaser_length) }}
+                {% set teaser_excerpt = (post.data.intro if post.data.intro else post.templateContent) %}
             {% endif %}
+            {{ teaser_excerpt | striptags(true) | truncate(teaser_length) }}
         </p>
     </div>
 </article>
