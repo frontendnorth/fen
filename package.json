@@ -18,7 +18,7 @@
     "11ty:watch": "npx eleventy --serve",
     "svgmin": "svgo --disable=inlineStyles -r -f src/assets/img -o docs/assets/img",
     "init": "npm run sass:build && npm run fonts && npm run favicons && npm run svgmin && npm run 11ty:build && mkdir -p docs/assets/js && npm run js:build",
-    "dev": "npm run init && npm run sass:watch & npm run 11ty:watch && npm run js:watch",
+    "dev": "npm run init && npm run sass:watch & npm run 11ty:watch & npm run js:watch",
     "build": "npm run clean && npm run init && npm run autoprefix",
     "clean": "rimraf ./docs",
     "deploy-staging": "ELEVENTY_ENV=staging npm run build && firebase deploy -P staging",
