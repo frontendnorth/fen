@@ -244,6 +244,10 @@
 		&__copy {
 			padding-top: $space-xxl;
 
+			@include mq(navigationBreak) {
+				padding-top: ($space-xxl + $menuHeight);
+			}
+
 			@include mq(md) {
 				padding-top: ($space-xxxl + $menuHeight);
 			}
