@@ -57,7 +57,7 @@ When we have selected our favourite talks, we will send acceptance emails to mak
 
 Occasionally, plans change and things happen that are beyond our control. It’s common for speaker lineups to change when Real Life intervenes. We may get in touch if we need a short-notice speaker!
 
-**Added 12th November:** We have no set date that we will let you know whether you have been successful or not. This is because contacting speakers to finalise plans can take time, and sometimes plans change. However, we know the speed of our reply is important, and we will try to let everyone know by the end of November.
+**Added 12th November:** We have no set date that we will let you know whether you have been successful or not. This is because contacting speakers to finalise plans can take time, and sometimes plans change. However, we know the speed of our reply is important, and we will try to let everyone know by mid-December.
 
 
 ## Code of conduct
