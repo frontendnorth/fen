@@ -27,6 +27,13 @@
 
                 {{ content | safe }}
 
+                <span class="c-reduced">
+                    Post published: <time datetime="{{ page.date|htmlDateString }}">{{ page.date | readableDate }}</time><br>
+                    {% if updated %}
+                        Last updated: <time datetime="{{ updated|htmlDateString }}">{{ updated | readableDate }}</time>
+                    {% endif %}
+                </span>
+
             </div>
 
             {% if collections.blog | length > 1 %}
