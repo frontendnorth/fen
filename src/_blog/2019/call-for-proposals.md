@@ -1,6 +1,7 @@
 ---
 title: "Apply to speak at Front End North 2020"
 date: 2019-09-26
+updated: 2019-11-12
 intro: "You may have seen that we have announced our invited speakers for Front End North 2020! We are really excited for them to be coming to Sheffield, but they will only make up half of our speakers on the day. For the other half, we are opening a call for proposals (CFP) to give you a chance to share your ideas and experience on stage!"
 ---
 _On the fence? Need some encouragement to submit a talk? We can answer your questions and tell you what it’s like to be on stage. We want you to be here, and if a quick video chat might convince you to submit a talk, we can help. Send us an email at <info@frontendnorth.com>_
@@ -55,6 +56,8 @@ The purpose of the curation round is to select talks with a complementary mix of
 When we have selected our favourite talks, we will send acceptance emails to make firm plans for speakers to come to the conference. We cannot send out rejection emails until this process is complete, and this can take some time. We appreciate this can be frustrating but it means we can promise that you will hear the bad news personally from ourselves, instead of a speaker announcement on Twitter. If you are successful, please keep this to yourself until we give you the go-ahead to share this news publically - remember that it can be tough to miss out on speaking at a conference.
 
 Occasionally, plans change and things happen that are beyond our control. It’s common for speaker lineups to change when Real Life intervenes. We may get in touch if we need a short-notice speaker!
+
+**Added 12th November:** We have no set date that we will let you know whether you have been successful or not. This is because contacting speakers to finalise plans can take time, and sometimes plans change. However, we know the speed of our reply is important, and we will try to let everyone know by the end of November.
 
 
 ## Code of conduct
