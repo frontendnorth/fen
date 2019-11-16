@@ -1,9 +1,11 @@
 ---
 title: "Apply to speak at Front End North 2020"
 date: 2019-09-26
-updated: 2019-11-12
+updated: 2019-11-17
 intro: "You may have seen that we have announced our invited speakers for Front End North 2020! We are really excited for them to be coming to Sheffield, but they will only make up half of our speakers on the day. For the other half, we are opening a call for proposals (CFP) to give you a chance to share your ideas and experience on stage!"
 ---
+**Sorry, but our CFP is now closed. Still want to help out? Consider volunteering! [Register your interest here](https://forms.gle/e9myLqPXzcxixBKY6).** If you submitted a talk then we will try to let you know if you have been successful by mid-December.
+
 _On the fence? Need some encouragement to submit a talk? We can answer your questions and tell you what it’s like to be on stage. We want you to be here, and if a quick video chat might convince you to submit a talk, we can help. Send us an email at <info@frontendnorth.com>_
 
 ## What we’re looking for
@@ -66,8 +68,6 @@ By applying to our CFP, you are agreeing to follow our [code of conduct](/code-o
 
 ## CFP form
 
-You can apply to speak at Front End North by [filling out our CFP form](https://forms.gle/9LKwzhpVJG2RNaAi7). Please remember that **this CFP will close on Saturday November 16th**.
+You can apply to speak at Front End North by ~~filling out our CFP form~~ - (sorry, CFP is now closed). Please remember that **this CFP will close on Saturday November 16th**.
 
 Good luck!
-
-<a href="https://forms.gle/9LKwzhpVJG2RNaAi7" class="c-button c-button--pop">Apply to speak at Front End North</a>
