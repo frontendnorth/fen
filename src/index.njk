@@ -77,6 +77,18 @@ navOrder: 0
 
         <section class="o-spacer o-spacer--super@md">
 
+            <h2><a href="/blog/">Blog</a></h2>
+
+            {% for post in collections.blog | reverse | limit(2) %}
+                {% include "_teaser/blog.njk" %}
+            {% endfor %}
+
+            <a href="/blog/" class="c-button">View all updates</a>
+
+        </section>
+
+        <section class="o-spacer@md">
+
             <h2><a href="/sponsors/">Sponsorship</a></h2>
 
             <div class="s-content">
@@ -98,18 +110,6 @@ navOrder: 0
                     {{ ('</a>' if sponsor.url) | safe }}
                 {%- endfor -%}
             </div>
-
-        </section>
-
-        <section class="o-spacer@md">
-
-            <h2><a href="/blog/">Blog</a></h2>
-
-            {% for post in collections.blog | reverse | limit(2) %}
-                {% include "_teaser/blog.njk" %}
-            {% endfor %}
-
-            <a href="/blog/" class="c-button">View all updates</a>
 
         </section>
 
