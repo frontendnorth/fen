@@ -58,6 +58,10 @@ module.exports = function(eleventyConfig) {
         html: true
     };
 
+    let markdownLib = markdownIt(options).use(markdownItAnchor);
+
+    eleventyConfig.setLibrary("md", markdownLib);
+
     // Limit filter
     // Thanks: https://www.webstoemp.com/blog/from-jekyll-to-eleventy/
     eleventyConfig.addNunjucksFilter("limit", function(array, limit) {
