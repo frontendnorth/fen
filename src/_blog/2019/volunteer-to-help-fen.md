@@ -25,7 +25,7 @@ We have set out to provide a conference with great speakers who will deliver ins
 
 ## How we'll help you to confidently help us
 
-You'll need to be **available for training session sometime during January** as well as on the 7th of February (the day of the conference). This will be delivered with help from [Katie Fenn](https://twitter.com/katie_fenn) who has helped other conferences with their CoC responsibilities.
+You'll need to be **available for a group training session sometime during January** in person for a couple of hours, as well as on the 7th of February (the day of the conference). This will be delivered with help from [Katie Fenn](https://twitter.com/katie_fenn) who has helped other conferences with their CoC responsibilities.
 
 <a href="{{ metadata.volunteer_form }}" class="c-button c-button--pop">Register your interest in volunteering</a>
 
