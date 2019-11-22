@@ -1,6 +1,7 @@
 ---
 title: "Rebooting Front End North"
 date: 2019-10-31
+updated: 2019-11-22
 ---
 Earlier this year, we announced that we had taken the reigns of Sheffield’s conference for web developers, Front End North. We’ve known for years that Sheffield has a thriving tech community, and that having a conference of our own is a great opportunity to get everyone together in one place at the same time. When the previous organisers asked whether we’d be interested in taking control, we jumped at the chance to make it our own.
 
@@ -33,3 +34,5 @@ As this is our first time organising a conference we’re going to try to share 
 ### Volunteers
 
 We’ll also be looking for some volunteers to help us on the day. If you’d like to register your interest [then please do so here]({{ metadata.volunteer_form }}) - but we won’t hold you to anything if you just want to talk to us and see what it’s all about first.
+
+**Added 22nd November:** We have written about how you can [get involved as a volunteer](/blog/2019/11/volunteering-to-help-at-fen-2020/).
