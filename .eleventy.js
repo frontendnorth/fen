@@ -50,6 +50,14 @@ module.exports = function(eleventyConfig) {
         return DateTime.fromJSDate(dateObj, {zone: 'gmt'}).toFormat("yyyy'/'LL");
     });
 
+    // Markdown plugin
+    let markdownIt = require("markdown-it");
+    let markdownItAnchor = require("markdown-it-anchor");
+    let options = {
+        // Defaults to `false`, unlike default 11ty behaviour
+        html: true
+    };
+
     // Limit filter
     // Thanks: https://www.webstoemp.com/blog/from-jekyll-to-eleventy/
     eleventyConfig.addNunjucksFilter("limit", function(array, limit) {
