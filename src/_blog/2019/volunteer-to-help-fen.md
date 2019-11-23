@@ -1,6 +1,7 @@
 ---
 title: Volunteering to help at FEN 2020
 intro: "Your opportunity to help us make this year's conference a success."
+updated: 2019-11-23
 ---
 We have set out to provide a conference with great speakers who will deliver insightful talks at an accessible price. You can read more about [the intentions behind Front End North in our blog post](https://frontendnorth.com/blog/2019/10/rebooting-front-end-north/). But to do this **we need volunteers to help us**. This is where you may come in!
 
@@ -25,7 +26,7 @@ We have set out to provide a conference with great speakers who will deliver ins
 
 ## How we'll help you to confidently help us
 
-You'll need to be **available for a group training session sometime during January** in person for a couple of hours, as well as on the 7th of February (the day of the conference). This will be delivered with help from [Katie Fenn](https://twitter.com/katie_fenn) who has helped other conferences with their CoC responsibilities.
+You'll need to be **available for a group training session sometime during January** for a couple of hours, as well as on the 7th of February (the day of the conference). This training will be delivered remotely with help from [Katie Fenn](https://twitter.com/katie_fenn) who has helped other conferences with their CoC responsibilities.
 
 <a href="{{ metadata.volunteer_form }}" class="c-button c-button--pop">Register your interest in volunteering</a>
 
@@ -38,3 +39,5 @@ It should go without saying, but we would not expect any volunteer to pay for a 
 If you don't want to volunteer but still like the sound of what we're doing, [then tickets are available now](https://www.eventbrite.co.uk/e/front-end-north-conference-tickets-78898540659) for £50.
 
 Thanks to [Peter Aitken](/speakers/peter-aitken/) for help with some of this.
+
+**Added 23rd November:** Updated to reflect that remote training is a possibility for volunteers.
