@@ -6,9 +6,7 @@ speaker: "john-henry-muller"
 ---
 Color touches literally every pixel of digital products. That's why it is so important to get color right in a design system.
 
-In this talk, John Henry Müller (former Design Director at Hudl) divulges mistakes made and practical lessons learned about color while creating Uniform, Hudl's design system.
-
-What you'll learn:
+In this talk, John Henry Müller (former Design Director at Hudl) divulges mistakes made and practical lessons learned about color while creating Uniform, Hudl's design system. What you'll learn:
 
 - Tips and tricks creating a durable color scheme
 - Common pitfalls when defining a color palette

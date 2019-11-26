@@ -6,6 +6,13 @@ card_image: "cards/speaker-card-jemima.png"
 external:
     - twitter: "jemimaabu"
     - website: "https://www.jemimaabu.com"
+previous:
+    - name: Writing Modern CSS
+      where: Frontstack
+      url: https://medium.com/frontstackio/frontstack-event-recap-writing-modern-css-1b7e9c5659a4
+    - name: Breaking Down Best Practices for JAMstack
+      where: JAMstack Lagos
+      url: https://noti.st/jemimaabu/gNF5op/bre
 featured: 70
 ---
 Jemima Abu is a Front End Developer with over three years experience building accessible and responsive websites using HTML and CSS.
