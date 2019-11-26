@@ -44,7 +44,7 @@ navOrder: 0
                 <h2 class="c-inverted">Our speakers</h2>
 
                 <ul class="o-speaker-grid">
-                    {% for speaker in collections.speakers %}
+                    {% for speaker in collections.speakers | limit(4) %}
                         {% if speaker.data.featured %}
                             <li class="o-speaker-grid__item">
                                 {% set teaser = {
@@ -57,7 +57,7 @@ navOrder: 0
                     {% endfor %}
                 </ul>
 
-                <a href="/speakers/" class="c-button">View our current line-up</a>
+                <a href="/speakers/" class="c-button">View the full line-up</a>
 
             </section>
         </div>
