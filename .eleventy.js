@@ -62,6 +62,16 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.setLibrary("md", markdownLib);
 
+    // Markdown filter for frontmatter (and other bits)
+    // TODO: Currently not in use
+    // https://github.com/11ty/eleventy/issues/658
+    eleventyConfig.addFilter('markdown', function(value) {
+        let markdown = require('markdown-it')({
+            html: true
+        });
+        return markdown.render(value);
+    });
+
     // Limit filter
     // Thanks: https://www.webstoemp.com/blog/from-jekyll-to-eleventy/
     eleventyConfig.addNunjucksFilter("limit", function(array, limit) {
