@@ -39,14 +39,19 @@ navOrder: 10
 
     </div>
 
-    <div class="o-wrapper o-spacer o-spacer--super@md">
+    <div class="o-wrapper">
 
-        <h2>Who else is speaking at Front End North 2020?</h2>
-        <p>
-            The speakers announced above <strong>will only make up part</strong> of our line-up. We are in the middle of a Call for Proposals (CFP) process and will reveal who will be joining them soon.
-        </p>
+        <section class="o-spacer o-spacer--super@md">
 
-        <a href="/blog/2019/09/apply-to-speak-at-front-end-north-2020/" class="c-button">Read about our CFP process</a>
+            <h2><a href="/blog/">Speaker updates & more…</a></h2>
+
+            {% for post in collections.blog | reverse | limit(2) %}
+                {% include "_teaser/blog.njk" %}
+            {% endfor %}
+
+            <a href="/blog/" class="c-button">View all updates</a>
+
+        </section>
 
     </div> {# /.o-wrapper.o-spacer #}
 
