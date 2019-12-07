@@ -28,4 +28,13 @@
         margin-bottom: 0;
     }
 
+    iframe {
+        margin-top: 3em;
+        margin-bottom: 3em;
+    }
+
+        p + iframe {
+            margin-top: 1.5em;
+        }
+
 }
