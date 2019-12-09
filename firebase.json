@@ -23,6 +23,10 @@
       "source": "/blog/2019/09/rebooting-front-end-north/",
       "destination": "/blog/2019/10/rebooting-front-end-north/",
       "type": 301
+    }, {
+      "source": "/blog/2019/12/volunteering-to-help-at-fen-2020/",
+      "destination": "/blog/2019/11/volunteering-to-help-at-fen-2020/",
+      "type": 301
     }]
   }
 }

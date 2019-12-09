@@ -1,5 +1,6 @@
 ---
 title: Volunteering to help at FEN 2020
+date: 2019-11-22
 intro: "Your opportunity to help us make this year's conference a success."
 updated: 2019-11-23
 ---
