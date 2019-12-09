@@ -8,9 +8,13 @@
 .o-sponsor-grid {
 
 	display: grid;
-	grid-gap: $space-xxl;
+	grid-gap: $space-xl;
 	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
 	overflow: hidden;
+
+	@include mq(sm) {
+		grid-gap: $space-xxl;
+	}
 
 	@supports (display: grid) {
 		overflow: visible;
@@ -22,10 +26,14 @@
 		flex-direction: column;
 		margin: auto;
 		margin-bottom: $space-xl;
-		max-width: 225px;
+		max-width: 50%;
 
 		&:last-child {
 			margin-bottom: 0;
+		}
+
+		@include mq(xs) {
+			max-width: 225px;
 		}
 
 		@include mq(sm) {
@@ -49,9 +57,54 @@
 	}
 
 		img {
-			height: auto;
-			min-width: 100%;
+			max-height: 85px;
 			max-width: 100%;
+			object-fit: contain;
+			width: 100%;
+
+			@include mq(md) {
+				max-height: 125px;
+			}
 		}
+
+	&--compact {
+		@include mq(xs) {
+
+			align-content: flex-start;
+			align-items: center;
+			display: flex;
+			grid-gap: 0; // Firefox 71 claims this doesn't have impact, but it does!
+			flex-wrap: wrap;
+			margin-left: -$space-l;
+			margin-right: -$space-l;
+
+			& > * {
+				box-sizing: content-box;
+				flex: 0 1 auto;
+				float: left; // For non-flexbox fallbacks?
+				min-height: 0 !important;
+				height: 30px;
+				margin: $space-l;
+				width: auto;
+				max-width: none;
+
+				@include mq(sm) {
+					height: 40px;
+				}
+
+				&:last-child {
+					margin-bottom: $space-l;
+				}
+
+				img {
+					display: block;
+					height: 100%;
+					max-height: none;
+					object-fit: contain;
+					width: auto;
+				}
+			}
+		}
+	}
 
 }

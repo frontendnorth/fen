@@ -5,6 +5,11 @@
         "logo": "evoluted.svg"
     },
     {
+        "name": "Egress",
+        "url": "https://www.egress.com",
+        "logo": "bitmap/Egress_Logo_600x147.png"
+    },
+    {
         "name": "Nimble",
         "url": "http://www.nimbleapproach.com/",
         "logo": "nimble.svg"
@@ -15,9 +20,9 @@
         "logo": "bitmap/autodesk-logo-rgb-1line-medium-v2.png"
     },
     {
-        "name": "Egress",
-        "url": "https://www.egress.com",
-        "logo": "bitmap/Egress_Logo_600x147.png"
+        "name": "Inviqa",
+        "url": "https://inviqa.com/",
+        "logo": "inviqa.svg"
     },
     {
         "name": "Notist",
