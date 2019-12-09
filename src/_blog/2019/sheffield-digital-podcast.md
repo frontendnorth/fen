@@ -1,5 +1,6 @@
 ---
-title: "We talk to the Sheffield Digital podcast "
+title: "We talk to the Sheffield Digital podcast"
+date: 2019-12-07
 intro: "FEN co-organisers Katie and Amy speak to local digital industry association about our upcoming conference."
 ---
 As supporters of all things digital locally, Sheffield Digital recently interviewed two of our FEN organisers, Katie Fenn and Amy Benson.
