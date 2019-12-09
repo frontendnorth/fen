@@ -102,9 +102,9 @@ navOrder: 0
 
             <h3>Our sponsors:</h3>
 
-            <div class="o-sponsor-grid">
+            <div class="o-sponsor-grid o-sponsor-grid--compact">
                 {%- for sponsor in sponsors -%}
-                    {{ ('<a href="' ~ sponsor.url ~ '" rel="external" title="' ~ sponsor.name ~ '">' if sponsor.url) | safe }}
+                    {{ ('<a href="' ~ sponsor.url ~ '" rel="external" title="' ~ sponsor.name ~ '" class="h-sponsor--' ~ sponsor.name | slug ~ '">' if sponsor.url) | safe }}
                         <span class="u-visually-hidden">{{ sponsor.name }}</span>
                         <img src="{{ site.image_folder }}sponsors/{{ sponsor.logo }}" alt="">
                     {{ ('</a>' if sponsor.url) | safe }}

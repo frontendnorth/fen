@@ -4,3 +4,12 @@
  *	derp !important
  *
  **/
+
+.h-sponsor {
+    &--nimble {
+        height: 50px;
+    }
+    &--inviqa {
+        height: 75px;
+    }
+}

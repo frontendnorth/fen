@@ -20,7 +20,7 @@ We have set out to provide a conference with great speakers who will deliver ins
 - Welcoming attendees on arrival and check their tickets.
 - Tend to the reception desk throughout the day.
 - Be a buddy for a speaker - i.e. the point person for that speaker so they have a friendly member of the team to support them.
-- Reporting any [Code of Conduct](/code-of-conduct/) concerns to the organisers.
+- Forwarding any [Code of Conduct](/code-of-conduct/) concerns to the organisers.
 - Generally being available to help the event run smoothly from the organisers (from a "We need this done!" perspective) and assisting attendees with questions they have.
 
 

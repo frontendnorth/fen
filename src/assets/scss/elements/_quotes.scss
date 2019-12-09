@@ -1,0 +1,39 @@
+/**
+ *	Quotes
+ *
+ **/
+
+blockquote {
+
+    padding-left: ($space-xl + $space-default);
+    position: relative;
+    margin: 3em
+        0
+        3em
+        0;
+
+    &::before {
+        @include pseudo();
+
+        background-color: $color-brand-secondary;
+        background-image: $color-gradient-secondary;
+        height: 100%;
+        left: 0;
+        width: $space-default;
+    }
+
+    p {
+        position: relative;
+
+        &:first-child::before {
+            content: open-quote;
+            position: absolute;
+            left: -.5em;
+        }
+
+        &:last-child::after {
+            content: close-quote;
+        }
+    }
+
+}
