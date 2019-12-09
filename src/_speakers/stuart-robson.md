@@ -13,7 +13,7 @@ previous:
     - name: 100% Pure Sass
       where: Breaking Borders 2014
       url: https://vimeo.com/112366583
-featured: 70
+featured: 60
 ---
 Stuart is a front-end consultant and design systems advocate who for the last 5 years has helped companies and organisation with the front-end of their design systems.
 
