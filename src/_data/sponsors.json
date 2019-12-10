@@ -1,32 +1,36 @@
-[
-    {
-        "name": "Evoluted",
-        "url": "https://www.evoluted.net/web-development",
-        "logo": "evoluted.svg"
-    },
-    {
-        "name": "Egress",
-        "url": "https://www.egress.com",
-        "logo": "bitmap/Egress_Logo_600x147.png"
-    },
-    {
-        "name": "Nimble",
-        "url": "http://www.nimbleapproach.com/",
-        "logo": "nimble.svg"
-    },
-    {
-        "name": "Autodesk",
-        "url": "https://autodesk.co.uk/",
-        "logo": "bitmap/autodesk-logo-rgb-1line-medium-v2.png"
-    },
-    {
-        "name": "Inviqa",
-        "url": "https://inviqa.com/",
-        "logo": "inviqa.svg"
-    },
-    {
-        "name": "Notist",
-        "url": "https://noti.st/",
-        "logo": "notist.svg"
-    }
-]
+{
+    "gold": [
+        {
+            "name": "Autodesk",
+            "url": "https://autodesk.co.uk/",
+            "logo": "bitmap/autodesk-logo-rgb-1line-medium-v2.png"
+        }
+    ],
+    "silver": [
+        {
+            "name": "Evoluted",
+            "url": "https://www.evoluted.net/web-development",
+            "logo": "evoluted.svg"
+        },
+        {
+            "name": "Egress",
+            "url": "https://www.egress.com",
+            "logo": "bitmap/Egress_Logo_600x147.png"
+        },
+        {
+            "name": "Nimble",
+            "url": "http://www.nimbleapproach.com/",
+            "logo": "nimble.svg"
+        },
+        {
+            "name": "Inviqa",
+            "url": "https://inviqa.com/",
+            "logo": "inviqa.svg"
+        },
+        {
+            "name": "Notist",
+            "url": "https://noti.st/",
+            "logo": "notist.svg"
+        }
+    ]
+}

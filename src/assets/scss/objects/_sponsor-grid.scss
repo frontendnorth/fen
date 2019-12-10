@@ -100,9 +100,24 @@
 					display: block;
 					height: 100%;
 					max-height: none;
-					object-fit: contain;
 					width: auto;
 				}
+			}
+		}
+	}
+
+	&--gold {
+		grid-template-columns: 1fr;
+
+		> * {
+			max-width: (225px *2);
+		}
+
+		img {
+			max-height: (85px *2);
+
+			@include mq(md) {
+				max-height: (125px *2);
 			}
 		}
 	}
