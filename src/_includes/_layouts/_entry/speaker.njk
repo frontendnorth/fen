@@ -21,7 +21,18 @@
 
                 {% if image %}
                     <div class="o-hero-header__image">
-                        <img
+                        <img srcset="{{ site.image_cdn }}{{ image }}?thumbnail=768 768w,
+                                {{ site.image_cdn }}{{ image }}?thumbnail=640 640w,
+                                {{ site.image_cdn }}{{ image }}?thumbnail=512 512w,
+                                {{ site.image_cdn }}{{ image }}?thumbnail=384 384w,
+                                {{ site.image_cdn }}{{ image }}?thumbnail=256 256w,
+                                {{ site.image_cdn }}{{ image }}?thumbnail=192 192w"
+                            sizes="(min-width:1500px) 768px,
+                                (min-width:1300px) 640px,
+                                (min-width:1200px) 512px,
+                                (min-width:1050px) 384px,
+                                (min-width:450px) 192px,
+                                75vw"
                             src="{{ site.image_cdn }}{{ image }}?thumbnail=768"
                             alt="Photograph of {{ title }}">
                     </div>

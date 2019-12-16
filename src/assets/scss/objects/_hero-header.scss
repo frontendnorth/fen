@@ -9,7 +9,6 @@
 
 	$image-size: $space-xxxl *1.5;
 	// Note: yes, it gets smaller, then bigger, then smaller again!
-	$image-size-sm: $space-xxxl;
 	$image-size-md: $space-xxxl *3;
 	$image-size-md-plus: $space-xxxl *4;
 	$image-size-lg: $space-xxxl *5;
@@ -35,13 +34,6 @@
 
 		@include mq(faceBreak) {
 			padding-right: ($image-size + $space-xl) ; // clear image + padding
-		}
-
-		@include mq(sm) {
-			padding: $space-xxxl
-				($image-size-sm + $space-xl)
-				$space-xxl
-				0;
 		}
 
 		@include mq(md) {
@@ -192,10 +184,8 @@
 				width: $image-size;
 			}
 
-			@include mq(sm) {
-				bottom: -$space-l;
-				height: $image-size-sm;
-				width: $image-size-sm;
+			@include mq(navigationBreak) {
+				bottom: -($space-xxl + $space-xl);
 			}
 
 			@include mq(md) {
