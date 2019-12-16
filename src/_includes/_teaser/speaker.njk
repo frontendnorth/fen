@@ -13,16 +13,16 @@
     </div>
     {% if speaker.data.image %}
         <div class="c-teaser__image">
-            {# TODO: Fix this with proper responsive images instead #}
-            {% if teaser.type == 'speaker' %}
-                <img
-                    src="{{ site.image_cdn }}{{ speaker.data.image }}?thumbnail=280"
-                    alt="">
-            {% else %}
-                <img
-                    src="{{ site.image_cdn }}{{ speaker.data.image }}?thumbnail=100"
-                    alt="">
-            {% endif %}
+            <img srcset="{{ site.image_cdn }}{{ speaker.data.image }}?thumbnail=560 560w,
+                    {{ site.image_cdn }}{{ speaker.data.image }}?thumbnail=280 280w,
+                    {{ site.image_cdn }}{{ speaker.data.image }}?thumbnail=200 200w,
+                    {{ site.image_cdn }}{{ speaker.data.image }}?thumbnail=100 100w"
+                sizes="{% if teaser.type == 'speaker' %}
+                    (min-width:700px) 280px,
+                {% endif %}
+                    100px"
+                src="{{ site.image_cdn }}{{ speaker.data.image }}?thumbnail=280"
+                alt="">
         </div>
     {% endif %}
 </article>
