@@ -29,6 +29,12 @@
 				margin-bottom: $space-xxxl;
 			}
 		}
+
+		@include mq(lg) {
+			&\@lg {
+				margin-bottom: $space-xxxl;
+			}
+		}
 	}
 
 }

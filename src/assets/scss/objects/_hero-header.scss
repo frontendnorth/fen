@@ -7,8 +7,9 @@
 
 .o-hero-header {
 
-	$image-size: $space-xxxl *1.5;
 	// Note: yes, it gets smaller, then bigger, then smaller again!
+	$image-size-sm: $space-xxxl *2;
+	$image-size: $space-xxxl *1.5;
 	$image-size-md: $space-xxxl *3;
 	$image-size-md-plus: $space-xxxl *4;
 	$image-size-lg: $space-xxxl *5;
@@ -20,9 +21,15 @@
 	$menuHeight: 75px;
 
 	// When things get awkward around the face…
-	@include mq-add-breakpoint(faceBreak, 450px);
+	@include mq-add-breakpoint(faceBreak, 400px);
+	@include mq-add-breakpoint(faceBreakLg, 500px);
 
+	overflow: hidden;
 	position: relative;
+
+	@include mq(navigationBreak) {
+		overflow: visible;
+	}
 
 	&__copy {
 		padding: $space-xxxl
@@ -33,7 +40,11 @@
 		z-index: 2; // lift above image
 
 		@include mq(faceBreak) {
-			padding-right: ($image-size + $space-xl) ; // clear image + padding
+			padding-right: ($image-size - $space-xl);
+		}
+
+		@include mq(faceBreakLg) {
+			padding-right: ($image-size + $space-l) ; // clear image + padding
 		}
 
 		@include mq(md) {
@@ -44,7 +55,6 @@
 
 		@include mq(lg) {
 			padding-top: ($space-xxl + $menuHeight);
-			padding-bottom: $space-xxl;
 		}
 
 		@include mq($from: lg, $and: '(min-height: #{$tightHeight})') {
@@ -55,6 +65,7 @@
 		&--speaker {
 			@include mq(lg) {
 				padding-top: ($space-xxxl + $menuHeight);
+				padding-bottom: $space-xxl; // tighten up on lg
 			}
 		}
 
@@ -177,15 +188,23 @@
 			}
 
 			@include mq(faceBreak) {
-				bottom: -$space-xl;
-				height: $image-size;
+				top: -$space-xl;
+				height: $image-size-sm;
 				position: absolute;
-				right: $space-l;
-				width: $image-size;
+				right: -$space-xxl;
+				width: $image-size-sm;
+			}
+
+			@include mq(faceBreakLg) {
+				bottom: -$space-xl;
+				top: auto;
 			}
 
 			@include mq(navigationBreak) {
 				bottom: -($space-xxl + $space-xl);
+				height: $image-size;
+				width: $image-size;
+				right: -$space-l;
 			}
 
 			@include mq(md) {
