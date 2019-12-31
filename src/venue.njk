@@ -1,0 +1,238 @@
+---
+title: 'Venue'
+description: 'Our complete February 2020 conference speaker lineup'
+tags: nav
+navOrder: 60
+image: "speakers/jemima-abu.jpg"
+---
+
+{% extends "_layouts/base.njk" %}
+
+{% block main %}
+
+    <div class="o-hero-header o-spacer o-spacer--super@lg c-raised--hero-gradient c-inverted">
+
+        <div class="o-wrapper o-wrapper--has-sidebar">
+
+            <header class="o-wrapper__primary o-hero-header__copy o-hero-header__copy--speaker">
+
+                <h1 class="c-inverted">Venue & travel</h1>
+                <span class="c-subheading">How to find us and our guide to Sheffield</span>
+
+            </header>
+
+            {% set image = "sheffield-crucible-venue.jpg" %}
+
+            <div class="o-hero-header__image">
+                <img srcset="{{ site.image_cdn }}{{ image }}?thumbnail=768 768w,
+                        {{ site.image_cdn }}{{ image }}?thumbnail=640 640w,
+                        {{ site.image_cdn }}{{ image }}?thumbnail=512 512w,
+                        {{ site.image_cdn }}{{ image }}?thumbnail=384 384w,
+                        {{ site.image_cdn }}{{ image }}?thumbnail=256 256w,
+                        {{ site.image_cdn }}{{ image }}?thumbnail=192 192w"
+                    sizes="(min-width:1500px) 768px,
+                        (min-width:1300px) 640px,
+                        (min-width:1200px) 512px,
+                        (min-width:1050px) 384px,
+                        (min-width:870px) 192px,
+                        (min-width:400px) 256px,
+                        75vw"
+                    src="{{ site.image_cdn }}{{ image }}?thumbnail=768"
+                    alt="Photograph of the Sheffield Crucible">
+            </div>
+
+        </div>
+        <div class="c-raised--light-opaque">
+
+            <section class="o-wrapper o-wrapper--has-sidebar">
+                <div class="o-wrapper__primary o-spacer o-spacer--flipped o-spacer--super@lg s-content">
+
+                    <h2>The Crucible</h2>
+                    <span class="c-subheading">
+                        55 Norfolk Street,
+                        Sheffield<br>
+                        XSY S1 1DA
+                    </span>
+
+                    <a href="https://www.google.co.uk/maps/place/Crucible+Theatre/@53.3809756,-1.4690144,17z/data=!3m1!4b1!4m5!3m4!1s0x48798282868a41f9:0x37d1d52352c41f69!8m2!3d53.3809724!4d-1.4668257" rel="external" class="c-button c-button--pop">View in Google Maps</a>
+
+                    {% set content_crucible = '
+The Crucible is an iconic Sheffield landmark. This modern theatre is home to world-class productions made right here in Sheffield. For Front End North we’ll be taking over the main auditorium so you’ll get to experience the epic stage which is surrounded by seats on three sides, so you’re never more than 20 metres from the action.
+
+Snooker fans will already know the Crucible well as it’s home to the annual Snooker World Championship every spring.
+
+### Access
+
+The Crucible has level access points, ramps, lifts and accessible toilets available.
+
+Assistance dogs are welcome. You can take your dog into the auditorium or you can use our dog sitting service. Bowls of water are available if required. Please advise us of your needs at the time of booking.
+
+We offer an infra-red Sennheiser transmission system to relay sound to customers who are hard of hearing and headsets and neck loops are available free of charge from our front of house staff.
+                    '%}
+
+                    {{ content_crucible | markdown | safe }}
+
+                </div>
+            </section> {# /.o-wrapper.o-wrapper--has-sidebar #}
+
+        </div>
+
+    </div> {# /.o-hero-header__copy.o-wrapper.o-wrapper--wide #}
+
+    <section class="o-wrapper s-content o-spacer">
+
+            {% set content_travel = '
+## Getting here
+
+The Crucible is in Sheffield City centre, on the corner of Norfolk Street and Arundel Gate.
+
+### Train
+
+The Crucible is 5-10 minutes’ walk from the train station and the transport interchange nearby.
+
+- Leave the train station, cross the road and walk straight up Howard Street, by Sheffield Hallam University.
+- Cross over Arundel Gate at the pedestrian crossing and Millennium Galleries is in front of you.
+- Walk up the obvious ramp to the right of the gallery entrance and continue along Surrey Street until Tudor Square and the theatres appear on your right.
+
+To plan your journey by train please visit [www.nationalrail.co.uk](https://www.nationalrail.co.uk)
+            '%}
+            {% set content_travel_2 = '
+### Bus or tram
+
+The nearest bus stops are on Arundel Gate (50m) and High Street (300m). We are also close by to Sheffield Interchange. To plan your journey please visit [www.travelsouthyorkshire.com](https://www.travelsouthyorkshire.com)
+
+#### Tram and Park & Ride options
+There are two Supertram Stops in close proximity to the Theatres; Castle Square and Cathedral (400m). Plan your journey here. There are also numerous park and ride options for the Tram, to see where you could park and ride please go to [www.travelsouthyorkshire.com](https://www.travelsouthyorkshire.com)
+
+### Parking
+
+The nearest car park is Q-Park’s Charles Street car park, located on Arundel Gate. This is a multi-storey car park, offering 530 parking spaces as well as disabled and parent and toddler bays. The car park has secure entry gates and is fitted with bright lighting and CCTV cameras.
+Full details: [www.q-park.co.uk/en-gb/cities/sheffield/charles-street/](https://www.q-park.co.uk/en-gb/cities/sheffield/charles-street/)
+
+### Taxis
+
+Private hire taxis can be booked via City Taxis on 0114 239 39 39, see [citytaxis.com/contact-us/sheffield/](https://citytaxis.com/contact-us/sheffield/) for details.
+
+Uber is available in Sheffield.
+
+Black cabs can be hailed in the street, there are taxi ranks at the Train station and at Barkers Pool. A map of taxi ranks is available here [www.sheffield.gov.uk/home/parking/taxi-ranks](https://www.sheffield.gov.uk/home/parking/taxi-ranks)
+            '%}
+
+            {{ content_travel | markdown | safe }}
+
+            {% image "sheffield-railway-station.jpg", "SHF railway station" %}
+                <a href="https://www.flickr.com/photos/58433307@N08/6282414683">"Sheffield Midland"</a><span> by <a href="https://www.flickr.com/photos/58433307@N08">hugh llewelyn</a></span> is licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/?ref=ccsearch&atype=html">CC BY-SA 2.0</a>
+            {% endimage %}
+
+            {{ content_travel_2 | markdown | safe }}
+
+    </section>
+    <section class="o-wrapper s-content">
+
+        <h2>About Sheffield</h2>
+
+        <h3>Eat & drink</h3>
+        <p>
+            There are loads of great places to eat and drink in Sheffield these days, here our some of our favourites near the Crucible. Take a look at <a href="https://www.ourfaveplaces.co.uk/where-to-go/">Our Favourite Places</a> for more inspiration.
+        </p>
+
+        {% macro placesList(array) %}
+
+            <ul>
+                {% for item in array %}
+
+                    <li>
+                        <h3 class="delta">
+                            {{ ('<a href="' ~ item.url ~ '" rel="external">' if item.url) | safe }}
+                                {{ item.name }}
+                            {{ ('</a>' if item.url) | safe }}
+                        </h3>
+                        {{ (item.description if item.description) | safe }}
+                    </li>
+
+                {% endfor %}
+            </ul>
+
+        {% endmacro %}
+
+        {% set places_food = [
+            {
+                name: "Kommune",
+                description: "lots of tasty food options from street food stalls in the iconic Castle House building. If you’re a beer fan make sure to pop in to see Jules at Hop Hideout as well.",
+                url: "http://kommune.co.uk/"
+            },
+            {
+                name: "Tamper: Sellers Wheel",
+                description: "Kiwi cafe culture brought to South Yorkshire. Great food and even better coffee.",
+                url: "https://tampercoffee.co.uk/"
+            },
+            {
+                name: "Street Food Chef (Arundel Street)",
+                description: "the best burritos (and I don’t just mean in Sheffield).",
+                url: "https://streetfoodchef.co.uk/"
+            },
+            {
+                name: "Birdhouse Tea bar & Kitchen",
+                description: "a heaven for tea drinkers. Try some of their lovely cakes or stop in for lunch or breakfast.",
+                url: "https://www.birdhouseteacompany.com/visit-us/tea-bar-kitchen/"
+            },
+            {
+                name: "The Rutland Arms",
+                description: "officially the best pub in the world. Plus some of the best food you’ll get in a pub anywhere. We recommend trying the small plates (though the chips are pretty good too).",
+                url: "https://www.facebook.com/rutland.arms/"
+            },
+            {
+                name: "The Sheffield Tap",
+                description: "a station pub that’s actually good! It has pretty much any beer you can think of, but don’t expect much more than crisps and nuts in the way of food.",
+                url: "http://www.sheffieldtap.com/"
+            }
+        ] %}
+
+        {{ placesList(places_food) }}
+
+        {% image "phlegm-street-art.jpg", "SHF railway station" %}
+            <a href="https://www.flickr.com/photos/17989497@N00/15474939806">"Sheffield, art city: Phlegm"</a><span> by <a href="https://www.flickr.com/photos/17989497@N00/">Monika</a></span> is licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/?ref=ccsearch&atype=html">CC BY-SA 2.0</a>
+        {% endimage %}
+
+        <h3>Things to see & do</h3>
+
+        {% set places_things = [
+            {
+                name: "Work",
+                description: "ok, not the most fun thing to do, but if you need some space to work during your visit our friends at <a href='https://shefftechparks.com/co-working'>Sheffield Tech Parks</a> have a very reasonably priced co-working drop-in day rate."
+            },
+            {
+                name: "Winter Gardens / Millennium Gallery",
+                description: "tropical plants and art (not quite) in the same building.",
+                url: "https://www.theoutdoorcity.co.uk/sheffield-city-life/attractions/sheffield-winter-garden-p755611"
+            },
+            {
+                name: "Discover Sheffield’s street art scene",
+                description: "we’re a creative lot when it comes to drawing on walls.",
+                url: "https://streetartsheffield.com/"
+            },
+            {
+                name: "Kelham Island Museum",
+                description: "learn about Sheffield’s industrial heritage. When they set the River Don Steam Engine going it gets proper loud.",
+                url: "http://www.simt.co.uk/kelham-island-museum"
+            },
+            {
+                name: "The Peak District",
+                description: "the beautiful Peak District is easily accessible by train, bus and bike from Sheffield City Centre.",
+                url: "https://www.visitpeakdistrict.com/"
+            }
+        ] %}
+
+        {{ placesList(places_things) }}
+
+        <p>
+            See <a href="https://www.ourfaveplaces.co.uk/whats-on/">Our Favourite Places</a> for more ideas.
+        </p>
+
+        <small><a href="https://www.flickr.com/photos/19935963@N00/34892678743" rel="external noopener">"Crucible Theatre"</a> by <a href="https://www.flickr.com/photos/19935963@N00" rel="external noopener">timo_w2s</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/2.0/?ref=ccsearch&amp;atype=rich" rel="external noopener">CC BY-SA 2.0</a></small>
+
+    </section>
+
+    {% include "image-clipper.njk" %}
+
+{% endblock %}

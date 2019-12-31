@@ -63,7 +63,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setLibrary("md", markdownLib);
 
     // Markdown filter for frontmatter (and other bits)
-    // TODO: Currently not in use
     // https://github.com/11ty/eleventy/issues/658
     eleventyConfig.addFilter('markdown', function(value) {
         let markdown = require('markdown-it')({
