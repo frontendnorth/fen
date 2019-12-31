@@ -39,17 +39,16 @@
 		flex-direction: row;
 		align-items: stretch;
 
-		&__item {
-			padding-right: 1em;
+		.o-menu__item {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 
 			&:last-child {
 				padding-right: 0;
 			}
-
-			> * {
-				// flex: 1;
-			}
 		}
+
 	}
 
 	&--horizontal {
