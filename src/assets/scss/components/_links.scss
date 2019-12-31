@@ -12,11 +12,11 @@
 		linear-gradient(to top,
 			$color 0,
 			$color 2px,
-			rgba($color, .2) 2px,
-			rgba($color, .2) 100%),
+			rgba($color, .15) 2px,
+			rgba($color, .15) 100%),
 		linear-gradient(to top,
-			rgba($color, .2) 100%,
-			rgba($color, .2) 100%);
+			rgba($color, .15) 100%,
+			rgba($color, .15) 100%);
 }
 
 // Include as mixin, for consumption elsewhere.
