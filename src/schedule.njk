@@ -13,14 +13,16 @@ ignore: true
 
         {% for talk in collections.schedule %}
             <h2>{{ talk.data.title }}</h2>
-            {{ talk.url }}
+            <span class="">{{ talk.data.subtitle }}</span>
             <br>{{ talk.data.time | readableTime }}<br>
             Get info where: {{ talk.data.speaker }}<br>
             {% for speaker in collections.speakers %}
-                {# TODO: Hacky AF? #}
+                {# If speaker matches that in schedule entry #}
                 {% if talk.data.speaker == speaker.fileSlug %}
                     <a href="{{ speaker.url }}">{{ speaker.data.title }}</a>
-                    {{ ('<a href="https://twitter.com/' ~ speaker.data.twitter ~ '" rel="external" title="Follow ' ~ speaker.data.title ~ '">' ~ speaker.data.twitter ~ '</a>' if speaker.data.twitter) | safe }}
+                    {% for item in speaker.data.external %}
+                        {{ ('<a href="https://twitter.com/' ~ item.twitter ~ '" rel="external" title="Follow ' ~ speaker.data.title ~ '">' ~ item.twitter ~ '</a>' if item.twitter) | safe }}
+                    {% endfor %}
                 {% endif %}
             {% endfor %}
         {% endfor %}
