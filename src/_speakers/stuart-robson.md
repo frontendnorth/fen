@@ -2,7 +2,7 @@
 title: "Stuart Robson"
 role: "Front end developer, alwaystwisted"
 image: "speakers/stuart-robson.jpg"
-card_image: "cards/speaker-card-stuart-robson.png"
+card_image: "cards/speaker-card-stuart.png"
 external:
     - twitter: sturobson
     - website: https://alwaystwisted.com
