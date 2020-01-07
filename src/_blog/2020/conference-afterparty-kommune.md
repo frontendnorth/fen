@@ -15,6 +15,8 @@ The small print:
 - Kommune does not accept cash payment: bring a payment card with you if you plan on making purchases.
 - Due to venue licensing restrictions, this event is only for people aged 18 and over.
 
+{% image "Kommune%20-%20Department%20Two-85.jpg", "Kommune exterior", "full" %}Kommune's Grade II listed building{% endimage %}
+
 We've added these details to the [Venue page](/venue/) for reference.
 
 Don't have a ticket? They're [still available]({{ metadata.ticket_url }})!
