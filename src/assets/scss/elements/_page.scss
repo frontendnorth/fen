@@ -10,7 +10,7 @@ html {
 	font-size: map-get($font-size-base, default);
 	height: 100%; // fixes flexbox sticky footer on Edge (tested: v17)
 	line-height: map-get($line-height-base, default);
-	scroll-behavior: smooth;
+	scroll-behavior: smooth; // Smoother anchor scrolling
 
 	@include mq(md) { // TODO: down to sm?
 		line-height: map-get($line-height-base, md);
