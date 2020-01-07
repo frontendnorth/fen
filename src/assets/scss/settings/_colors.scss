@@ -11,7 +11,7 @@ $color-brand-secondary: #ff8725; // orange
 // backgrounds
 $color-bg-grey-light: #e6e6e6;
 $color-bg-grey-mid: darken(#e6e6e6, 10);
-$color-bg-grey-dark: #545f66;
+$color-bg-grey-dark: #272724;
 $color-bg-white: #fdfdfd;
 
 
@@ -29,7 +29,7 @@ $color-gradient-secondary: linear-gradient(to bottom,
 
 // text
 $color-text-base: #262626; // 85%
-$color-text-headings: #404040; // 75%
+$color-text-headings: $color-bg-grey-dark; // 75%
 $color-text-reduced: #727272; // 50%
 $color-text-white: #fff;
 $color-text-highlight: $color-brand-secondary;
