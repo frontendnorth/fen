@@ -24,13 +24,16 @@
 	&--super {
 		margin-bottom: $space-xxxl;
 
-		@include mq(md) {
+		$tightHeight: 900px;
+
+		// Don't use these on shallow screens
+		@include mq($from: md, $and: '(min-height: #{$tightHeight})') {
 			&\@md {
 				margin-bottom: $space-xxxl;
 			}
 		}
 
-		@include mq(lg) {
+		@include mq($from: lg, $and: '(min-height: #{$tightHeight})') {
 			&\@lg {
 				margin-bottom: $space-xxxl;
 			}
