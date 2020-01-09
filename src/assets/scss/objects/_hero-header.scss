@@ -7,9 +7,8 @@
 
 .o-hero-header {
 
-	// Note: yes, it gets smaller, then bigger, then smaller again!
-	$image-size-sm: $space-xxxl *2;
 	$image-size: $space-xxxl *1.5;
+	$image-size-plus: $space-xxxl *2;
 	$image-size-md: $space-xxxl *3;
 	$image-size-md-plus: $space-xxxl *4;
 	$image-size-lg: $space-xxxl *5;
@@ -21,7 +20,8 @@
 	$menuHeight: 75px;
 
 	// When things get awkward around the face…
-	@include mq-add-breakpoint(faceBreak, 400px);
+	@include mq-add-breakpoint(faceBreak, 370px);
+	@include mq-add-breakpoint(faceBreakMd, 420px);
 	@include mq-add-breakpoint(faceBreakLg, 500px);
 
 	overflow: hidden;
@@ -40,11 +40,11 @@
 		z-index: 2; // lift above image
 
 		@include mq(faceBreak) {
-			padding-right: ($image-size - $space-xl);
+			padding-right: ($image-size - $space-xxxl);
 		}
 
-		@include mq(faceBreakLg) {
-			padding-right: ($image-size + $space-l) ; // clear image + padding
+		@include mq(faceBreakMd) {
+			padding-right: ($image-size - $space-xl) ; // clear image + padding
 		}
 
 		@include mq(md) {
@@ -189,10 +189,16 @@
 
 			@include mq(faceBreak) {
 				top: -$space-xl;
-				height: $image-size-sm;
+				height: $image-size;
 				position: absolute;
+				right: -($space-xl + $space-default);
+				width: $image-size;
+			}
+
+			@include mq(faceBreakMd) {
+				height: $image-size-plus;
 				right: -$space-xxl;
-				width: $image-size-sm;
+				width: $image-size-plus;
 			}
 
 			@include mq(faceBreakLg) {
