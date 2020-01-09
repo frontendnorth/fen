@@ -2,18 +2,18 @@
 
 {% block main %}
 
-    <article>
+    <article itemscope itemtype="http://schema.org/BlogPosting">
 
         <div class="o-spacer o-spacer--super@lg c-raised--hero-gradient c-inverted">
 
             <header class="o-hero-header__copy o-wrapper">
 
-                <h1 class="c-inverted">{{ title }}</h1>
-                <time class="c-subheading" datetime="{{ page.date|htmlDateString }}">{{ page.date | readableDate }}</time>
+                <h1 class="c-inverted" itemprop="headline">{{ title }}</h1>
+                <time class="c-subheading" datetime="{{ page.date|htmlDateString }}" itemprop="dateCreated pubdate datePublished">{{ page.date | readableDate }}</time>
 
                 {% if intro %}
                     <div class="s-content c-lede">
-                        <p>{{ intro | safe }}</p>
+                        <p itemprop="subheading">{{ intro | safe }}</p>
                     </div>
                 {% endif %}
 
@@ -23,15 +23,20 @@
 
         <div class="o-wrapper">
 
-            <div class="s-content o-spacer o-spacer--super">
+            <div class="o-spacer o-spacer--super">
 
-                {{ content | safe }}
+                <div class="s-content" itemprop="articleBody">
+
+                    {{ content | safe }}
+
+                </div>
 
                 <span class="c-reduced">
-                    Post published: <time datetime="{{ page.date|htmlDateString }}">{{ page.date | readableDate }}</time><br>
+                    Post published: <time datetime="{{ page.date|htmlDateString }}" itemprop="pubdate">{{ page.date | readableDate }}</time><br>
                     {% if updated %}
-                        Last updated: <time datetime="{{ updated|htmlDateString }}">{{ updated | readableDate }}</time>
+                        Last updated: <time datetime="{{ updated|htmlDateString }}" itemprop="dateModified">{{ updated | readableDate }}</time>
                     {% endif %}
+                    <meta itemprop="author" content="Front End North" />
                 </span>
 
             </div>
