@@ -2,7 +2,7 @@
 title: "Léonie Watson"
 role: "Director, TetraLogical"
 image: "speakers/leonie-watson.jpg"
-card_image: "cards/speaker-card-leonie.png"
+card_image: "cards/speaker-card-leonie.png?v=2"
 external:
     - twitter: "LeonieWatson"
     - twitter: "TetraLogical"
