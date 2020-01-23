@@ -11,20 +11,40 @@ ignore: true
 
         <h1>Schedule</h1>
 
-        {% for talk in collections.schedule %}
-            <h2>{{ talk.data.title }}</h2>
-            <span class="">{{ talk.data.subtitle }}</span>
-            <br>{{ talk.data.time | readableTime }}<br>
-            Get info where: {{ talk.data.speaker }}<br>
-            {% for speaker in collections.speakers %}
-                {# If speaker matches that in schedule entry #}
-                {% if talk.data.speaker == speaker.fileSlug %}
-                    <a href="{{ speaker.url }}">{{ speaker.data.title }}</a>
-                    {% for item in speaker.data.external %}
-                        {{ ('<a href="https://twitter.com/' ~ item.twitter ~ '" rel="external" title="Follow ' ~ speaker.data.title ~ '">' ~ item.twitter ~ '</a>' if item.twitter) | safe }}
+        {% for item in _2020.schedule %}
+            <article>
+
+                {% if item.talk %}
+
+                    {% for talk in collections.schedule %}
+                        {# If speaker matches that in schedule entry - IAF #}
+                        {% if item.talk == talk.fileSlug %}
+                            <h2>{{ talk.data.title }}</h2>
+                            {% for speaker in collections.speakers %}
+                                {% if talk.data.speaker == speaker.fileSlug %}
+                                    <a href="{{ speaker.url }}">{{ speaker.data.title }}</a>
+                                    {% for item in speaker.data.external %}
+                                        {{ ('<a href="https://twitter.com/' ~ item.twitter ~ '" rel="external" title="Follow ' ~ speaker.data.title ~ '">' ~ item.twitter ~ '</a>' if item.twitter) | safe }}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
                     {% endfor %}
+
+                {% else %}
+
+                    {{ item.description }}
+
                 {% endif %}
-            {% endfor %}
+
+                <time>
+                    {{ item.start }}
+                </time>
+                <time>
+                    {{ item.end }}
+                </time>
+
+            </article>
         {% endfor %}
 
     </main>

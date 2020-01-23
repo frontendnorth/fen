@@ -1,0 +1,72 @@
+[
+    {
+        "description": "Registration",
+        "start": "2020-02-01T9:00:00",
+        "end": "2020-02-01T9:30:00"
+    },
+    {
+        "description": "Opening remarks",
+        "start": "2020-02-01T9:30:00",
+        "end": "2020-02-01T10:00:00"
+    },
+    {
+        "talk": "andrew-the-evolution-of-rwd",
+        "start": "2020-02-01T9:45:00",
+        "end": "2020-02-01T10:30:00"
+    },
+    {
+        "talk": "okoye-are-we-even-designing",
+        "start": "2020-02-01T10:35:00",
+        "end": "2020-02-01T12:20:00"
+    },
+    {
+        "name": "Morning break",
+        "start": "2020-02-01T11:20:00",
+        "end": "2020-02-01T11:40:00"
+    },
+    {
+        "talk": "robson-design-tokens-and-css",
+        "start": "2020-02-01T11:40:00",
+        "end": "2020-02-01T12:10:00"
+    },
+    {
+        "talk": "smith-have-you-written-tests-for-that",
+        "start": "2020-02-01T12:15:00",
+        "end": "2020-02-01T12:45:00"
+    },
+    {
+        "description": "Lunch",
+        "start": "2020-02-01T12:45:00",
+        "end": "2020-02-01T14:00:00"
+    },
+    {
+        "talk": "watson-you-talkin-to-me",
+        "start": "2020-02-01T14:00:00",
+        "end": "2020-02-01T14:45:00"
+    },
+    {
+        "description": "Afternoon break",
+        "start": "2020-02-01T15:35:00",
+        "end": "2020-02-01T15:55:00"
+    },
+    {
+        "talk": "gonzalez-guerrilla-design-systems",
+        "start": "2020-02-01T12:15:00",
+        "end": "2020-02-01T12:45:00"
+    },
+    {
+        "talk": "abu-lets-get-functional",
+        "start": "2020-02-01T15:15:00",
+        "end": "2020-02-01T16:25:00"
+    },
+    {
+        "talk": "aitken-deliberate-direct-positive-action",
+        "start": "2020-02-01T16:30:00",
+        "end": "2020-02-01T17:15:00"
+    },
+    {
+        "description": "Closing remarks",
+        "start": "2020-02-01T17:15:00",
+        "end": "2020-02-01T17:30:00"
+    }
+]
