@@ -104,7 +104,7 @@ sponsorPackages:
         <h2>Our amazing sponsors:</h2>
         <h3>Gold</h3>
         <div class="o-sponsor-grid o-sponsor-grid--gold o-spacer">
-            {%- for sponsor in sponsors.gold -%}
+            {%- for sponsor in _2020.sponsors.gold -%}
                 {{ ('<a href="' ~ sponsor.url ~ '" rel="external" title="' ~ sponsor.name ~ '">' if sponsor.url) | safe }}
                     <span class="u-visually-hidden">{{ sponsor.name }}</span>
                     <img src="{{ site.image_folder }}sponsors/{{ sponsor.logo }}" alt="">
@@ -114,7 +114,7 @@ sponsorPackages:
 
         <h3>Silver & bronze</h3>
         <div class="o-sponsor-grid">
-            {%- for sponsor in sponsors.silver -%}
+            {%- for sponsor in _2020.sponsors.silver -%}
                 {{ ('<a href="' ~ sponsor.url ~ '" rel="external" title="' ~ sponsor.name ~ '">' if sponsor.url) | safe }}
                     <span class="u-visually-hidden">{{ sponsor.name }}</span>
                     <img src="{{ site.image_folder }}sponsors/{{ sponsor.logo }}" alt="">

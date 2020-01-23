@@ -103,7 +103,7 @@ navOrder: 0
             <h3>Our sponsors:</h3>
 
             <div class="o-sponsor-grid o-sponsor-grid--compact">
-                {%- for level in [sponsors.gold, sponsors.silver] -%}
+                {%- for level in [_2020.sponsors.gold, _2020.sponsors.silver] -%}
                     {# {{ level | dump | safe }} #}
                     {% for sponsor in level %}
                         {{ ('<a href="' ~ sponsor.url ~ '" rel="external" title="' ~ sponsor.name ~ '" class="h-sponsor--' ~ sponsor.name | slug ~ '">' if sponsor.url) | safe }}
