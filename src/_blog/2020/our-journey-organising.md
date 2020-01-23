@@ -8,7 +8,9 @@ In 2018, we were asked a simple question: would we be interested in organising F
 We said ‘yes’.
 
 Soon after, in January 2019, we met for an all-day workshop we defined some key goals:
-A low-risk endeavour
+
+
+## A low-risk endeavour
 
 As first-time conference organisers we were very aware of the risk of failure, especially financial loss. While we were excited at the prospect of making Front End North our own we decided to **be conservative with our plans to reduce risk** at our 2020 event.
 
@@ -31,7 +33,7 @@ Easy access and proximity to transportation were major factors in choosing our v
 
 ## An inclusive event
 
-As with our Front End Sheffield monthly meetings, it is essential that we aim to provide a safe and inclusive space for all attendees.
+As with our Front End Sheffield monthly meetings, it is essential that we aim to **provide a safe and inclusive space** for all attendees.
 
 Some ways we are making Front End North inclusive:
 - We have a [Code of Conduct](/code-of-conduct/) that applies to all attendees, plus all our organisers and volunteers are required to undergo Code of Conduct training.
