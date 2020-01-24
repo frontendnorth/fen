@@ -267,6 +267,7 @@
 	.c-teaser {
 		&__text {
 			display: flex;
+			flex: 1 1 auto;
 			flex-direction: column;
 			padding: 0
 				$space-inset-xl;
