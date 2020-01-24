@@ -40,6 +40,10 @@ module.exports = function(eleventyConfig) {
         return DateTime.fromJSDate(dateObj, {zone: 'gmt'}).toFormat("h:mma");
     });
 
+    eleventyConfig.addFilter("scheduleTime", dateObj => {
+        return DateTime.fromISO(dateObj, {zone: 'gmt'}).toFormat("h:mma");
+    });
+
     // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
     eleventyConfig.addFilter('htmlDateString', (dateObj) => {
         return DateTime.fromJSDate(dateObj, {zone: 'gmt'}).toFormat('yyyy-LL-dd');

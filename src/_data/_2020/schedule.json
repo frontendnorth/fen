@@ -1,17 +1,17 @@
 [
     {
         "description": "Registration",
-        "start": "2020-02-01T9:00:00",
-        "end": "2020-02-01T9:30:00"
+        "start": "2020-02-01T09:00:00",
+        "end": "2020-02-01T09:30:00"
     },
     {
         "description": "Opening remarks",
-        "start": "2020-02-01T9:30:00",
+        "start": "2020-02-01T09:30:00",
         "end": "2020-02-01T10:00:00"
     },
     {
         "talk": "andrew-the-evolution-of-rwd",
-        "start": "2020-02-01T9:45:00",
+        "start": "2020-02-01T09:45:00",
         "end": "2020-02-01T10:30:00"
     },
     {

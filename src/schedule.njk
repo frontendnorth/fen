@@ -38,10 +38,10 @@ ignore: true
                 {% endif %}
 
                 <time>
-                    {{ item.start }}
+                    {{ item.start | scheduleTime }}
                 </time>
                 <time>
-                    {{ item.end }}
+                    {{ item.end | scheduleTime }}
                 </time>
 
             </article>
