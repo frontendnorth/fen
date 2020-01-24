@@ -186,7 +186,7 @@
 			color: $color-text-white;
 
 			a {
-				// color: $color-text-white;
+				color: $color-text-white;
 
 				@supports (-webkit-text-fill-color: transparent) {
 					background-image: linear-gradient(
