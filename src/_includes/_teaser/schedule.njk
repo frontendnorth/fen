@@ -1,0 +1,78 @@
+{% import "_macros/icons.njk" as icons %}
+
+{% if item.talk %}
+    <article class="c-teaser c-teaser--inverted c-teaser--schedule c-raised--light-opaque c-raised--rounded">
+{% else %}
+    <div class="c-teaser c-teaser--inverted c-teaser--schedule">
+{% endif %}
+
+    {% if item.talk %}
+
+        {% for talk in collections.schedule %}
+
+            {% set speaker_url = null %}
+            {% set speaker_name = null %}
+            {% set speaker_image = null %}
+            {% set speaker_twitter = null %}
+
+            {# If speaker matches that in schedule entry - IAF #}
+            {% if item.talk == talk.fileSlug %}
+                {% for speaker in collections.speakers %}
+                    {% if talk.data.speaker == speaker.fileSlug %}
+                        {% set speaker_url = speaker.url %}
+                        {% set speaker_name = speaker.data.title %}
+                        {% set speaker_image = speaker.data.image %}
+                        {% for item in speaker.data.external %}
+                            {% if item.twitter %}
+                                {% set speaker_twitter = item.twitter %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+
+                <div class="c-teaser__text{{ ' c-teaser__text--talk' if item.talk }}">
+                    <h2 class="c-teaser__title">
+                        <a href="{{ speaker_url }}">{{ talk.data.title }}</a>
+                    </h2>
+                    {{ ('<span class="c-teaser__excerpt">' ~ talk.data.subtitle ~ '</span>' if talk.data.subtitle) | safe }}
+                    <span class="c-teaser__meta">{{ speaker_name }}</span>
+                    {{ ('<a href="https://twitter.com/' ~ speaker_twitter ~ '" rel="external" title="Follow ' ~ speaker_name ~ '" class="c-teaser__icon">' ~ icons.icon('twitter') ~ '</a>' if speaker_twitter) | safe }}
+                </div>
+
+                {% if speaker_image %}
+                    <div class="c-teaser__image">
+                        <img srcset="{{ site.image_cdn }}{{ speaker_image }}?thumbnail=560 560w,
+                            {{ site.image_cdn }}{{ speaker_image }}?thumbnail=320 320w,
+                            {{ site.image_cdn }}{{ speaker_image }}?thumbnail=160 160w,
+                            {{ site.image_cdn }}{{ speaker_image }}?thumbnail=140 140w"
+                            sizes="(min-width:700px) 140px,
+                                160px"
+                            src="{{ site.image_cdn }}{{ speaker_image }}?thumbnail=160"
+                            alt="">
+                    </div>
+                {% endif %}
+
+            {% endif %}
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="c-teaser__text">
+            <span class="beta c-teaser__title">
+                {{ item.description }}
+            </span>
+        </div>
+
+    {% endif %}
+
+    <time datetime="{{ item.start | scheduleDateString }}" class="c-teaser__time {{ 'c-teaser__time--lg' if item.talk }}">
+        {{- item.start | scheduleTime -}}
+        {{- ' - late' if loop.last -}}
+    </time>
+
+{% if item.talk %}
+    </article>
+{% else %}
+    </div>
+{% endif %}

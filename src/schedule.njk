@@ -7,46 +7,33 @@ ignore: true
 
 {% block main %}
 
-    <main>
+    <div class="o-hero-header o-spacer o-spacer--super@lg c-raised--hero-gradient">
 
-        <h1>Schedule</h1>
+        <div class="o-hero-header__copy o-wrapper o-wrapper--wide">
 
-        {% for item in _2020.schedule %}
-            <article>
+            <header class="o-spacer c-inverted">
 
-                {% if item.talk %}
+                <h1 class="c-inverted">Schedule</h1>
+                <span class="c-subheading">Our 7 February 2020 running order</span>
 
-                    {% for talk in collections.schedule %}
-                        {# If speaker matches that in schedule entry - IAF #}
-                        {% if item.talk == talk.fileSlug %}
-                            <h2>{{ talk.data.title }}</h2>
-                            {% for speaker in collections.speakers %}
-                                {% if talk.data.speaker == speaker.fileSlug %}
-                                    <a href="{{ speaker.url }}">{{ speaker.data.title }}</a>
-                                    {% for item in speaker.data.external %}
-                                        {{ ('<a href="https://twitter.com/' ~ item.twitter ~ '" rel="external" title="Follow ' ~ speaker.data.title ~ '">' ~ item.twitter ~ '</a>' if item.twitter) | safe }}
-                                    {% endfor %}
-                                {% endif %}
-                            {% endfor %}
-                        {% endif %}
-                    {% endfor %}
+            </header>
 
-                {% else %}
+            <div class="o-spacer">
 
-                    {{ item.description }}
+                {% for item in _2020.schedule %}
+                    {% include "_teaser/schedule.njk" %}
+                {% endfor %}
 
-                {% endif %}
+            </div>
 
-                <time>
-                    {{ item.start | scheduleTime }}
-                </time>
-                <time>
-                    {{ item.end | scheduleTime }}
-                </time>
+            <div class="u-centered">
+                <a href="/venue/" class="c-button c-button--pop u-center">View venue details & local area guide</a>
+            </div>
 
-            </article>
-        {% endfor %}
+        </div>
 
-    </main>
+    </div>
+
+    {% include "image-clipper.njk" %}
 
 {% endblock %}

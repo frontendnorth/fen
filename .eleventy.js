@@ -41,12 +41,16 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("scheduleTime", dateObj => {
-        return DateTime.fromISO(dateObj, {zone: 'gmt'}).toFormat("h:mma");
+        return DateTime.fromISO(dateObj, {zone: 'gmt'}).toFormat("H:mm");
     });
 
     // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
     eleventyConfig.addFilter('htmlDateString', (dateObj) => {
         return DateTime.fromJSDate(dateObj, {zone: 'gmt'}).toFormat('yyyy-LL-dd');
+    });
+
+    eleventyConfig.addFilter('scheduleDateString', (dateObj) => {
+        return DateTime.fromISO(dateObj, {zone: 'gmt'}).toFormat('yyyy-LL-dd');
     });
 
     // For use with blog URL path

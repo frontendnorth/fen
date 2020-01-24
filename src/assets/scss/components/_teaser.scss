@@ -30,6 +30,7 @@
 		flex: 1 0 0;
 		// When used, assume an image is alongside, so…
 		margin-top: $space-l;
+		z-index: 10; // Help link function over image
 	}
 
 	&__title {
@@ -79,6 +80,7 @@
 
 			// For clickable area
 			&::after {
+				// TODO: Remove whilst building
 				content: '';
 				bottom: 0;
 				left: 0;
@@ -142,7 +144,6 @@
 		overflow: hidden; // for the rounded corners
 		position: relative;
 		order: -1;
-		z-index: -1;
 		width: 100px;
 		transition: all 0.1s linear;
 
@@ -173,6 +174,39 @@
 	// Media (has an image)
 	&--media {
 		flex-wrap: nowrap;
+	}
+
+	// Inverted
+	// Most generic first
+	&--inverted {
+		color: $color-text-white;
+
+	.c-teaser {
+		&__title {
+			color: $color-text-white;
+
+			a {
+				// color: $color-text-white;
+
+				@supports (-webkit-text-fill-color: transparent) {
+					background-image: linear-gradient(
+						to right,
+						$color-brand-secondary,
+						$color-brand-secondary 50%,
+						$color-text-white 50%);
+				}
+
+				&:focus,
+				&:hover {
+					color: $color-brand-secondary;
+				}
+			}
+		}
+
+		&__meta {
+			color: rgba($color-text-white, .7);
+		}
+	}
 	}
 
 	// Speaker - used (large) on speaker landing page
@@ -210,30 +244,166 @@
 		}
 	}
 
-	// Inverted
-	&--inverted {
-	.c-teaser {
-		&__title {
-			a {
-				color: $color-text-white;
+	// Speaker - used (large) on speaker landing page
+	&--schedule {
 
-				@supports (-webkit-text-fill-color: transparent) {
-					background-image: linear-gradient(
-						to right,
-						$color-brand-secondary,
-						$color-brand-secondary 50%,
-						$color-text-white 50%);
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+
+		@include mq(sm) {
+			align-items: center;
+			flex-direction: row;
+		}
+
+		& + & {
+			margin-top: $space-xl;
+
+			@include mq(md) {
+				margin-top: $space-xxl;
+			}
+		}
+
+	.c-teaser {
+		&__text {
+			display: flex;
+			flex-direction: column;
+			padding: 0
+				$space-inset-xl;
+			margin-top: 0;
+
+			@include mq(sm) {
+				margin-left: calc(4em + #{$space-xl});
+			}
+
+			@include mq(md) {
+				margin-left: calc(6em + #{$space-xxl});
+			}
+
+			&--talk {
+				padding-top: $space-inset-xl;
+				padding-bottom: $space-inset-xl;
+
+				@include mq(sm) {
+					@include mq(sm) {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+			&__title {
+				font-size: map-get($type-scale-major-second, xl);
+				// line-height: 1.1;
+				margin-right: $space-xxl;
+
+				@include mq(sm) {
+					margin-right: $space-xxxl;
 				}
 
-				&:focus,
-				&:hover {
-					color: $color-brand-secondary;
+				@include mq(lg) {
+					margin-right: 0;
+				}
+			}
+
+			&__excerpt {
+				color: rgba($color-text-white, .7);
+				margin-top: 0;
+
+				@include mq(sm) {
+					margin-right: $space-xxxl;
+				}
+
+				@include mq(md) {
+					margin-right: 0;
+				}
+			}
+
+			&__meta {
+				color: $color-text-white;
+				font-size: map-get($type-scale-major-second, default);
+				order: -1;
+				text-transform: uppercase;
+			}
+
+		&__image {
+			display: none;
+
+			@supports(clip-path: url('#svgPath')) {
+				margin-right: 0;
+				position: absolute;
+				right: -($space-xl *1.5);
+				top: -($space-xl *1.5);
+				border-radius: 0;
+				display: block;
+				height: ($space-xxxl *1.5);
+				background: rgba(#000, .25);
+				clip-path: url('#svgPath');
+				width: ($space-xxxl *1.5);
+
+				> img {
+					bottom: 0;
+					height: calc(100% - #{$space-xl});
+					position: absolute;
+					left: 0;
+					width: calc(100% - #{$space-xl});
+				}
+			}
+
+			@include mq(md) {
+				background-color: $color-brand-primary;
+				bottom: 0;
+				clip-path: none;
+				height: 100%;
+				right: 0;
+				top: 0;
+				width: 140px;
+
+				> img {
+					height: 100%;
+					width: 100%;
 				}
 			}
 		}
 
-		&__meta {
+		&__icon {
+			align-self: flex-start;
+			z-index: 20;
+			margin-top: $space-xl;
+
+			@include mq(md) {
+				margin-top: -($icon-size /2);
+				position: absolute;
+				top: 50%;
+				right: (($space-xxxl *1.5) - $space-l);
+			}
+		}
+
+		&__time {
 			color: rgba($color-text-white, .7);
+			font-weight: bold;
+			order: -1;
+			padding: 0
+				0
+				0
+				$space-inset-xl;
+
+			@include mq(sm) {
+				position: absolute;
+			}
+
+			&--lg {
+				color: $color-text-white;
+				font-size: map-get($type-scale-major-second, xxxl);
+				padding-top: $space-inset-xl;
+
+				@include mq(sm) {
+					align-self: flex-start;
+				}
+
+				@include mq(md) {
+					font-size: map-get($type-scale, xxl);
+				}
+			}
 		}
 	}
 	}

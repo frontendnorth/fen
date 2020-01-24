@@ -1,7 +1,7 @@
 [
     {
         "description": "Registration",
-        "start": "2020-02-01T09:00:00",
+        "start": "2020-02-01T08:45:00",
         "end": "2020-02-01T09:30:00"
     },
     {
@@ -20,7 +20,7 @@
         "end": "2020-02-01T12:20:00"
     },
     {
-        "name": "Morning break",
+        "description": "Morning break",
         "start": "2020-02-01T11:20:00",
         "end": "2020-02-01T11:40:00"
     },
@@ -67,6 +67,11 @@
     {
         "description": "Closing remarks",
         "start": "2020-02-01T17:15:00",
+        "end": "2020-02-01T17:30:00"
+    },
+    {
+        "description": "Social @ Kommune",
+        "start": "2020-02-01T17:30:00",
         "end": "2020-02-01T17:30:00"
     }
 ]
