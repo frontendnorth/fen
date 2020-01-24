@@ -1,7 +1,6 @@
 ---
 title: "Deliberate, Direct, Positive ACTION!"
 subtitle: "Supporting people from underrepresented and marginalised groups "
-time: 2020-02-01T9:30:00
 speaker: "peter-aitken"
 ---
 How can you include, welcome, provide support, safety and a confidence boost to people from underrepresented and marginalised groups that are absent from your community/workplace?

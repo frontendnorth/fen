@@ -1,6 +1,5 @@
 ---
 title: "Have you written tests for that?"
-time: 2020-02-01T9:30:00
 speaker: "mike-smith"
 ---
 “Have you written tests for that?” is a question sometimes feared by developers. There are so many approaches, libraries and methodologies that it can be hard to know where to even start.

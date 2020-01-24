@@ -1,7 +1,6 @@
 ---
 title: "Let's Get Functional"
 subtitle: "a.k.a. a web app is just multiple functions stacked on top of each other, wearing a trenchcoat"
-time: 2020-02-01T9:30:00
 speaker: "jemima-abu"
 ---
 Let's get back to basics, for a minute. No frameworks, no libraries; just pure and plain ol' JavaScript.

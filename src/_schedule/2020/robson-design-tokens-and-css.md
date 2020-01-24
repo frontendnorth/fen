@@ -1,7 +1,6 @@
 ---
 title: "Design Tokens and CSS"
 subtitle: "Systematising the Design of Components"
-time: 2020-02-01T9:30:00
 speaker: "stuart-robson"
 ---
 Aren’t Design Tokens just spicy Sass variables?

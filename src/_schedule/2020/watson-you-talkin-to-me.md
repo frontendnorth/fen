@@ -1,6 +1,5 @@
 ---
 title: "You talkin' to me?"
-time: 2020-02-01T9:30:00
 speaker: "léonie-watson"
 ---
 We've been talking with technology for longer than you might think, but despite increasing conversational sophistication, relatively few ways exist to help us make artificial speech sound human.

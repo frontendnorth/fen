@@ -1,7 +1,6 @@
 ---
 title: "Are we even designing? Like, at all?"
 subtitle: "How can we come together and better engineer the web?"
-time: 2020-02-01T9:30:00
 speaker: "florence-okoye"
 ---
 The web is certainly living in interesting times. We have created an ever growing ecosystem of services, providing entertainment, knowledge and connectivity on a global scale for over 3.2 billion users with another billion on the way.
