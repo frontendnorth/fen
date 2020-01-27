@@ -10,7 +10,7 @@
 
                 <header class="o-wrapper__primary o-hero-header__copy o-hero-header__copy--speaker">
 
-                    <h1 class="c-inverted">{{ title }}</h1>
+                    <h1 class="c-inverted">{{ title | safe }}</h1>
                     {% if role %}
                         <span class="c-subheading">
                             {{ role }}
@@ -197,7 +197,7 @@
                                 rel="{{ "prev" if direction == 'previous' else "next" }}"
                                 title="View the {{ "previous" if direction == 'previous' else "next" }} speaker: {{ sibling.data.title }}"
                                 class="c-arrow-link {{ "c-arrow-link--previous" if direction == 'previous' }}">
-                                {{- sibling.data.title -}}
+                                {{- sibling.data.title | safe -}}
                                 {{ icons.icon('arrow-right') }}
                             </a>
                         </span>

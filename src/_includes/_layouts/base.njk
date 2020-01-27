@@ -10,7 +10,7 @@
         {%- else -%}
             {% set meta_title = title ~ ' | ' ~ metadata.title %}
         {%- endif -%}
-        {{- meta_title -}}
+        {{- meta_title | replace('&shy;', '') -}}
     </title>
     {# Is description set in frontmatter? #}
     {% set meta_description = null %}

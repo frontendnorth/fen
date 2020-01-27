@@ -3,7 +3,7 @@
     {{ 'c-teaser--' ~ teaser.type if teaser.type }}">
     <div class="c-teaser__text">
         <{{ teaser.level if teaser.level else 'h3' }} class="c-teaser__title">
-            <a href="{{ speaker.url }}">{{ speaker.data.title }}</a>
+            <a href="{{ speaker.url }}">{{ speaker.data.title | safe }}</a>
         </{{ teaser.level if teaser.level else 'h3' }}>
         {% if speaker.data.role %}
             <span class="c-teaser__meta c-teaser__meta--important">

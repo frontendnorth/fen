@@ -58,10 +58,11 @@
 
     {% else %}
 
-        <div class="c-teaser__text">
+        <div class="c-teaser__text s-content">
             <span class="beta c-teaser__title">
                 {{ item.description }}
             </span>
+            {{ ('<span class="c-teaser__excerpt c-inverted">' ~ item.detail ~ '</span>' if item.detail) | safe }}
         </div>
 
     {% endif %}
