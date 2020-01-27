@@ -36,6 +36,7 @@
     },
     {
         "description": "Lunch",
+        "detail": "Check out our some of our <a href='/venue/#about-sheffield'>recommended places to eat</a>.",
         "start": "2020-02-01T12:45:00",
         "end": "2020-02-01T14:00:00"
     },
@@ -71,6 +72,7 @@
     },
     {
         "description": "Social @ Kommune",
+        "detail": "Learn more about our afterparty <a href='/venue/#afterparty'>on our venue page</a>",
         "start": "2020-02-01T17:30:00",
         "end": "2020-02-01T17:30:00"
     }
