@@ -27,6 +27,10 @@
       "source": "/blog/2019/12/volunteering-to-help-at-fen-2020/",
       "destination": "/blog/2019/11/volunteering-to-help-at-fen-2020/",
       "type": 301
+    }, {
+      "source": "/speakers/jemima-abu/",
+      "destination": "/speakers/nevelina-aleksandrova/",
+      "type": 301
     }]
   }
 }
