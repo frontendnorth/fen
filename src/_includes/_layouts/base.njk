@@ -8,9 +8,9 @@
         {%- if page.url == '/' -%}
             {% set meta_title = metadata.title ~ ' | Returning 7th February, 2020' %}
         {%- else -%}
-            {% set meta_title = title ~ ' | ' ~ metadata.title %}
+            {% set meta_title = (title | replace('&shy;', '')) ~ ' | ' ~ metadata.title %}
         {%- endif -%}
-        {{- meta_title | replace('&shy;', '') -}}
+        {{- meta_title -}}
     </title>
     {# Is description set in frontmatter? #}
     {% set meta_description = null %}
@@ -53,8 +53,8 @@
     {% for speaker in collections.speakers -%}
         {% if page.fileSlug == speaker.fileSlug %}
             {%- set og_type = 'profile' -%}
-            <meta property="og:profile_first_name" content="{{ title.split(' ')[0] }}" />
-            <meta property="og:profile_last_name" content="{{ title.split(' ').reverse()[0] }}" />
+            <meta property="og:profile_first_name" content="{{ title.split(' ')[0] | replace('&shy;', '') }}" />
+            <meta property="og:profile_last_name" content="{{ title.split(' ').reverse()[0] | replace('&shy;', '') }}" />
         {% endif %}
     {%- endfor -%}
     <meta property="og:type" content="{{ og_type | d('website', true) }}" />

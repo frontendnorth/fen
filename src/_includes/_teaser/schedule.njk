@@ -20,7 +20,7 @@
                 {% for speaker in collections.speakers %}
                     {% if talk.data.speaker == speaker.fileSlug %}
                         {% set speaker_url = speaker.url %}
-                        {% set speaker_name = speaker.data.title %}
+                        {% set speaker_name = speaker.data.title | replace('&shy;', '') %}
                         {% set speaker_image = speaker.data.image %}
                         {% for item in speaker.data.external %}
                             {% if item.twitter %}
