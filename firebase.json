@@ -31,6 +31,10 @@
       "source": "/speakers/jemima-abu/",
       "destination": "/speakers/nevelina-aleksandrova/",
       "type": 301
+    }, {
+      "source": "/speakers/peter-aitken/",
+      "destination": "/speakers/jessica-rose/",
+      "type": 301
     }]
   }
 }
