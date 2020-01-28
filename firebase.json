@@ -20,6 +20,10 @@
       }]
     }],
     "redirects": [{
+        "source": "/coc",
+        "destination": "/code-of-conduct/",
+        "type": 301
+    }, {
       "source": "/blog/2019/09/rebooting-front-end-north/",
       "destination": "/blog/2019/10/rebooting-front-end-north/",
       "type": 301
