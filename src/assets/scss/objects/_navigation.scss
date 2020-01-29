@@ -117,6 +117,27 @@
 				}
 			}
 
+			&__cta {
+				flex: 0 0 auto;
+
+				@include mq($until: navigationBreak) {
+					padding: $space-xl;
+					padding-right: 0;
+				}
+
+				@include mq(xl) {
+					margin-left: $space-xl;
+					order: 10;
+				}
+			}
+
+				// Hide on homepage, it clashes with the body CTA
+				&--home &__cta {
+					@include mq(navigationBreak) {
+						display: none;
+					}
+				}
+
 	&__trigger {
 		bottom: $space-l;
 		display: block;

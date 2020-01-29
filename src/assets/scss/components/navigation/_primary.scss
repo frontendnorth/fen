@@ -32,6 +32,12 @@
 			margin: 0 $space-xs;
 			position: relative;
 
+			// Hide CoC on desktop to make room for other things
+			// (it's still in the footer)
+			&:last-child {
+				display: none;
+			}
+
 			// divider
 			&::before {
 				@include pseudo();
