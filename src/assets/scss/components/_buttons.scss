@@ -97,12 +97,6 @@
 		text-shadow: inherit;
 	}
 
-	// in body copy
-	p + & {
-		// margin-top: $space-default;
-		// margin-bottom: $space-default;
-	}
-
 	// state
 	&--disabled {
 		&::after {
@@ -133,70 +127,10 @@
 				margin-top: $space-default;
 			}
 		}
-
-		// @include block-rules();
-
-		// @include mq(md) {
-		// 	&\@md {
-		// 		@include block-rules();
-		// 	}
-		// }
 	}
 
 
 	// variations
-	// …colors
-	$colors: (
-		'orange': $color-brand-secondary,
-		'reduced': $color-bg-grey-mid
-	);
-
-	@mixin colorButtonAttibutes($name, $color) {
-		background: $color;
-		border-right-color: darken($color, 10);
-
-		// for state
-		&::before {
-			background-color: darken($color, 10);
-		}
-
-		&:hover,
-		&:focus {
-			background-color: lighten($color, 2.5);
-		}
-
-		&:focus-within {
-			background-color: lighten($color, 2.5);
-		}
-
-		// Contrast fixer
-		// make this smarter with color checker!
-		@if ( $name == 'reduced' ) {
-			color: $color-text-base;
-			text-shadow: none;
-
-			&:hover,
-			&:focus {
-				color: darken($color-text-base, 10);
-			}
-
-			&:focus-within {
-				color: darken($color-text-base, 10);
-			}
-
-			// arrow
-			&::after {
-				@include triangle($color-text-base, 'right', 7px);
-			}
-		}
-	}
-
-	@each $name, $color in $colors {
-		&--#{$name} {
-			@include colorButtonAttibutes($name, $color);
-		}
-	}
-
 	// Special orange 'pop' button for maximum impact
 	&--pop {
 		background-color: #ffb92d !important;
