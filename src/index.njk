@@ -32,10 +32,16 @@ navOrder: 0
                 </p>
 
                 <div class="o-hero-header__action">
-                    <a href="{{ metadata.ticket_url }}" class="c-button c-button--split">
-                        Buy tickets now
-                        <strong class="c-button__emphasis">&pound;50</strong>
-                    </a>
+                    {% if site.finished != true %}
+                        <a href="{{ metadata.ticket_url }}" class="c-button c-button--split">
+                            Buy tickets now
+                            <strong class="c-button__emphasis">&pound;50</strong>
+                        </a>
+                    {% else %}
+                        <a href="/schedule/" class="c-button c-button--pop">
+                            View our schedule
+                        </a>
+                    {% endif %}
                 </div>
 
             </div>

@@ -4,7 +4,7 @@
 
 {% import "_macros/icons.njk" as icons %}
 
-<div class="o-navigation{{ ' o-navigation--home' if page.url == '/' }}">
+<div class="o-navigation{{ ' o-navigation--hide-cta' if ( page.url == '/' and site.finished != true ) }}">
     <div class="o-navigation__wrapper">
 
         {# Homepage has its own logo, THANK YOU VERY MUCH x_X #}
@@ -36,14 +36,16 @@
                 </ul>
 
             </nav>
-            <div class="o-navigation__cta">
+            {% if site.finished != true %}
+                <div class="o-navigation__cta">
 
-                <a href="{{ metadata.ticket_url }}" class="c-button c-button--split">
-                    Buy tickets
-                    <strong class="c-button__emphasis">&pound;50</strong>
-                </a>
+                    <a href="{{ metadata.ticket_url }}" class="c-button c-button--split">
+                        Buy tickets
+                        <strong class="c-button__emphasis">&pound;50</strong>
+                    </a>
 
-            </div>
+                </div>
+            {% endif %}
             <div class="o-navigation__social c-inverted">
 
                 {% include "social.njk" %}
