@@ -239,14 +239,11 @@
 		svg {
 			bottom: 0;
 			color: inherit;
-			height: 21px;
 			position: absolute;
-			right: -$icon-bar-width;
+			right: -($icon-bar-width - ($icon-size-sm /2));
 			top: 0;
-			// transition: $transition-fade;
 			opacity: .7;
 			margin: auto;
-			width: $icon-bar-width;
 		}
 
 			&:focus,
