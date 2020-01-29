@@ -107,6 +107,14 @@
 				@include mq($until: navigationBreak) {
 					padding: $space-xl;
 				}
+
+				@include mq(navigationBreak) {
+					display: none;
+				}
+
+				@include mq(xl) {
+					display: block;
+				}
 			}
 
 	&__trigger {
