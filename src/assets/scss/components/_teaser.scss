@@ -307,7 +307,7 @@
 			}
 
 			&__excerpt {
-				color: rgba($color-text-white, .7);
+				color: rgba($color-text-white, .85);
 				margin-top: 0;
 
 				@include mq(sm) {
