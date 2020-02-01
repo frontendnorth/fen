@@ -24,6 +24,7 @@
                         {% set isParent = nav.url != '/' and nav.url in page.url -%}
                         <li class="c-navigation-primary__item
                             {{ 'c-navigation-primary__item--home' if loop.index0 == 0 }}
+                            {{ 'c-navigation-primary__item--is-optional' if ( loop.last and site.finished != true ) }}
                             {% if isCurrent or isParent %}is-here{% endif %}">
                             <a
                                 {% if isCurrent %}aria-current="page"{% endif %}
