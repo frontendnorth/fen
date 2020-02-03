@@ -142,7 +142,7 @@
 		bottom: $space-l;
 		display: block;
 		position: fixed;
-		right: $space-l;
+		right: $space-default;
 
 		@include mq(navigationBreak) {
 			display: none;
