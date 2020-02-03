@@ -125,6 +125,13 @@
 					padding-right: 0;
 				}
 
+				@include mq(navigationBreak) {
+					// Hack to stop button causing inconsistency between
+					// pages where it is in menu and where it isn't.
+					margin: -.5em
+						0;
+				}
+
 				@include mq(xl) {
 					margin-left: $space-xl;
 					order: 10;
