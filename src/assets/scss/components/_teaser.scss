@@ -247,13 +247,13 @@
 	// Speaker - used (large) on speaker landing page
 	&--schedule {
 
-		display: flex;
 		flex-direction: column;
 		overflow: hidden;
 
 		@include mq(sm) {
 			align-items: center;
 			flex-direction: row;
+			flex-wrap: nowrap;
 		}
 
 		& + & {
@@ -274,11 +274,7 @@
 			margin-top: 0;
 
 			@include mq(sm) {
-				margin-left: calc(4em + #{$space-xl});
-			}
-
-			@include mq(md) {
-				margin-left: calc(6em + #{$space-xxl});
+				padding-left: 0;
 			}
 
 			&--talk {
@@ -291,10 +287,13 @@
 					}
 				}
 			}
+
+			> :last-child {
+				margin-bottom: 0;
+			}
 		}
 			&__title {
 				font-size: map-get($type-scale-major-second, xl);
-				// line-height: 1.1;
 				margin-right: $space-xxl;
 
 				@include mq(sm) {
@@ -389,20 +388,24 @@
 				$space-inset-xl;
 
 			@include mq(sm) {
-				position: absolute;
+				flex: 0 0 calc(4rem + #{$space-l});
+				padding-right: $space-l;
+			}
+
+			@include mq(md) {
+				flex-basis: calc(6rem + #{$space-xxl - $space-l});
 			}
 
 			&--lg {
+				align-self: flex-start;
 				color: $color-text-white;
 				font-size: map-get($type-scale-major-second, xxxl);
 				padding-top: $space-inset-xl;
 
-				@include mq(sm) {
-					align-self: flex-start;
-				}
-
 				@include mq(md) {
+					align-self: center;
 					font-size: map-get($type-scale, xxl);
+					padding-top: 0;
 				}
 			}
 		}
