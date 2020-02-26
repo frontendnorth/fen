@@ -2,6 +2,7 @@
 title: "Developing Software for Prisons"
 subtitle: "When you don't want your users to stick around"
 speaker: "nevelina-aleksandrova"
+slides: "https://docs.google.com/presentation/d/1GF3vWCiWo6DASaGsVcPH9Xo9nZx8xnW6dex_oho3QTU/edit?usp=sharing"
 ---
 At Her Majesty's Prison and Probation Service (HMPPS) part of the work we do is develop applications for prison staff. Our users are people with very limited time.
 

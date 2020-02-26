@@ -1,0 +1,38 @@
+{#
+    Slides
+#}
+
+{% macro slides(year = _2020) %}
+<ul>
+{% set slides = [] %}
+{% for item in year.schedule %}
+    {% if item.talk %}
+        {% for talk in collections.schedule %}
+            {% if item.talk == talk.fileSlug %}
+                {% if talk.data.slides %}
+
+                    {% set this_speaker = null %}
+
+                    {% for speaker in collections.speakers %}
+                        {% if talk.data.speaker == speaker.fileSlug %}
+                            {% set this_speaker = speaker.data.title | replace('&shy;', '') %}
+                        {% endif %}
+                    {% endfor %}
+
+                    {% set this = {
+                        title: talk.data.title,
+                        slides: talk.data.slides,
+                        speaker: this_speaker
+                    } %}
+
+                    <li>
+                        <a href="{{ this.slides }}">{{ this.title }}</a> - {{ this.speaker }}
+                    </li>
+
+                {% endif %}
+            {% endif%}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+</ul>
+{% endmacro %}

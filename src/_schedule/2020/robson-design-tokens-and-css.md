@@ -2,6 +2,7 @@
 title: "Design Tokens and CSS"
 subtitle: "Systematising the Design of Components"
 speaker: "stuart-robson"
+slides: "https://noti.st/sturobson/H9SeXk/design-tokens-and-css-systemising-the-design-of-components"
 ---
 Aren’t Design Tokens just spicy Sass variables?
 

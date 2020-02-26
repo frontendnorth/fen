@@ -1,6 +1,7 @@
 ---
 title: "Have you written tests for that?"
 speaker: "mike-smith"
+slides: "https://noti.st/mikerhyssmith/LQFZME"
 ---
 “Have you written tests for that?” is a question sometimes feared by developers. There are so many approaches, libraries and methodologies that it can be hard to know where to even start.
 

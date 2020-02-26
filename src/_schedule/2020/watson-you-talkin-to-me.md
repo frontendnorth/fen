@@ -1,6 +1,7 @@
 ---
 title: "You talkin' to me?"
 speaker: "léonie-watson"
+slides: "https://presentations.tetralogical.com/"
 ---
 We've been talking with technology for longer than you might think, but despite increasing conversational sophistication, relatively few ways exist to help us make artificial speech sound human.
 

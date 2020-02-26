@@ -1,6 +1,7 @@
 ---
 title: "The Evolution Of Responsive Design"
 speaker: "rachel-andrew"
+slides: "https://noti.st/rachelandrew/4AtjON/the-evolution-of-responsive-design"
 ---
 We typically understand responsive design as being fluid grids, flexible images and media queries - these being the elements detailed in [Ethan Marcotte's original _A List Apart_ article](https://alistapart.com/article/responsive-web-design/) on responsive web design.
 
