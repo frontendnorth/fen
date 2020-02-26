@@ -1,0 +1,41 @@
+---
+title: "FEN 2020 coverage, roundup and thanks"
+date: 2020-02-26
+intro: "We think our conference went pretty well. Here are some final details you may find useful."
+---
+{% import "_macros/slides.njk" as macro with context %}
+
+<h2>Talks</h2>
+
+<p>
+    Our speakers have all been kind enough to share their slides from their talks:
+</p>
+
+{{ macro.slides(_2020) }}
+
+{% set content = '
+## Coverage
+
+Several attendess blogged about their experiences. Did you write something and want it featured here? [Drop us a message](https://twitter.com/frontendnorth).
+
+- [Four things from Front End North](https://medium.com/@dinosaurenby/four-things-from-front-end-north-715c2dd6092b) by Jaye Hackett
+- [I attended FrontEndNorth, here are my notes!
+](https://dev.to/ritadias/i-attended-frontendnorth-here-are-my-notes-3pm8) by Rita Dias
+- [Sixth Story does Front End North](https://sixthstory.co.uk/blog/front-end-north/) from _Sixth Story_
+- [Front End North 2020](https://supercooldesign.co.uk/blog/front-end-north-2020) by Sally McGrath at _Supercool_
+
+
+## Some thanks
+
+We\'d like to again thank our wonderful [speakers](/speakers), volunteers and [sponsors](/sponsors). Without their efforts and support, this conference could not have happened.
+
+We\'d also like to thank all of our attendess. We believe that supporting grass-roots-initiated events like this one helps the industry to grow and stay vibrant.
+
+## What now?
+
+In Sheffield? Want to keep learning about front end development? Consider popping along to [Front End Sheffield](https://www.meetup.com/Front-End-Sheffield/) which is run on the last Thursday of everything month (not this month though, the organisers are still recovering from FEN 2020!)
+
+Attendees should receive an email questionnaire soon. If you could take the time to respond to this then we\'d apprecaite it. Your feedback will help make future events better and on that note… well, [stay tuned to our social media](https://twitter.com/frontendnorth). You never know!
+' %}
+
+{{ content | markdown | safe }}
