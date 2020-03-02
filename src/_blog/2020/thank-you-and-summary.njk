@@ -13,6 +13,8 @@ intro: "We think our conference went pretty well. Here are some final details yo
 
 {{ macro.slides(_2020) }}
 
+{% image "2020-attendees.jpg", "Attendees at FEN 2020" %}Our audience in The Crucible{% endimage %}
+
 {% set content = "
 ## Coverage
 
@@ -28,7 +30,9 @@ Several attendess blogged about their experiences. Did you write something and w
 ## Some thanks
 
 We'd like to again thank our wonderful [speakers](/speakers), volunteers and [sponsors](/sponsors). Without their efforts and support, this conference could not have happened.
+" %}
 
+{% set content_2 = "
 We'd also like to thank all of our attendess. We believe that supporting grass-roots events like this one helps the industry to grow and stay vibrant.
 
 ## What now?
@@ -41,3 +45,7 @@ Attendees should receive an email questionnaire soon. If you could take the time
 " %}
 
 {{ content | markdown | safe }}
+
+{% image "thank-you-katie.jpg", "Katie at the end of FEN 2020" %}Katie said it best on the day{% endimage %}
+
+{{ content_2 | markdown | safe }}
