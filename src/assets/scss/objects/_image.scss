@@ -18,7 +18,8 @@
 		margin-bottom: 0;
 	}
 
-	> img {
+	> img,
+	> a > img {
 		display: block;
 		margin: 0 auto;
 		max-width: 100%;

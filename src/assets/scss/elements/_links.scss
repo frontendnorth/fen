@@ -15,8 +15,19 @@ a {
 	&:hover {
 		text-decoration-color: lighten($color-brand-secondary, 20);
 
+		// Is an external link, so probably a logo
+		&[href^="http"] {
+			> img {
+				filter: opacity(80%);
+			}
+		}
+
 		> img {
-			filter: opacity(75%);
+			// If this is an image
+			&[src*=".jpg"] {
+				cursor: zoom-in;
+				filter: none;
+			}
 		}
 	}
 
