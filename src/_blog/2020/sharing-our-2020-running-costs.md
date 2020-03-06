@@ -1,7 +1,7 @@
 ---
 title: "Sharing our 2020 running costs"
 date: 2020-03-06
-excerpt: "We are a community-focused event, so in this spirit of openness we wanted to share our running costs publicly."
+intro: "We are a community-focused event, so in this spirit of openness we wanted to share our running costs publicly."
 ---
 Front End North 2020 was a year in the making, it cost around £12,400 to run and had over 300 attendees. We didn’t count how many hours we spent on organising it, but I bet it was a lot (apologies again to our families).
 
@@ -19,20 +19,16 @@ From the beginning we were keen to run FEN as very much a [Minimum Viable](https
 
 In total we spent £12,400, this breaks down as:
 
-**Venue: 48.4%** 
-
+**Venue: 48.4%**  
 Includes venue hire, A/V equipment and refreshments.
 
-**Speaker & MC expenses: 26.8%**
-
+**Speaker & MC expenses: 26.8%**  
 Includes accommodation and travel expenses, plus gifts.
 
-**After party: 14%**
-
+**After party: 14%**  
 Includes venue hire and drinks.
 
-**Misc: 10.7%**
-
+**Misc: 10.7%**  
 Includes wristbands, signage, t-shirts & hoodies for volunteers and organisers, branding, company administrative fees, stationery, bathroom packs, stickers, plus a post conference meal for the organisers to celebrate and retro the conference.
 
 ## How we paid for it 
