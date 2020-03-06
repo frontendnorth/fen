@@ -43,7 +43,7 @@ In the end, we sold 296 tickets, gave away three freebies and allocated eight to
 
 ### Sponsorship
 
-We’re incredibly grateful to sponsors [Autodesk](https://autodesk.co.uk/), [Inviqa](https://inviqa.com/), [Egress](https://www.egress.com/), [Evoluted](https://www.evoluted.net/web-development) and [Nimble](http://www.nimbleapproach.com/). Thanks to their generosity our total sponsorship income was £11,000.
+We’re incredibly grateful to sponsors [Autodesk](https://autodesk.co.uk/), [Inviqa](https://inviqa.com/), [Egress](https://www.egress.com/), [Evoluted](https://www.evoluted.net/web-development) and [Nimble](https://www.nimbleapproach.com/). Thanks to their generosity our total sponsorship income was £11,000.
 
 ## Spot the difference
 Our income from sponsorship and especially ticket sales ended up being much more than we thought was likely when we started this process and we were able to keep our costs pretty low. 
