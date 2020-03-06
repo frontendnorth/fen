@@ -103,20 +103,25 @@ module.exports = function(eleventyConfig) {
     // });
     // e.g.: {% image "image", "alt text", "right" %}A caption.{% endimage %}
     eleventyConfig.addPairedShortcode("image", function(caption, image, alt, alignment, link) {
-        return `<div class="o-image ${alignment ? `o-image--${alignment}` : `-`} c-inverted">
-            ${link ? `<a href="https://devolute-cdn.sirv.com/fen/${image}?w=1920">` : ``}
-                <img srcset="https://devolute-cdn.sirv.com/fen/${image}?w=1180 1180w,
+        var markup = `<div class="o-image ${alignment ? `o-image--${alignment}` : `-`} c-inverted">`;
+        if (link) {
+            markup += `<a href="https://devolute-cdn.sirv.com/fen/${image}?w=1920">`
+        };
+        markup += `<img srcset="https://devolute-cdn.sirv.com/fen/${image}?w=1180 1180w,
                     https://devolute-cdn.sirv.com/fen/${image}?w=600 600w,
                     https://devolute-cdn.sirv.com/fen/${image}?w=475 475w"
                     sizes="(min-width:1300px) 1180px,
                         (min-width:680px) 600px,
                         100vw"
-                    src="https://devolute-cdn.sirv.com/fen/${image}?w=600" alt="${alt}">
-            ${link ? `</a>` : ``}
-            ${caption ? `<div class="o-image__caption c-reduced c-raised">
+                    src="https://devolute-cdn.sirv.com/fen/${image}?w=600" alt="${alt}">`
+        if (link) {
+            markup += `</a>`
+        };
+        markup +=`${caption ? `<div class="o-image__caption c-reduced c-raised">
                 <p>${caption}</p>
-            </div>` : `&nbsp;`}
+            </div>` : ``}
         </div>`;
+        return markup.trim();
     });
 
     eleventyConfig.addPassthroughCopy("src/site.webmanifest");
