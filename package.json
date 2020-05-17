@@ -30,7 +30,7 @@
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
-    "autoprefixer": "^9.7.2",
+    "autoprefixer": "^9.8.0",
     "markdown-it-anchor": "^5.2.5",
     "node-sass": "^4.13.0",
     "normalize.css": "^8.0.1",
