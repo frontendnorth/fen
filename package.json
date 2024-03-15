@@ -29,18 +29,17 @@
   "dependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
-    "autoprefixer": "^9.7.2",
+    "autoprefixer": "^10.4.18",
     "markdown-it-anchor": "^5.2.5",
     "normalize.css": "^8.0.1",
-    "postcss-cli": "^7.1.0",
+    "postcss-cli": "^11.0.0",
     "sass-mq": "^6.0.0",
     "svgo": "^1.3.2",
-    "uglify-js": "^3.8.0"
+    "uglify-js": "^3.17.4"
   },
   "devDependencies": {
-    "npm-check": "^5.9.2",
-    "onchange": "^6.1.0",
-    "rimraf": "^3.0.2"
+    "onchange": "^7.1.0",
+    "rimraf": "^5.0.5",
     "sass": "^1.72.0"
   },
   "browserslist": [
