@@ -370,7 +370,7 @@
 			margin-top: $space-xl;
 
 			@include mq(md) {
-				margin-top: -($icon-size /2);
+				margin-top: math.div(-$icon-size, 2);
 				position: absolute;
 				top: 50%;
 				right: (($space-xxxl *1.5) - $space-l);

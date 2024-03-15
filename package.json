@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass:dev": "node-sass src/assets/scss/all.scss -o docs/assets/css/",
-    "sass:watch": "node-sass src/assets/scss/all.scss -wo docs/assets/css/ --source-map docs/assets/css/",
-    "sass:build": "node-sass src/assets/scss/all.scss -xo docs/assets/css/ --output-style=compressed",
+    "sass:watch": "sass --watch src/assets/scss/all.scss docs/assets/css/all.css",
+    "sass:build": "sass src/assets/scss/all.scss docs/assets/css/all.css --style=compressed --no-source-map",
     "fonts": "cp -R src/assets/fonts/ docs/assets/fonts/",
     "favicons": "cp -R src/assets/favicons/ docs/",
     "autoprefix": "npx postcss docs/assets/css/*.css --no-map --use autoprefixer -d docs/assets/css/",
@@ -32,10 +31,9 @@
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "autoprefixer": "^9.7.2",
     "markdown-it-anchor": "^5.2.5",
-    "node-sass": "^4.13.0",
     "normalize.css": "^8.0.1",
     "postcss-cli": "^7.1.0",
-    "sass-mq": "^5.0.1",
+    "sass-mq": "^6.0.0",
     "svgo": "^1.3.2",
     "uglify-js": "^3.8.0"
   },
@@ -43,6 +41,7 @@
     "npm-check": "^5.9.2",
     "onchange": "^6.1.0",
     "rimraf": "^3.0.2"
+    "sass": "^1.72.0"
   },
   "browserslist": [
     "last 2 versions",

@@ -103,7 +103,7 @@
  */
 
 @mixin responsiveRatio($x: 1,$y: 1, $pseudo: false) {
-	$padding: unquote( ( $y / $x ) * 100 + '%' );
+	$padding: unquote( math.div( $y, $x ) * 100 + '%' );
 	@if $pseudo {
 		&:before {
 			@include pseudo($pos: relative);

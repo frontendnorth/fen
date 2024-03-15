@@ -93,7 +93,7 @@
 				width: $icon-size;
 
 				@include mq(xs) {
-					margin-bottom: ($form-padding-vertical /2);
+					margin-bottom: math.div($form-padding-vertical, 2);
 				}
 
 				@include mq($until: sm) {

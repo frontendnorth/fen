@@ -217,26 +217,26 @@
 				bottom: 0;
 				height: $image-size-md;
 				margin: 0;
-				margin-bottom: -($image-size-md /2);
+				margin-bottom: math.div(-$image-size-md, 2);
 				right: ($width-page + $space-xxl);
 				width: $image-size-md;
 			}
 
 			@include mq(mdPlus) {
 				height: $image-size-md-plus;
-				margin-bottom: -($image-size-md-plus /2);
+				margin-bottom: math.div(-$image-size-md-plus, 2);
 				width: $image-size-md-plus;
 			}
 
 			@include mq(lg) {
 				height: $image-size-lg;
-				margin-bottom: -($image-size-lg /2);
+				margin-bottom: math.div(-$image-size-lg, 2);
 				width: $image-size-lg;
 			}
 
 			@include mq(xl) {
 				height: $image-size-xl;
-				margin-bottom: -($image-size-xl /2);
+				margin-bottom: math.div(-$image-size-xl, 2);
 				width: $image-size-xl;
 			}
 

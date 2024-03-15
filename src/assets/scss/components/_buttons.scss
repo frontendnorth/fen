@@ -48,7 +48,7 @@
 	&::after {
 		@include triangle($color-text-white, 'right', 6px);
 
-		right: -(($icon-bar-width /2) - 2px);
+		right: -(math.div($icon-bar-width, 2) - 2px);
 		top: 50%;
 		transform: translateY(-50%);
 	}
@@ -174,7 +174,7 @@
 			bottom: 0;
 			color: inherit;
 			position: absolute;
-			right: -($icon-bar-width - ($icon-size-sm /2));
+			right: -($icon-bar-width - math.div($icon-size-sm, 2));
 			top: 0;
 			opacity: .7;
 			margin: auto;
