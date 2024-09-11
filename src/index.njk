@@ -25,8 +25,8 @@ navOrder: 0
 
                 <p class="c-lede">
                     <strong class="u-uppercase">
-                        7th&nbsp;February, 2020<br>
-                        The Crucible Sheffield,&nbsp;UK
+                        Comming Summer 2025<br>
+                        Sheffield,&nbsp;UK
                     </strong><br>
                     A welcoming one-track, one-day conference for <strong>developers and designers</strong> who work on the&nbsp;web.
                 </p>
@@ -38,13 +38,14 @@ navOrder: 0
                             <strong class="c-button__emphasis">&pound;50</strong>
                         </a>
                     {% else %}
-                        <a href="/schedule/" class="c-button c-button--pop">
+                       {# <a href="/schedule/" class="c-button c-button--pop">
                             View our schedule
-                        </a>
+                        </a>#}
                     {% endif %}
                 </div>
 
             </div>
+            {#
             <section class="">
 
                 <h2 class="c-inverted">Our speakers</h2>
@@ -65,8 +66,9 @@ navOrder: 0
 
                 <a href="/speakers/" class="c-button">View the full line-up</a>
 
-            </section>
+            </section>#}
         </div>
+        {#
         <div class="o-hero-header__image">
             <img
                 srcset="{{ site.image_cdn }}crucible-bg.jpg?w=900 900w,
@@ -75,7 +77,8 @@ navOrder: 0
                     1345px"
                 src="{{ site.image_cdn }}crucible-bg.jpg?w=1345"
                 alt="The Crucible, Sheffield - photograph by Craig Flemming">
-        </div>
+        </div>#}
+        
 
     </header> {# /.o-hero-header #}
 
@@ -92,7 +95,7 @@ navOrder: 0
             <a href="/blog/" class="c-button">View all updates</a>
 
         </section>
-
+{#
         <section class="o-spacer@md">
 
             <h2><a href="/sponsors/">Sponsorship</a></h2>
@@ -110,7 +113,6 @@ navOrder: 0
 
             <div class="o-sponsor-grid o-sponsor-grid--compact">
                 {%- for level in [_2020.sponsors.gold, _2020.sponsors.silver] -%}
-                    {# {{ level | dump | safe }} #}
                     {% for sponsor in level %}
                         {{ ('<a href="' ~ sponsor.url ~ '" rel="external" title="' ~ sponsor.name ~ '" class="h-sponsor--' ~ sponsor.name | slug ~ '">' if sponsor.url) | safe }}
                             <span class="u-visually-hidden">{{ sponsor.name }}</span>
@@ -120,7 +122,7 @@ navOrder: 0
                 {%- endfor -%}
             </div>
 
-        </section>
+        </section>#}
 
     </div>
 
