@@ -65,6 +65,8 @@
     <meta name="twitter:site" content="@frontendnorth">
 
     <script defer src="/assets/js/main.js?v={{ project.buildDate }}"></script>
+
+    {% include 'tracking.njk' %}
 </head>
 <body>
 
@@ -100,8 +102,6 @@
 
         </div>
     </footer>
-
-    {% include 'tracking.njk' %}
 
     {% include 'inline-svg.njk' %}
 
