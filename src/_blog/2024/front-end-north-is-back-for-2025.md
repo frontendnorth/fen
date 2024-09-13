@@ -1,7 +1,7 @@
 ---
-title: "Front End North is back for 2025!"
+title: "Front End North is back for 2025"
 date: 2024-09-13
-excerpt: "We’re very happy to announce that Front End North will be back in Summer 2025!"
+intro: "We’re very happy to announce that Front End North will be returning to Sheffield in Summer 2025!"
 ---
 
 A certain global health crisis plus various life events meant that we weren’t able to schedule the next Front End North as soon as we’d hoped, but now things have calmed down a bit we’re very happy to announce that Front End North will be back in Summer 2025!
