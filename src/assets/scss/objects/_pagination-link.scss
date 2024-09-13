@@ -32,7 +32,7 @@
 			text-align: center;
 		}
 
-		&:first-child {
+		&:first-child:not(:last-child) {
 			display: none; // hide on mobile due to spacing issues
 			text-align: left;
 

@@ -9,6 +9,7 @@ tags: nav
 navTitle: 'Blog'
 navOrder: 30
 ---
+{% import "_macros/icons.njk" as icons %}
 
 {% extends "_layouts/base.njk" %}
 
@@ -37,10 +38,43 @@ navOrder: 30
     {# Only show pagination when required #}
     {% if pagination.hrefs | length > 1 %}
 
-        {# TODO: Style this from `o-pagination-links` before we write too many posts! #}
-        <nav aria-label="pagination">
-            {{ ('<a href="' ~ pagination.previousPageHref ~ '">Newer posts</a>' if pagination.previousPageHref) | safe }}
-            {{ ('<a href="' ~ pagination.nextPageHref ~ '">Older posts</a>' if pagination.nextPageHref) | safe }}
+        <nav class="o-wrapper o-wrapper--wide o-spacer" aria-label="Blog pagination">
+
+            <ol class="o-pagination-link">
+
+                {% if pagination.previousPageHref %}
+                    <li class="o-pagination-link__item">
+                        <span class="c-teaser">
+                            <span class="c-teaser__title">
+                                <a
+                                    href="{{ pagination.previousPageHref }}"
+                                    rel="prev"
+                                    class="c-arrow-link  c-arrow-link--previous">
+                                    Newer posts
+                                    {{ icons.icon('arrow-right') }}
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                {% endif %}
+                {% if pagination.nextPageHref %}
+                    <li class="o-pagination-link__item">
+                        <span class="c-teaser">
+                            <span class="c-teaser__title">
+                                <a
+                                    href="{{ pagination.nextPageHref }}"
+                                    rel="prev"
+                                    class="c-arrow-link">
+                                    Older posts
+                                    {{ icons.icon('arrow-right') }}
+                                </a>
+                            </span>
+                        </span>
+                    </li>
+                {% endif %}
+
+            </ol>
+
         </nav>
 
     {% endif %}
