@@ -1,0 +1,57 @@
+/**
+ *	Popover
+ *
+ *	An obnoxious announcement.
+ *
+ **/
+
+.c-announcement {
+
+	background-color: red;
+    bottom: 0;
+    padding: $space-xxl 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    @include mq($until: md) {
+        // Spacing for trigger. Fuck the maths on this one.
+        border-bottom: 4.5em solid darken($color-bg-grey-dark, 10);
+        padding-bottom: $space-xl;
+    }
+
+    &.is-hidden {
+        display: none;
+    }
+
+    // Tighten
+    h2 {
+        margin-bottom: 0;
+    }
+
+    &__actions {
+        align-items: center;
+        display: flex;
+        gap: $space-l;
+        flex-wrap: wrap;
+    }
+
+    &__dismiss {
+        appearance: none;
+        background: none;
+        border: none;
+        color: $color-text-white;
+        cursor: pointer;
+        // Matches `.c-reduced`
+        font-size: map-get($type-scale-major-second, s);
+        font-weight: 700;
+        position: absolute;
+        right: $space-default;
+        top: calc(-#{$space-xxl} + $space-l);
+
+        @include mq(md) {
+            top: calc(-#{$space-xxl} + $space-xl);
+        }
+    }
+
+}

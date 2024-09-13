@@ -4,6 +4,9 @@ description: A welcoming one-track, one-day conference in Sheffield, UK for deve
 tags: nav
 navOrder: 0
 ---
+
+{% import "_macros/icons.njk" as icons %}
+
 {# layout: base.njk #}
 {% extends "_layouts/base.njk" %}
 
@@ -123,6 +126,26 @@ navOrder: 0
         </section>
 
     </div>
+
+    <section class="c-raised c-announcement c-inverted js-banner">
+
+        <div class="o-wrapper o-wrapper--wide">
+
+            <h2 class="gamma">We are returning for Summer 2025!</h2>
+            <p class="c-lede">More details soon.</p>
+            <div class="c-announcement__actions">
+                <a href="/blog/" class="c-button c-button--pop">Read more on our blog post</a>
+                <span class="c-reduced s-content">…or <a href="#subscribe" class="js-banner-dismiss">sign-up for our 2025 updates here</a></span>
+            </div>
+
+            <button class="c-announcement__dismiss js-banner-dismiss" data-trigger="banner">
+                Dismiss
+                {{ icons.icon('cross', 'inherit') }}
+            </button>
+
+        </div>
+
+    </section>
 
     {% include "image-clipper.njk" %}
 
