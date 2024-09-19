@@ -128,8 +128,12 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets/img/cards/");
     eleventyConfig.addPassthroughCopy("src/assets/img/sponsors/bitmap/");
 
-    eleventyConfig.setBrowserSyncConfig({
-        port: 1234
+    eleventyConfig.setServerOptions({
+        port: 1234,
+        watch: [
+            "docs/assets/css/*.css",
+            "docs/assets/js/*.js"
+        ]
     });
 
     // https://www.npmjs.com/package/@11ty/eleventy-plugin-rss
