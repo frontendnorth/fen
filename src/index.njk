@@ -115,7 +115,7 @@ navOrder: 0
                 {%- for level in [_2020.sponsors.gold, _2020.sponsors.silver] -%}
                     {# {{ level | dump | safe }} #}
                     {% for sponsor in level %}
-                        {{ ('<a href="' ~ sponsor.url ~ '" rel="external" title="' ~ sponsor.name ~ '" class="h-sponsor--' ~ sponsor.name | slug ~ '">' if sponsor.url) | safe }}
+                        {{ ('<a href="' ~ sponsor.url ~ '" rel="external" title="' ~ sponsor.name ~ '" class="h-sponsor--' ~ sponsor.name | slugify ~ '">' if sponsor.url) | safe }}
                             <span class="u-visually-hidden">{{ sponsor.name }}</span>
                             <img src="{{ site.image_folder }}sponsors/{{ sponsor.logo }}" alt="">
                         {{ ('</a>' if sponsor.url) | safe }}

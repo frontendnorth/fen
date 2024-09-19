@@ -2,6 +2,7 @@
 title: "What to expect at this year's conference"
 date: 2020-02-06
 excerpt: "A recap of our plans for the day at FEN 2020"
+permalink: "/blog/{{ page.date | blogPermalink }}/what-to-expect-at-this-year's-conference/index.html"
 ---
 We’re looking forward to seeing you at the Crucible on Friday for Front End North 2020!
 

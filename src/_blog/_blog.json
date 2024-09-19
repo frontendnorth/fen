@@ -3,5 +3,5 @@
         "blog"
     ],
     "layout": "_entry/blog.njk",
-    "permalink": "/blog/{{ page.date|blogPermalink }}/{{ title | slug }}/index.html"
+    "permalink": "/blog/{{ page.date|blogPermalink }}/{{ title | slugify }}/index.html"
 }
