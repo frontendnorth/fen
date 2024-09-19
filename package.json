@@ -27,7 +27,7 @@
   "author": "Front End North",
   "license": "none",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0-beta.1",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "autoprefixer": "^10.4.18",
     "markdown-it-anchor": "^5.2.5",
