@@ -28,7 +28,7 @@
   "license": "none",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0-beta.1",
-    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
     "autoprefixer": "^10.4.20",
     "markdown-it-anchor": "^9.2.0",
     "normalize.css": "^8.0.1",
