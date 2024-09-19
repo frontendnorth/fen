@@ -1,7 +1,7 @@
 const { DateTime } = require("luxon");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
-module.exports = function(eleventyConfig) {
+module.exports = async function(eleventyConfig) {
 
     // Define collections
     eleventyConfig.addCollection('speakers', collection => {
